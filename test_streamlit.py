@@ -65,7 +65,8 @@ if st.session_state.page == 1:
     # 受試者基本資料
     age = st.number_input("請輸入您的年齡", min_value=10, max_value=100, step=1)
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"])
-    st.radio("問題 1：你喜歡貓還是狗？", ["貓", "狗"], key="q1_1")
+    st.markdown('<div class="question-text">問題 1：你喜歡貓還是狗？</div>', unsafe_allow_html=True)
+    st.radio("", ["貓", "狗"], key="q1")
     st.radio("問題 2：你喜歡早上還是晚上？", ["早上", "晚上"], key="q1_2")
     st.button("下一頁", on_click=next_page)
 
