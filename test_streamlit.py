@@ -42,16 +42,25 @@ input, textarea {
 </style>
 """, unsafe_allow_html=True)
 
-from datetime import datetime
 import time
-from datetime import datetime
 
-# 在主程式最開頭（例如 import 下方）加入：
+# ✅ 初始化狀態
+if 'page' not in st.session_state:
+    st.session_state.page = 0  # 頁面 0 為歡迎頁
 if 'start_time' not in st.session_state:
-    st.session_state.start_time = time.time()
+    st.session_state.start_time = None  # 尚未開始計時
 
-# 計算目前經過的秒數
-elapsed_time = int(time.time() - st.session_state.start_time)
+# ✅ 設定換頁函式
+def next_page():
+    st.session_state.page += 1
+    if st.session_state.start_time is None:
+        st.session_state.start_time = time.time()  # ⏱️ 按下開始時才設定
+
+# ✅ 歡迎頁（page == 0）
+if st.session_state.page == 0:
+    st.title("📝 歡迎參加測驗")
+    st.write("本測驗包含數題圖片與選項，請專心作答。")
+    st.button("👉 開始測驗", on_click=next_page)
 
 
 # 初始化頁數狀態
