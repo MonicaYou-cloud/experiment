@@ -42,6 +42,7 @@ input, textarea {
 </style>
 """, unsafe_allow_html=True)
 
+import streamlit as st
 import time
 
 # ✅ 初始化狀態
@@ -56,13 +57,18 @@ def next_page():
     if st.session_state.start_time is None:
         st.session_state.start_time = time.time()  # ⏱️ 按下開始時才設定
 
+# ✅ 顯示計時器（轉換為分＋秒格式）
 if st.session_state.start_time:
-    elapsed_time = int(time.time() - st.session_state.start_time)
+    elapsed_seconds = int(time.time() - st.session_state.start_time)
+    minutes = elapsed_seconds // 60
+    seconds = elapsed_seconds % 60
+    time_str = f"{minutes:02d} 分 {seconds:02d} 秒"
+
     st.markdown(f"""
         <div style='position:fixed; top:20px; left:30px; background:#f0f0f0;
                     padding:8px 16px; border-radius:8px; font-size:18px;
                     box-shadow:0 0 5px rgba(0,0,0,0.1); z-index:1000;'>
-            ⏱️ 測驗時間：<strong>{elapsed_time} 秒</strong>
+            ⏱️ 測驗時間：<strong>{time_str}</strong>
         </div>
     """, unsafe_allow_html=True)
 
