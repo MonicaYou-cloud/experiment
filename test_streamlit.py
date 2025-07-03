@@ -3,6 +3,47 @@ import pandas as pd
 import os
 from datetime import datetime
 
+# 插入 CSS 樣式來修改整體字體、間距、置中等
+st.markdown("""
+<style>
+/* 全域文字設定 */
+html, body, [class*="css"]  {
+    font-family: "Microsoft JhengHei", "Arial", sans-serif;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* 所有標題置中 */
+h1, h2, h3, h4 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+/* Radio 題目與選項加大 */
+div[data-baseweb="radio"] {
+    font-size: 20px;
+}
+
+/* 所有按鈕加大字體與寬度 */
+button[kind="primary"] {
+    font-size: 18px;
+    padding: 0.5em 2em;
+}
+
+/* 整個畫面寬度置中顯示 */
+main .block-container {
+    max-width: 800px;
+    margin: auto;
+}
+
+/* 增加輸入欄位的字體大小 */
+input, textarea {
+    font-size: 18px !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
+
 # 初始化頁數狀態
 if 'page' not in st.session_state:
     st.session_state.page = 1
