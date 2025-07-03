@@ -43,24 +43,6 @@ input, textarea {
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-.question-text {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 20px;
-    margin-bottom: 0px;  /* ✅ 調整這裡：縮小與 radio 間距 */
-}
-
-div[data-baseweb="radio"] {
-    font-size: 18px;
-    margin-top: 0px;  /* ✅ optional: 確保 radio 本身也無額外上邊距 */
-}
-</style>
-""", unsafe_allow_html=True)
-
-
 
 # 初始化頁數狀態
 if 'page' not in st.session_state:
