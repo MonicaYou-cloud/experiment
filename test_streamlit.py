@@ -16,7 +16,7 @@ def prev_page():
 
 # 顯示內容根據頁數改變
 if st.session_state.page == 1:
-    st.title("基本資料")
+    st.title(<span style='font-size:20px;'>"基本資料"</span>)
     st.write("請填寫以下問卷，完成後按提交。")
     st.title("題組 1")
     st.write("這是第一組題目")
