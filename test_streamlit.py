@@ -102,12 +102,11 @@ if st.session_state.page == 1:
     st.markdown('<div class="question-text">問題 1：你喜歡貓還是狗？</div>', unsafe_allow_html=True)
     st.radio("", ["貓", "狗"], key="q1")
     st.radio("問題 2：你喜歡早上還是晚上？", ["早上", "晚上"], key="q1_2")
-    st.button("下一頁", on_click=next_page)
-    
     #插入圖片
     image1 = Image.open("螢幕擷取畫面 2025-07-03 115532.png")
     st.image(image1, caption="題目1")
-
+    st.button("下一頁", on_click=next_page)
+    
 elif st.session_state.page == 2:
     st.title("題組 2")
     st.write("這是第二組題目")
