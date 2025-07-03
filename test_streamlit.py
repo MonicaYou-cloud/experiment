@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import os
+import time
+from PIL import Image
 
 # 插入 CSS 樣式來修改整體字體、間距、置中等
 st.markdown("""
@@ -42,9 +44,7 @@ input, textarea {
 </style>
 """, unsafe_allow_html=True)
 
-import streamlit as st
-import time
-
+#計時器
 # ✅ 初始化狀態
 if 'page' not in st.session_state:
     st.session_state.page = 0  # 頁面 0 為歡迎頁
@@ -78,7 +78,6 @@ if st.session_state.page == 0:
     st.write("本測驗包含數題圖片與選項，請專心作答。")
     st.button("👉 開始測驗", on_click=next_page)
 
-
 # 初始化頁數狀態
 if 'page' not in st.session_state:
     st.session_state.page = 1
@@ -104,6 +103,10 @@ if st.session_state.page == 1:
     st.radio("", ["貓", "狗"], key="q1")
     st.radio("問題 2：你喜歡早上還是晚上？", ["早上", "晚上"], key="q1_2")
     st.button("下一頁", on_click=next_page)
+    
+    #插入圖片
+    image1 = Image.open("螢幕擷取畫面 2025-07-03 115532.png")
+    st.image(image1, caption="題目1")
 
 elif st.session_state.page == 2:
     st.title("題組 2")
