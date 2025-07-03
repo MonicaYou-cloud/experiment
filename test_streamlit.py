@@ -54,47 +54,23 @@ if 'start_time' not in st.session_state:
 def next_page():
     st.session_state.page += 1
     if st.session_state.start_time is None:
-        st.session_state.start_time = time.time()
+        st.session_state.start_time = time.time()  # ⏱️ 按下開始時才設定
 
-# ✅ 測驗頁：啟動計時器並更新畫面
-def show_test_page():
-    st.title("📄 測驗進行中")
-    st.write("請作答以下題目...")
-
-    # 建立一個空容器顯示計時器
-    timer_placeholder = st.empty()
-
-    # 每秒更新計時器（更新 1 次即可，不用進入無限迴圈）
-    elapsed = int(time.time() - st.session_state.start_time)
-    timer_html = f"""
+if st.session_state.start_time:
+    elapsed_time = int(time.time() - st.session_state.start_time)
+    st.markdown(f"""
         <div style='position:fixed; top:20px; left:30px; background:#f0f0f0;
                     padding:8px 16px; border-radius:8px; font-size:18px;
                     box-shadow:0 0 5px rgba(0,0,0,0.1); z-index:1000;'>
-            ⏱️ 測驗時間：<strong>{elapsed} 秒</strong>
+            ⏱️ 測驗時間：<strong>{elapsed_time} 秒</strong>
         </div>
-    """
-    timer_placeholder.markdown(timer_html, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-    # 題目與下一頁按鈕
-    st.write("這是第 1 題（範例）...")
-    if st.button("下一頁"):
-        st.session_state.page += 1
-
-    # 自動等待 1 秒後 rerun 整個頁面來刷新計時器
-    time.sleep(1)
-    st.experimental_rerun()
-
-# ✅ 歡迎頁
-def show_welcome_page():
+# ✅ 歡迎頁（page == 0）
+if st.session_state.page == 0:
     st.title("📝 歡迎參加測驗")
     st.write("本測驗包含數題圖片與選項，請專心作答。")
     st.button("👉 開始測驗", on_click=next_page)
-
-# ✅ 主邏輯
-if st.session_state.page == 0:
-    show_welcome_page()
-else:
-    show_test_page()
 
 
 # 初始化頁數狀態
