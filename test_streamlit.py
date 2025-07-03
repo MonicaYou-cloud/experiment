@@ -113,6 +113,39 @@ elif st.session_state.page == 2:
     st.radio("問題 1：你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
     st.radio("問題 2：你喜歡夏天還是冬天？", ["夏天", "冬天"], key="q2_2")
     # st.button("上一頁", on_click=prev_page)
+    from PIL import Image, ImageDraw
+    def create_simple_shape(color, shape, size=(150,150)):
+    img = Image.new("RGB", size, "white")
+    draw = ImageDraw.Draw(img)
+    if shape == "circle":
+        draw.ellipse([30,30,120,120], fill=color)
+    elif shape == "square":
+        draw.rectangle([30,30,120,120], fill=color)
+    elif shape == "triangle":
+        draw.polygon([(75,30),(30,120),(120,120)], fill=color)
+    return img
+
+    # 題目圖 (8格 - 3x3, 中間空白)
+    context_imgs = []
+    colors = ["red", "green", "blue", "red", "green", "blue", "red", "green"]
+    shapes = ["circle", "circle", "circle", "square", "square", "square", "triangle", "triangle"]
+    
+    for i in range(8):
+        img = create_simple_shape(colors[i], shapes[i])
+        img.save(f"q001_context_{i}.png")
+    
+    # 選項圖 (8個選項，只有一個正確填中間空白格)
+    choices_imgs = []
+    choice_colors = ["red", "green", "blue", "red", "green", "blue", "red", "blue"]
+    choice_shapes = ["circle", "circle", "circle", "square", "square", "square", "triangle", "triangle"]
+    
+    for i in range(8):
+        img = create_simple_shape(choice_colors[i], choice_shapes[i])
+        img.save(f"q001_choice_{i}.png")
+
+    # 正確選項是 index 2（藍色圓形）
+    correct_answer = 2
+
     st.button("下一頁", on_click=next_page)
 
 elif st.session_state.page == 3:
