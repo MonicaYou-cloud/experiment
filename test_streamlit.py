@@ -38,8 +38,8 @@ elif st.session_state.page == 2:
 elif st.session_state.page == 3:
     st.title("題組 3")
     st.write("這是第三組題目")
-    st.radio("問題 1："請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
-    st.radio("問題 2："請選擇您覺得正確的選項？", ["1", "2"], key="q3_2")
+    st.radio("問題 1：請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
+    st.radio("問題 2：請選擇您覺得正確的選項？", ["1", "2"], key="q3_2")
     st.button("提交", on_click=lambda: st.success("問卷已完成！非常感謝您的作答"))
 
 
