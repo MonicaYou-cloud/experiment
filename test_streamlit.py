@@ -2,9 +2,6 @@ import streamlit as st
 import pandas as pd
 import os
 
-# 顯示計時器
-st.markdown(f"⏱️ 測驗已進行：**{elapsed_time} 秒**", unsafe_allow_html=True)
-
 # 插入 CSS 樣式來修改整體字體、間距、置中等
 st.markdown("""
 <style>
