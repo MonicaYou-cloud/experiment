@@ -59,7 +59,7 @@ def next_page():
 if st.session_state.start_time:
     elapsed_time = int(time.time() - st.session_state.start_time)
     st.markdown(f"""
-        <div style='position:fixed; top:20px; right:30px; background:#f0f0f0;
+        <div style='position:fixed; top:20px; left:30px; background:#f0f0f0;
                     padding:8px 16px; border-radius:8px; font-size:18px;
                     box-shadow:0 0 5px rgba(0,0,0,0.1); z-index:1000;'>
             ⏱️ 測驗時間：<strong>{elapsed_time} 秒</strong>
