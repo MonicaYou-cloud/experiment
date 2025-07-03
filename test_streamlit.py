@@ -3,6 +3,33 @@ import pandas as pd
 import os
 from datetime import datetime
 
+# 初始化頁數狀態
+if 'page' not in st.session_state:
+    st.session_state.page = 1
+
+# 定義換頁函式
+def next_page():
+    st.session_state.page += 1
+
+def prev_page():
+    st.session_state.page -= 1
+
+# 顯示內容根據頁數改變
+if st.session_state.page == 1:
+    st.title("📘 題組 1")
+    st.write("這是第一組題目")
+    st.radio("問題 1：你喜歡貓還是狗？", ["貓", "狗"], key="q1_1")
+    st.radio("問題 2：你喜歡早上還是晚上？", ["早上", "晚上"], key="q1_2")
+    st.button("下一頁", on_click=next_page)
+
+elif st.session_state.page == 2:
+    st.title("📙 題組 2")
+    st.write("這是第二組題目")
+    st.radio("問題 3：你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
+    st.radio("問題 4：你喜歡夏天還是冬天？", ["夏天", "冬天"], key="q2_2")
+    st.button("上一頁", on_click=prev_page)
+    st.button("提交", on_click=lambda: st.success("問卷已完成！感謝作答 🙏"))
+
 st.title("🧪 心理學測驗示範")
 st.write("請填寫以下問卷，完成後按提交。")
 
