@@ -40,7 +40,7 @@ elif st.session_state.page == 3:
     st.write("這是第三組題目")
     st.radio("問題 1：請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
     st.radio("問題 2：請選擇您覺得正確的選項？", ["1", "2"], key="q3_2")
-    st.button("下一頁", on_click=next_page)
+    st.button("提交", on_click=next_page)
 
 elif st.session_state.page == 4:
     st.success("問卷已完成！非常感謝您的作答")
