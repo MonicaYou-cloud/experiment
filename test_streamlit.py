@@ -1,7 +1,9 @@
 import streamlit as st
 import pandas as pd
 import os
-from datetime import datetime
+
+# 顯示計時器
+st.markdown(f"⏱️ 測驗已進行：**{elapsed_time} 秒**", unsafe_allow_html=True)
 
 # 插入 CSS 樣式來修改整體字體、間距、置中等
 st.markdown("""
@@ -42,6 +44,17 @@ input, textarea {
 }
 </style>
 """, unsafe_allow_html=True)
+
+from datetime import datetime
+import time
+from datetime import datetime
+
+# 在主程式最開頭（例如 import 下方）加入：
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = time.time()
+
+# 計算目前經過的秒數
+elapsed_time = int(time.time() - st.session_state.start_time)
 
 
 # 初始化頁數狀態
