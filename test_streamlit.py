@@ -69,11 +69,11 @@ elif st.session_state.page == 3:
 #             "Q5": [q5]
 #         })
 
-        # 將結果儲存到 CSV
-        if os.path.exists("results.csv"):
-            result.to_csv("results.csv", mode="a", header=False, index=False, encoding='utf-8-sig')
-        else:
-            result.to_csv("results.csv", mode="w", header=True, index=False, encoding='utf-8-sig')
+        # # 將結果儲存到 CSV
+        # if os.path.exists("results.csv"):
+        #     result.to_csv("results.csv", mode="a", header=False, index=False, encoding='utf-8-sig')
+        # else:
+        #     result.to_csv("results.csv", mode="w", header=True, index=False, encoding='utf-8-sig')
 
-        st.success(f"感謝您的填寫，{participant_id}！已成功提交測驗。")
-        st.balloons()
+        # st.success(f"感謝您的填寫，{participant_id}！已成功提交測驗。")
+        # st.balloons()
