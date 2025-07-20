@@ -76,6 +76,7 @@ elif st.session_state.page == 1:
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"])
     st.button("下一頁", on_click=next_page)
 
+#題一
 elif st.session_state.page == 2:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
@@ -138,54 +139,70 @@ elif st.session_state.page == 2:
         詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線
         """)
 
-
-# 頁 2：題組 2
+#題二
 elif st.session_state.page == 3:
-    import time
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
-# 初始化計時器
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = time.time()
-if 'elapsed_time' not in st.session_state:
-    st.session_state.elapsed_time = 0
+    # 顯示圖形題目與選項圖片
+    col1, col2 = st.columns(2)
+    with col1:
+        try:
+            image1 = Image.open("高級圖形一 (2).png")
+            st.image(image1, caption="練習題2")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片一載入失敗")
+    
+    with col2:
+        try:
+            image2 = Image.open("高級圖形一選項 (2).png")
+            st.image(image2, caption="請選擇您認為的正確圖形")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片二載入失敗")
 
-# 更新經過時間
-st.session_state.elapsed_time = int(time.time() - st.session_state.start_time)
+    # 顯示選項（置中）
+    col1, col2, col3 = st.columns([1, 5, 1])
+    with col2:
+        answer = st.radio(
+            label="選項",
+            options=["1", "2", "3", "4", "5", "6", "7", "8"],
+            key="q_graphical_1",
+            horizontal=True
+        )
 
-# 用三欄控制：左邊是計時器，中間兩張圖左右排列
-col_timer, col_img1, col_img2 = st.columns([1, 3, 3])
+    # 初始化詳解狀態（只跑一次）
+    if 'show_answer' not in st.session_state:
+        st.session_state.show_answer = False
+    if 'show_explanation' not in st.session_state:
+        st.session_state.show_explanation = False
 
-# 顯示計時器（放在左邊）
-with col_timer:
-    st.markdown("### 測驗時間")
-    minutes = st.session_state.elapsed_time // 60
-    seconds = st.session_state.elapsed_time % 60
-    st.markdown(f"⏱️ {minutes:02d}:{seconds:02d}")
+    # 三個按鈕：上一頁、看詳解、下一頁
+    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
-# 顯示圖片一（題幹圖）
-with col_img1:
-    try:
-        image1 = Image.open("高級圖形一 (1).png")
-        st.image(image1, caption="題目", use_column_width=True)
-    except FileNotFoundError:
-        st.warning("⚠️ 圖片一載入失敗")
+    with col1:
+        st.button("上一頁", on_click=prev_page)
 
-# 顯示圖片二（選項圖）
-with col_img2:
-    try:
-        image2 = Image.open("高級圖形一選項 (1).png")
-        st.image(image2, caption="請選擇您認為的正確圖形", use_column_width=True)
-    except FileNotFoundError:
-        st.warning("⚠️ 圖片二載入失敗")
+    with col3:
+        if st.button("看答案"):
+            st.session_state.show_answer = True
+
+    with col4:
+        if st.button("看詳解"):
+            st.session_state.show_explanation = True
+
+    with col6:
+             st.button("下一頁", on_click=next_page)
+
+    # ✅ 按下「看詳解」後才顯示詳解區塊
+    if st.session_state.show_answer:
+        st.markdown("""
+        正確答案是 **8**""")
+        
+    if st.session_state.show_explanation:
+        st.markdown("""
+        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線
+        """)
 
 
-# # 頁 3：題組 3
-# elif st.session_state.page == 4:
-#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-#     st.header("練習題")
-#     st.radio("3. 請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
-#     st.button("上一頁", on_click=prev_page)
-#     st.button("提交", on_click=next_page)
 
 # # 完成頁面
 # elif st.session_state.page == 5:
