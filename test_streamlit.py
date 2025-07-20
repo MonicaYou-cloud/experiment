@@ -86,7 +86,6 @@ elif st.session_state.page == 2:
         image2 = Image.open("高級圖形一選項 (1).png")
         st.image(image2)
         answer = st.radio(
-            label="選項（1 到 8）",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True)
