@@ -50,10 +50,10 @@ if 'auto_scroll' not in st.session_state:
 # 換頁函式
 def next_page():
     st.session_state.page += 1
-    st.session_state.auto_scroll = True
-    if st.session_state.start_time is None:
-        st.session_state.start_time = time.time()
-        st.experimental_rerun()
+    st.experimental_rerun()
+
+if st.session_state.page > 0:
+    scroll_to_top()
 
 def prev_page():
     st.session_state.page -= 1
