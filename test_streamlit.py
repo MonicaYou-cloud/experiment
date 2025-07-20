@@ -58,15 +58,15 @@ def next_page():
 def prev_page():
     st.session_state.page -= 1
 def scroll_to_top():
-    # 用 st.components.v1.html 注入 JS，等待 DOM 完全載入再滾動
-    js_code = """
-    <script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        window.scrollTo(0, 0);
-    });
-    </script>
-    """
-    components.html(js_code, height=0, width=0)
+    components.html(
+        """
+        <script>
+        window.scrollTo(0,0);
+        </script>
+        """,
+        height=0,
+        width=0,
+    )
     
 # 顯示計時器
 if st.session_state.page > 0 and st.session_state.start_time:
