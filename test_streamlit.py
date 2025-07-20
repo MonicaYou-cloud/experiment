@@ -98,7 +98,7 @@ elif st.session_state.page == 2:
             st.warning("⚠️ 圖片二載入失敗")
         
     # 中間一欄放選項，左右是空白欄位
-    col1, col2, col3 = st.columns([1, 3, 1])
+    col1, col2, col3 = st.columns([1, 4, 1])
     with col2:
         answer = st.radio(
             label="請選擇答案",
@@ -107,7 +107,7 @@ elif st.session_state.page == 2:
             horizontal=True
         )
     
-    col1, col2, col3 = st.columns([2, 1, 2])
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col1:
         st.button("上一頁", on_click=prev_page)
     
