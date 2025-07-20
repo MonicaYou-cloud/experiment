@@ -114,6 +114,63 @@ elif st.session_state.page == 2:
     with col3:
         st.button("下一頁", on_click=next_page)
 
+elif st.session_state.page == 3:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    st.header("練習題")
+    
+    # 分成左右兩欄顯示圖片
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        try:
+            image1 = Image.open("高級圖形一 (1).png")
+            st.image(image1, caption="")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片一載入失敗")
+    
+    with col2:
+        try:
+            image2 = Image.open("高級圖形一選項 (1).png")
+            st.image(image2, caption="請選擇您認為的正確圖形")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片二載入失敗")
+        
+    # 中間一欄放選項
+    col1, col2, col3 = st.columns([1, 5, 1])
+    with col2:
+        answer = st.radio(
+            label="選項",
+            options=["1", "2", "3", "4", "5", "6", "7", "8"],
+            key="q_graphical_1",
+            horizontal=True
+        )
+
+    # 初始化詳解狀態
+    if 'show_explanation' not in st.session_state:
+        st.session_state.show_explanation = False
+
+    # 三個按鈕：上一頁、看詳解、下一頁
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 3, 1, 1])
+
+    with col1:
+        st.button("上一頁", on_click=prev_page)
+
+    with col3:
+        if st.button("看詳解"):
+            st.session_state.show_explanation = True
+
+    with col5:
+        if st.session_state.show_explanation:
+            st.button("下一頁", on_click=next_page)
+        else:
+            st.button("下一頁（請先看詳解）", disabled=True)
+
+    # 顯示詳解內容
+    if st.session_state.show_explanation:
+        st.markdown("---")
+        st.subheader("詳解")
+        st.markdown("正確答案是 **5**。請觀察圖形排列規律...")
+
 
 # 頁 2：題組 2
 elif st.session_state.page == 3:
