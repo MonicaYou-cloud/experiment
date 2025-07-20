@@ -179,16 +179,16 @@ with col_img2:
         st.warning("⚠️ 圖片二載入失敗")
 
 
-# 頁 3：題組 3
-elif st.session_state.page == 4:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.header("練習題")
-    st.radio("3. 請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
-    st.button("上一頁", on_click=prev_page)
-    st.button("提交", on_click=next_page)
+# # 頁 3：題組 3
+# elif st.session_state.page == 4:
+#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+#     st.header("練習題")
+#     st.radio("3. 請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
+#     st.button("上一頁", on_click=prev_page)
+#     st.button("提交", on_click=next_page)
 
-# 完成頁面
-elif st.session_state.page == 5:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.success("問卷已完成！非常感謝您的作答。")
-    st.balloons()
+# # 完成頁面
+# elif st.session_state.page == 5:
+#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+#     st.success("問卷已完成！非常感謝您的作答。")
+#     st.balloons()
