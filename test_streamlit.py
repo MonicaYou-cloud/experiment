@@ -136,7 +136,7 @@ elif st.session_state.page == 2:
         
     if st.session_state.show_explanation1:
         st.markdown("""
-        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線
+        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線處。
         """)
 
 #題二
@@ -199,7 +199,7 @@ elif st.session_state.page == 3:
         
     if st.session_state.show_explanation2:
         st.markdown("""
-        詳解：本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑
+        詳解：本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑。
         """)
 
 
