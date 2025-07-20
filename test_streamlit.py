@@ -78,7 +78,6 @@ elif st.session_state.page == 1:
 
 elif st.session_state.page == 2:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.header("練習題")
     
     # 分成左右兩欄顯示圖片
     col1, col2 = st.columns(2)
@@ -86,7 +85,7 @@ elif st.session_state.page == 2:
     with col1:
         try:
             image1 = Image.open("高級圖形一 (1).png")
-            st.image(image1, caption="")
+            st.image(image1, caption="練習題1")
         except FileNotFoundError:
             st.warning("⚠️ 圖片一載入失敗")
     
