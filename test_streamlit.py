@@ -636,11 +636,11 @@ elif st.session_state.page == 10:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer9:
         st.markdown("""
-        正確答案是 **4？**""")
+        正確答案是 **3**""")
         
     if st.session_state.show_explanation9:
         st.markdown("""
-        詳解：？。
+        詳解：圖形皆是圓形，以大小間隔。
         """)
 
 # 題十
@@ -699,11 +699,11 @@ elif st.session_state.page == 11:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer10:
         st.markdown("""
-        正確答案是 **5**""")
+        正確答案是 **4**""")
 
     if st.session_state.show_explanation10:
         st.markdown("""
-        詳解：外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。
+        詳解：圖形皆是由兩條線組成。
         """)
 
 
