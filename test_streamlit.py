@@ -171,7 +171,7 @@ elif st.session_state.page == 3:
             st.button("下一題", disabled=True)
 
     # ✅ 按下「看詳解」後才顯示詳解區塊
-     if st.session_state.show_answer:
+    if st.session_state.show_answer:
         st.markdown("""
         正確答案是 **8**""")
         
