@@ -117,10 +117,9 @@ elif st.session_state.page == 2:
 elif st.session_state.page == 3:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.header("練習題")
-    
-    # 分成左右兩欄顯示圖片
+
+    # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
-    
     with col1:
         try:
             image1 = Image.open("高級圖形一 (1).png")
@@ -134,8 +133,8 @@ elif st.session_state.page == 3:
             st.image(image2, caption="請選擇您認為的正確圖形")
         except FileNotFoundError:
             st.warning("⚠️ 圖片二載入失敗")
-        
-    # 中間一欄放選項
+
+    # 顯示選項（置中）
     col1, col2, col3 = st.columns([1, 5, 1])
     with col2:
         answer = st.radio(
@@ -145,7 +144,7 @@ elif st.session_state.page == 3:
             horizontal=True
         )
 
-    # 初始化詳解狀態
+    # 初始化詳解狀態（只跑一次）
     if 'show_explanation' not in st.session_state:
         st.session_state.show_explanation = False
 
@@ -161,15 +160,20 @@ elif st.session_state.page == 3:
 
     with col5:
         if st.session_state.show_explanation:
-            st.button("下一頁", on_click=next_page)
+            st.button("下一題", on_click=next_page)
         else:
-            st.button("下一頁（請先看詳解）", disabled=True)
+            st.button("下一題", disabled=True)
 
-    # 顯示詳解內容
+    # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_explanation:
         st.markdown("---")
         st.subheader("詳解")
-        st.markdown("正確答案是 **5**。請觀察圖形排列規律...")
+        st.markdown("""
+        正確答案是 **5**。
+
+        解題技巧：觀察圖形中的變化邏輯，例如形狀排列、旋轉角度或數量變化。
+        本題中圖形是根據對角線與邊形方向進行規則排列...
+        """)
 
 
 # 頁 2：題組 2
