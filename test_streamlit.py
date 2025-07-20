@@ -83,8 +83,9 @@ elif st.session_state.page == 2:
     st.radio("", ["貓", "狗"], key="q1")
 
     try:
-        image1 = Image.open("螢幕擷取畫面 2025-07-03 115532.png")
-        st.image(image1, caption="題目1")
+        image1 = Image.open("高級圖形一 (1).png")
+        st.image(image1, caption="請從以下選項選擇您認為的正確答案")
+        image2 = Image.open("高級圖形一選項 (1).png")
     except FileNotFoundError:
         st.warning("⚠️ 無法載入圖片，請確認圖片檔案名稱與路徑是否正確。")
     
