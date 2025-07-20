@@ -89,14 +89,14 @@ elif st.session_state.page == 2:
     with col1:
         try:
             image1 = Image.open("高級圖形一 (1).png")
-            st.image(image1, caption="題目圖片", use_column_width=True)
+            st.image(image1, caption="題目圖片")
         except FileNotFoundError:
             st.warning("⚠️ 圖片一載入失敗")
     
     with col2:
         try:
             image2 = Image.open("高級圖形一選項 (1).png")
-            st.image(image2, caption="選項圖片", use_column_width=True)
+            st.image(image2, caption="選項圖片")
         except FileNotFoundError:
             st.warning("⚠️ 圖片二載入失敗")
         answer = st.radio(
