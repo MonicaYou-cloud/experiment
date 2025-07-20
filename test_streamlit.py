@@ -80,11 +80,25 @@ elif st.session_state.page == 2:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.header("練習題")
 
-    try:
-        image1 = Image.open("高級圖形一 (1).png")
-        st.image(image1, caption="請從以下選項選擇您認為的正確答案", width=400)
-        image2 = Image.open("高級圖形一選項 (1).png")
-        st.image(image2, caption="選項圖片", width=400)
+
+    st.title("題組 1")
+    
+    # 分成左右兩欄顯示圖片
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        try:
+            image1 = Image.open("高級圖形一 (1).png")
+            st.image(image1, caption="題目圖片", use_column_width=True)
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片一載入失敗")
+    
+    with col2:
+        try:
+            image2 = Image.open("高級圖形一選項 (1).png")
+            st.image(image2, caption="選項圖片", use_column_width=True)
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片二載入失敗")
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
