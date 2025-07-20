@@ -94,4 +94,22 @@ elif st.session_state.page == 2:
     st.title("題組 2")
     st.write("這是第二組題目")
     st.radio("問題 1：你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
-    st.radio("問題 2
+    st.radio("問題 2：你喜歡夏天還是冬天？", ["夏天", "冬天"], key="q2_2")
+    st.button("上一頁", on_click=prev_page)
+    st.button("下一頁", on_click=next_page)
+
+# 頁 3：題組 3
+elif st.session_state.page == 3:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    st.title("題組 3")
+    st.write("這是第三組題目")
+    st.radio("問題 1：請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
+    st.radio("問題 2：請選擇您覺得正確的選項？", ["1", "2"], key="q3_2")
+    st.button("上一頁", on_click=prev_page)
+    st.button("提交", on_click=next_page)
+
+# 完成頁面
+elif st.session_state.page == 4:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    st.success("問卷已完成！非常感謝您的作答 🙏")
+    st.balloons()
