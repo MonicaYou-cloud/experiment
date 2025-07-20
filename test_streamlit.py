@@ -384,11 +384,11 @@ elif st.session_state.page == 6:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer5:
         st.markdown("""
-        正確答案是 **1**""")
+        正確答案是 **E**""")
         
     if st.session_state.show_explanation5:
         st.markdown("""
-        詳解：每一直排或每一橫排只會出現一次橫的與直的黑、白、斜線。
+        詳解：箭頭以凹凸間隔，三角形以順時針轉動。
         """)
 
 # 題六
@@ -412,7 +412,7 @@ elif st.session_state.page == 7:
             st.warning("⚠️ 圖片二載入失敗")
 
     # 顯示選項（置中）
-    col1, col2, col3 = st.columns([1, 5, 1])
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         answer = st.radio(
             label="選項",
@@ -447,11 +447,11 @@ elif st.session_state.page == 7:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer6:
         st.markdown("""
-        正確答案是 **8**""")
-        
+        正確答案是 **？**""")
+
     if st.session_state.show_explanation6:
         st.markdown("""
-        詳解：以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。
+        詳解：？。
         """)
 
 
