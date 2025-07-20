@@ -479,7 +479,7 @@ elif st.session_state.page == 8:
     with col2:
         answer = st.radio(
             label="選項",
-            options=["A", "B", "C", "D", "E"],
+            options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
             horizontal=True
         )
@@ -542,7 +542,7 @@ elif st.session_state.page == 9:
     with col2:
         answer = st.radio(
             label="選項",
-            options=["A", "B", "C", "D", "E"],
+            options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
             horizontal=True
         )
