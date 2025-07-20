@@ -87,7 +87,8 @@ elif st.session_state.page == 2:
         st.image(image1, caption="題目1")
     except FileNotFoundError:
         st.warning("⚠️ 無法載入圖片，請確認圖片檔案名稱與路徑是否正確。")
-
+    
+    st.button("上一頁", on_click=prev_page)
     st.button("下一頁", on_click=next_page)
 
 # 頁 2：題組 2
