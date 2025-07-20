@@ -42,15 +42,23 @@ if 'page' not in st.session_state:
     st.session_state.page = 0
 if 'start_time' not in st.session_state:
     st.session_state.start_time = None
+if 'auto_scroll' not in st.session_state:
+    st.session_state.auto_scroll = False
 
 # 換頁函式
 def next_page():
     st.session_state.page += 1
+    st.session_state.auto_scroll = True
     if st.session_state.start_time is None:
         st.session_state.start_time = time.time()
+    st.experimental_rerun()
 
 def prev_page():
     st.session_state.page -= 1
+def scroll_to_top():
+    if 'auto_scroll' not in st.session_state or st.session_state.auto_scroll:
+        st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+        st.session_state.auto_scroll = False
 
 # 顯示計時器
 if st.session_state.page > 0 and st.session_state.start_time:
@@ -61,13 +69,16 @@ if st.session_state.page > 0 and st.session_state.start_time:
 
 # 歡迎頁
 if st.session_state.page == 0:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.title("📝 歡迎參加測驗")
     st.write("本測驗包含數題圖片與選項，請專心作答。")
     st.button("👉 開始測驗", on_click=next_page)
 
+
 # 基本資料頁
 elif st.session_state.page == 1:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
@@ -78,6 +89,7 @@ elif st.session_state.page == 1:
 
 # 題一
 elif st.session_state.page == 2:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -141,6 +153,7 @@ elif st.session_state.page == 2:
 
 # 題二
 elif st.session_state.page == 3:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -204,6 +217,7 @@ elif st.session_state.page == 3:
 
 # 題三
 elif st.session_state.page == 4:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -267,6 +281,7 @@ elif st.session_state.page == 4:
 
 # 題四
 elif st.session_state.page == 5:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -330,6 +345,7 @@ elif st.session_state.page == 5:
 
 # 題五
 elif st.session_state.page == 6:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -393,6 +409,7 @@ elif st.session_state.page == 6:
 
 # 題六
 elif st.session_state.page == 7:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -456,6 +473,7 @@ elif st.session_state.page == 7:
 
 # 題七
 elif st.session_state.page == 8:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -519,6 +537,7 @@ elif st.session_state.page == 8:
 
 # 題八
 elif st.session_state.page == 9:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -582,6 +601,7 @@ elif st.session_state.page == 9:
 
 # 題九
 elif st.session_state.page == 10:
+    scroll_to_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
