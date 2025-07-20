@@ -78,8 +78,8 @@ elif st.session_state.page == 1:
 
 elif st.session_state.page == 2:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.title("練習題")
-    st.markdown('<div class="question-text">第一題：你喜歡貓還是狗？</div>', unsafe_allow_html=True)
+    st.header("練習題")
+    st.markdown('<div class="question-text">1. 你喜歡貓還是狗？</div>', unsafe_allow_html=True)
     st.radio("", ["貓", "狗"], key="q1")
 
     try:
@@ -93,16 +93,16 @@ elif st.session_state.page == 2:
 # 頁 2：題組 2
 elif st.session_state.page == 3:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.title("練習題")
-    st.radio("第二題：你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
+    st.header("練習題")
+    st.radio("2. 你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
     st.button("上一頁", on_click=prev_page)
     st.button("下一頁", on_click=next_page)
 
 # 頁 3：題組 3
 elif st.session_state.page == 4:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.title("練習題")
-    st.radio("第三題：請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
+    st.header("練習題")
+    st.radio("3. 請選擇您覺得正確的選項？", ["1", "2"], key="q3_1")
     st.button("上一頁", on_click=prev_page)
     st.button("提交", on_click=next_page)
 
