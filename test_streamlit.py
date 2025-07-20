@@ -50,7 +50,6 @@ if 'auto_scroll' not in st.session_state:
 # 換頁函式
 def next_page():
     st.session_state.page += 1
-    st.experimental_rerun()
     
 def prev_page():
     st.session_state.page -= 1
