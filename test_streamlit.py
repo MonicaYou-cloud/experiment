@@ -107,10 +107,10 @@ elif st.session_state.page == 2:
         )
 
     # 初始化詳解狀態（只跑一次）
-    if 'show_answer' not in st.session_state:
-        st.session_state.show_answer = False
-    if 'show_explanation' not in st.session_state:
-        st.session_state.show_explanation = False
+    if 'show_answer1' not in st.session_state:
+        st.session_state.show_answer1 = False
+    if 'show_explanation1' not in st.session_state:
+        st.session_state.show_explanation1 = False
 
     # 三個按鈕：上一頁、看詳解、下一頁
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
@@ -120,21 +120,21 @@ elif st.session_state.page == 2:
 
     with col3:
         if st.button("看答案"):
-            st.session_state.show_answer = True
+            st.session_state.show_answer1 = True
 
     with col4:
         if st.button("看詳解"):
-            st.session_state.show_explanation = True
+            st.session_state.show_explanation1 = True
 
     with col6:
              st.button("下一頁", on_click=next_page)
 
     # ✅ 按下「看詳解」後才顯示詳解區塊
-    if st.session_state.show_answer:
+    if st.session_state.show_answer1:
         st.markdown("""
         正確答案是 **8**""")
         
-    if st.session_state.show_explanation:
+    if st.session_state.show_explanation1:
         st.markdown("""
         詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線
         """)
