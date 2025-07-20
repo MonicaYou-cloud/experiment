@@ -84,7 +84,7 @@ elif st.session_state.page == 2:
         image1 = Image.open("高級圖形一 (1).png")
         st.image(image1, caption="請從以下選項選擇您認為的正確答案")
         image2 = Image.open("高級圖形一選項 (1).png")
-        st.image(image2, caption="選項")
+        st.image(image2)
     except FileNotFoundError:
         st.warning("⚠️ 無法載入圖片，請確認檔案名稱與路徑正確。")
         
