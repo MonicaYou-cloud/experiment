@@ -86,7 +86,7 @@ elif st.session_state.page == 2:
     with col1:
         try:
             image1 = Image.open("高級圖形一 (1).png")
-            st.image(image1, caption="1")
+            st.image(image1, caption="")
         except FileNotFoundError:
             st.warning("⚠️ 圖片一載入失敗")
     
@@ -101,7 +101,7 @@ elif st.session_state.page == 2:
     col1, col2, col3 = st.columns([1, 5, 1])
     with col2:
         answer = st.radio(
-            label="請選擇答案",
+            label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True
