@@ -573,11 +573,11 @@ elif st.session_state.page == 9:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer8:
         st.markdown("""
-        正確答案是 **？**""")
+        正確答案是 **5**""")
 
     if st.session_state.show_explanation8:
         st.markdown("""
-        詳解：？。
+        詳解：外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。
         """)
 
 
