@@ -349,7 +349,7 @@ elif st.session_state.page == 6:
             st.warning("⚠️ 圖片二載入失敗")
 
     # 顯示選項（置中）
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         answer = st.radio(
             label="選項",
