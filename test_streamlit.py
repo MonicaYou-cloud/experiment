@@ -1,7 +1,6 @@
 import streamlit as st
 import time
 
-# 初始化
 if "page" not in st.session_state:
     st.session_state.page = 0
 if "start_time" not in st.session_state:
@@ -12,27 +11,21 @@ def next_page():
     if st.session_state.start_time is None:
         st.session_state.start_time = time.time()
 
-# ✅ 計時器區塊
+# ✅ 把時間直接顯示為一般文字
 if st.session_state.start_time:
     elapsed = int(time.time() - st.session_state.start_time)
     m, s = divmod(elapsed, 60)
-    st.markdown(f"""
-        <div style='position:fixed; top:20px; left:30px; background:#f0f0f0;
-                    padding:8px 16px; border-radius:8px; font-size:18px;
-                    box-shadow:0 0 5px rgba(0,0,0,0.1); z-index:1000;'>
-            ⏱️ 測驗時間：<strong>{m:02d} 分 {s:02d} 秒</strong>
-        </div>
-    """, unsafe_allow_html=True)
+    st.write(f"⏱️ 測驗時間：**{m:02d} 分 {s:02d} 秒**")
 
-# 頁面內容
 if st.session_state.page == 0:
     st.title("歡迎頁")
     st.button("👉 開始測驗", on_click=next_page)
 
 elif st.session_state.page == 1:
     st.title("這是測驗頁面")
-    st.write("請看左上角是否有計時器")
+    st.write("看看上面有沒有時間出現")
     st.button("下一頁", on_click=next_page)
+
 
 
 # import streamlit as st
