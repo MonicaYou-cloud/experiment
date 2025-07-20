@@ -79,12 +79,12 @@ elif st.session_state.page == 1:
 elif st.session_state.page == 2:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.header("練習題")
-    
+
     try:
         image1 = Image.open("高級圖形一 (1).png")
-        st.image(image1, caption="請從以下選項選擇您認為的正確答案")
+        st.image(image1, caption="請從以下選項選擇您認為的正確答案", width=400)
         image2 = Image.open("高級圖形一選項 (1).png")
-        st.image(image2)
+        st.image(image2, caption="選項圖片", width=400)
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
