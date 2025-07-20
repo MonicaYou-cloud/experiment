@@ -85,6 +85,12 @@ elif st.session_state.page == 2:
         st.image(image1, caption="請從以下選項選擇您認為的正確答案")
         image2 = Image.open("高級圖形一選項 (1).png")
         st.image(image2)
+        answer = st.radio(
+            label="選項（1 到 8）",
+            options=["1", "2", "3", "4", "5", "6", "7", "8"],
+            key="q_graphical_1",
+            horizontal=True)
+
     except FileNotFoundError:
         st.warning("⚠️ 無法載入圖片，請確認檔案名稱與路徑正確。")
         
