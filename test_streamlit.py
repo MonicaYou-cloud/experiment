@@ -113,17 +113,6 @@ elif st.session_state.page == 2:
     st.radio("問題 1：你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
     st.radio("問題 2：你喜歡夏天還是冬天？", ["夏天", "冬天"], key="q2_2")
     # st.button("上一頁", on_click=prev_page)
-    from PIL import Image, ImageDraw
-    def create_simple_shape(color, shape, size=(150,150)):
-    img = Image.new("RGB", size, "white")
-    draw = ImageDraw.Draw(img)
-    if shape == "circle":
-        draw.ellipse([30,30,120,120], fill=color)
-    elif shape == "square":
-        draw.rectangle([30,30,120,120], fill=color)
-    elif shape == "triangle":
-        draw.polygon([(75,30),(30,120),(120,120)], fill=color)
-    return img
 
     # 題目圖 (8格 - 3x3, 中間空白)
     context_imgs = []
