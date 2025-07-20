@@ -51,7 +51,7 @@ def next_page():
     st.session_state.auto_scroll = True
     if st.session_state.start_time is None:
         st.session_state.start_time = time.time()
-    st.experimental_rerun()
+        st.experimental_rerun()
 
 def prev_page():
     st.session_state.page -= 1
