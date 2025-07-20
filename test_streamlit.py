@@ -580,6 +580,132 @@ elif st.session_state.page == 9:
         詳解：外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。
         """)
 
+# 題九
+elif st.session_state.page == 10:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+
+    # 顯示圖形題目與選項圖片
+    col1, col2 = st.columns(2)
+    with col1:
+        try:
+            image1 = Image.open("羅桑二氏 (1).png")
+            st.image(image1, caption="練習題9")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片一載入失敗")
+    
+    with col2:
+        try:
+            image2 = Image.open("羅桑二氏選項 (1).png")
+            st.image(image2, caption="請選擇您認為的正確圖形")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片二載入失敗")
+
+    # 顯示選項（置中）
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        answer = st.radio(
+            label="選項",
+            options=["1", "2", "3", "4", "5"],
+            key="q_graphical_1",
+            horizontal=True
+        )
+
+    # 初始化詳解狀態（只跑一次）
+    if 'show_answer9' not in st.session_state:
+        st.session_state.show_answer9 = False
+    if 'show_explanation9' not in st.session_state:
+        st.session_state.show_explanation9 = False
+
+    # 三個按鈕：上一頁、看詳解、下一頁
+    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+
+    with col1:
+        st.button("上一頁", on_click=prev_page)
+
+    with col3:
+        if st.button("看答案"):
+            st.session_state.show_answer9 = True
+
+    with col4:
+        if st.button("看詳解"):
+            st.session_state.show_explanation9 = True
+
+    with col6:
+             st.button("下一頁", on_click=next_page)
+
+    # ✅ 按下「看詳解」後才顯示詳解區塊
+    if st.session_state.show_answer9:
+        st.markdown("""
+        正確答案是 **4？**""")
+        
+    if st.session_state.show_explanation9:
+        st.markdown("""
+        詳解：？。
+        """)
+
+# 題十
+elif st.session_state.page == 11:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+
+    # 顯示圖形題目與選項圖片
+    col1, col2 = st.columns(2)
+    with col1:
+        try:
+            image1 = Image.open("羅桑二氏 (2).png")
+            st.image(image1, caption="練習題10")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片一載入失敗")
+    
+    with col2:
+        try:
+            image2 = Image.open("羅桑二氏選項 (2).png")
+            st.image(image2, caption="請選擇您認為的正確圖形")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片二載入失敗")
+
+    # 顯示選項（置中）
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        answer = st.radio(
+            label="選項",
+            options=["1", "2", "3", "4", "5"],
+            key="q_graphical_1",
+            horizontal=True
+        )
+
+    # 初始化詳解狀態（只跑一次）
+    if 'show_answer10' not in st.session_state:
+        st.session_state.show_answer10 = False
+    if 'show_explanation10' not in st.session_state:
+        st.session_state.show_explanation10 = False
+
+    # 三個按鈕：上一頁、看詳解、下一頁
+    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+
+    with col1:
+        st.button("上一頁", on_click=prev_page)
+
+    with col3:
+        if st.button("看答案"):
+            st.session_state.show_answer10 = True
+
+    with col4:
+        if st.button("看詳解"):
+            st.session_state.show_explanation10 = True
+
+    with col6:
+             st.button("下一頁", on_click=next_page)
+
+    # ✅ 按下「看詳解」後才顯示詳解區塊
+    if st.session_state.show_answer10:
+        st.markdown("""
+        正確答案是 **5**""")
+
+    if st.session_state.show_explanation10:
+        st.markdown("""
+        詳解：外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。
+        """)
+
 
 # # 完成頁面
 # elif st.session_state.page == 5:
