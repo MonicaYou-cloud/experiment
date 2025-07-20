@@ -141,11 +141,43 @@ elif st.session_state.page == 2:
 
 # 頁 2：題組 2
 elif st.session_state.page == 3:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.header("練習題")
-    st.radio("2. 你喜歡咖啡還是茶？", ["咖啡", "茶"], key="q2_1")
-    st.button("上一頁", on_click=prev_page)
-    st.button("下一頁", on_click=next_page)
+    import time
+
+# 初始化計時器
+if 'start_time' not in st.session_state:
+    st.session_state.start_time = time.time()
+if 'elapsed_time' not in st.session_state:
+    st.session_state.elapsed_time = 0
+
+# 更新經過時間
+st.session_state.elapsed_time = int(time.time() - st.session_state.start_time)
+
+# 用三欄控制：左邊是計時器，中間兩張圖左右排列
+col_timer, col_img1, col_img2 = st.columns([1, 3, 3])
+
+# 顯示計時器（放在左邊）
+with col_timer:
+    st.markdown("### 測驗時間")
+    minutes = st.session_state.elapsed_time // 60
+    seconds = st.session_state.elapsed_time % 60
+    st.markdown(f"⏱️ {minutes:02d}:{seconds:02d}")
+
+# 顯示圖片一（題幹圖）
+with col_img1:
+    try:
+        image1 = Image.open("高級圖形一 (1).png")
+        st.image(image1, caption="題目", use_column_width=True)
+    except FileNotFoundError:
+        st.warning("⚠️ 圖片一載入失敗")
+
+# 顯示圖片二（選項圖）
+with col_img2:
+    try:
+        image2 = Image.open("高級圖形一選項 (1).png")
+        st.image(image2, caption="請選擇您認為的正確圖形", use_column_width=True)
+    except FileNotFoundError:
+        st.warning("⚠️ 圖片二載入失敗")
+
 
 # 頁 3：題組 3
 elif st.session_state.page == 4:
