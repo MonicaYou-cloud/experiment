@@ -151,7 +151,7 @@ elif st.session_state.page == 3:
         st.session_state.show_explanation = False
 
     # 三個按鈕：上一頁、看詳解、下一頁
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1, 1])
+    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
     with col1:
         st.button("上一頁", on_click=prev_page)
