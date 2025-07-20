@@ -258,11 +258,11 @@ elif st.session_state.page == 4:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer3:
         st.markdown("""
-        正確答案是 **8**""")
+        正確答案是 **1**""")
         
     if st.session_state.show_explanation3:
         st.markdown("""
-        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線處。
+        詳解：每一直排或每一橫排只會出現一次橫的與直的黑、白、斜線。
         """)
 
 # 題四
@@ -321,11 +321,11 @@ elif st.session_state.page == 5:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer4:
         st.markdown("""
-        正確答案是 **4**""")
+        正確答案是 **8**""")
         
     if st.session_state.show_explanation4:
         st.markdown("""
-        詳解：本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑。
+        詳解：以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。
         """)
 
 
