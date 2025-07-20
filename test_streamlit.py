@@ -51,9 +51,8 @@ if 'auto_scroll' not in st.session_state:
 def next_page():
     st.session_state.page += 1
     st.experimental_rerun()
-
-if st.session_state.page > 0:
-    scroll_to_top()
+    if st.session_state.page > 0:
+        scroll_to_top()
 
 def prev_page():
     st.session_state.page -= 1
