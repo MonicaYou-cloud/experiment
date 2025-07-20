@@ -107,7 +107,7 @@ elif st.session_state.page == 2:
             horizontal=True
         )
     
-    col1, col2, col3 = st.columns([1, 5, 1])
+    col1, col2, col3 = st.columns([1, 4, 1])
     with col1:
         st.button("上一頁", on_click=prev_page)
     
