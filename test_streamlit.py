@@ -104,9 +104,6 @@ elif st.session_state.page == 2:
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True)
-
-    except FileNotFoundError:
-        st.warning("⚠️ 無法載入圖片，請確認檔案名稱與路徑正確。")
         
         st.button("上一頁", on_click=prev_page)
         st.button("下一頁", on_click=next_page)
