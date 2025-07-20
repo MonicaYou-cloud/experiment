@@ -145,34 +145,39 @@ elif st.session_state.page == 3:
         )
 
     # 初始化詳解狀態（只跑一次）
+    if 'show_answer' not in st.session_state:
+        st.session_state.show_answer = False
     if 'show_explanation' not in st.session_state:
         st.session_state.show_explanation = False
 
     # 三個按鈕：上一頁、看詳解、下一頁
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 3, 1, 1])
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1, 1])
 
     with col1:
         st.button("上一頁", on_click=prev_page)
 
     with col3:
+        if st.button("看答案"):
+            st.session_state.show_answer = True
+
+    with col4:
         if st.button("看詳解"):
             st.session_state.show_explanation = True
 
-    with col5:
+    with col6:
         if st.session_state.show_explanation:
             st.button("下一題", on_click=next_page)
         else:
             st.button("下一題", disabled=True)
 
     # ✅ 按下「看詳解」後才顯示詳解區塊
-    if st.session_state.show_explanation:
-        st.markdown("---")
-        st.subheader("詳解")
+     if st.session_state.show_answer:
         st.markdown("""
-        正確答案是 **5**。
-
-        解題技巧：觀察圖形中的變化邏輯，例如形狀排列、旋轉角度或數量變化。
-        本題中圖形是根據對角線與邊形方向進行規則排列...
+        正確答案是 **8**""")
+        
+    if st.session_state.show_explanation:
+        st.markdown("""
+        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線
         """)
 
 
