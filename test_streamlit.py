@@ -510,11 +510,11 @@ elif st.session_state.page == 8:
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer7:
         st.markdown("""
-        正確答案是 **E**""")
+        正確答案是 **4？**""")
         
     if st.session_state.show_explanation7:
         st.markdown("""
-        詳解：箭頭以凹凸間隔，三角形以順時針轉動。
+        詳解：？。
         """)
 
 # 題八
