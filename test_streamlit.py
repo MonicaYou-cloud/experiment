@@ -72,20 +72,25 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
-    # 問卷選項（index=None 表示預設不選）
-    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
-    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+    # 使用 session_state 記錄輸入
+    st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
+    st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
 
-    # 顯示警告的區塊
+    # 顯示警告的佔位區塊
     warn_placeholder = st.empty()
 
-    # 下一頁按鈕與驗證
+    # 處理下一頁按鈕事件
     if st.button("下一頁"):
         if st.session_state.age is None or st.session_state.gender is None:
-            warn_placeholder.warning("請完成必答題")
+            warn_placeholder.warning("請完成所有題目後再繼續")
         else:
-            next_page()  # 所有題目都回答了才換頁
+            st.session_state.allow_next = True  # ✅ 用 flag 允許換頁
 
+    # 換頁條件（在按完按鈕且資料齊全的下一輪觸發）
+    if st.session_state.get("allow_next", False):
+        st.session_state.page += 1
+        st.session_state.allow_next = False  # 重設 flag 避免多次觸發
+        st.experimental_rerun()  # 🔄 立即重繪，避免按兩下
             
 # 題一
 elif st.session_state.page == 2:
