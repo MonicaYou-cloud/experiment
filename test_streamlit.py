@@ -112,7 +112,8 @@ elif st.session_state.page == 2:
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True, 
-            index=None
+            index=None,
+            key="one"
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -176,7 +177,8 @@ elif st.session_state.page == 3:
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True, 
-            index=None   
+            index=None,
+            key="two"   
         )
 
     # 初始化詳解狀態（只跑一次）
