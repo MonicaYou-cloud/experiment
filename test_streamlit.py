@@ -8,10 +8,9 @@ import streamlit.components.v1 as components
 def scroll_top():
     components.html("""
         <script>
-            window.parent.scrollTo({top:0, behavior:'smooth'});
+            window.parent.scrollTo(0, 0);
         </script>
     """, height=0)
-
 
 # 插入 CSS 樣式
 st.markdown("""
@@ -108,7 +107,6 @@ elif st.session_state.page == 1:
             
 # 題一
 elif st.session_state.page == 2:
-    scroll_top()
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -172,8 +170,6 @@ elif st.session_state.page == 2:
       
 # 題二
 elif st.session_state.page == 3:
-    scroll_top()
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -238,7 +234,6 @@ elif st.session_state.page == 3:
 
 # 題三
 elif st.session_state.page == 4:
-    scroll_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -300,8 +295,6 @@ elif st.session_state.page == 4:
         st.markdown("""
         詳解：每一直排或每一橫排只會出現一次橫的與直的黑、白、斜線。
         """)
-
-    scroll_top()
 
 # 題四
 elif st.session_state.page == 5:
@@ -365,8 +358,6 @@ elif st.session_state.page == 5:
         st.markdown("""
         詳解：以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。
         """)
-        
-    scroll_top()
 
 # 題五
 elif st.session_state.page == 6:
@@ -751,6 +742,8 @@ elif st.session_state.page == 11:
         st.markdown("""
         詳解：圖形皆是由兩條線組成。
         """)
+
+ scroll_top()
 
 
 # # 完成頁面
