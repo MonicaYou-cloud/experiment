@@ -85,14 +85,14 @@ if st.session_state.page > 0 and st.session_state.start_time:
 
 # 歡迎頁
 if st.session_state.page == 0:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.title("歡迎參加本測驗")
     st.write("本測驗包含數題圖片與選項，請專心作答。")
     st.button("開始測驗", on_click=next_page)
 
+ scroll_top()
+
 # 基本資料頁
 elif st.session_state.page == 1:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
@@ -107,10 +107,11 @@ elif st.session_state.page == 1:
             st.session_state.page += 1
             st.rerun()  # ✅ 避免需要按兩下的問題
 
+ scroll_top()
+
             
 # 題一
 elif st.session_state.page == 2:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
