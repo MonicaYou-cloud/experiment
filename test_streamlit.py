@@ -3,7 +3,6 @@ import pandas as pd
 import time
 from PIL import Image
 import streamlit.components.v1 as components
-from streamlit_extras.switch_page_button import switch_page
 
 # 放在每一頁的最上面來捲動到頂部
 def scroll_top():
