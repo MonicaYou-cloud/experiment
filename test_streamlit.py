@@ -3,6 +3,8 @@ import pandas as pd
 import time
 from PIL import Image
 
+st.write("目前 Streamlit 版本：", st.__version__)
+
 # 插入 CSS 樣式
 st.markdown("""
 <style>
