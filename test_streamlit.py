@@ -743,7 +743,7 @@ elif st.session_state.page == 11:
         詳解：圖形皆是由兩條線組成。
         """)
 
- scroll_top()
+scroll_top()
 
 
 # # 完成頁面
