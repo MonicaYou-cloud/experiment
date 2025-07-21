@@ -112,8 +112,7 @@ elif st.session_state.page == 2:
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
             horizontal=True, 
-            index=None,
-            key="one"
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -175,7 +174,7 @@ elif st.session_state.page == 3:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
-            key="q_graphical_1",
+            key="q_graphical_2",
             horizontal=True, 
             index=None,
             key="two"   
@@ -240,7 +239,7 @@ elif st.session_state.page == 4:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
-            key="q_graphical_1",
+            key="q_graphical_3",
             horizontal=True, 
             index=None
         )
@@ -304,7 +303,7 @@ elif st.session_state.page == 5:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
-            key="q_graphical_1",
+            key="q_graphical_4",
             horizontal=True, 
             index=None
         )
@@ -368,7 +367,7 @@ elif st.session_state.page == 6:
         answer = st.radio(
             label="選項",
             options=["A", "B", "C", "D", "E"],
-            key="q_graphical_1",
+            key="q_graphical_5",
             horizontal=True, 
             index=None
         )
@@ -432,7 +431,7 @@ elif st.session_state.page == 7:
         answer = st.radio(
             label="選項",
             options=["A", "B", "C", "D", "E"],
-            key="q_graphical_1",
+            key="q_graphical_6",
             horizontal=True, 
             index=None
         )
@@ -496,7 +495,7 @@ elif st.session_state.page == 8:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5"],
-            key="q_graphical_1",
+            key="q_graphical_7",
             horizontal=True, 
             index=None
         )
@@ -560,7 +559,7 @@ elif st.session_state.page == 9:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5"],
-            key="q_graphical_1",
+            key="q_graphical_8",
             horizontal=True, 
             index=None
         )
@@ -624,7 +623,7 @@ elif st.session_state.page == 10:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5"],
-            key="q_graphical_1",
+            key="q_graphical_9",
             horizontal=True, 
             index=None
         )
@@ -688,7 +687,7 @@ elif st.session_state.page == 11:
         answer = st.radio(
             label="選項",
             options=["1", "2", "3", "4", "5"],
-            key="q_graphical_1",
+            key="q_graphical_10",
             horizontal=True, 
             index=None
         )
