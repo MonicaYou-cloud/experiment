@@ -81,7 +81,7 @@ elif st.session_state.page == 1:
             st.warning("請完整填寫所有問題才能繼續。")
         else:
             st.session_state.page += 1
-            st.experimental_rerun()  # ✅ 避免需要按兩下的問題
+            st.rerun()  # ✅ 避免需要按兩下的問題
 
             
 # 題一
