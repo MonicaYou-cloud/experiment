@@ -6,11 +6,11 @@ import streamlit.components.v1 as components
 
 # 放在每一頁的最上面來捲動到頂部
 def scroll_top():
-    components.html("""
-        <script>
-            window.parent.scrollTo(0, 0);
-        </script>
-    """, height=0)
+    st.markdown("""
+    <script>
+        window.scrollTo(0, 0);
+    </script>
+    """, unsafe_allow_html=True)
 
 # 插入 CSS 樣式
 st.markdown("""
