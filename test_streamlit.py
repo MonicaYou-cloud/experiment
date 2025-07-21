@@ -175,7 +175,6 @@ elif st.session_state.page == 2:
 
 # 題二
 elif st.session_state.page == 3:
-    st.markdown("""<script>window.scrollTo(0, 0);
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
