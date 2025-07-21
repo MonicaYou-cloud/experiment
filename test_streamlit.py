@@ -62,9 +62,9 @@ if st.session_state.page > 0 and st.session_state.start_time:
 # 歡迎頁
 if st.session_state.page == 0:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-    st.title("📝 歡迎參加測驗")
+    st.title("歡迎參加本測驗")
     st.write("本測驗包含數題圖片與選項，請專心作答。")
-    st.button("👉 開始測驗", on_click=next_page)
+    st.button("開始測驗", on_click=next_page)
 
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -72,8 +72,8 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
-    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"])
-    gender = st.radio("請選擇您的性別", ["男", "女", "其他"])
+    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None)
+    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None)
     st.button("下一頁", on_click=next_page)
 
 # 題一
