@@ -43,16 +43,28 @@ if 'page' not in st.session_state:
     st.session_state.page = 0
 if 'start_time' not in st.session_state:
     st.session_state.start_time = None
+if 'go_next' not in st.session_state:
+    st.session_state.go_next = False
+if 'go_prev' not in st.session_state:
+    st.session_state.go_prev = False
 
-# 換頁函式
+# 換頁函式：設定旗標
 def next_page():
-    st.session_state.page += 1
-    st.rerun()
-    if st.session_state.start_time is None:
-        st.session_state.start_time = time.time()
-
+    st.session_state.go_next = True
 def prev_page():
+    st.session_state.go_prev = True
+
+# ⏱️ 換頁觸發後，實際處理與初始化計時
+if st.session_state.go_next:
+    st.session_state.page += 1
+    st.session_state.go_next = False
+    if st.session_state.page == 1 and st.session_state.start_time is None:
+        st.session_state.start_time = time.time()
+    st.rerun()
+
+if st.session_state.go_prev:
     st.session_state.page -= 1
+    st.session_state.go_prev = False
     st.rerun()
 
 # 顯示計時器
