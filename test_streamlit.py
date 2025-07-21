@@ -241,7 +241,7 @@ elif st.session_state.page == 3:
 
 # 題三
 elif st.session_state.page == 4:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    scroll_top()
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
