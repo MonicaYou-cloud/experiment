@@ -4,13 +4,13 @@ import time
 from PIL import Image
 import streamlit.components.v1 as components
 
-# 自動捲動到頂部
-scroll_container = st.empty()
-scroll_container.components.v1.html("""
+# 放在每一頁的最上面來捲動到頂部
+components.html("""
     <script>
         window.scrollTo(0, 0);
     </script>
 """, height=0)
+
 
 # 插入 CSS 樣式
 st.markdown("""
