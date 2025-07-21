@@ -165,7 +165,7 @@ elif st.session_state.page == 2:
             st.session_state.show_explanation1 = True
 
     with col6:
-             st.button("下一頁", on_click=next_page)
+        st.button("下一頁", on_click=next_page)
         scroll_top()
         
 
