@@ -103,7 +103,8 @@ elif st.session_state.page == 2:
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -166,7 +167,8 @@ elif st.session_state.page == 3:
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None   
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -229,7 +231,8 @@ elif st.session_state.page == 4:
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -292,7 +295,8 @@ elif st.session_state.page == 5:
             label="選項",
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -355,7 +359,8 @@ elif st.session_state.page == 6:
             label="選項",
             options=["A", "B", "C", "D", "E"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -418,7 +423,8 @@ elif st.session_state.page == 7:
             label="選項",
             options=["A", "B", "C", "D", "E"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -481,7 +487,8 @@ elif st.session_state.page == 8:
             label="選項",
             options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -544,7 +551,8 @@ elif st.session_state.page == 9:
             label="選項",
             options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -607,7 +615,8 @@ elif st.session_state.page == 10:
             label="選項",
             options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
@@ -670,7 +679,8 @@ elif st.session_state.page == 11:
             label="選項",
             options=["1", "2", "3", "4", "5"],
             key="q_graphical_1",
-            horizontal=True
+            horizontal=True, 
+            index=None
         )
 
     # 初始化詳解狀態（只跑一次）
