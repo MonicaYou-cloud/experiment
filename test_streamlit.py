@@ -1,4 +1,3 @@
-請幫我替換以下程式碼：
 import streamlit as st
 import pandas as pd
 import time
