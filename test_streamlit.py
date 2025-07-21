@@ -46,11 +46,13 @@ if 'start_time' not in st.session_state:
 # 換頁函式
 def next_page():
     st.session_state.page += 1
+    st.experimental_rerun()
     if st.session_state.start_time is None:
         st.session_state.start_time = time.time()
 
 def prev_page():
     st.session_state.page -= 1
+    st.experimental_rerun()
 
 # 顯示計時器
 if st.session_state.page > 0 and st.session_state.start_time:
