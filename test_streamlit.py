@@ -109,11 +109,11 @@ elif st.session_state.page == 1:
             
 # 題一
 elif st.session_state.page == 2:
-   components.html("""
+    components.html("""
     <script>
-        window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     </script>
-""", height=0)
+    """, height=0)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -179,9 +179,9 @@ elif st.session_state.page == 2:
 elif st.session_state.page == 3:
     components.html("""
     <script>
-        window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     </script>
-""", height=0)
+    """, height=0)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
