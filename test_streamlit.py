@@ -72,8 +72,9 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
-    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None)
-    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None)
+    # 問卷選項（index=None 表示預設不選）
+    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
+    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
 
     # 顯示警告的區塊
     warn_placeholder = st.empty()
@@ -81,9 +82,10 @@ elif st.session_state.page == 1:
     # 下一頁按鈕與驗證
     if st.button("下一頁"):
         if st.session_state.age is None or st.session_state.gender is None:
-            warn_placeholder.warning("此頁為必選題")
+            warn_placeholder.warning("請完成必答題")
         else:
             next_page()  # 所有題目都回答了才換頁
+
             
 # 題一
 elif st.session_state.page == 2:
