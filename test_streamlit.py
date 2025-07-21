@@ -110,11 +110,7 @@ elif st.session_state.page == 1:
             
 # 題一
 elif st.session_state.page == 2:
-    components.html("""
-    <script>
-    window.scrollTo(0, 0);
-    </script>
-    """, height=0)
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
