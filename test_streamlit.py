@@ -106,10 +106,9 @@ elif st.session_state.page == 1:
             st.session_state.page += 1
             st.rerun()  # ✅ 避免需要按兩下的問題
             
-        scroll_top()
-            
 # 題一
 elif st.session_state.page == 2:
+    scroll_top()
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -171,10 +170,9 @@ elif st.session_state.page == 2:
         詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線處。
         """)
       
-    scroll_top()
-
 # 題二
 elif st.session_state.page == 3:
+    scroll_top()
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
@@ -237,11 +235,11 @@ elif st.session_state.page == 3:
         詳解：本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑。
         """)
         
-    scroll_top()
 
 # 題三
 elif st.session_state.page == 4:
     scroll_top()
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
