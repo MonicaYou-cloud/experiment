@@ -89,8 +89,8 @@ elif st.session_state.page == 1:
     # 換頁條件（在按完按鈕且資料齊全的下一輪觸發）
     if st.session_state.get("allow_next", False):
         st.session_state.page += 1
-        st.session_state.allow_next = False  # 重設 flag 避免多次觸發
-        st.experimental_rerun()  # 🔄 立即重繪，避免按兩下
+        st.session_state.allow_next = False
+        st.stop() 
             
 # 題一
 elif st.session_state.page == 2:
