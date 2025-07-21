@@ -3,13 +3,15 @@ import pandas as pd
 import time
 from PIL import Image
 import streamlit.components.v1 as components
+from streamlit_extras.switch_page_button import switch_page
 
 # 放在每一頁的最上面來捲動到頂部
-components.html("""
-    <script>
-        window.scrollTo(0, 0);
-    </script>
-""", height=0)
+def scroll_top():
+    components.html("""
+        <script>
+            window.parent.scrollTo({top:0, behavior:'smooth'});
+        </script>
+    """, height=0)
 
 
 # 插入 CSS 樣式
@@ -164,6 +166,8 @@ elif st.session_state.page == 2:
 
     with col6:
              st.button("下一頁", on_click=next_page)
+        scroll_top()
+        
 
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer1:
@@ -177,11 +181,7 @@ elif st.session_state.page == 2:
 
 # 題二
 elif st.session_state.page == 3:
-    components.html("""
-    <script>
-    window.scrollTo(0, 0);
-    </script>
-    """, height=0)
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
