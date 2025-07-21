@@ -175,7 +175,6 @@ elif st.session_state.page == 2:
 
 # 題二
 elif st.session_state.page == 3:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -241,7 +240,6 @@ elif st.session_state.page == 3:
 
 # 題三
 elif st.session_state.page == 4:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -307,7 +305,6 @@ elif st.session_state.page == 4:
 
 # 題四
 elif st.session_state.page == 5:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
