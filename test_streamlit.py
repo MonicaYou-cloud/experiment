@@ -91,6 +91,7 @@ if st.session_state.page == 0:
 
 # 基本資料頁
 elif st.session_state.page == 1:
+    scroll_top()
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
@@ -107,6 +108,7 @@ elif st.session_state.page == 1:
             
 # 題一
 elif st.session_state.page == 2:
+    scroll_top()
    
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -170,6 +172,7 @@ elif st.session_state.page == 2:
       
 # 題二
 elif st.session_state.page == 3:
+    scroll_top()
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
