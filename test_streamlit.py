@@ -236,7 +236,7 @@ elif st.session_state.page == 3:
         st.markdown("""
         詳解：本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑。
         """)
-    
+        
     scroll_top()
 
 # 題三
