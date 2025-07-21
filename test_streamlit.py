@@ -165,9 +165,7 @@ elif st.session_state.page == 2:
 
     with col6:
         st.button("下一頁", on_click=next_page)
-        scroll_top()
-        
-
+    
     # ✅ 按下「看詳解」後才顯示詳解區塊
     if st.session_state.show_answer1:
         st.markdown("""
@@ -177,6 +175,8 @@ elif st.session_state.page == 2:
         st.markdown("""
         詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線處。
         """)
+      
+    scroll_top()
 
 # 題二
 elif st.session_state.page == 3:
