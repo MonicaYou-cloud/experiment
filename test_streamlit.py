@@ -88,8 +88,8 @@ if st.session_state.page == 0:
     st.title("歡迎參加本測驗")
     st.write("本測驗包含數題圖片與選項，請專心作答。")
     st.button("開始測驗", on_click=next_page)
-
- scroll_top()
+    
+scroll_top()
 
 # 基本資料頁
 elif st.session_state.page == 1:
