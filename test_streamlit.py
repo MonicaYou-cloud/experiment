@@ -3,8 +3,6 @@ import pandas as pd
 import time
 from PIL import Image
 
-st.write("目前 Streamlit 版本：", st.__version__)
-
 # 插入 CSS 樣式
 st.markdown("""
 <style>
@@ -74,25 +72,17 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
 
-    # 使用 session_state 記錄輸入
+    # 問題選項，加上 key 儲存在 session_state
     st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
 
-    # 顯示警告的佔位區塊
-    warn_placeholder = st.empty()
-
-    # 處理下一頁按鈕事件
     if st.button("下一頁"):
         if st.session_state.age is None or st.session_state.gender is None:
-            warn_placeholder.warning("請完成所有題目後再繼續")
+            st.warning("請完整填寫所有問題才能繼續。")
         else:
-            st.session_state.allow_next = True  # ✅ 用 flag 允許換頁
+            st.session_state.page += 1
+            st.experimental_rerun()  # ✅ 避免需要按兩下的問題
 
-    # 換頁條件（在按完按鈕且資料齊全的下一輪觸發）
-    if st.session_state.get("allow_next", False):
-        st.session_state.page += 1
-        st.session_state.allow_next = False
-        st.stop() 
             
 # 題一
 elif st.session_state.page == 2:
