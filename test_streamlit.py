@@ -2,6 +2,15 @@ import streamlit as st
 import pandas as pd
 import time
 from PIL import Image
+import streamlit.components.v1 as components
+
+# 自動捲動到頂部
+scroll_container = st.empty()
+scroll_container.components.v1.html("""
+    <script>
+        window.scrollTo(0, 0);
+    </script>
+""", height=0)
 
 # 插入 CSS 樣式
 st.markdown("""
@@ -100,7 +109,12 @@ elif st.session_state.page == 1:
             
 # 題一
 elif st.session_state.page == 2:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+   scroll_container = st.empty()
+    scroll_container.components.v1.html("""
+        <script>
+            window.scrollTo(0, 0);
+        </script>
+    """, height=0)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
@@ -164,7 +178,12 @@ elif st.session_state.page == 2:
 
 # 題二
 elif st.session_state.page == 3:
-    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    scroll_container = st.empty()
+    scroll_container.components.v1.html("""
+        <script>
+            window.scrollTo(0, 0);
+        </script>
+    """, height=0)
 
     # 顯示圖形題目與選項圖片
     col1, col2 = st.columns(2)
