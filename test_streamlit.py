@@ -176,8 +176,7 @@ elif st.session_state.page == 3:
             options=["1", "2", "3", "4", "5", "6", "7", "8"],
             key="q_graphical_2",
             horizontal=True, 
-            index=None,
-            key="two"   
+            index=None 
         )
 
     # 初始化詳解狀態（只跑一次）
