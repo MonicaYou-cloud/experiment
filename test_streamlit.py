@@ -39,19 +39,29 @@ input, textarea {
 
 # 初始化狀態
 if 'page' not in st.session_state:
-    st.session_state.page = 0
-if 'start_time' not in st.session_state:
-    st.session_state.start_time = None
+    st.session_state.page = 2  # 這裡預設從第2頁開始（因為你有歡迎頁或練習題等）
+if 'go_next' not in st.session_state:
+    st.session_state.go_next = False
+if 'go_prev' not in st.session_state:
+    st.session_state.go_prev = False
+
 
 # 換頁函式
 def next_page():
-    st.session_state.page += 1
-    st.rerun()
-    if st.session_state.start_time is None:
-        st.session_state.start_time = time.time()
+    st.session_state.go_next = True
 
 def prev_page():
+    st.session_state.go_prev = True
+
+# 處理換頁與重新載入（解決「按兩下才跳頁」、「沒回到最上方」問題）
+if st.session_state.go_next:
+    st.session_state.page += 1
+    st.session_state.go_next = False
+    st.rerun()
+
+if st.session_state.go_prev:
     st.session_state.page -= 1
+    st.session_state.go_prev = False
     st.rerun()
 
 # 顯示計時器
