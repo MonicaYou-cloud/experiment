@@ -96,7 +96,7 @@ elif st.session_state.page == 1:
     st.write("請填寫以下問卷，完成後按下一頁。")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
-    col1, col2, col3, col4 = st.columns([1, 4, 1, 1])
+    col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
 
     with col2:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
