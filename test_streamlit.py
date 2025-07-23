@@ -438,30 +438,30 @@ if st.session_state.page == 13:
     st.header("進入正式測驗前")
     st.write("（此處將放個人知覺努力程度問題說明）")
     
-    # col1, col2= st.columns([5, 1])
+    col1, col2= st.columns([5, 1])
 
-    # with col1:
-    E1 = st.radio(label="您覺得自己有多認真對待剛才的練習題？",
-                  options=["非常不認真", "不認真", "有點不認真", "有點認真", "認真", "非常認真"],
-                  key="E1",
-                  horizontal=True, 
-                  index=None
-                 )
-    E2 = st.radio(label="您覺得自己有多投入於練習階段？",
-                  options=["非常不投入", "不投入", "有點不投入", "有點投入", "投入", "非常投入"],
-                  key="E2",
-                  horizontal=True, 
-                  index=None
-                 )
-    E3 = st.radio(label="您覺得自己在做練習題時有多努力？",
-                  options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
-                  key="E3",
-                  horizontal=True, 
-                  index=None
-                 )
-        
-    if 'warning_message' in st.session_state and st.session_state.warning_message:
-        st.warning(st.session_state.warning_message)
+    with col1:
+        E1 = st.radio(label="您覺得自己有多認真對待剛才的練習題？",
+                      options=["非常不認真", "不認真", "有點不認真", "有點認真", "認真", "非常認真"],
+                      key="E1",
+                      horizontal=True, 
+                      index=None
+                     )
+        E2 = st.radio(label="您覺得自己有多投入於練習階段？",
+                      options=["非常不投入", "不投入", "有點不投入", "有點投入", "投入", "非常投入"],
+                      key="E2",
+                      horizontal=True, 
+                      index=None
+                     )
+        E3 = st.radio(label="您覺得自己在做練習題時有多努力？",
+                      options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
+                      key="E3",
+                      horizontal=True, 
+                      index=None
+                     )
+            
+        if 'warning_message' in st.session_state and st.session_state.warning_message:
+            st.warning(st.session_state.warning_message)
 
     spacer1, btn_col = st.columns([5, 1])
 
