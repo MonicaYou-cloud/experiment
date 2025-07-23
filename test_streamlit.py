@@ -127,6 +127,7 @@ def graphical_question(
         if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
+        
         # 顯示圖形題目與選項圖片
         col1, col2 = st.columns(2)
         with col1:
