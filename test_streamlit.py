@@ -86,7 +86,7 @@ if st.session_state.page > 0 and st.session_state.start_time:
 if st.session_state.page == 0:
     st.header("歡迎參加本測驗")
     st.write("此處將放上實驗說明與知情同意")
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
         st.button("開始測驗", on_click=next_page)
             
@@ -94,19 +94,24 @@ if st.session_state.page == 0:
 elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
-
-    # 問題選項，加上 key 儲存在 session_state
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+    col1, col2, col3, col4 = st.columns([1, 2, 2, 1])
 
-    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-    with col6:
+    with col2:
+        if 'warning_message' in st.session_state and st.session_state.warning_message:
+            st.warning(st.session_state.warning_message)
+
+    with col4:
         if st.button("下一頁"):
             if age is None or gender is None:
-                st.warning("請完整填寫所有問題才能繼續。")
+                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.rerun()
             else:
+                st.session_state.warning_message = "" 
                 st.session_state.page += 1
                 st.rerun()
+
             
 # 高級圖形測驗函式
 def graphical_question(
