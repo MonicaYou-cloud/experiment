@@ -508,7 +508,7 @@ def question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-14}")
+                st.image(image1, caption=f"正式題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -555,7 +555,7 @@ def question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-14}")
+                st.image(image1, caption=f"正式題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -602,7 +602,7 @@ def question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-14}")
+                st.image(image1, caption=f"正式題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
