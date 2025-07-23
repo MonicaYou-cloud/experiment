@@ -438,7 +438,7 @@ if st.session_state.page == 13:
     st.header("進入正式測驗前")
     st.write("（此處將放個人知覺努力程度問題說明）")
     
-    col1, col2= st.columns([4, 1])
+    col1, col2= st.columns([3, 1])
 
     with col1:
         E1 = st.radio(label="您覺得自己有多認真對待剛才的練習題？",
