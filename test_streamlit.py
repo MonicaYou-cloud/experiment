@@ -122,12 +122,11 @@ def graphical_question(
     radio_key: str,
     answer_value: str,
     explanation_text: str
-):  
+):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
-        
         # 顯示圖形題目與選項圖片
         col1, col2 = st.columns(2)
         with col1:
@@ -143,7 +142,7 @@ def graphical_question(
                 st.image(image2, caption="請選擇您認為的正確圖形")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片二載入失敗")
-        
+
         # 顯示選項（置中）
         col1, col2, col3 = st.columns([1, 5, 1])
         with col2:
@@ -153,13 +152,13 @@ def graphical_question(
                 horizontal=True, 
                 index=None
             )
-            
+
         # 初始化詳解狀態（只跑一次）
         if f'show_answer_{page_number}' not in st.session_state:
             st.session_state[f'show_answer_{page_number}'] = False
         if f'show_explanation_{page_number}' not in st.session_state:
             st.session_state[f'show_explanation_{page_number}'] = False
-        
+
         # 三個按鈕
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
@@ -169,14 +168,13 @@ def graphical_question(
         with col3:
             if st.button("看答案"):
                 st.session_state[f'show_answer_{page_number}'] = True
-                
+
         with col4:
             if st.button("看詳解"):
                 st.session_state[f'show_explanation_{page_number}'] = True
-            
+
         with col6:
             st.button("下一頁", on_click=next_page)
-
 
         # 顯示答案與詳解
         if st.session_state[f'show_answer_{page_number}']:
