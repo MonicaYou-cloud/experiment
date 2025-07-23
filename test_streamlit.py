@@ -77,31 +77,42 @@ if st.session_state.page == 0:
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
         st.button("開始測驗", on_click=next_page)
-            
-# 基本資料頁
+        
+# 練習說明
 elif st.session_state.page == 1:
-    if st.session_state.get("scroll_to_top", False):
-            st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
-            st.session_state.scroll_to_top = False
-    st.header("基本資料")
-    st.write("請填寫以下問卷，完成後按下一頁。")
-    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
-    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
-    col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
+    st.header("第一階段：練習測驗")
+    st.write("此處將放上練習測驗說明")
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 2])
+    with col3:
+        st.button("開始練習", on_click=next_page)
+    
+    with col5:
+        st.button("直接進入正式測驗", on_click=next_page)
+            
+# # 基本資料頁
+# elif st.session_state.page == 1:
+#     if st.session_state.get("scroll_to_top", False):
+#             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+#             st.session_state.scroll_to_top = False
+#     st.header("基本資料")
+#     st.write("請填寫以下問卷，完成後按下一頁。")
+#     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
+#     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+#     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
 
-    with col2:
-        if 'warning_message' in st.session_state and st.session_state.warning_message:
-            st.warning(st.session_state.warning_message)
+#     with col2:
+#         if 'warning_message' in st.session_state and st.session_state.warning_message:
+#             st.warning(st.session_state.warning_message)
 
-    with col4:
-        if st.button("下一頁"):
-            if age is None or gender is None:
-                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
-                st.rerun()
-            else:
-                st.session_state.warning_message = "" 
-                st.session_state.page += 1
-                st.rerun()
+#     with col4:
+#         if st.button("下一頁"):
+#             if age is None or gender is None:
+#                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+#                 st.rerun()
+#             else:
+#                 st.session_state.warning_message = "" 
+#                 st.session_state.page += 1
+#                 st.rerun()
 
             
 # 高級圖形測驗函式
