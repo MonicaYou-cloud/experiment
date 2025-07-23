@@ -147,7 +147,7 @@ def graphical_question(
         col1, col2, col3 = st.columns([1, 5, 1])
         with col2:
             answer = st.radio(
-                label=""
+                label="",
                 options=["1", "2", "3", "4", "5", "6", "7", "8"],
                 key=radio_key,
                 horizontal=True, 
