@@ -86,8 +86,8 @@ if st.session_state.page > 0 and st.session_state.start_time:
 if st.session_state.page == 0:
     st.header("歡迎參加本測驗")
     st.write("此處將放上實驗說明與知情同意")
-    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-    with col6:
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
         st.button("開始測驗", on_click=next_page)
             
 # 基本資料頁
