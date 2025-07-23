@@ -193,7 +193,7 @@ def graphical_question1(
     explanation_text: str
 ):
     if st.session_state.page == page_number:
-    st_javascript("window.scrollTo(0, 0);")
+        st_javascript("window.scrollTo(0, 0);")
         # 顯示圖形題目與選項圖片
         col1, col2 = st.columns(2)
         with col1:
