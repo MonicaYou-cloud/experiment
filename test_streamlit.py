@@ -82,11 +82,11 @@ if st.session_state.page == 0:
 elif st.session_state.page == 1:
     st.header("第一階段：練習測驗")
     st.write("此處將放上練習測驗說明")
-    col1, col2, col3, col4, col5 = st.columns([1, 1, 2, 1, 2])
+    col1, col2, col3, col4, col5 = st.columns([1, 1, 2, 2])
     with col3:
         st.button("開始練習", on_click=next_page)
     
-    with col5:
+    with col4:
         st.button("直接進入正式測驗", on_click=next_page)
             
 # # 基本資料頁
