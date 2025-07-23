@@ -143,21 +143,15 @@ def graphical_question(
             except FileNotFoundError:
                 st.warning("⚠️ 圖片二載入失敗")
 
-        # # 顯示選項（置中）
-        # col1, col2, col3 = st.columns([1, 5, 1])
-        # with col2:
-        #     answer = st.radio(
-        #         options=["1", "2", "3", "4", "5", "6", "7", "8"],
-        #         key=radio_key,
-        #         horizontal=True, 
-        #         index=None
-        #     )
-
-        # # 初始化詳解狀態（只跑一次）
-        # if f'show_answer_{page_number}' not in st.session_state:
-        #     st.session_state[f'show_answer_{page_number}'] = False
-        # if f'show_explanation_{page_number}' not in st.session_state:
-        #     st.session_state[f'show_explanation_{page_number}'] = False
+        # 顯示選項（置中）
+        col1, col2, col3 = st.columns([1, 5, 1])
+        with col2:
+            answer = st.radio(
+                options=["1", "2", "3", "4", "5", "6", "7", "8"],
+                key=radio_key,
+                horizontal=True, 
+                index=None
+            )
 
         # 三個按鈕
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
@@ -183,10 +177,12 @@ def graphical_question(
         if st.session_state[f'show_explanation_{page_number}']:
             st.markdown(f"""詳解：{explanation_text}""")
 
-        
-        
-       
-
+        # 初始化詳解狀態（只跑一次）
+        if f'show_answer_{page_number}' not in st.session_state:
+            st.session_state[f'show_answer_{page_number}'] = False
+        if f'show_explanation_{page_number}' not in st.session_state:
+            st.session_state[f'show_explanation_{page_number}'] = False
+    
 # 區分性向測驗函式
 def graphical_question1(
     page_number: int,
