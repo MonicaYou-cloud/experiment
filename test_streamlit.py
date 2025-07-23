@@ -85,8 +85,8 @@ elif st.session_state.page == 1:
             st.session_state.scroll_to_top = False
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
-    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
-    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=0, key="age")
+    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=0, key="gender")
     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
 
     with col2:
@@ -150,7 +150,7 @@ def graphical_question(
                 options=["1", "2", "3", "4", "5", "6", "7", "8"],
                 key=radio_key,
                 horizontal=True, 
-                index=None
+                index=0
             )
 
         # 初始化詳解狀態（只跑一次）
@@ -158,7 +158,14 @@ def graphical_question(
             st.session_state[f'show_answer_{page_number}'] = False
         if f'show_explanation_{page_number}' not in st.session_state:
             st.session_state[f'show_explanation_{page_number}'] = False
+        
+        # 顯示答案與詳解
+        if st.session_state[f'show_answer_{page_number}']:
+            st.markdown(f"""正確答案是 **{answer_value}**""")
 
+        if st.session_state[f'show_explanation_{page_number}']:
+            st.markdown(f"""詳解：{explanation_text}""")
+        
         # 三個按鈕
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
@@ -175,13 +182,6 @@ def graphical_question(
             
         with col6:
             st.button("下一頁", on_click=next_page)
-
-        # 顯示答案與詳解
-        if st.session_state[f'show_answer_{page_number}']:
-            st.markdown(f"""正確答案是 **{answer_value}**""")
-
-        if st.session_state[f'show_explanation_{page_number}']:
-            st.markdown(f"""詳解：{explanation_text}""")
 
 # 區分性向測驗函式
 def graphical_question1(
@@ -220,7 +220,7 @@ def graphical_question1(
                 options=["A", "B", "C", "D", "E"],
                 key=radio_key,
                 horizontal=True, 
-                index=None
+                index=0
             )
 
         # 初始化詳解狀態（只跑一次）
@@ -290,7 +290,7 @@ def graphical_question2(
                 options=["1", "2", "3", "4", "5"],
                 key=radio_key,
                 horizontal=True, 
-                index=None
+                index=0
             )
 
         # 初始化詳解狀態（只跑一次）
