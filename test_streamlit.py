@@ -121,7 +121,7 @@ def graphical_question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number}")
+                st.image(image1, caption=f"練習題 {page_number-1}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
