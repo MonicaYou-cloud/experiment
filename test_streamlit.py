@@ -293,7 +293,7 @@ graphical_question1(
 
 # 題六
 graphical_question1(
-    page_number=6,
+    page_number=7,
     question_image_path="區分 (2).png",
     option_image_path="區分選項 (2).png",
     radio_key="q_graphical_6",
