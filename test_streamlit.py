@@ -63,15 +63,12 @@ def next_page():
     if st.session_state.page == 1 and st.session_state.start_time is None:
         st.session_state.start_time = time.time()
 
-# ⏱️換頁觸發後，實際處理與初始化計時
-
-
 # 顯示計時器
 if st.session_state.page > 0 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
-    st.markdown(f"⏱️ **測驗時間：{minutes:02d} 分 {seconds:02d} 秒**")
+    st.markdown(f"⏱️ **練習時間：{minutes:02d} 分 {seconds:02d} 秒**")
 
 # 歡迎頁
 if st.session_state.page == 0:
@@ -83,6 +80,9 @@ if st.session_state.page == 0:
             
 # 基本資料頁
 elif st.session_state.page == 1:
+    if st.session_state.get("scroll_to_top", False):
+            st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+            st.session_state.scroll_to_top = False
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
