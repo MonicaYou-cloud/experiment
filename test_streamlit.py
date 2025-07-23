@@ -477,6 +477,13 @@ if st.session_state.page == 13:
                 st.session_state.page += 1
                 st.rerun()
 
+# 正式測驗說明
+if st.session_state.page == 14:
+    st.header("第二階段：正式測驗")
+    st.write("此處將放上正式測驗說明")
+    col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
+    with col3:
+        st.button("開始測驗", on_click=next_page)
 
 # # 完成頁面
 # elif st.session_state.page == 5:
