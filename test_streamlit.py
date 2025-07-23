@@ -316,10 +316,10 @@ def graphical_question2(
 
         # 顯示答案與詳解
         if st.session_state[f'show_answer_{page_number}']:
-            st.markdown(f"""✅ 正確答案是 **{answer_value}**""")
+            st.markdown(f"""正確答案是 **{answer_value}**""")
 
         if st.session_state[f'show_explanation_{page_number}']:
-            st.markdown(f"""📘 詳解：{explanation_text}""")
+            st.markdown(f"""詳解：{explanation_text}""")
 
 # 題一
 graphical_question(
