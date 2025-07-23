@@ -86,10 +86,9 @@ if st.session_state.page > 0 and st.session_state.start_time:
 if st.session_state.page == 0:
     st.header("歡迎參加本測驗")
     st.write("此處將放上實驗說明與知情同意")
-    
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-        with col6:
-            st.button("開始測驗", on_click=next_page)
+    with col6:
+        st.button("開始測驗", on_click=next_page)
             
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -99,11 +98,8 @@ elif st.session_state.page == 1:
     # 問題選項，加上 key 儲存在 session_state
     st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
- 
-col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-        with col6:
-            st.button("下一頁", on_click=next_page)
-
+    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+    with col6:
     if st.button("下一頁"):
         if st.session_state.age is None or st.session_state.gender is None:
             st.warning("請完整填寫所有問題才能繼續。")
