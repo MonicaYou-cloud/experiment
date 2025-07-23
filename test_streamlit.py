@@ -63,6 +63,13 @@ def next_page():
     if st.session_state.page == 1 and st.session_state.start_time is None:
         st.session_state.start_time = time.time()
 
+# 顯示答案和詳解功能
+def show_answer(page_number):
+    st.session_state[f'show_answer_{page_number}'] = True
+
+def show_explanation(page_number):
+    st.session_state[f'show_explanation_{page_number}'] = True
+
 # 顯示計時器
 if st.session_state.page > 2 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
@@ -174,12 +181,10 @@ def graphical_question(
             st.button("上一頁", on_click=prev_page)
 
         with col3:
-            if st.button("看答案"):
-                st.session_state[f'show_answer_{page_number}'] = True
-
+            st.button("看答案", on_click=show_answer, args=(page_number,))
+                
         with col4:
-            if st.button("看詳解"):
-                st.session_state[f'show_explanation_{page_number}'] = True
+            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
         with col6:
             st.button("下一頁", on_click=next_page)
