@@ -242,12 +242,10 @@ def graphical_question1(
             st.button("上一頁", on_click=prev_page)
 
         with col3:
-            if st.button("看答案"):
-                st.session_state[f'show_answer_{page_number}'] = True
-
+            st.button("看答案", on_click=show_answer, args=(page_number,))
+                
         with col4:
-            if st.button("看詳解"):
-                st.session_state[f'show_explanation_{page_number}'] = True
+            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
         with col6:
             st.button("下一頁", on_click=next_page)
@@ -312,12 +310,10 @@ def graphical_question2(
             st.button("上一頁", on_click=prev_page)
 
         with col3:
-            if st.button("看答案"):
-                st.session_state[f'show_answer_{page_number}'] = True
-
+            st.button("看答案", on_click=show_answer, args=(page_number,))
+                
         with col4:
-            if st.button("看詳解"):
-                st.session_state[f'show_explanation_{page_number}'] = True
+            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
         with col6:
             st.button("下一頁", on_click=next_page)
