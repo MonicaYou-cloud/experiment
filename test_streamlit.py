@@ -91,7 +91,6 @@ if st.session_state.page == 0:
             
 # 基本資料頁
 elif st.session_state.page == 1:
-    st_javascript("window.scrollTo(0, 0);")
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
@@ -123,7 +122,6 @@ def graphical_question(
     explanation_text: str
 ):  
     if st.session_state.page == page_number:
-        st_javascript("window.scrollTo(0, 0);")
         if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
