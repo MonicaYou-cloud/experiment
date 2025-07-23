@@ -105,68 +105,83 @@ elif st.session_state.page == 1:
             st.session_state.page += 1
             st.rerun()  # ✅ 避免需要按兩下的問題
             
-# 題一
-elif st.session_state.page == 2:
-   
-    # 顯示圖形題目與選項圖片
-    col1, col2 = st.columns(2)
-    with col1:
-        try:
-            image1 = Image.open("高級圖形一 (1).png")
-            st.image(image1, caption="練習題1")
-        except FileNotFoundError:
-            st.warning("⚠️ 圖片一載入失敗")
-    
-    with col2:
-        try:
-            image2 = Image.open("高級圖形一選項 (1).png")
-            st.image(image2, caption="請選擇您認為的正確圖形")
-        except FileNotFoundError:
-            st.warning("⚠️ 圖片二載入失敗")
+#高級圖形函式
 
-    # 顯示選項（置中）
-    col1, col2, col3 = st.columns([1, 5, 1])
-    with col2:
-        answer = st.radio(
-            label="選項",
-            options=["1", "2", "3", "4", "5", "6", "7", "8"],
-            key="q_graphical_1",
-            horizontal=True, 
-            index=None
-        )
-
-    # 初始化詳解狀態（只跑一次）
-    if 'show_answer1' not in st.session_state:
-        st.session_state.show_answer1 = False
-    if 'show_explanation1' not in st.session_state:
-        st.session_state.show_explanation1 = False
-
-    # 三個按鈕：上一頁、看詳解、下一頁
-    col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-    with col1:
-        st.button("上一頁", on_click=prev_page)
-
-    with col3:
-        if st.button("看答案"):
-            st.session_state.show_answer1 = True
-
-    with col4:
-        if st.button("看詳解"):
-            st.session_state.show_explanation1 = True
-
-    with col6:
-        st.button("下一頁", on_click=next_page)
-    
-    # ✅ 按下「看詳解」後才顯示詳解區塊
-    if st.session_state.show_answer1:
-        st.markdown("""
-        正確答案是 **8**""")
+def graphical_question(
+    page_number: int,
+    question_image_path: str,
+    option_image_path: str,
+    radio_key: str,
+    answer_value: str,
+    explanation_text: str
+):
+    if st.session_state.page == page_number:
+        # 顯示圖形題目與選項圖片
+        col1, col2 = st.columns(2)
+        with col1:
+            try:
+                image1 = Image.open(question_image_path)
+                st.image(image1, caption=f"練習題 {page_number}")
+            except FileNotFoundError:
+                st.warning("⚠️ 圖片一載入失敗")
         
-    if st.session_state.show_explanation1:
-        st.markdown("""
-        詳解：本題中圖形的位置位於三條橫向點點線與一條直向直線處。
-        """)
+        with col2:
+            try:
+                image2 = Image.open(option_image_path)
+                st.image(image2, caption="請選擇您認為的正確圖形")
+            except FileNotFoundError:
+                st.warning("⚠️ 圖片二載入失敗")
+
+        # 顯示選項（置中）
+        col1, col2, col3 = st.columns([1, 5, 1])
+        with col2:
+            answer = st.radio(
+                label="選項",
+                options=["1", "2", "3", "4", "5", "6", "7", "8"],
+                key=radio_key,
+                horizontal=True, 
+                index=None
+            )
+
+        # 初始化詳解狀態（只跑一次）
+        if f'show_answer_{page_number}' not in st.session_state:
+            st.session_state[f'show_answer_{page_number}'] = False
+        if f'show_explanation_{page_number}' not in st.session_state:
+            st.session_state[f'show_explanation_{page_number}'] = False
+
+        # 三個按鈕
+        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+
+        with col1:
+            st.button("上一頁", on_click=prev_page)
+
+        with col3:
+            if st.button("看答案"):
+                st.session_state[f'show_answer_{page_number}'] = True
+
+        with col4:
+            if st.button("看詳解"):
+                st.session_state[f'show_explanation_{page_number}'] = True
+
+        with col6:
+            st.button("下一頁", on_click=next_page)
+
+        # 顯示答案與詳解
+        if st.session_state[f'show_answer_{page_number}']:
+            st.markdown(f"""✅ 正確答案是 **{answer_value}**""")
+
+        if st.session_state[f'show_explanation_{page_number}']:
+            st.markdown(f"""📘 詳解：{explanation_text}""")
+
+# 題一
+graphical_question(
+    page_number=2,
+    question_image_path="高級圖形一 (1).png",
+    option_image_path="高級圖形一選項 (1).png",
+    radio_key="q_graphical_1",
+    answer_value="8",
+    explanation_text="本題中圖形的位置位於三條橫向點點線與一條直向直線處。"
+)
       
 # 題二
 elif st.session_state.page == 3:
