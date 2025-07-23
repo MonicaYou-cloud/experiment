@@ -2,11 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 from PIL import Image
-
-if st.session_state.get("scroll_to_top", False):
-    import streamlit.components.v1 as components
-    components.html("<script>window.scrollTo(0, 0);</script>", height=0)
-    st.session_state.scroll_to_top = False
+import streamlit.components.v1 as components
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -124,8 +120,11 @@ def graphical_question(
     radio_key: str,
     answer_value: str,
     explanation_text: str
-):
+):  
     if st.session_state.page == page_number:
+          if st.session_state.get("scroll_to_top", False):
+            st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+            st.session_state.scroll_to_top = False
         # 顯示圖形題目與選項圖片
         col1, col2 = st.columns(2)
         with col1:
