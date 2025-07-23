@@ -112,7 +112,7 @@ elif st.session_state.page == 2:
         st.button("開始練習", on_click=next_page)
     
     with col4:
-        st.button("直接進入正式測驗", on_click=next_page)
+        st.button("直接進入正式測驗")
          
 # 高級圖形測驗函式
 def graphical_question(
