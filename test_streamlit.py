@@ -204,68 +204,16 @@ graphical_question(
 )
 
 
-# # 題四
-# elif st.session_state.page == 5:
+# 題四
+graphical_question(
+    page_number=5,
+    question_image_path="高級圖形二 (2).png",
+    option_image_path="高級圖形二選項 (2).png",
+    radio_key="q_graphical_4",
+    answer_value="8",
+    explanation_text="以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。"
+)
 
-#     # 顯示圖形題目與選項圖片
-#     col1, col2 = st.columns(2)
-#     with col1:
-#         try:
-#             image1 = Image.open("高級圖形二 (2).png")
-#             st.image(image1, caption="練習題4")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片一載入失敗")
-    
-#     with col2:
-#         try:
-#             image2 = Image.open("高級圖形二選項 (2).png")
-#             st.image(image2, caption="請選擇您認為的正確圖形")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片二載入失敗")
-
-#     # 顯示選項（置中）
-#     col1, col2, col3 = st.columns([1, 5, 1])
-#     with col2:
-#         answer = st.radio(
-#             label="選項",
-#             options=["1", "2", "3", "4", "5", "6", "7", "8"],
-#             key="q_graphical_4",
-#             horizontal=True, 
-#             index=None
-#         )
-
-#     # 初始化詳解狀態（只跑一次）
-#     if 'show_answer4' not in st.session_state:
-#         st.session_state.show_answer4 = False
-#     if 'show_explanation4' not in st.session_state:
-#         st.session_state.show_explanation4 = False
-
-#     # 三個按鈕：上一頁、看詳解、下一頁
-#     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-#     with col1:
-#         st.button("上一頁", on_click=prev_page)
-
-#     with col3:
-#         if st.button("看答案"):
-#             st.session_state.show_answer4 = True
-
-#     with col4:
-#         if st.button("看詳解"):
-#             st.session_state.show_explanation4 = True
-
-#     with col6:
-#              st.button("下一頁", on_click=next_page)
-
-#     # ✅ 按下「看詳解」後才顯示詳解區塊
-#     if st.session_state.show_answer4:
-#         st.markdown("""
-#         正確答案是 **8**""")
-        
-#     if st.session_state.show_explanation4:
-#         st.markdown("""
-#         詳解：以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。
-#         """)
 
 # # 題五
 # elif st.session_state.page == 6:
