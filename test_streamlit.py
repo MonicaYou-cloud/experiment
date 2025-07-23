@@ -159,21 +159,15 @@ def graphical_question(
         with col3:
             if st.button("看答案"):
                 st.session_state[f'show_answer_{page_number}'] = True
-                st.session_state.scroll_to_bottom = True
-
+                
         with col4:
             if st.button("看詳解"):
                 st.session_state[f'show_explanation_{page_number}'] = True
-                st.session_state.scroll_to_bottom = True
-
+            
         with col6:
             st.button("下一頁", on_click=next_page)
         
         # 顯示答案與詳解
-        if st.session_state.get("scroll_to_bottom", False):
-            st.markdown("<script>window.scrollTo(0, document.body.scrollHeight);</script>", unsafe_allow_html=True)
-            st.session_state.scroll_to_bottom = False
-    
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
