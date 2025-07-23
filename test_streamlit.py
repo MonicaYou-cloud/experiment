@@ -71,7 +71,7 @@ def show_explanation(page_number):
     st.session_state[f'show_explanation_{page_number}'] = True
 
 # 顯示計時器
-if st.session_state.page > 2 and st.session_state.start_time:
+if 2 < st.session_state.page < 13 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
