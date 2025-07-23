@@ -4,13 +4,15 @@ import time
 from PIL import Image
 import streamlit.components.v1 as components
 
-# 放在每一頁的最上面來捲動到頂部
-def scroll_top():
-    st.markdown("""
-    <script>
+def scroll_to_top():
+    components.html(
+        """
+        <script>
         window.scrollTo(0, 0);
-    </script>
-    """, unsafe_allow_html=True)
+        </script>
+        """,
+        height=0,
+    )
 
 # 插入 CSS 樣式
 st.markdown("""
@@ -57,10 +59,15 @@ if 'go_prev' not in st.session_state:
     st.session_state.go_prev = False
 
 # 換頁函式：設定旗標
-def next_page():
-    st.session_state.go_next = True
 def prev_page():
-    st.session_state.go_prev = True
+    st.session_state.page -= 1
+    scroll_to_top()
+    st.rerun()
+
+def next_page():
+    st.session_state.page += 1
+    scroll_to_top()
+    st.rerun()
 
 # ⏱️換頁觸發後，實際處理與初始化計時
 if st.session_state.go_next:
