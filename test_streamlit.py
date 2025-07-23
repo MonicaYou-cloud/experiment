@@ -497,9 +497,7 @@ def question(
     page_number: int,
     question_image_path: str,
     option_image_path: str,
-    radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    radio_key: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -510,7 +508,7 @@ def question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-2}")
+                st.image(image1, caption=f"練習題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -546,9 +544,7 @@ def question1(
     page_number: int,
     question_image_path: str,
     option_image_path: str,
-    radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    radio_key: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -559,7 +555,7 @@ def question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-2}")
+                st.image(image1, caption=f"練習題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -595,9 +591,7 @@ def question2(
     page_number: int,
     question_image_path: str,
     option_image_path: str,
-    radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    radio_key: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -608,7 +602,7 @@ def question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-2}")
+                st.image(image1, caption=f"練習題 {page_number-14}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -639,54 +633,44 @@ def question2(
         with col6:
             st.button("下一頁", on_click=next_page)
 
-# 題一
-graphical_question(
-    page_number=3,
-    question_image_path="高級圖形一 (1).png",
-    option_image_path="高級圖形一選項 (1).png",
-    radio_key="q_graphical_1",
-    answer_value="8",
-    explanation_text="本題中圖形的位置位於三條橫向點點線與一條直向直線處。"
+# 1
+question(
+    page_number=15,
+    question_image_path="高級圖形一 (5).png",
+    option_image_path="高級圖形一選項 (5).png",
+    radio_key="q_1"
 )
         
-# 題三
-graphical_question(
-    page_number=5,
-    question_image_path="高級圖形二 (1).png",
-    option_image_path="高級圖形二選項 (1).png",
-    radio_key="q_graphical_3",
-    answer_value="1",
-    explanation_text="每一直排或每一橫排只會出現一次橫的與直的黑、白、斜線。"
+# 2
+question(
+    page_number=16,
+    question_image_path="高級圖形二 (5).png",
+    option_image_path="高級圖形二選項 (5).png",
+    radio_key="q_2"
 )
 
-# 題五
-graphical_question1(
-    page_number=7,
-    question_image_path="區分 (1).png",
-    option_image_path="區分選項 (1).png",
-    radio_key="q_graphical_5",
-    answer_value="E",
-    explanation_text="箭頭以凹凸間隔，三角形以順時針轉動。"
+# 3
+question1(
+    page_number=17,
+    question_image_path="區分 (5).png",
+    option_image_path="區分選項 (5).png",
+    radio_key="q_3",
 )
 
-# 題七
-graphical_question2(
-    page_number=9,
-    question_image_path="推理思考 (1).png",
-    option_image_path="推理思考選項 (1).png",
-    radio_key="q_graphical_7",
-    answer_value="4？",
-    explanation_text="？。"
+# 4
+question2(
+    page_number=18,
+    question_image_path="推理思考 (5).png",
+    option_image_path="推理思考選項 (5).png",
+    radio_key="q_4"
 )
 
-# 題九
-graphical_question2(
-    page_number=11,
-    question_image_path="羅桑二氏 (1).png",
-    option_image_path="羅桑二氏選項 (1).png",
-    radio_key="q_graphical_9",
-    answer_value="3",
-    explanation_text="圖形皆是圓形，以大小間隔。"
+# 5
+question2(
+    page_number=19,
+    question_image_path="羅桑二氏 (5).png",
+    option_image_path="羅桑二氏選項 (5).png",
+    radio_key="q_5",
 )
 
 
