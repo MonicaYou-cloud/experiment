@@ -150,7 +150,7 @@ def graphical_question(
                 options=["1", "2", "3", "4", "5", "6", "7", "8"],
                 key=radio_key,
                 horizontal=True, 
-                index=None
+                index=0
             )
 
         # 初始化詳解狀態（只跑一次）
