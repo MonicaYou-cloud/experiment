@@ -463,7 +463,9 @@ if st.session_state.page == 13:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
 
-    with col2:
+    spacer1, spacer2, btn_col = st.columns([5, 1, 1])
+
+    with btn_col:
         if st.button("下一頁"):
             if st.session_state.get("E1") is None or \
                st.session_state.get("E2") is None or \
