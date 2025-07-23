@@ -64,7 +64,7 @@ def next_page():
         st.session_state.start_time = time.time()
 
 # 顯示計時器
-if st.session_state.page > 0 and st.session_state.start_time:
+if st.session_state.page > 1 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
