@@ -364,13 +364,13 @@ graphical_question1(
     question_image_path="區分 (2).png",
     option_image_path="區分選項 (2).png",
     radio_key="q_graphical_6",
-    answer_value="？",
+    answer_value="2？",
     explanation_text="？。"
 )
     
 # 題七
-graphical_question1(
-    page_number=7,
+graphical_question2(
+    page_number=8,
     question_image_path="推理思考 (1).png",
     option_image_path="推理思考選項 (1).png",
     radio_key="q_graphical_7",
@@ -378,200 +378,35 @@ graphical_question1(
     explanation_text="？。"
 )
 
-# # 題八
-# elif st.session_state.page == 9:
-#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+# 題八
+graphical_question2(
+    page_number=9,
+    question_image_path="推理思考 (2).png",
+    option_image_path="推理思考選項 (2).png",
+    radio_key="q_graphical_8",
+    answer_value="5",
+    explanation_text="外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。"
+)
 
-#     # 顯示圖形題目與選項圖片
-#     col1, col2 = st.columns(2)
-#     with col1:
-#         try:
-#             image1 = Image.open("推理思考 (2).png")
-#             st.image(image1, caption="練習題8")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片一載入失敗")
-    
-#     with col2:
-#         try:
-#             image2 = Image.open("推理思考選項 (2).png")
-#             st.image(image2, caption="請選擇您認為的正確圖形")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片二載入失敗")
+# 題九
+graphical_question2(
+    page_number=10,
+    question_image_path="羅桑二氏 (1).png",
+    option_image_path="羅桑二氏選項 (1).png",
+    radio_key="q_graphical_9",
+    answer_value="3",
+    explanation_text="圖形皆是圓形，以大小間隔。"
+)
 
-#     # 顯示選項（置中）
-#     col1, col2, col3 = st.columns([1, 2, 1])
-#     with col2:
-#         answer = st.radio(
-#             label="選項",
-#             options=["1", "2", "3", "4", "5"],
-#             key="q_graphical_8",
-#             horizontal=True, 
-#             index=None
-#         )
-
-#     # 初始化詳解狀態（只跑一次）
-#     if 'show_answer8' not in st.session_state:
-#         st.session_state.show_answer8 = False
-#     if 'show_explanation8' not in st.session_state:
-#         st.session_state.show_explanation8 = False
-
-#     # 三個按鈕：上一頁、看詳解、下一頁
-#     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-#     with col1:
-#         st.button("上一頁", on_click=prev_page)
-
-#     with col3:
-#         if st.button("看答案"):
-#             st.session_state.show_answer8 = True
-
-#     with col4:
-#         if st.button("看詳解"):
-#             st.session_state.show_explanation8 = True
-
-#     with col6:
-#              st.button("下一頁", on_click=next_page)
-
-#     # ✅ 按下「看詳解」後才顯示詳解區塊
-#     if st.session_state.show_answer8:
-#         st.markdown("""
-#         正確答案是 **5**""")
-
-#     if st.session_state.show_explanation8:
-#         st.markdown("""
-#         詳解：外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。
-#         """)
-
-# # 題九
-# elif st.session_state.page == 10:
-#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-
-#     # 顯示圖形題目與選項圖片
-#     col1, col2 = st.columns(2)
-#     with col1:
-#         try:
-#             image1 = Image.open("羅桑二氏 (1).png")
-#             st.image(image1, caption="練習題9")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片一載入失敗")
-    
-#     with col2:
-#         try:
-#             image2 = Image.open("羅桑二氏選項 (1).png")
-#             st.image(image2, caption="請選擇您認為的正確圖形")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片二載入失敗")
-
-#     # 顯示選項（置中）
-#     col1, col2, col3 = st.columns([1, 2, 1])
-#     with col2:
-#         answer = st.radio(
-#             label="選項",
-#             options=["1", "2", "3", "4", "5"],
-#             key="q_graphical_9",
-#             horizontal=True, 
-#             index=None
-#         )
-
-#     # 初始化詳解狀態（只跑一次）
-#     if 'show_answer9' not in st.session_state:
-#         st.session_state.show_answer9 = False
-#     if 'show_explanation9' not in st.session_state:
-#         st.session_state.show_explanation9 = False
-
-#     # 三個按鈕：上一頁、看詳解、下一頁
-#     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-#     with col1:
-#         st.button("上一頁", on_click=prev_page)
-
-#     with col3:
-#         if st.button("看答案"):
-#             st.session_state.show_answer9 = True
-
-#     with col4:
-#         if st.button("看詳解"):
-#             st.session_state.show_explanation9 = True
-
-#     with col6:
-#              st.button("下一頁", on_click=next_page)
-
-#     # ✅ 按下「看詳解」後才顯示詳解區塊
-#     if st.session_state.show_answer9:
-#         st.markdown("""
-#         正確答案是 **3**""")
-        
-#     if st.session_state.show_explanation9:
-#         st.markdown("""
-#         詳解：圖形皆是圓形，以大小間隔。
-#         """)
-
-# # 題十
-# elif st.session_state.page == 11:
-#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-
-#     # 顯示圖形題目與選項圖片
-#     col1, col2 = st.columns(2)
-#     with col1:
-#         try:
-#             image1 = Image.open("羅桑二氏 (2).png")
-#             st.image(image1, caption="練習題10")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片一載入失敗")
-    
-#     with col2:
-#         try:
-#             image2 = Image.open("羅桑二氏選項 (2).png")
-#             st.image(image2, caption="請選擇您認為的正確圖形")
-#         except FileNotFoundError:
-#             st.warning("⚠️ 圖片二載入失敗")
-
-#     # 顯示選項（置中）
-#     col1, col2, col3 = st.columns([1, 2, 1])
-#     with col2:
-#         answer = st.radio(
-#             label="選項",
-#             options=["1", "2", "3", "4", "5"],
-#             key="q_graphical_10",
-#             horizontal=True, 
-#             index=None
-#         )
-
-#     # 初始化詳解狀態（只跑一次）
-#     if 'show_answer10' not in st.session_state:
-#         st.session_state.show_answer10 = False
-#     if 'show_explanation10' not in st.session_state:
-#         st.session_state.show_explanation10 = False
-
-#     # 三個按鈕：上一頁、看詳解、下一頁
-#     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-#     with col1:
-#         st.button("上一頁", on_click=prev_page)
-
-#     with col3:
-#         if st.button("看答案"):
-#             st.session_state.show_answer10 = True
-
-#     with col4:
-#         if st.button("看詳解"):
-#             st.session_state.show_explanation10 = True
-
-#     with col6:
-#              st.button("下一頁", on_click=next_page)
-
-#     # ✅ 按下「看詳解」後才顯示詳解區塊
-#     if st.session_state.show_answer10:
-#         st.markdown("""
-#         正確答案是 **4**""")
-
-#     if st.session_state.show_explanation10:
-#         st.markdown("""
-#         詳解：圖形皆是由兩條線組成。
-#         """)
-
-# scroll_top()
-
+# 題十
+graphical_question2(
+    page_number=11,
+    question_image_path="羅桑二氏 (2).png",
+    option_image_path="羅桑二氏選項 (2).png",
+    radio_key="q_graphical_10",
+    answer_value="4",
+    explanation_text="圖形皆是由兩條線組成。"
+)
 
 # # 完成頁面
 # elif st.session_state.page == 5:
