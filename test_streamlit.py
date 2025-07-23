@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import time
 from PIL import Image
-import streamlit.components.v1 as components
+from streamlit_javascript import st_javascript
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -91,6 +91,7 @@ if st.session_state.page == 0:
             
 # 基本資料頁
 elif st.session_state.page == 1:
+    st_javascript("window.scrollTo(0, 0);")
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁。")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
@@ -192,6 +193,7 @@ def graphical_question1(
     explanation_text: str
 ):
     if st.session_state.page == page_number:
+    st_javascript("window.scrollTo(0, 0);")
         # 顯示圖形題目與選項圖片
         col1, col2 = st.columns(2)
         with col1:
