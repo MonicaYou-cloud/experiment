@@ -428,7 +428,7 @@ graphical_question2(
 )
 
 #練習後問卷
-elif st.session_state.page == 13:
+if st.session_state.page == 13:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -451,7 +451,7 @@ elif st.session_state.page == 13:
                       index=None
                      )
         E3 = st.radio(label="您覺得自己在做練習題時有多努力？",
-                      options=["非常不努力", "不努力", "有點努力", "有點努力", "努力", "非常努力"],
+                      options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
                       key="E3",
                       horizontal=True, 
                       index=None
@@ -461,11 +461,16 @@ elif st.session_state.page == 13:
             st.warning(st.session_state.warning_message)
 
     with col2:
-        if st.session_state.get("E1") is None or \
-        st.session_state.get("E2") is None or \
-        st.session_state.get("E3") is None:
-            st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
-            st.rerun()
+        if st.button("下一頁"):
+            if st.session_state.get("E1") is None or \
+               st.session_state.get("E2") is None or \
+               st.session_state.get("E3") is None:
+                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.rerun()
+            else:
+                st.session_state.warning_message = ""
+                st.session_state.page += 1
+                st.rerun()
 
 
 # # 完成頁面
