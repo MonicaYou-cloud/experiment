@@ -77,9 +77,34 @@ if st.session_state.page == 0:
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
         st.button("開始測驗", on_click=next_page)
-        
-# 練習說明
+            
+# 基本資料頁
 elif st.session_state.page == 1:
+    if st.session_state.get("scroll_to_top", False):
+            st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+            st.session_state.scroll_to_top = False
+    st.header("基本資料")
+    st.write("請填寫以下問卷，完成後按下一頁。")
+    age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
+    gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+    col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
+
+    with col2:
+        if 'warning_message' in st.session_state and st.session_state.warning_message:
+            st.warning(st.session_state.warning_message)
+
+    with col4:
+        if st.button("下一頁"):
+            if age is None or gender is None:
+                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.rerun()
+            else:
+                st.session_state.warning_message = "" 
+                st.session_state.page += 1
+                st.rerun()
+
+# 練習說明
+elif st.session_state.page == 2:
     st.header("第一階段：練習測驗")
     st.write("此處將放上練習測驗說明")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
@@ -88,33 +113,7 @@ elif st.session_state.page == 1:
     
     with col4:
         st.button("直接進入正式測驗", on_click=next_page)
-            
-# # 基本資料頁
-# elif st.session_state.page == 1:
-#     if st.session_state.get("scroll_to_top", False):
-#             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
-#             st.session_state.scroll_to_top = False
-#     st.header("基本資料")
-#     st.write("請填寫以下問卷，完成後按下一頁。")
-#     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
-#     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
-#     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
-
-#     with col2:
-#         if 'warning_message' in st.session_state and st.session_state.warning_message:
-#             st.warning(st.session_state.warning_message)
-
-#     with col4:
-#         if st.button("下一頁"):
-#             if age is None or gender is None:
-#                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
-#                 st.rerun()
-#             else:
-#                 st.session_state.warning_message = "" 
-#                 st.session_state.page += 1
-#                 st.rerun()
-
-            
+         
 # 高級圖形測驗函式
 def graphical_question(
     page_number: int,
@@ -133,7 +132,7 @@ def graphical_question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-1}")
+                st.image(image1, caption=f"練習題 {page_number-2}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -203,7 +202,7 @@ def graphical_question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-1}")
+                st.image(image1, caption=f"練習題 {page_number-2}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -273,7 +272,7 @@ def graphical_question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"練習題 {page_number-1}")
+                st.image(image1, caption=f"練習題 {page_number-2}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片一載入失敗")
         
@@ -327,7 +326,7 @@ def graphical_question2(
 
 # 題一
 graphical_question(
-    page_number=2,
+    page_number=3,
     question_image_path="高級圖形一 (1).png",
     option_image_path="高級圖形一選項 (1).png",
     radio_key="q_graphical_1",
@@ -337,7 +336,7 @@ graphical_question(
       
 # 題二
 graphical_question(
-    page_number=3,
+    page_number=4,
     question_image_path="高級圖形一 (2).png",
     option_image_path="高級圖形一選項 (2).png",
     radio_key="q_graphical_2",
@@ -347,7 +346,7 @@ graphical_question(
         
 # 題三
 graphical_question(
-    page_number=4,
+    page_number=5,
     question_image_path="高級圖形二 (1).png",
     option_image_path="高級圖形二選項 (1).png",
     radio_key="q_graphical_3",
@@ -358,7 +357,7 @@ graphical_question(
 
 # 題四
 graphical_question(
-    page_number=5,
+    page_number=6,
     question_image_path="高級圖形二 (2).png",
     option_image_path="高級圖形二選項 (2).png",
     radio_key="q_graphical_4",
@@ -369,7 +368,7 @@ graphical_question(
 
 # 題五
 graphical_question1(
-    page_number=6,
+    page_number=7,
     question_image_path="區分 (1).png",
     option_image_path="區分選項 (1).png",
     radio_key="q_graphical_5",
@@ -379,7 +378,7 @@ graphical_question1(
 
 # 題六
 graphical_question1(
-    page_number=7,
+    page_number=8,
     question_image_path="區分 (2).png",
     option_image_path="區分選項 (2).png",
     radio_key="q_graphical_6",
@@ -389,7 +388,7 @@ graphical_question1(
     
 # 題七
 graphical_question2(
-    page_number=8,
+    page_number=9,
     question_image_path="推理思考 (1).png",
     option_image_path="推理思考選項 (1).png",
     radio_key="q_graphical_7",
@@ -399,7 +398,7 @@ graphical_question2(
 
 # 題八
 graphical_question2(
-    page_number=9,
+    page_number=10,
     question_image_path="推理思考 (2).png",
     option_image_path="推理思考選項 (2).png",
     radio_key="q_graphical_8",
@@ -409,7 +408,7 @@ graphical_question2(
 
 # 題九
 graphical_question2(
-    page_number=10,
+    page_number=11,
     question_image_path="羅桑二氏 (1).png",
     option_image_path="羅桑二氏選項 (1).png",
     radio_key="q_graphical_9",
@@ -419,7 +418,7 @@ graphical_question2(
 
 # 題十
 graphical_question2(
-    page_number=11,
+    page_number=12,
     question_image_path="羅桑二氏 (2).png",
     option_image_path="羅桑二氏選項 (2).png",
     radio_key="q_graphical_10",
