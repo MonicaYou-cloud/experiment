@@ -514,9 +514,16 @@ if st.session_state.page == 13:
                 st.session_state.page += 1
                 st.rerun()
 
+# 正式測驗時間
+if "formal_start_time" not in st.session_state:
+    st.session_state.formal_start_time = None
+
+if "formal_timer_started" not in st.session_state:
+    st.session_state.formal_timer_started = False
+
 # 顯示計時器
-if 14 < st.session_state.page and st.session_state.start_time:
-    elapsed_seconds = int(time.time() - st.session_state.start_time)
+if st.session_state.page > 14 and st.session_state.formal_timer_started:
+    elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
     st.markdown(f"⏱️ **正式時間：{minutes:02d} 分 {seconds:02d} 秒**")
@@ -527,7 +534,12 @@ if st.session_state.page == 14:
     st.write("此處將放上正式測驗說明")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
-        st.button("開始測驗", on_click=next_page)
+        if st.button("開始測驗"):
+            st.session_state.formal_time = time.time()
+            st.session_state.formal_timer_started = True
+            st.session_state.page += 1  # 進入下一頁
+            st.session_state.scroll_to_top = True
+            st.rerun()
 
 # 高級圖形測驗函式
 def question(
