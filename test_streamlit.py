@@ -70,6 +70,22 @@ def show_answer(page_number):
 def show_explanation(page_number):
     st.session_state[f'show_explanation_{page_number}'] = True
 
+# 初始化 session_state 的變數
+if "page" not in st.session_state:
+    st.session_state.page = 1
+
+if "start_time" not in st.session_state:
+    st.session_state.start_time = None
+
+if "timer_started" not in st.session_state:
+    st.session_state.timer_started = False
+
+# 「開始練習」按鈕：點了才會記錄開始時間
+if st.session_state.page == 3 and not st.session_state.timer_started:
+    if st.button("開始練習"):
+        st.session_state.start_time = time.time()
+        st.session_state.timer_started = True
+
 # 顯示計時器
 if 2 < st.session_state.page < 13 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
