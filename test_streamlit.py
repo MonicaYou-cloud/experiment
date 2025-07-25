@@ -206,6 +206,14 @@ def graphical_question(
 
         with col6:
             st.button("下一頁", on_click=next_page)
+
+        col1, col2 = st.columns([4, 2])
+
+        with col1:
+            if st.button("直接進入正式測驗"):
+                st.session_state.page = 13
+                st.session_state.scroll_to_top = True
+                st.rerun()
     
 # 區分性向測驗函式
 def graphical_question1(
@@ -274,6 +282,13 @@ def graphical_question1(
 
         with col6:
             st.button("下一頁", on_click=next_page)
+        
+        col1, col2 = st.columns([4, 2])
+        with col1:
+            if st.button("直接進入正式測驗"):
+                st.session_state.page = 13
+                st.session_state.scroll_to_top = True
+                st.rerun()
 
 # 推理思考測驗&羅桑二氏非語文測驗函式
 def graphical_question2(
@@ -342,6 +357,13 @@ def graphical_question2(
 
         with col6:
             st.button("下一頁", on_click=next_page)
+        
+        col1, col2 = st.columns([4, 2])
+        with col1:
+            if st.button("直接進入正式測驗"):
+                st.session_state.page = 13
+                st.session_state.scroll_to_top = True
+                st.rerun()
 
 # 題一
 graphical_question(
