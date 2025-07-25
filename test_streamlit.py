@@ -209,7 +209,7 @@ def graphical_question(
 
         col1, col2 = st.columns([4, 2])
 
-        with col1:
+        with col2:
             if st.button("直接進入正式測驗"):
                 st.session_state.page = 13
                 st.session_state.scroll_to_top = True
@@ -284,7 +284,7 @@ def graphical_question1(
             st.button("下一頁", on_click=next_page)
         
         col1, col2 = st.columns([4, 2])
-        with col1:
+        with col2:
             if st.button("直接進入正式測驗"):
                 st.session_state.page = 13
                 st.session_state.scroll_to_top = True
@@ -359,7 +359,7 @@ def graphical_question2(
             st.button("下一頁", on_click=next_page)
         
         col1, col2 = st.columns([4, 2])
-        with col1:
+        with col2:
             if st.button("直接進入正式測驗"):
                 st.session_state.page = 13
                 st.session_state.scroll_to_top = True
@@ -469,7 +469,8 @@ graphical_question2(
 
 #練習後問卷
 if st.session_state.page == 13:
-    if st.session_state.get("scroll_to_top", False):
+    if st.session_state.page == page_number:
+        if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("進入正式測驗前")
