@@ -248,7 +248,7 @@ def graphical_question1(
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             answer = st.radio(
-                label="選項",
+                label="",
                 options=["A", "B", "C", "D", "E"],
                 key=radio_key,
                 horizontal=True, 
@@ -323,7 +323,7 @@ def graphical_question2(
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             answer = st.radio(
-                label="選項",
+                label="",
                 options=["1", "2", "3", "4", "5"],
                 key=radio_key,
                 horizontal=True, 
@@ -586,7 +586,12 @@ def question(
             st.button("上一頁", on_click=prev_page)
 
         with col6:
-            st.button("下一頁", on_click=next_page)
+            if st.button("下一頁"):
+                if st.session_state.get(radio_key) is None:
+                    st.warning("⚠️ 請先作答才能繼續。")
+                else:
+                    next_page()
+                    st.rerun()
     
 # 區分性向測驗函式
 def question1(
@@ -619,7 +624,7 @@ def question1(
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             answer = st.radio(
-                label="選項",
+                label="",
                 options=["A", "B", "C", "D", "E"],
                 key=radio_key,
                 horizontal=True, 
@@ -633,7 +638,12 @@ def question1(
             st.button("上一頁", on_click=prev_page)
 
         with col6:
-            st.button("下一頁", on_click=next_page)
+            if st.button("下一頁"):
+                if st.session_state.get(radio_key) is None:
+                    st.warning("⚠️ 請先作答才能繼續。")
+                else:
+                    next_page()
+                    st.rerun()
 
 # 推理思考測驗&羅桑二氏非語文測驗函式
 def question2(
@@ -666,7 +676,7 @@ def question2(
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             answer = st.radio(
-                label="選項",
+                label="",
                 options=["1", "2", "3", "4", "5"],
                 key=radio_key,
                 horizontal=True, 
@@ -680,7 +690,12 @@ def question2(
             st.button("上一頁", on_click=prev_page)
 
         with col6:
-            st.button("下一頁", on_click=next_page)
+            if st.button("下一頁"):
+                if st.session_state.get(radio_key) is None:
+                    st.warning("⚠️ 請先作答才能繼續。")
+                else:
+                    next_page()
+                    st.rerun()
 
 # 1
 question(
