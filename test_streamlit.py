@@ -127,16 +127,18 @@ elif st.session_state.page == 2:
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
         if st.button("開始練習"):
-            on_click=next_page
             st.session_state.start_time = time.time()
             st.session_state.timer_started = True
+            st.session_state.page += 1  # 進入下一頁
+            st.session_state.scroll_to_top = True
+            st.rerun()
     
     with col4:
         if st.button("直接進入正式測驗"):
             st.session_state.page = 13
             st.session_state.scroll_to_top = True
             st.rerun()
-         
+    
 # 高級圖形測驗函式
 def graphical_question(
     page_number: int,
