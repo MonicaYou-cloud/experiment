@@ -526,7 +526,7 @@ if st.session_state.page > 14 and st.session_state.formal_timer_started:
     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
-    st.markdown(f"⏱️ **正式時間：{minutes:02d} 分 {seconds:02d} 秒**")
+    st.markdown(f"⏱️ **正式測驗時間：{minutes:02d} 分 {seconds:02d} 秒**")
 
 # 正式測驗說明
 if st.session_state.page == 14:
