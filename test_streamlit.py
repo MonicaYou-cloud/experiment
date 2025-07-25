@@ -535,7 +535,7 @@ if st.session_state.page == 14:
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
         if st.button("開始測驗"):
-            st.session_state.formal_time = time.time()
+            st.session_state.formal_start_time = time.time()
             st.session_state.formal_timer_started = True
             st.session_state.page += 1  # 進入下一頁
             st.session_state.scroll_to_top = True
