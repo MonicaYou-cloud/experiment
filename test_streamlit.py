@@ -80,12 +80,6 @@ if "start_time" not in st.session_state:
 if "timer_started" not in st.session_state:
     st.session_state.timer_started = False
 
-# 「開始練習」按鈕：點了才會記錄開始時間
-if st.session_state.page == 3 and not st.session_state.timer_started:
-    if st.button("開始練習"):
-        st.session_state.start_time = time.time()
-        st.session_state.timer_started = True
-
 # 顯示計時器
 if 2 < st.session_state.page < 13 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
@@ -132,7 +126,10 @@ elif st.session_state.page == 2:
     st.write("此處將放上練習測驗說明")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
-        st.button("開始練習", on_click=next_page)
+        if st.button("開始練習"):
+            on_click=next_page
+            st.session_state.start_time = time.time()
+            st.session_state.timer_started = True
     
     with col4:
         if st.button("直接進入正式測驗"):
