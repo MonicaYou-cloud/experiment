@@ -283,7 +283,7 @@ def graphical_question1(
         with col6:
             st.button("下一頁", on_click=next_page)
         
-        col1, col2 = st.columns([4, 2])
+        col1, col2 = st.columns([7, 3])
         with col2:
             if st.button("直接進入正式測驗"):
                 st.session_state.page = 13
@@ -358,7 +358,7 @@ def graphical_question2(
         with col6:
             st.button("下一頁", on_click=next_page)
         
-        col1, col2 = st.columns([4, 2])
+        col1, col2 = st.columns([7, 3])
         with col2:
             if st.button("直接進入正式測驗"):
                 st.session_state.page = 13
