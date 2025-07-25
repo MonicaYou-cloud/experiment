@@ -580,6 +580,8 @@ def question(
             )
 
         # 三個按鈕
+        warning_needed = False
+        
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
         with col1:
@@ -588,10 +590,13 @@ def question(
         with col6:
             if st.button("下一頁"):
                 if st.session_state.get(radio_key) is None:
-                    st.warning("⚠️ 請先作答才能繼續。")
+                    warning_needed = True  # 觸發提示
                 else:
                     next_page()
                     st.rerun()
+        
+        if warning_needed:
+            st.warning("⚠️ 請先作答才能繼續。")
     
 # 區分性向測驗函式
 def question1(
@@ -632,6 +637,8 @@ def question1(
             )
 
         # 三個按鈕
+        warning_needed = False
+        
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
         with col1:
@@ -640,10 +647,14 @@ def question1(
         with col6:
             if st.button("下一頁"):
                 if st.session_state.get(radio_key) is None:
-                    st.warning("⚠️ 請先作答才能繼續。")
+                    warning_needed = True  # 觸發提示
                 else:
                     next_page()
                     st.rerun()
+        
+        if warning_needed:
+            st.warning("⚠️ 請先作答才能繼續。")
+
 
 # 推理思考測驗&羅桑二氏非語文測驗函式
 def question2(
@@ -684,6 +695,8 @@ def question2(
             )
 
         # 三個按鈕
+        warning_needed = False
+        
         col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
 
         with col1:
@@ -692,10 +705,14 @@ def question2(
         with col6:
             if st.button("下一頁"):
                 if st.session_state.get(radio_key) is None:
-                    st.warning("⚠️ 請先作答才能繼續。")
+                    warning_needed = True  # 觸發提示
                 else:
                     next_page()
                     st.rerun()
+        
+        if warning_needed:
+            st.warning("⚠️ 請先作答才能繼續。")
+
 
 # 1
 question(
