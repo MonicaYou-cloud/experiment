@@ -796,7 +796,7 @@ if st.session_state.page == 20 and st.session_state.get("page20_loaded", False):
     st.success("✅ 資料處理完成！")
     st.write("這裡是您要呈現的正式結果或訊息內容。")
 
-    col1, col2, col3 = st.columns([5, 1, 1])
+    col1, col2, col3 = st.columns([4, 1, 2])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
