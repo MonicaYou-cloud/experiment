@@ -472,7 +472,66 @@ graphical_question2(
     explanation_text="圖形皆是由兩條線組成。"
 )
 
-#練習後問卷
+# 練習進度條
+if st.session_state.page == 13:
+    placeholder = st.empty()
+    with placeholder.container():
+        st.markdown("""
+            <style>
+                /* 強制整頁白底，清除殘影 */
+                body, .main, .block-container {
+                    background-color: white !important;
+                }
+
+                /* 置頂區塊容器 */
+                .top-container {
+                    padding-top: 30px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                /* 將進度條的外框撐寬（選擇性） */
+                .stProgress {
+                    width: 60%;
+                    margin: 0 auto;
+                }
+            </style>
+            <div class="top-container">
+                <h4>資料處理中，請稍候…</h4>
+            </div>
+        """, unsafe_allow_html=True)
+
+        progress_bar = st.progress(0)
+
+    for i in range(3):
+        time.sleep(0.5)
+        progress_bar.progress((i + 1) * 10)
+
+    # 處理完跳轉下一頁
+    st.session_state.page += 1
+    st.session_state.scroll_to_top = True
+    st.rerun()
+    
+if st.session_state.page == 14:
+    if st.session_state.get("state_start_time"):
+        elapsed_seconds = int(time.time() - st.session_state.start_time)
+        minutes = elapsed_seconds // 60
+        seconds = elapsed_seconds % 60
+        time_str = f"{minutes} 分 {seconds} 秒"
+  
+        st.metric(label="您在練習所花費的時間", value=time_str) 
+
+    st.markdown("---")
+    # 下一頁按鈕
+    col1, col2 = st.columns([5, 2])
+    with col2:
+        if st.button("下一頁"):
+            st.session_state.page += 1
+            st.session_state.scroll_to_top = True
+            st.rerun()
+
+# 練習後問卷
 if st.session_state.page == 13:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
