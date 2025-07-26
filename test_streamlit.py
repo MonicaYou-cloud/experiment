@@ -527,9 +527,8 @@ if st.session_state.page == 14:
             st.warning("⚠️ 未能取得練習開始時間")
             
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
-
-        with col6:
-            st.button("下一頁", on_click=next_page)
+    with col6:
+        st.button("下一頁", on_click=next_page)
 
 # 練習後問卷
 if st.session_state.page == 15:
