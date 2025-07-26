@@ -525,7 +525,7 @@ if st.session_state.page == 14:
             time_str = f"{minutes} 分 {seconds} 秒"
             st.metric(label="您在練習所花費的時間", value=time_str)
         else:
-            st.warning("⚠️ 未能取得練習開始時間")
+            st.warning("您並未進行任何練習，請按下一頁")
             
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
     with col6:
