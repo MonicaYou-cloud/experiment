@@ -761,43 +761,39 @@ if st.session_state.page == 20:
     if "page20_loaded" not in st.session_state:
         st.session_state.page20_loaded = False
 
+    # 第一次進來，清除畫面顯示 loading
     if not st.session_state.page20_loaded:
-        # 建立空白畫面區塊
+        # 清空畫面用 placeholder（覆蓋整頁）
         placeholder = st.empty()
         with placeholder.container():
-            # 插入置中的 CSS 樣式
+            # 使用 HTML + CSS 全頁置中
             st.markdown("""
-                <div style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh;'>
+                <style>
+                    .centered {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        background-color: white;
+                    }
+                </style>
+                <div class="centered">
                     <h3>⏳ 資料處理中，請稍候…</h3>
-                    <div id='progress-container'></div>
                 </div>
-                """, unsafe_allow_html=True)
-            
-            # 建立進度條（放在 st.progress 外部以對齊）
+            """, unsafe_allow_html=True)
+
+            # 顯示進度條
             progress_bar = st.progress(0)
 
-        # 模擬 10 秒處理過程
+        # 模擬 5 秒處理過程
         for i in range(10):
-            time.sleep(1)
+            time.sleep(0.5)
             progress_bar.progress((i + 1) * 10)
 
-        # 標記 loading 完成、清除畫面並跳出內容
+        # 記錄完成並清除畫面
         st.session_state.page20_loaded = True
         placeholder.empty()
-        st.rerun()
-
-    else:
-        # 顯示處理完成後的內容
-        st.success("✅ 資料處理完成！")
-        st.write("這裡是您要呈現的正式結果或訊息內容。")
-
-        # 下一頁按鈕
-        col1, col2, col3 = st.columns([5, 1, 1])
-        with col2:
-            if st.button("下一頁"):
-                st.session_state.page += 1
-                st.session_state.scroll_to_top = True
-                st.rerun()
 
 # 測驗後問卷
 if st.session_state.page == 21:
