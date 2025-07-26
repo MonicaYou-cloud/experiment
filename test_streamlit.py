@@ -472,7 +472,7 @@ graphical_question2(
     explanation_text="圖形皆是由兩條線組成。"
 )
 
-# 練習進度條
+# 頁面 13：練習結束後，進入過渡動畫（進度條）
 if st.session_state.page == 13:
     placeholder = st.empty()
     with placeholder.container():
@@ -483,7 +483,6 @@ if st.session_state.page == 13:
                     background-color: white !important;
                 }
 
-                /* 置頂區塊容器 */
                 .top-container {
                     padding-top: 30px;
                     display: flex;
@@ -491,45 +490,43 @@ if st.session_state.page == 13:
                     align-items: center;
                 }
 
-                /* 將進度條的外框撐寬（選擇性） */
                 .stProgress {
                     width: 60%;
                     margin: 0 auto;
                 }
             </style>
             <div class="top-container">
-                <h4>資料處理中，請稍候…</h4>
+                <h4>📚 正在整理練習資料，請稍候…</h4>
             </div>
         """, unsafe_allow_html=True)
 
         progress_bar = st.progress(0)
 
-    for i in range(3):
+    for i in range(10):  # 顯示 5 秒（0.5 秒更新一次）
         time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
 
-    # 處理完跳轉下一頁
+    # 處理完後跳轉至第 14 頁（正式測驗前）
     st.session_state.page += 1
     st.session_state.scroll_to_top = True
     st.rerun()
     
+# 頁面 14：顯示練習花費時間
 if st.session_state.page == 14:
-    if st.session_state.get("state_start_time"):
+    st.header("🎯 正式測驗前")
+
+    # 顯示練習階段所花時間
+    if st.session_state.get("start_time"):
         elapsed_seconds = int(time.time() - st.session_state.start_time)
         minutes = elapsed_seconds // 60
         seconds = elapsed_seconds % 60
         time_str = f"{minutes} 分 {seconds} 秒"
-  
-        st.metric(label="您在練習所花費的時間", value=time_str) 
+        st.metric(label="您在練習所花費的時間", value=time_str)
+    else:
+        st.warning("⚠️ 未能取得練習開始時間")
 
-    st.markdown("---")
-    # 下一頁按鈕
-    col1, col2 = st.columns([5, 2])
-    with col2:
-        if st.button("下一頁"):
-            st.session_state.page += 1
-            st.session_state.scroll_to_top = True
-            st.rerun()
+    # 下一步說明
+    st.write("請閱讀以下正式測驗說明...（可加入按鈕跳轉正式測驗）")
 
 # 練習後問卷
 if st.session_state.page == 15:
