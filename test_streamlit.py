@@ -762,21 +762,29 @@ if st.session_state.page == 20:
         st.session_state.page20_loaded = False
 
     if not st.session_state.page20_loaded:
-        # 顯示處理中訊息與進度條
+        # 建立空白畫面區塊
         placeholder = st.empty()
         with placeholder.container():
-            st.markdown("⏳ **資料處理中，請稍候…**")
+            # 插入置中的 CSS 樣式
+            st.markdown("""
+                <div style='display: flex; flex-direction: column; justify-content: center; align-items: center; height: 80vh;'>
+                    <h3>⏳ 資料處理中，請稍候…</h3>
+                    <div id='progress-container'></div>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            # 建立進度條（放在 st.progress 外部以對齊）
             progress_bar = st.progress(0)
 
-        # 模擬 5 秒處理過程（每秒更新一次進度條）
-        for i in range(5):
+        # 模擬 10 秒處理過程
+        for i in range(10):
             time.sleep(1)
-            progress_bar.progress((i + 1) * 20)
+            progress_bar.progress((i + 1) * 10)
 
-        # 記錄已完成 loading
+        # 標記 loading 完成、清除畫面並跳出內容
         st.session_state.page20_loaded = True
         placeholder.empty()
-        st.rerun()  # 重新載入頁面以顯示最終內容
+        st.rerun()
 
     else:
         # 顯示處理完成後的內容
