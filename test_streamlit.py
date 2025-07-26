@@ -796,15 +796,36 @@ if st.session_state.page == 20:
     st.rerun()
     
 if st.session_state.page == 21:
-    st.success("✅ 資料處理完成！")
-    st.write("這裡是您要呈現的正式結果或訊息內容。")
+    st.success("測驗分數計算完成！以下是您的測驗分數")
+    st.header("正式測驗結果")
 
-    col1, col2 = st.columns([5, 1])
+    if st.session_state.get("formal_start_time"):
+        elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
+        minutes = elapsed_seconds // 60
+        seconds = elapsed_seconds % 60
+        st.markdown(f"🕒 **您花費的時間：{minutes} 分 {seconds} 秒**")
+    else:
+        st.warning("⚠️ 找不到正式測驗的起始時間。")
+
+    # 顯示假的個人成績
+    fake_score = 65
+    st.subheader("您的測驗分數")
+    st.markdown(f"**{fake_score} / 100）**")
+
+    # 3️⃣ 顯示假的他人平均分數
+    fake_average = 80
+    st.subheader("與您同齡的他人平均分數")
+    st.markdown(f"**平均為 {fake_average} / 100 分**")
+
+    # 下一頁按鈕
+    col1, col2 = st.columns([6, 1])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
             st.session_state.scroll_to_top = True
             st.rerun()
+
+   
 
 # 測驗後問卷
 if st.session_state.page == 22:
