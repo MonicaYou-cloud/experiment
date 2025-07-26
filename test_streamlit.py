@@ -843,6 +843,7 @@ if st.session_state.page == 22:
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
     st.header("結束正式測驗前")
+    st.markdown("---")
     st.write("（此處將放依變項問題說明）")
     
     col1, col2= st.columns([3, 1])
@@ -870,6 +871,7 @@ if st.session_state.page == 22:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
 
+    st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
 
     with btn_col:
