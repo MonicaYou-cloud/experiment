@@ -795,7 +795,7 @@ if st.session_state.page == 20:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 22:
+if st.session_state.page == 21:
     st.header("📋 測驗結果")
 
     if st.session_state.get("formal_start_time"):
