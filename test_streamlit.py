@@ -801,9 +801,6 @@ if st.session_state.page == 20:
                 st.session_state.page += 1
                 st.rerun()
 
-# 正式測驗時間
-if "formal_start_time" not in st.
-
 # # 完成頁面
 # elif st.session_state.page == 5:
 #     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
