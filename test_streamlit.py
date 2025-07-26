@@ -797,7 +797,7 @@ if st.session_state.page == 20:
     
 if st.session_state.page == 21:
     st.success("測驗結果分析完成！")
-    st.markdown("##測驗結果")
+    st.markdown("## 測驗結果")
 
     if st.session_state.get("formal_start_time"):
         elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
