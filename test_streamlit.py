@@ -90,7 +90,9 @@ if 2 < st.session_state.page < 13 and st.session_state.start_time:
 # 歡迎頁
 if st.session_state.page == 0:
     st.header("歡迎參加本測驗")
+    st.markdown("---")
     st.write("（此處將放上實驗說明與知情同意）")
+    st.markdown("---")
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
         st.button("開始測驗", on_click=next_page)
@@ -101,11 +103,12 @@ elif st.session_state.page == 1:
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("基本資料")
+    st.markdown("---")
     st.write("請填寫以下問卷，完成後按下一頁")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
+    st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
-
     with col2:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
@@ -123,7 +126,9 @@ elif st.session_state.page == 1:
 # 練習說明
 elif st.session_state.page == 2:
     st.header("第一階段：練習測驗")
+    st.markdown("---")
     st.write("此處將放上練習測驗說明")
+    st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
         if st.button("開始練習"):
@@ -473,6 +478,7 @@ if st.session_state.page == 13:
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
     st.header("進入正式測驗前")
+    st.markdown("---")
     st.write("（此處將放個人知覺努力程度問題說明）")
     
     col1, col2= st.columns([3, 1])
@@ -500,6 +506,7 @@ if st.session_state.page == 13:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
 
+    st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
 
     with btn_col:
@@ -531,7 +538,9 @@ if 20 > st.session_state.page > 14 and st.session_state.formal_timer_started:
 # 正式測驗說明
 if st.session_state.page == 14:
     st.header("第二階段：正式測驗")
+    st.markdown("---")
     st.write("此處將放上正式測驗說明")
+    st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
         if st.button("開始測驗"):
@@ -797,8 +806,7 @@ if st.session_state.page == 20:
     
 if st.session_state.page == 21:
     st.success("測驗結果分析完成！")
-    st.markdown("# 測驗結果")
-
+    st.header("測驗結果")
     st.markdown("---")
 
     if st.session_state.get("formal_start_time"):
@@ -821,7 +829,6 @@ if st.session_state.page == 21:
         st.metric(label="與您同齡的人的平均分數", value=f"{average_score}")
 
     st.markdown("---")
-
     # 下一頁按鈕
     col1, col2 = st.columns([5, 2])
     with col2:
