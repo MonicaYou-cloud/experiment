@@ -796,7 +796,7 @@ if st.session_state.page == 20:
     st.rerun()
     
 if st.session_state.page == 21:
-    st.header("📋 測驗結果")
+    st.markdown("## 📊 測驗結果分析")
 
     if st.session_state.get("formal_start_time"):
         elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
@@ -806,27 +806,26 @@ if st.session_state.page == 21:
     else:
         time_str = "無法取得"
 
-    # 模擬分數
     personal_score = 65
     average_score = 80
 
-    # 使用 Pandas 資料表呈現
-    import pandas as pd
-    result_df = pd.DataFrame({
-        "項目": ["您的測驗分數", "跟您同齡的人的平均測驗分數", "您測驗總共花了"],
-        "結果": [f"{personal_score} / 100", f"{average_score} / 100", time_str]
-    })
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        st.metric(label="🎯 您的分數", value=f"{personal_score}/100")
+    with col2:
+        st.metric(label="👥 同齡平均分", value=f"{average_score}/100")
+    with col3:
+        st.metric(label="🕒 花費時間", value=time_str)
 
-    st.table(result_df)
+    st.markdown("---")
 
     # 下一頁按鈕
-    col1, col2 = st.columns([5, 2])
+    col1, col2 = st.columns([6, 1])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
             st.session_state.scroll_to_top = True
             st.rerun()
-   
 
 # 測驗後問卷
 if st.session_state.page == 22:
