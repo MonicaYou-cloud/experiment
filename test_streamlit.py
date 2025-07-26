@@ -532,7 +532,7 @@ if st.session_state.page == 14:
             st.rerun()
 
 # 練習後問卷
-if st.session_state.page == 13:
+if st.session_state.page == 15:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -588,14 +588,14 @@ if "formal_timer_started" not in st.session_state:
     st.session_state.formal_timer_started = False
 
 # 顯示計時器
-if 20 > st.session_state.page > 14 and st.session_state.formal_timer_started:
+if 22 > st.session_state.page > 16 and st.session_state.formal_timer_started:
     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
     st.markdown(f"⏱️ **正式測驗時間：{minutes:02d} 分 {seconds:02d} 秒**")
 
 # 正式測驗說明
-if st.session_state.page == 14:
+if st.session_state.page == 16:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("此處將放上正式測驗說明")
@@ -784,7 +784,7 @@ def question2(
 
 # 1
 question(
-    page_number=15,
+    page_number=17,
     question_image_path="高級圖形一 (5).png",
     option_image_path="高級圖形一選項 (5).png",
     radio_key="q_1"
@@ -792,7 +792,7 @@ question(
         
 # 2
 question(
-    page_number=16,
+    page_number=18,
     question_image_path="高級圖形二 (5).png",
     option_image_path="高級圖形二選項 (5).png",
     radio_key="q_2"
@@ -800,7 +800,7 @@ question(
 
 # 3
 question1(
-    page_number=17,
+    page_number=19,
     question_image_path="區分 (5).png",
     option_image_path="區分選項 (5).png",
     radio_key="q_3",
@@ -808,7 +808,7 @@ question1(
 
 # 4
 question2(
-    page_number=18,
+    page_number=20,
     question_image_path="推理思考 (5).png",
     option_image_path="推理思考選項 (5).png",
     radio_key="q_4"
@@ -816,13 +816,13 @@ question2(
 
 # 5
 question2(
-    page_number=19,
+    page_number=21,
     question_image_path="羅桑二氏 (5).png",
     option_image_path="羅桑二氏選項 (5).png",
     radio_key="q_5",
 )
 
-if st.session_state.page == 20:
+if st.session_state.page == 22:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -863,7 +863,7 @@ if st.session_state.page == 20:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 21:
+if st.session_state.page == 23:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -897,7 +897,7 @@ if st.session_state.page == 21:
             st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 22:
+if st.session_state.page == 24:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
