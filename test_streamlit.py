@@ -759,31 +759,38 @@ if st.session_state.page == 20:
     with placeholder.container():
         st.markdown("""
             <style>
-                /* 強制整頁背景白色，蓋掉任何先前內容 */
+                /* 強制整頁白底，清除殘影 */
                 body, .main, .block-container {
                     background-color: white !important;
                 }
 
-                .centered {
+                /* 置頂區塊容器 */
+                .top-container {
+                    padding-top: 30px;
                     display: flex;
                     flex-direction: column;
-                    justify-content: center;
                     align-items: center;
-                    height: 100vh;
+                }
+
+                /* 將進度條的外框撐寬（選擇性） */
+                .stProgress {
+                    width: 60%;
+                    margin: 0 auto;
                 }
             </style>
-            <div class="centered">
-                <h3>⏳ 資料處理中，請稍候…</h3>
+            <div class="top-container">
+                <h4>⏳ 資料處理中，請稍候…</h4>
             </div>
         """, unsafe_allow_html=True)
 
+        # 放置進度條（放在 Markdown 之後，就會靠近頂部）
         progress_bar = st.progress(0)
 
     for i in range(10):
         time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
 
-    # 跑完直接跳下一頁
+    # 處理完跳轉下一頁
     st.session_state.page += 1
     st.session_state.scroll_to_top = True
     st.rerun()
