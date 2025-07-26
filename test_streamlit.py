@@ -754,8 +754,45 @@ question2(
     radio_key="q_5",
 )
 
-#練習後問卷
+# 頁面 20：模擬計算中畫面
 if st.session_state.page == 20:
+
+    # 初始化狀態：只執行一次計算
+    if "page20_loaded" not in st.session_state:
+        st.session_state.page20_loaded = False
+
+    if not st.session_state.page20_loaded:
+        # 顯示處理中訊息與進度條
+        placeholder = st.empty()
+        with placeholder.container():
+            st.markdown("⏳ **資料處理中，請稍候…**")
+            progress_bar = st.progress(0)
+
+        # 模擬 5 秒處理過程（每秒更新一次進度條）
+        for i in range(5):
+            time.sleep(1)
+            progress_bar.progress((i + 1) * 20)
+
+        # 記錄已完成 loading
+        st.session_state.page20_loaded = True
+        placeholder.empty()
+        st.rerun()  # 重新載入頁面以顯示最終內容
+
+    else:
+        # 顯示處理完成後的內容
+        st.success("✅ 資料處理完成！")
+        st.write("這裡是您要呈現的正式結果或訊息內容。")
+
+        # 下一頁按鈕
+        col1, col2, col3 = st.columns([5, 1, 1])
+        with col2:
+            if st.button("下一頁"):
+                st.session_state.page += 1
+                st.session_state.scroll_to_top = True
+                st.rerun()
+
+# 測驗後問卷
+if st.session_state.page == 21:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -800,6 +837,7 @@ if st.session_state.page == 20:
                 st.session_state.warning_message = ""
                 st.session_state.page += 1
                 st.rerun()
+
 
 # # 完成頁面
 # elif st.session_state.page == 5:
