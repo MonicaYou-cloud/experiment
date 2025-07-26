@@ -813,14 +813,14 @@ if st.session_state.page == 21:
     # 使用 Pandas 資料表呈現
     import pandas as pd
     result_df = pd.DataFrame({
-        "項目": ["您的測驗分數", "同齡他人平均分數", "您花費的時間"],
+        "項目": ["您的測驗分數", "跟您同齡的人的平均測驗分數", "您測驗總共花了"],
         "結果": [f"{personal_score} / 100", f"{average_score} / 100", time_str]
     })
 
     st.table(result_df)
 
     # 下一頁按鈕
-    col1, col2 = st.columns([6, 1])
+    col1, col2 = st.columns([5, 2])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
