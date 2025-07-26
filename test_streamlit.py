@@ -796,7 +796,7 @@ if st.session_state.page == 21:
             st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 21:
+if st.session_state.page == 22:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
