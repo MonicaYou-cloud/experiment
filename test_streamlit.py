@@ -759,13 +759,17 @@ if st.session_state.page == 20:
     with placeholder.container():
         st.markdown("""
             <style>
+                /* 強制整頁背景白色，蓋掉任何先前內容 */
+                body, .main, .block-container {
+                    background-color: white !important;
+                }
+
                 .centered {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
                     height: 100vh;
-                    background-color: white;
                 }
             </style>
             <div class="centered">
@@ -783,7 +787,7 @@ if st.session_state.page == 20:
     st.session_state.page += 1
     st.session_state.scroll_to_top = True
     st.rerun()
-
+    
 if st.session_state.page == 21:
     st.success("✅ 資料處理完成！")
     st.write("這裡是您要呈現的正式結果或訊息內容。")
