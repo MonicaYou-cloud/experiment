@@ -754,6 +754,55 @@ question2(
     radio_key="q_5",
 )
 
+#練習後問卷
+if st.session_state.page == 20:
+    if st.session_state.get("scroll_to_top", False):
+        st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+        st.session_state.scroll_to_top = False
+    st.header("結束正式測驗前")
+    st.write("（此處將放依變項問題說明）")
+    
+    col1, col2= st.columns([3, 1])
+    
+    with col1:
+        E1 = st.radio(label="您認為自己的邏輯推理能力如何？",
+                      options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
+                      key="E1",
+                      horizontal=True, 
+                      index=None
+                     )
+        E2 = st.radio(label="您認為自己的分析思考能力如何？",
+                      options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
+                      key="E2",
+                      horizontal=True, 
+                      index=None
+                     )
+        E3 = st.radio(label="您認為自己的圖形理解能力如何？",
+                      options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
+                      key="E3",
+                      horizontal=True, 
+                      index=None
+                     )
+            
+        if 'warning_message' in st.session_state and st.session_state.warning_message:
+            st.warning(st.session_state.warning_message)
+
+    spacer1, btn_col = st.columns([5, 1])
+
+    with btn_col:
+        if st.button("下一頁"):
+            if st.session_state.get("E1") is None or \
+               st.session_state.get("E2") is None or \
+               st.session_state.get("E3") is None:
+                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.rerun()
+            else:
+                st.session_state.warning_message = ""
+                st.session_state.page += 1
+                st.rerun()
+
+# 正式測驗時間
+if "formal_start_time" not in st.
 
 # # 完成頁面
 # elif st.session_state.page == 5:
