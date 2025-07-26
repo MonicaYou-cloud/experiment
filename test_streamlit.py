@@ -810,7 +810,7 @@ if st.session_state.page == 21:
     personal_score = 65
     average_score = 80
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3 = st.columns([2, 1, 1])
     with col1:
         st.metric(label="您在測驗所花費的時間", value=time_str) 
     with col2:
@@ -821,7 +821,7 @@ if st.session_state.page == 21:
     st.markdown("---")
 
     # 下一頁按鈕
-    col1, col2 = st.columns([6, 1])
+    col1, col2 = st.columns([5, 2])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
