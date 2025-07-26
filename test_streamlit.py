@@ -140,6 +140,7 @@ elif st.session_state.page == 2:
     
     with col4:
         if st.button("直接進入正式測驗"):
+            st.session_state.start_time = None
             st.session_state.page = 13
             st.session_state.scroll_to_top = True
             st.rerun()
