@@ -796,7 +796,8 @@ if st.session_state.page == 20:
     st.rerun()
     
 if st.session_state.page == 21:
-    st.markdown("## 📊 測驗結果分析")
+    st.success("測驗結果分析完成！")
+    st.markdown("###測驗結果")
 
     if st.session_state.get("formal_start_time"):
         elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
@@ -811,11 +812,11 @@ if st.session_state.page == 21:
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric(label="🎯 您的分數", value=f"{personal_score}/100")
+        st.metric(label="您的測驗分數", value=f"{personal_score}")
     with col2:
-        st.metric(label="👥 同齡平均分", value=f"{average_score}/100")
+        st.metric(label="與您同齡的人的平均測驗分數", value=f"{average_score}")
     with col3:
-        st.metric(label="🕒 花費時間", value=time_str)
+        st.metric(label="您在測驗所花費的時間", value=time_str)
 
     st.markdown("---")
 
