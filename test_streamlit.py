@@ -754,16 +754,7 @@ question2(
     radio_key="q_5",
 )
 
-if "page20_loading" not in st.session_state:
-    st.session_state.page20_loading = False
-
-# ✅ 頁面 20：如果還沒跑 loading，就先跑 loading 畫面
-if st.session_state.page == 20 and not st.session_state.page20_loading:
-    st.session_state.page20_loading = True  # 啟用 loading 狀態
-    st.rerun()
-
-# ✅ 真正 loading 畫面（會在 rerun 後觸發）
-if st.session_state.page == 20 and st.session_state.page20_loading and "page20_loaded" not in st.session_state:
+if st.session_state.page == 20:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -781,22 +772,23 @@ if st.session_state.page == 20 and st.session_state.page20_loading and "page20_l
                 <h3>⏳ 資料處理中，請稍候…</h3>
             </div>
         """, unsafe_allow_html=True)
+
         progress_bar = st.progress(0)
 
     for i in range(10):
         time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
 
-    # 標記 loading 結束，畫面跳轉為正式內容
-    st.session_state.page20_loaded = True
+    # 跑完直接跳下一頁
+    st.session_state.page += 1
+    st.session_state.scroll_to_top = True
     st.rerun()
 
-# ✅ 頁面 20：loading 跑完後顯示正式內容
-if st.session_state.page == 20 and st.session_state.get("page20_loaded", False):
+if st.session_state.page == 21:
     st.success("✅ 資料處理完成！")
     st.write("這裡是您要呈現的正式結果或訊息內容。")
 
-    col1, col2, col3 = st.columns([4, 1, 2])
+    col1, col2 = st.columns([5, 1])
     with col2:
         if st.button("下一頁"):
             st.session_state.page += 1
