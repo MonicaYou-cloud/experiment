@@ -915,8 +915,37 @@ if st.session_state.page == 23:
             st.session_state.scroll_to_top = True
             st.rerun()
 
-# 測驗後問卷
+#操弄檢核
 if st.session_state.page == 24:
+    if st.session_state.get("scroll_to_top", False):
+            st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+            st.session_state.scroll_to_top = False
+    st.header("請填寫以下問題")
+    st.markdown("---")
+    score1 = st.text_input("您的正式測驗分數為何？", index=None, key="score1")
+    score2 = st.text_input("同齡人平均測驗分數為何？", index=None, key="score2")
+    comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
+  
+    st.markdown("---")
+    col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
+    with col2:
+        if 'warning_message' in st.session_state and st.session_state.warning_message:
+            st.warning(st.session_state.warning_message)
+
+    with col4:
+        if st.button("下一頁"):
+            if score1 is None or score2 is None or comparison is None:
+                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.rerun()
+            else:
+                st.session_state.warning_message = "" 
+                st.session_state.page += 1
+                st.rerun()
+
+
+
+# 測驗後問卷
+if st.session_state.page == 25:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
