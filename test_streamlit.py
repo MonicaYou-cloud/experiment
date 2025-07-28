@@ -922,8 +922,8 @@ if st.session_state.page == 24:
             st.session_state.scroll_to_top = False
     st.header("請填寫以下問題")
     st.markdown("---")
-    score1 = st.text_input("您的正式測驗分數為何？", index=None, key="score1")
-    score2 = st.text_input("同齡人平均測驗分數為何？", index=None, key="score2")
+    score1 = st.text_input("您的正式測驗分數為何？", key="score1")
+    score2 = st.text_input("同齡人平均測驗分數為何？", key="score2")
     comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
   
     st.markdown("---")
