@@ -125,9 +125,9 @@ elif st.session_state.page == 1:
 
     with col4:
         if st.button("下一頁"):
-            if age is None or gender is None or self_esteem1 is None or self_esteem2 is None or self_esteem3 is None 
-            or self_esteem4 is None or self_esteem5 is None or self_esteem6 is None or self_esteem7 is None 
-            or self_esteem8 is None or self_esteem9 is None or self_esteem10 is None:
+            if (age is None or gender is None or self_esteem1 is None or self_esteem2 is None or self_esteem3 is None 
+                or self_esteem4 is None or self_esteem5 is None or self_esteem6 is None or self_esteem7 is None 
+                or self_esteem8 is None or self_esteem9 is None or self_esteem10 is None):
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
             else:
