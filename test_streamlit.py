@@ -107,16 +107,16 @@ elif st.session_state.page == 1:
     st.write("請填寫以下問卷，完成後按下一頁")
     age = st.radio("請問您是否為大專院校的學生？", ["是", "否"], index=None, key="age")
     gender = st.radio("請選擇您的性別", ["男", "女", "其他"], index=None, key="gender")
-    self-esteem1 = st.radio("我覺得自己一無是處。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem1")
-    self-esteem2 = st.radio("我有許多優點。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem2")
-    self-esteem3 = st.radio("我能像大多數人一樣做好事情。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem3")
-    self-esteem4 = st.radio("我沒有什麼值得驕傲的地方。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem4")
-    self-esteem5 = st.radio("我很沒用。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem5")
-    self-esteem6 = st.radio("我是一個有價值的人。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem6")
-    self-esteem7 = st.radio("我希望我能更尊重自己。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem7")
-    self-esteem8 = st.radio("整體來說，我是個失敗者。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem8")
-    self-esteem9 = st.radio("我對自己抱持正面的態度。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem9")
-    self-esteem10 = st.radio("整體來說，我對自己感到滿意。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self-esteem10")
+    self_esteem1 = st.radio("我覺得自己一無是處。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem1")
+    self_esteem2 = st.radio("我有許多優點。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem2")
+    self_esteem3 = st.radio("我能像大多數人一樣做好事情。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem3")
+    self_esteem4 = st.radio("我沒有什麼值得驕傲的地方。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem4")
+    self_esteem5 = st.radio("我很沒用。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem5")
+    self_esteem6 = st.radio("我是一個有價值的人。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem6")
+    self_esteem7 = st.radio("我希望我能更尊重自己。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem7")
+    self_esteem8 = st.radio("整體來說，我是個失敗者。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem8")
+    self_esteem9 = st.radio("我對自己抱持正面的態度。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem9")
+    self_esteem10 = st.radio("整體來說，我對自己感到滿意。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem10")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
     with col2:
@@ -125,9 +125,9 @@ elif st.session_state.page == 1:
 
     with col4:
         if st.button("下一頁"):
-            if age is None or gender is None or self-esteem1 is None or self-esteem2 is None or self-esteem3 is None 
-            or self-esteem4 is None or self-esteem5 is None or self-esteem6 is None or self-esteem7 is None 
-            or self-esteem8 is None or self-esteem9 is None or self-esteem10 is None:
+            if age is None or gender is None or self_esteem1 is None or self_esteem2 is None or self_esteem3 is None 
+            or self_esteem4 is None or self_esteem5 is None or self_esteem6 is None or self_esteem7 is None 
+            or self_esteem8 is None or self_esteem9 is None or self_esteem10 is None:
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
             else:
