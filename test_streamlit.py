@@ -982,7 +982,7 @@ if st.session_state.page == 25:
     spacer1, btn_col = st.columns([5, 1])
 
     with btn_col:
-        if st.button("下一頁"):
+        if st.button("完成測驗"):
             if st.session_state.get("E1") is None or \
                st.session_state.get("E2") is None or \
                st.session_state.get("E3") is None:
@@ -993,9 +993,23 @@ if st.session_state.page == 25:
                 st.session_state.page += 1
                 st.rerun()
 
+# debrief
+if st.session_state.page == 26:
+    if st.session_state.get("scroll_to_top", False):
+        st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+        st.session_state.scroll_to_top = False
+    st.header("實驗目的澄清")
+    st.markdown("---")
+    st.write("（此處將放debrief文字）")
+    st.markdown("---")
+    
+    col1, col2, col3 = st.columns([1, 1, 1])
 
-# # 完成頁面
-# elif st.session_state.page == 5:
-#     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
-#     st.success("問卷已完成！非常感謝您的作答。")
-#     st.balloons()
+    with col2:
+        st.button("結束實驗", on_click=next_page)
+
+#完成頁面
+elif st.session_state.page == 27:
+    st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
+    st.success("實驗已完成！非常感謝您的參與。")
+    st.balloons()
