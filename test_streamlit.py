@@ -116,10 +116,13 @@ elif st.session_state.page == 1:
     self_esteem7 = st.radio("我希望我能更尊重自己。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem7")
     self_esteem8 = st.radio("整體來說，我是個失敗者。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem8")
     self_esteem9 = st.radio("我對自己抱持正面的態度。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem9")
-    self_esteem10 = st.radio("整體來說，我對自己感到滿意。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem10
+    self_esteem10 = st.radio("整體來說，我對自己感到滿意。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem10")
     mindset1 = st.radio("人的聰明程度是固定的，無論做什麼都不能改變。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset1")
     mindset2 = st.radio("人可以學新的東西，但沒有辦法真正改變自己原本的聰明程度。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset2")
     mindset3 = st.radio("一個人有多聰明是他不太能夠改變的。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset3")
+    important1 = st.radio("對您來說，邏輯推理能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important1")
+    important2 = st.radio("對您來說，分析思考能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important2")
+    important3 = st.radio("對您來說，圖形理解能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important3")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
     with col2:
@@ -131,7 +134,7 @@ elif st.session_state.page == 1:
             if (age is None or gender is None or self_esteem1 is None or self_esteem2 is None or self_esteem3 is None 
                 or self_esteem4 is None or self_esteem5 is None or self_esteem6 is None or self_esteem7 is None 
                 or self_esteem8 is None or self_esteem9 is None or self_esteem10 is None or mindset1 is None 
-                or mindset2 is None or mindset3 is None):
+                or mindset2 is None or mindset3 is None or important1 is None or important2 is None or important3 is None):
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
             else:
