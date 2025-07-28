@@ -1003,7 +1003,7 @@ if st.session_state.page == 26:
     st.write("（此處將放debrief文字）")
     st.markdown("---")
     
-    col1, col2, col3 = st.columns([1, 1, 1])
+    col1, col2, col3 = st.columns([2, 1, 1])
 
     with col2:
         st.button("結束實驗", on_click=next_page)
