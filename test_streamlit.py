@@ -555,6 +555,11 @@ if st.session_state.page == 15:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
+
+    # ✅ 每次進來先清掉警告訊息（除非是剛剛按了按鈕才會顯示）
+    if "warning_message" not in st.session_state:
+        st.session_state.warning_message = ""
+
     st.header("進入正式測驗前")
     st.markdown("---")
     st.write("（此處將放個人知覺努力程度問題說明）")
@@ -580,8 +585,8 @@ if st.session_state.page == 15:
                       horizontal=True, 
                       index=None
                      )
-            
-        if 'warning_message' in st.session_state and st.session_state.warning_message:
+
+        if st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
 
     st.markdown("---")
