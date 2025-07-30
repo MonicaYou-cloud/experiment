@@ -920,7 +920,7 @@ if st.session_state.page == 23:
             st.session_state.scroll_to_top = True
             st.rerun()
 
-#操弄檢核
+# 操弄檢核
 if st.session_state.page == 24:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
