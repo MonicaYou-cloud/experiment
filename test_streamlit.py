@@ -556,37 +556,35 @@ if st.session_state.page == 15:
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
 
-    # ✅ 每次進來先清掉警告訊息（除非是剛剛按了按鈕才會顯示）
-    if "warning_message" not in st.session_state:
+    # ✅ 強制一進來這頁就清空 warning_message（只清一次）
+    if st.session_state.get("just_entered_page_15", True):
         st.session_state.warning_message = ""
+        st.session_state.just_entered_page_15 = False  # 清除標記
 
     st.header("進入正式測驗前")
     st.markdown("---")
     st.write("（此處將放個人知覺努力程度問題說明）")
     
-    col1, col2= st.columns([3, 1])
+    col1, col2 = st.columns([3, 1])
 
     with col1:
-        E1 = st.radio(label="您覺得自己有多認真對待剛才的練習題？",
-                      options=["非常不認真", "不認真", "有點不認真", "有點認真", "認真", "非常認真"],
-                      key="E1",
-                      horizontal=True, 
-                      index=None
-                     )
-        E2 = st.radio(label="您覺得自己有多投入於練習階段？",
-                      options=["非常不投入", "不投入", "有點不投入", "有點投入", "投入", "非常投入"],
-                      key="E2",
-                      horizontal=True, 
-                      index=None
-                     )
-        E3 = st.radio(label="您覺得自己在做練習題時有多努力？",
-                      options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
-                      key="E3",
-                      horizontal=True, 
-                      index=None
-                     )
+        E1 = st.radio(
+            label="您覺得自己有多認真對待剛才的練習題？",
+            options=["非常不認真", "不認真", "有點不認真", "有點認真", "認真", "非常認真"],
+            key="E1", horizontal=True, index=None
+        )
+        E2 = st.radio(
+            label="您覺得自己有多投入於練習階段？",
+            options=["非常不投入", "不投入", "有點不投入", "有點投入", "投入", "非常投入"],
+            key="E2", horizontal=True, index=None
+        )
+        E3 = st.radio(
+            label="您覺得自己在做練習題時有多努力？",
+            options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
+            key="E3", horizontal=True, index=None
+        )
 
-        if st.session_state.warning_message:
+        if st.session_state.get("warning_message"):
             st.warning(st.session_state.warning_message)
 
     st.markdown("---")
@@ -600,7 +598,9 @@ if st.session_state.page == 15:
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
             else:
+                # ✅ 填寫完成，清除錯誤訊息，標記頁面已換
                 st.session_state.warning_message = ""
+                st.session_state.just_entered_page_15 = True  # 供下一頁使用
                 st.session_state.page += 1
                 st.rerun()
 
