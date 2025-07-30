@@ -977,8 +977,8 @@ if st.session_state.page == 25:
                   index=None
                  )
             
-        if 'warning_message' in st.session_state and st.session_state.warning_message:
-            st.warning(st.session_state.warning_message)
+    if 'warning_message' in st.session_state and st.session_state.warning_message:
+        st.warning(st.session_state.warning_message)
 
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
