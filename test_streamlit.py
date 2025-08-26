@@ -170,8 +170,7 @@ def graphical_question(
     question_image_path: str,
     option_image_path: str,
     radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    answer_value: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -207,29 +206,21 @@ def graphical_question(
         # 初始化詳解狀態（只跑一次）
         if f'show_answer_{page_number}' not in st.session_state:
             st.session_state[f'show_answer_{page_number}'] = False
-        if f'show_explanation_{page_number}' not in st.session_state:
-            st.session_state[f'show_explanation_{page_number}'] = False
 
         # 顯示答案與詳解
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
-        if st.session_state[f'show_explanation_{page_number}']:
-            st.markdown(f"""詳解：{explanation_text}""")
-
         # 三個按鈕
-        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+        col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
 
         with col1:
             st.button("上一頁", on_click=prev_page)
 
         with col3:
             st.button("看答案", on_click=show_answer, args=(page_number,))
-                
-        with col4:
-            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
-        with col6:
+        with col5:
             st.button("下一頁", on_click=next_page)
 
         col1, col2 = st.columns([7, 3])
@@ -396,39 +387,35 @@ graphical_question(
     question_image_path="new_folder/高級圖形一 (1).png",
     option_image_path="new_folder/高級圖形一選項 (1).png",
     radio_key="q_graphical_1",
-    answer_value="8",
-    explanation_text="本題中圖形的位置位於三條橫向點點線與一條直向直線處。"
+    answer_value="8"
 )
       
 # 題二
 graphical_question(
     page_number=4,
-    question_image_path="高級圖形一 (2).png",
-    option_image_path="高級圖形一選項 (2).png",
+    question_image_path="new_folder/高級圖形一 (2).png",
+    option_image_path="new_folder/高級圖形一選項 (2).png",
     radio_key="q_graphical_2",
-    answer_value="4",
-    explanation_text="本題中圖形的位置位於一條橫向白線與一條直向白線，橫直白線的交會處皆會塗黑。"
+    answer_value="4"
 )
         
 # 題三
 graphical_question(
     page_number=5,
-    question_image_path="高級圖形二 (1).png",
-    option_image_path="高級圖形二選項 (1).png",
+    question_image_path="new_folder/高級圖形二 (1).png",
+    option_image_path="new_folder/高級圖形二選項 (1).png",
     radio_key="q_graphical_3",
-    answer_value="1",
-    explanation_text="每一直排或每一橫排只會出現一次橫的與直的黑、白、斜線。"
+    answer_value="1"
 )
 
 
 # 題四
 graphical_question(
     page_number=6,
-    question_image_path="高級圖形二 (2).png",
-    option_image_path="高級圖形二選項 (2).png",
+    question_image_path="new_folder/高級圖形二 (2).png",
+    option_image_path="new_folder/高級圖形二選項 (2).png",
     radio_key="q_graphical_4",
-    answer_value="8",
-    explanation_text="以橫向來看，第一張圖加上第二張圖會等於第三張，直向來看也是如此。"
+    answer_value="8"
 )
 
 
@@ -1015,4 +1002,5 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
