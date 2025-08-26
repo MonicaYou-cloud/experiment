@@ -351,7 +351,7 @@ def graphical_question2(
 # 題一
 graphical_question(
     page_number=3,
-    question_image_path="new_folder/高級圖形一 (2).png",
+    question_image_path="new_folder/高級圖形一 (1).png",
     option_image_path="new_folder/高級圖形一選項 (1).png",
     radio_key="q_graphical_1",
     answer_value="8"
@@ -963,6 +963,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
