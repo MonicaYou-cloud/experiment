@@ -542,7 +542,7 @@ graphical_question2(
 )
 
 # 頁面 13：練習結束後，進入過渡動畫（進度條）
-if st.session_state.page == 13:
+if st.session_state.page == 23:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -581,7 +581,7 @@ if st.session_state.page == 13:
     st.rerun()
     
 # 頁面 14：顯示練習花費時間
-if st.session_state.page == 14:
+if st.session_state.page == 24:
 
     # 顯示練習階段所花時間
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -600,7 +600,7 @@ if st.session_state.page == 14:
         st.button("下一頁", on_click=next_page)
 
 # 練習後問卷
-if st.session_state.page == 15:
+if st.session_state.page == 25:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1064,6 +1064,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
