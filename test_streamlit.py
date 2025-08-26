@@ -63,12 +63,9 @@ def next_page():
     if st.session_state.page == 1 and st.session_state.start_time is None:
         st.session_state.start_time = time.time()
 
-# 顯示答案和詳解功能
+# 顯示答案功能
 def show_answer(page_number):
     st.session_state[f'show_answer_{page_number}'] = True
-
-def show_explanation(page_number):
-    st.session_state[f'show_explanation_{page_number}'] = True
 
 # 初始化 session_state 的變數
 if "page" not in st.session_state:
@@ -203,11 +200,7 @@ def graphical_question(
                 index=None
             )
 
-        # 初始化詳解狀態（只跑一次）
-        if f'show_answer_{page_number}' not in st.session_state:
-            st.session_state[f'show_answer_{page_number}'] = False
-
-        # 顯示答案與詳解
+        # 顯示答案
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
@@ -1002,5 +995,6 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
