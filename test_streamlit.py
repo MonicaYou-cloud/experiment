@@ -262,12 +262,8 @@ def graphical_question1(
                 horizontal=True, 
                 index=None
             )
-
-        # 初始化詳解狀態（只跑一次）
-        if f'show_answer_{page_number}' not in st.session_state:
-            st.session_state[f'show_answer_{page_number}'] = False
-
-        # 顯示答案與詳解
+            
+        # 顯示答案
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
@@ -329,11 +325,7 @@ def graphical_question2(
                 index=None
             )
 
-        # 初始化詳解狀態（只跑一次）
-        if f'show_answer_{page_number}' not in st.session_state:
-            st.session_state[f'show_answer_{page_number}'] = False
-
-        # 顯示答案與詳解
+        # 顯示答案
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
@@ -971,6 +963,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
