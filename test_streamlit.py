@@ -230,8 +230,7 @@ def graphical_question1(
     question_image_path: str,
     option_image_path: str,
     radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    answer_value: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -267,29 +266,21 @@ def graphical_question1(
         # 初始化詳解狀態（只跑一次）
         if f'show_answer_{page_number}' not in st.session_state:
             st.session_state[f'show_answer_{page_number}'] = False
-        if f'show_explanation_{page_number}' not in st.session_state:
-            st.session_state[f'show_explanation_{page_number}'] = False
 
         # 顯示答案與詳解
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
-        if st.session_state[f'show_explanation_{page_number}']:
-            st.markdown(f"""詳解：{explanation_text}""")
-
         # 三個按鈕
-        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+        col1, col2, col3, col4, col5= st.columns([1, 1, 1, 1, 1])
 
         with col1:
             st.button("上一頁", on_click=prev_page)
 
         with col3:
             st.button("看答案", on_click=show_answer, args=(page_number,))
-                
-        with col4:
-            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
-        with col6:
+        with col5:
             st.button("下一頁", on_click=next_page)
         
         col1, col2 = st.columns([7, 3])
@@ -305,8 +296,7 @@ def graphical_question2(
     question_image_path: str,
     option_image_path: str,
     radio_key: str,
-    answer_value: str,
-    explanation_text: str
+    answer_value: str
 ):
     if st.session_state.page == page_number:
         if st.session_state.get("scroll_to_top", False):
@@ -342,29 +332,21 @@ def graphical_question2(
         # 初始化詳解狀態（只跑一次）
         if f'show_answer_{page_number}' not in st.session_state:
             st.session_state[f'show_answer_{page_number}'] = False
-        if f'show_explanation_{page_number}' not in st.session_state:
-            st.session_state[f'show_explanation_{page_number}'] = False
 
         # 顯示答案與詳解
         if st.session_state[f'show_answer_{page_number}']:
             st.markdown(f"""正確答案是 **{answer_value}**""")
 
-        if st.session_state[f'show_explanation_{page_number}']:
-            st.markdown(f"""詳解：{explanation_text}""")
-
         # 三個按鈕
-        col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
+        col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
 
         with col1:
             st.button("上一頁", on_click=prev_page)
 
         with col3:
             st.button("看答案", on_click=show_answer, args=(page_number,))
-                
-        with col4:
-            st.button("看詳解", on_click=show_explanation, args=(page_number,))
 
-        with col6:
+        with col5:
             st.button("下一頁", on_click=next_page)
         
         col1, col2 = st.columns([7, 3])
@@ -415,61 +397,55 @@ graphical_question(
 # 題五
 graphical_question1(
     page_number=7,
-    question_image_path="區分 (1).png",
-    option_image_path="區分選項 (1).png",
+    question_image_path="new_folder/區分 (1).png",
+    option_image_path="new_folder/區分選項 (1).png",
     radio_key="q_graphical_5",
-    answer_value="E",
-    explanation_text="箭頭以凹凸間隔，三角形以順時針轉動。"
+    answer_value="E"
 )
 
 # 題六
 graphical_question1(
     page_number=8,
-    question_image_path="區分 (2).png",
-    option_image_path="區分選項 (2).png",
+    question_image_path="new_folder/區分 (2).png",
+    option_image_path="new_folder/區分選項 (2).png",
     radio_key="q_graphical_6",
-    answer_value="2？",
-    explanation_text="？。"
+    answer_value="2"
 )
     
 # 題七
 graphical_question2(
     page_number=9,
-    question_image_path="推理思考 (1).png",
-    option_image_path="推理思考選項 (1).png",
+    question_image_path="new_folder/推理思考 (1).png",
+    option_image_path="new_folder/推理思考選項 (1).png",
     radio_key="q_graphical_7",
-    answer_value="4？",
-    explanation_text="？。"
+    answer_value="4"
 )
 
 # 題八
 graphical_question2(
     page_number=10,
-    question_image_path="推理思考 (2).png",
-    option_image_path="推理思考選項 (2).png",
+    question_image_path="new_folder/推理思考 (2).png",
+    option_image_path="new_folder/推理思考選項 (2).png",
     radio_key="q_graphical_8",
-    answer_value="5",
-    explanation_text="外圓以大小間隔，內圓以逆時針轉動，線條以逆時針轉動並以在外圓裡外間隔。"
+    answer_value="5"
 )
 
 # 題九
 graphical_question2(
     page_number=11,
-    question_image_path="羅桑二氏 (1).png",
-    option_image_path="羅桑二氏選項 (1).png",
+    question_image_path="new_folder/羅桑二氏 (1).png",
+    option_image_path="new_folder/羅桑二氏選項 (1).png",
     radio_key="q_graphical_9",
-    answer_value="3",
-    explanation_text="圖形皆是圓形，以大小間隔。"
+    answer_value="3"
 )
 
 # 題十
 graphical_question2(
     page_number=12,
-    question_image_path="羅桑二氏 (2).png",
-    option_image_path="羅桑二氏選項 (2).png",
+    question_image_path="new_folder/羅桑二氏 (2).png",
+    option_image_path="new_folder/羅桑二氏選項 (2).png",
     radio_key="q_graphical_10",
-    answer_value="4",
-    explanation_text="圖形皆是由兩條線組成。"
+    answer_value="4"
 )
 
 # 頁面 13：練習結束後，進入過渡動畫（進度條）
@@ -995,6 +971,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
