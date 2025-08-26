@@ -451,94 +451,94 @@ graphical_question2(
 
 # 練題11
 graphical_question(
-    page_number=3,
-    question_image_path="new_folder/高級圖形一 (1).png",
-    option_image_path="new_folder/高級圖形一選項 (1).png",
-    radio_key="q_graphical_1",
-    answer_value="8"
+    page_number=13,
+    question_image_path="new_folder/高級圖形一 (3).png",
+    option_image_path="new_folder/高級圖形一選項 (3).png",
+    radio_key="q_graphical_11",
+    answer_value=""
 )
       
 # 練題12
 graphical_question(
-    page_number=4,
-    question_image_path="new_folder/高級圖形一 (2).png",
-    option_image_path="new_folder/高級圖形一選項 (2).png",
-    radio_key="q_graphical_2",
-    answer_value="4"
+    page_number=14,
+    question_image_path="new_folder/高級圖形一 (4).png",
+    option_image_path="new_folder/高級圖形一選項 (4).png",
+    radio_key="q_graphical_12",
+    answer_value=""
 )
         
 # 練題13
 graphical_question(
-    page_number=5,
-    question_image_path="new_folder/高級圖形二 (1).png",
-    option_image_path="new_folder/高級圖形二選項 (1).png",
-    radio_key="q_graphical_3",
-    answer_value="1"
+    page_number=15,
+    question_image_path="new_folder/高級圖形二 (3).png",
+    option_image_path="new_folder/高級圖形二選項 (3).png",
+    radio_key="q_graphical_13",
+    answer_value=""
 )
 
 
 # 練題14
 graphical_question(
-    page_number=6,
-    question_image_path="new_folder/高級圖形二 (2).png",
-    option_image_path="new_folder/高級圖形二選項 (2).png",
-    radio_key="q_graphical_4",
-    answer_value="8"
+    page_number=16,
+    question_image_path="new_folder/高級圖形二 (4).png",
+    option_image_path="new_folder/高級圖形二選項 (4).png",
+    radio_key="q_graphical_14",
+    answer_value=""
 )
 
 
 # 練題15
 graphical_question1(
-    page_number=7,
-    question_image_path="new_folder/區分 (1).png",
-    option_image_path="new_folder/區分選項 (1).png",
-    radio_key="q_graphical_5",
-    answer_value="E"
+    page_number=17,
+    question_image_path="new_folder/區分 (3).png",
+    option_image_path="new_folder/區分選項 (3).png",
+    radio_key="q_graphical_15",
+    answer_value=""
 )
 
 # 練題16
 graphical_question1(
-    page_number=8,
-    question_image_path="new_folder/區分 (2).png",
-    option_image_path="new_folder/區分選項 (2).png",
-    radio_key="q_graphical_6",
-    answer_value="2"
+    page_number=18,
+    question_image_path="new_folder/區分 (4).png",
+    option_image_path="new_folder/區分選項 (4).png",
+    radio_key="q_graphical_16",
+    answer_value=""
 )
     
 # 練題17
 graphical_question2(
-    page_number=9,
-    question_image_path="new_folder/推理思考 (1).png",
-    option_image_path="new_folder/推理思考選項 (1).png",
-    radio_key="q_graphical_7",
-    answer_value="4"
+    page_number=19,
+    question_image_path="new_folder/推理思考 (3).png",
+    option_image_path="new_folder/推理思考選項 (3).png",
+    radio_key="q_graphical_17",
+    answer_value=""
 )
 
 # 練題18
 graphical_question2(
-    page_number=10,
-    question_image_path="new_folder/推理思考 (2).png",
-    option_image_path="new_folder/推理思考選項 (2).png",
-    radio_key="q_graphical_8",
-    answer_value="5"
+    page_number=20,
+    question_image_path="new_folder/推理思考 (4).png",
+    option_image_path="new_folder/推理思考選項 (4).png",
+    radio_key="q_graphical_18",
+    answer_value=""
 )
 
 # 練題19
 graphical_question2(
-    page_number=11,
-    question_image_path="new_folder/羅桑二氏 (1).png",
-    option_image_path="new_folder/羅桑二氏選項 (1).png",
-    radio_key="q_graphical_9",
-    answer_value="3"
+    page_number=21,
+    question_image_path="new_folder/羅桑二氏 (3).png",
+    option_image_path="new_folder/羅桑二氏選項 (3).png",
+    radio_key="q_graphical_19",
+    answer_value=""
 )
 
 # 練題20
 graphical_question2(
-    page_number=12,
-    question_image_path="new_folder/羅桑二氏 (2).png",
-    option_image_path="new_folder/羅桑二氏選項 (2).png",
-    radio_key="q_graphical_10",
-    answer_value="4"
+    page_number=22,
+    question_image_path="new_folder/羅桑二氏 (4).png",
+    option_image_path="new_folder/羅桑二氏選項 (4).png",
+    radio_key="q_graphical_20",
+    answer_value=""
 )
 
 # 頁面 13：練習結束後，進入過渡動畫（進度條）
@@ -1064,6 +1064,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
