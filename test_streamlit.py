@@ -226,7 +226,7 @@ graphical_question(
 # 練題2
 graphical_question(
     page_number=4,
-    question_image_path="new_folder/高級圖形二(19).png",
+    question_image_path="new_folder/高級圖形二 (19).png",
     option_image_path="new_folder/高級圖形二選項 (19).png",
     answer_value=""
 )
@@ -472,7 +472,7 @@ graphical_question(
 # 練題32
 graphical_question(
     page_number=34,
-    question_image_path="new_folder/高級圖形二(26).png",
+    question_image_path="new_folder/高級圖形二 (26).png",
     option_image_path="new_folder/高級圖形二選項 (26).png",
     answer_value=""
 )
@@ -554,7 +554,7 @@ graphical_question(
 # 練題42
 graphical_question(
     page_number=44,
-    question_image_path="new_folder/高級圖形二(29).png",
+    question_image_path="new_folder/高級圖形二 (29).png",
     option_image_path="new_folder/高級圖形二選項 (29).png",
     answer_value=""
 )
@@ -800,7 +800,7 @@ graphical_question(
 # 練題72
 graphical_question(
     page_number=74,
-    question_image_path="new_folder/高級圖形二(16).png",
+    question_image_path="new_folder/高級圖形二 (16).png",
     option_image_path="new_folder/高級圖形二選項 (16).png",
     answer_value=""
 )
@@ -882,7 +882,7 @@ graphical_question(
 # 練題82
 graphical_question(
     page_number=84,
-    question_image_path="new_folder/高級圖形二(22).png",
+    question_image_path="new_folder/高級圖形二 (22).png",
     option_image_path="new_folder/高級圖形二選項 (22).png",
     answer_value=""
 )
@@ -964,7 +964,7 @@ graphical_question(
 # 練題92
 graphical_question(
     page_number=94,
-    question_image_path="new_folder/高級圖形二(7).png",
+    question_image_path="new_folder/高級圖形二 (7).png",
     option_image_path="new_folder/高級圖形二選項 (7).png",
     answer_value=""
 )
@@ -1556,5 +1556,6 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
