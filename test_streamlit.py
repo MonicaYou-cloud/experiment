@@ -580,8 +580,8 @@ graphical_question(
 # 練題45
 graphical_question(
     page_number=47,
-    question_image_path="new_folder/區分 (28).png",
-    option_image_path="new_folder/區分選項 (28).png",
+    question_image_path="new_folder/區分 (34).png",
+    option_image_path="new_folder/區分選項 (34).png",
     answer_value=""
 )
 
@@ -662,8 +662,8 @@ graphical_question(
 # 練題55
 graphical_question(
     page_number=57,
-    question_image_path="new_folder/區分 (34).png",
-    option_image_path="new_folder/區分選項 (34).png",
+    question_image_path="new_folder/區分 (36).png",
+    option_image_path="new_folder/區分選項 (36).png",
     answer_value=""
 )
 
@@ -1556,6 +1556,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
