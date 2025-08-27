@@ -211,7 +211,7 @@ def graphical_question(
 
         with col2:
             if st.button("直接進入正式測驗"):
-                st.session_state.page = 13
+                st.session_state.page = 106
                 st.session_state.scroll_to_top = True
                 st.rerun()
     
@@ -1035,8 +1035,8 @@ graphical_question(
     answer_value=""
 )
 
-# 頁面 13：練習結束後，進入過渡動畫（進度條）
-if st.session_state.page == 23:
+# 練習結束後，進入過渡動畫（進度條）
+if st.session_state.page == 103:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -1074,8 +1074,8 @@ if st.session_state.page == 23:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-# 頁面 14：顯示練習花費時間
-if st.session_state.page == 24:
+# 顯示練習花費時間
+if st.session_state.page == 104:
 
     # 顯示練習階段所花時間
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -1094,7 +1094,7 @@ if st.session_state.page == 24:
         st.button("下一頁", on_click=next_page)
 
 # 練習後問卷
-if st.session_state.page == 25:
+if st.session_state.page == 105:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1155,14 +1155,14 @@ if "formal_timer_started" not in st.session_state:
     st.session_state.formal_timer_started = False
 
 # 顯示計時器
-if 22 > st.session_state.page > 16 and st.session_state.formal_timer_started:
+if 106 > st.session_state.page > 112 and st.session_state.formal_timer_started:
     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
     st.markdown(f"⏱️ **正式測驗時間：{minutes:02d} 分 {seconds:02d} 秒**")
 
 # 正式測驗說明
-if st.session_state.page == 16:
+if st.session_state.page == 106:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("此處將放上正式測驗說明")
@@ -1194,14 +1194,14 @@ def question(
                 image1 = Image.open(question_image_path)
                 st.image(image1, caption=f"正式題 {page_number-16}")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片一載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
         
         with col2:
             try:
                 image2 = Image.open(option_image_path)
                 st.image(image2, caption="請選擇您認為的正確圖形")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片二載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
 
         # 顯示選項（置中）
         col1, col2, col3 = st.columns([1, 5, 1])
@@ -1251,14 +1251,14 @@ def question1(
                 image1 = Image.open(question_image_path)
                 st.image(image1, caption=f"正式題 {page_number-16}")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片一載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
         
         with col2:
             try:
                 image2 = Image.open(option_image_path)
                 st.image(image2, caption="請選擇您認為的正確圖形")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片二載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
 
         # 顯示選項（置中）
         col1, col2, col3 = st.columns([1, 2, 1])
@@ -1309,14 +1309,14 @@ def question2(
                 image1 = Image.open(question_image_path)
                 st.image(image1, caption=f"正式題 {page_number-16}")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片一載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
         
         with col2:
             try:
                 image2 = Image.open(option_image_path)
                 st.image(image2, caption="請選擇您認為的正確圖形")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片二載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
 
         # 顯示選項（置中）
         col1, col2, col3 = st.columns([1, 2, 1])
@@ -1351,7 +1351,7 @@ def question2(
 
 # 1
 question(
-    page_number=17,
+    page_number=107,
     question_image_path="高級圖形一 (5).png",
     option_image_path="高級圖形一選項 (5).png",
     radio_key="q_1"
@@ -1359,7 +1359,7 @@ question(
         
 # 2
 question(
-    page_number=18,
+    page_number=108,
     question_image_path="高級圖形二 (5).png",
     option_image_path="高級圖形二選項 (5).png",
     radio_key="q_2"
@@ -1367,7 +1367,7 @@ question(
 
 # 3
 question1(
-    page_number=19,
+    page_number=109,
     question_image_path="區分 (5).png",
     option_image_path="區分選項 (5).png",
     radio_key="q_3",
@@ -1375,7 +1375,7 @@ question1(
 
 # 4
 question2(
-    page_number=20,
+    page_number=110,
     question_image_path="推理思考 (5).png",
     option_image_path="推理思考選項 (5).png",
     radio_key="q_4"
@@ -1383,13 +1383,13 @@ question2(
 
 # 5
 question2(
-    page_number=21,
+    page_number=111,
     question_image_path="羅桑二氏 (5).png",
     option_image_path="羅桑二氏選項 (5).png",
     radio_key="q_5",
 )
 
-if st.session_state.page == 22:
+if st.session_state.page == 112:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -1430,7 +1430,7 @@ if st.session_state.page == 22:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 23:
+if st.session_state.page == 113:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1464,7 +1464,7 @@ if st.session_state.page == 23:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 24:
+if st.session_state.page == 114:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1490,10 +1490,8 @@ if st.session_state.page == 24:
                 st.session_state.page += 1
                 st.rerun()
 
-
-
 # 測驗後問卷
-if st.session_state.page == 25:
+if st.session_state.page == 115:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1539,7 +1537,7 @@ if st.session_state.page == 25:
                 st.rerun()
 
 # debrief
-if st.session_state.page == 26:
+if st.session_state.page == 116:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1554,26 +1552,7 @@ if st.session_state.page == 26:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 27:
+elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
