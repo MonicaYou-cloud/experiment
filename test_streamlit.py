@@ -1192,7 +1192,7 @@ def question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-16}")
+                st.image(image1, caption=f"正式題 {page_number-106}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1249,7 +1249,7 @@ def question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-16}")
+                st.image(image1, caption=f"正式題 {page_number-106}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1307,7 +1307,7 @@ def question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-16}")
+                st.image(image1, caption=f"正式題 {page_number-106}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1556,4 +1556,5 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
