@@ -633,6 +633,190 @@ graphical_question2(
     answer_value=""
 )
 
+# 練題31
+graphical_question(
+    page_number=33,
+    question_image_path="new_folder/高級圖形一 (6).png",
+    option_image_path="new_folder/高級圖形一選項 (6).png",
+    radio_key="q_graphical_31",
+    answer_value=""
+)
+      
+# 練題32
+graphical_question(
+    page_number=34,
+    question_image_path="new_folder/高級圖形二(26).png",
+    option_image_path="new_folder/高級圖形二選項 (26).png",
+    radio_key="q_graphical_32",
+    answer_value=""
+)
+        
+# 練題33
+graphical_question(
+    page_number=35,
+    question_image_path="new_folder/高級圖形二 (13).png",
+    option_image_path="new_folder/高級圖形二選項 (13).png",
+    radio_key="q_graphical_33",
+    answer_value=""
+)
+
+
+# 練題34
+graphical_question(
+    page_number=36,
+    question_image_path="new_folder/高級圖形二 (9).png",
+    option_image_path="new_folder/高級圖形二選項 (9).png",
+    radio_key="q_graphical_34",
+    answer_value=""
+)
+
+
+# 練題35
+graphical_question1(
+    page_number=37,
+    question_image_path="new_folder/區分 (16).png",
+    option_image_path="new_folder/區分選項 (16).png",
+    radio_key="q_graphical_35",
+    answer_value=""
+)
+
+# 練題36
+graphical_question1(
+    page_number=38,
+    question_image_path="new_folder/區分 (31).png",
+    option_image_path="new_folder/區分選項 (31).png",
+    radio_key="q_graphical_36",
+    answer_value=""
+)
+    
+# 練題37
+graphical_question1(
+    page_number=39,
+    question_image_path="new_folder/區分 (26).png",
+    option_image_path="new_folder/區分選項 (26).png",
+    radio_key="q_graphical_37",
+    answer_value=""
+)
+
+# 練題38
+graphical_question2(
+    page_number=40,
+    question_image_path="new_folder/推理思考 (14).png",
+    option_image_path="new_folder/推理思考選項 (14).png",
+    radio_key="q_graphical_38",
+    answer_value=""
+)
+
+# 練題39
+graphical_question2(
+    page_number=41,
+    question_image_path="new_folder/羅桑二氏 (59).png",
+    option_image_path="new_folder/羅桑二氏選項 (59).png",
+    radio_key="q_graphical_39",
+    answer_value=""
+)
+
+# 練題40
+graphical_question2(
+    page_number=42,
+    question_image_path="new_folder/羅桑二氏 (57).png",
+    option_image_path="new_folder/羅桑二氏選項 (57).png",
+    radio_key="q_graphical_40",
+    answer_value=""
+)
+
+# 練題41
+graphical_question(
+    page_number=43,
+    question_image_path="new_folder/高級圖形一 (9).png",
+    option_image_path="new_folder/高級圖形一選項 (9).png",
+    radio_key="q_graphical_41",
+    answer_value=""
+)
+      
+# 練題42
+graphical_question(
+    page_number=44,
+    question_image_path="new_folder/高級圖形二(29).png",
+    option_image_path="new_folder/高級圖形二選項 (29).png",
+    radio_key="q_graphical_42",
+    answer_value=""
+)
+        
+# 練題43
+graphical_question(
+    page_number=45,
+    question_image_path="new_folder/高級圖形二 (34).png",
+    option_image_path="new_folder/高級圖形二選項 (34).png",
+    radio_key="q_graphical_43",
+    answer_value=""
+)
+
+
+# 練題44
+graphical_question(
+    page_number=46,
+    question_image_path="new_folder/高級圖形二 (17).png",
+    option_image_path="new_folder/高級圖形二選項 (17).png",
+    radio_key="q_graphical_44",
+    answer_value=""
+)
+
+
+# 練題45
+graphical_question1(
+    page_number=47,
+    question_image_path="new_folder/區分 (28).png",
+    option_image_path="new_folder/區分選項 (28).png",
+    radio_key="q_graphical_45",
+    answer_value=""
+)
+
+# 練題46
+graphical_question1(
+    page_number=48,
+    question_image_path="new_folder/區分 (1).png",
+    option_image_path="new_folder/區分選項 (1).png",
+    radio_key="q_graphical_46",
+    answer_value=""
+)
+    
+# 練題47
+graphical_question1(
+    page_number=49,
+    question_image_path="new_folder/區分 (9).png",
+    option_image_path="new_folder/區分選項 (9).png",
+    radio_key="q_graphical_47",
+    answer_value=""
+)
+
+# 練題48
+graphical_question2(
+    page_number=50,
+    question_image_path="new_folder/推理思考 (16).png",
+    option_image_path="new_folder/推理思考選項 (16).png",
+    radio_key="q_graphical_48",
+    answer_value=""
+)
+
+# 練題49
+graphical_question2(
+    page_number=51,
+    question_image_path="new_folder/羅桑二氏 (36).png",
+    option_image_path="new_folder/羅桑二氏選項 (36).png",
+    radio_key="q_graphical_49",
+    answer_value=""
+)
+
+# 練題50
+graphical_question2(
+    page_number=52,
+    question_image_path="new_folder/羅桑二氏 (18).png",
+    option_image_path="new_folder/羅桑二氏選項 (18).png",
+    radio_key="q_graphical_50",
+    answer_value=""
+)
+
 # 頁面 13：練習結束後，進入過渡動畫（進度條）
 if st.session_state.page == 23:
     placeholder = st.empty()
@@ -1156,6 +1340,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
