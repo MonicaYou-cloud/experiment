@@ -182,14 +182,14 @@ def graphical_question(
                 image1 = Image.open(question_image_path)
                 st.image(image1, caption=f"練習題 {page_number-2}")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片一載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
         
         with col2:
             try:
                 image2 = Image.open(option_image_path)
                 st.image(image2, caption="請選擇您認為的正確圖形")
             except FileNotFoundError:
-                st.warning("⚠️ 圖片二載入失敗")
+                st.warning("⚠️ 圖片載入失敗")
 
         # 顯示答案
         if st.session_state[f'show_answer_{page_number}']:
@@ -297,833 +297,743 @@ graphical_question(
     answer_value=""
 )
 
-# # 練題11
-# graphical_question(
-#     page_number=13,
-#     question_image_path="new_folder/高級圖形一 (8).png",
-#     option_image_path="new_folder/高級圖形一選項 (8).png",
-#     radio_key="q_graphical_11",
-#     answer_value=""
-# )
+# 練題11
+graphical_question(
+    page_number=13,
+    question_image_path="new_folder/高級圖形一 (8).png",
+    option_image_path="new_folder/高級圖形一選項 (8).png",
+    answer_value=""
+)
       
-# # 練題12
-# graphical_question(
-#     page_number=14,
-#     question_image_path="new_folder/高級圖形二 (28).png",
-#     option_image_path="new_folder/高級圖形二選項 (28).png",
-#     radio_key="q_graphical_12",
-#     answer_value=""
-# )
+# 練題12
+graphical_question(
+    page_number=14,
+    question_image_path="new_folder/高級圖形二 (28).png",
+    option_image_path="new_folder/高級圖形二選項 (28).png",
+    answer_value=""
+)
         
-# # 練題13
-# graphical_question(
-#     page_number=15,
-#     question_image_path="new_folder/高級圖形二 (32).png",
-#     option_image_path="new_folder/高級圖形二選項 (32).png",
-#     radio_key="q_graphical_13",
-#     answer_value=""
-# )
+# 練題13
+graphical_question(
+    page_number=15,
+    question_image_path="new_folder/高級圖形二 (32).png",
+    option_image_path="new_folder/高級圖形二選項 (32).png",
+    answer_value=""
+)
 
 
-# # 練題14
-# graphical_question1(
-#     page_number=16,
-#     question_image_path="new_folder/區分 (17).png",
-#     option_image_path="new_folder/區分選項 (17).png",
-#     radio_key="q_graphical_14",
-#     answer_value=""
-# )
+# 練題14
+graphical_question(
+    page_number=16,
+    question_image_path="new_folder/區分 (17).png",
+    option_image_path="new_folder/區分選項 (17).png",
+    answer_value=""
+)
 
 
-# # 練題15
-# graphical_question1(
-#     page_number=17,
-#     question_image_path="new_folder/區分 (14).png",
-#     option_image_path="new_folder/區分選項 (14).png",
-#     radio_key="q_graphical_15",
-#     answer_value=""
-# )
+# 練題15
+graphical_question(
+    page_number=17,
+    question_image_path="new_folder/區分 (14).png",
+    option_image_path="new_folder/區分選項 (14).png",
+    answer_value=""
+)
 
-# # 練題16
-# graphical_question1(
-#     page_number=18,
-#     question_image_path="new_folder/區分 (12).png",
-#     option_image_path="new_folder/區分選項 (12).png",
-#     radio_key="q_graphical_16",
-#     answer_value=""
-# )
+# 練題16
+graphical_question(
+    page_number=18,
+    question_image_path="new_folder/區分 (12).png",
+    option_image_path="new_folder/區分選項 (12).png",
+    answer_value=""
+)
     
-# # 練題17
-# graphical_question2(
-#     page_number=19,
-#     question_image_path="new_folder/推理思考 (6).png",
-#     option_image_path="new_folder/推理思考選項 (6).png",
-#     radio_key="q_graphical_17",
-#     answer_value=""
-# )
+# 練題17
+graphical_question(
+    page_number=19,
+    question_image_path="new_folder/推理思考 (6).png",
+    option_image_path="new_folder/推理思考選項 (6).png",
+    answer_value=""
+)
 
-# # 練題18
-# graphical_question2(
-#     page_number=20,
-#     question_image_path="new_folder/推理思考 (11).png",
-#     option_image_path="new_folder/推理思考選項 (11).png",
-#     radio_key="q_graphical_18",
-#     answer_value=""
-# )
+# 練題18
+graphical_question(
+    page_number=20,
+    question_image_path="new_folder/推理思考 (11).png",
+    option_image_path="new_folder/推理思考選項 (11).png",
+    answer_value=""
+)
 
-# # 練題19
-# graphical_question2(
-#     page_number=21,
-#     question_image_path="new_folder/羅桑二氏 (3).png",
-#     option_image_path="new_folder/羅桑二氏選項 (3).png",
-#     radio_key="q_graphical_19",
-#     answer_value=""
-# )
+# 練題19
+graphical_question(
+    page_number=21,
+    question_image_path="new_folder/羅桑二氏 (3).png",
+    option_image_path="new_folder/羅桑二氏選項 (3).png",
+    answer_value=""
+)
 
-# # 練題20
-# graphical_question2(
-#     page_number=22,
-#     question_image_path="new_folder/羅桑二氏 (47).png",
-#     option_image_path="new_folder/羅桑二氏選項 (47).png",
-#     radio_key="q_graphical_20",
-#     answer_value=""
-# )
+# 練題20
+graphical_question(
+    page_number=22,
+    question_image_path="new_folder/羅桑二氏 (47).png",
+    option_image_path="new_folder/羅桑二氏選項 (47).png",
+    answer_value=""
+)
 
-# # 練題21
-# graphical_question(
-#     page_number=23,
-#     question_image_path="new_folder/高級圖形一 (2).png",
-#     option_image_path="new_folder/高級圖形一選項 (2).png",
-#     radio_key="q_graphical_21",
-#     answer_value=""
-# )
+# 練題21
+graphical_question(
+    page_number=23,
+    question_image_path="new_folder/高級圖形一 (2).png",
+    option_image_path="new_folder/高級圖形一選項 (2).png",
+    answer_value=""
+)
       
-# # 練題22
-# graphical_question(
-#     page_number=24,
-#     question_image_path="new_folder/高級圖形二 (21).png",
-#     option_image_path="new_folder/高級圖形二選項 (21).png",
-#     radio_key="q_graphical_22",
-#     answer_value=""
-# )
+# 練題22
+graphical_question(
+    page_number=24,
+    question_image_path="new_folder/高級圖形二 (21).png",
+    option_image_path="new_folder/高級圖形二選項 (21).png",
+    answer_value=""
+)
         
-# # 練題23
-# graphical_question(
-#     page_number=25,
-#     question_image_path="new_folder/高級圖形二 (4).png",
-#     option_image_path="new_folder/高級圖形二選項 (4).png",
-#     radio_key="q_graphical_23",
-#     answer_value=""
-# )
+# 練題23
+graphical_question(
+    page_number=25,
+    question_image_path="new_folder/高級圖形二 (4).png",
+    option_image_path="new_folder/高級圖形二選項 (4).png",
+    answer_value=""
+)
 
 
-# # 練題24
-# graphical_question1(
-#     page_number=26,
-#     question_image_path="new_folder/區分 (23).png",
-#     option_image_path="new_folder/區分選項 (23).png",
-#     radio_key="q_graphical_24",
-#     answer_value=""
-# )
+# 練題24
+graphical_question(
+    page_number=26,
+    question_image_path="new_folder/區分 (23).png",
+    option_image_path="new_folder/區分選項 (23).png",
+    answer_value=""
+)
 
 
-# # 練題25
-# graphical_question1(
-#     page_number=27,
-#     question_image_path="new_folder/區分 (32).png",
-#     option_image_path="new_folder/區分選項 (32).png",
-#     radio_key="q_graphical_25",
-#     answer_value=""
-# )
+# 練題25
+graphical_question(
+    page_number=27,
+    question_image_path="new_folder/區分 (32).png",
+    option_image_path="new_folder/區分選項 (32).png",
+    answer_value=""
+)
 
-# # 練題26
-# graphical_question1(
-#     page_number=28,
-#     question_image_path="new_folder/區分 (11).png",
-#     option_image_path="new_folder/區分選項 (11).png",
-#     radio_key="q_graphical_26",
-#     answer_value=""
-# )
+# 練題26
+graphical_question(
+    page_number=28,
+    question_image_path="new_folder/區分 (11).png",
+    option_image_path="new_folder/區分選項 (11).png",
+    answer_value=""
+)
     
-# # 練題27
-# graphical_question2(
-#     page_number=29,
-#     question_image_path="new_folder/推理思考 (12).png",
-#     option_image_path="new_folder/推理思考選項 (12).png",
-#     radio_key="q_graphical_27",
-#     answer_value=""
-# )
+# 練題27
+graphical_question(
+    page_number=29,
+    question_image_path="new_folder/推理思考 (12).png",
+    option_image_path="new_folder/推理思考選項 (12).png",
+    answer_value=""
+)
 
-# # 練題28
-# graphical_question2(
-#     page_number=30,
-#     question_image_path="new_folder/推理思考 (13).png",
-#     option_image_path="new_folder/推理思考選項 (13).png",
-#     radio_key="q_graphical_28",
-#     answer_value=""
-# )
+# 練題28
+graphical_question(
+    page_number=30,
+    question_image_path="new_folder/推理思考 (13).png",
+    option_image_path="new_folder/推理思考選項 (13).png",
+    answer_value=""
+)
 
-# # 練題29
-# graphical_question2(
-#     page_number=31,
-#     question_image_path="new_folder/羅桑二氏 (33).png",
-#     option_image_path="new_folder/羅桑二氏選項 (33).png",
-#     radio_key="q_graphical_29",
-#     answer_value=""
-# )
+# 練題29
+graphical_question(
+    page_number=31,
+    question_image_path="new_folder/羅桑二氏 (33).png",
+    option_image_path="new_folder/羅桑二氏選項 (33).png",
+    answer_value=""
+)
 
-# # 練題30
-# graphical_question2(
-#     page_number=32,
-#     question_image_path="new_folder/羅桑二氏 (54).png",
-#     option_image_path="new_folder/羅桑二氏選項 (54).png",
-#     radio_key="q_graphical_30",
-#     answer_value=""
-# )
+# 練題30
+graphical_question(
+    page_number=32,
+    question_image_path="new_folder/羅桑二氏 (54).png",
+    option_image_path="new_folder/羅桑二氏選項 (54).png",
+    answer_value=""
+)
 
-# # 練題31
-# graphical_question(
-#     page_number=33,
-#     question_image_path="new_folder/高級圖形一 (6).png",
-#     option_image_path="new_folder/高級圖形一選項 (6).png",
-#     radio_key="q_graphical_31",
-#     answer_value=""
-# )
+# 練題31
+graphical_question(
+    page_number=33,
+    question_image_path="new_folder/高級圖形一 (6).png",
+    option_image_path="new_folder/高級圖形一選項 (6).png",
+    answer_value=""
+)
       
-# # 練題32
-# graphical_question(
-#     page_number=34,
-#     question_image_path="new_folder/高級圖形二(26).png",
-#     option_image_path="new_folder/高級圖形二選項 (26).png",
-#     radio_key="q_graphical_32",
-#     answer_value=""
-# )
+# 練題32
+graphical_question(
+    page_number=34,
+    question_image_path="new_folder/高級圖形二(26).png",
+    option_image_path="new_folder/高級圖形二選項 (26).png",
+    answer_value=""
+)
         
-# # 練題33
-# graphical_question(
-#     page_number=35,
-#     question_image_path="new_folder/高級圖形二 (13).png",
-#     option_image_path="new_folder/高級圖形二選項 (13).png",
-#     radio_key="q_graphical_33",
-#     answer_value=""
-# )
+# 練題33
+graphical_question(
+    page_number=35,
+    question_image_path="new_folder/高級圖形二 (13).png",
+    option_image_path="new_folder/高級圖形二選項 (13).png",
+    answer_value=""
+)
 
 
-# # 練題34
-# graphical_question(
-#     page_number=36,
-#     question_image_path="new_folder/高級圖形二 (9).png",
-#     option_image_path="new_folder/高級圖形二選項 (9).png",
-#     radio_key="q_graphical_34",
-#     answer_value=""
-# )
+# 練題34
+graphical_question(
+    page_number=36,
+    question_image_path="new_folder/高級圖形二 (9).png",
+    option_image_path="new_folder/高級圖形二選項 (9).png",
+    answer_value=""
+)
 
 
-# # 練題35
-# graphical_question1(
-#     page_number=37,
-#     question_image_path="new_folder/區分 (16).png",
-#     option_image_path="new_folder/區分選項 (16).png",
-#     radio_key="q_graphical_35",
-#     answer_value=""
-# )
+# 練題35
+graphical_question(
+    page_number=37,
+    question_image_path="new_folder/區分 (16).png",
+    option_image_path="new_folder/區分選項 (16).png",
+    answer_value=""
+)
 
-# # 練題36
-# graphical_question1(
-#     page_number=38,
-#     question_image_path="new_folder/區分 (31).png",
-#     option_image_path="new_folder/區分選項 (31).png",
-#     radio_key="q_graphical_36",
-#     answer_value=""
-# )
+# 練題36
+graphical_question(
+    page_number=38,
+    question_image_path="new_folder/區分 (31).png",
+    option_image_path="new_folder/區分選項 (31).png",
+    answer_value=""
+)
     
-# # 練題37
-# graphical_question1(
-#     page_number=39,
-#     question_image_path="new_folder/區分 (26).png",
-#     option_image_path="new_folder/區分選項 (26).png",
-#     radio_key="q_graphical_37",
-#     answer_value=""
-# )
+# 練題37
+graphical_question(
+    page_number=39,
+    question_image_path="new_folder/區分 (26).png",
+    option_image_path="new_folder/區分選項 (26).png",
+    answer_value=""
+)
 
-# # 練題38
-# graphical_question2(
-#     page_number=40,
-#     question_image_path="new_folder/推理思考 (14).png",
-#     option_image_path="new_folder/推理思考選項 (14).png",
-#     radio_key="q_graphical_38",
-#     answer_value=""
-# )
+# 練題38
+graphical_question(
+    page_number=40,
+    question_image_path="new_folder/推理思考 (14).png",
+    option_image_path="new_folder/推理思考選項 (14).png",
+    answer_value=""
+)
 
-# # 練題39
-# graphical_question2(
-#     page_number=41,
-#     question_image_path="new_folder/羅桑二氏 (59).png",
-#     option_image_path="new_folder/羅桑二氏選項 (59).png",
-#     radio_key="q_graphical_39",
-#     answer_value=""
-# )
+# 練題39
+graphical_question(
+    page_number=41,
+    question_image_path="new_folder/羅桑二氏 (59).png",
+    option_image_path="new_folder/羅桑二氏選項 (59).png",
+    answer_value=""
+)
 
-# # 練題40
-# graphical_question2(
-#     page_number=42,
-#     question_image_path="new_folder/羅桑二氏 (57).png",
-#     option_image_path="new_folder/羅桑二氏選項 (57).png",
-#     radio_key="q_graphical_40",
-#     answer_value=""
-# )
+# 練題40
+graphical_question(
+    page_number=42,
+    question_image_path="new_folder/羅桑二氏 (57).png",
+    option_image_path="new_folder/羅桑二氏選項 (57).png",
+    answer_value=""
+)
 
-# # 練題41
-# graphical_question(
-#     page_number=43,
-#     question_image_path="new_folder/高級圖形一 (9).png",
-#     option_image_path="new_folder/高級圖形一選項 (9).png",
-#     radio_key="q_graphical_41",
-#     answer_value=""
-# )
+# 練題41
+graphical_question(
+    page_number=43,
+    question_image_path="new_folder/高級圖形一 (9).png",
+    option_image_path="new_folder/高級圖形一選項 (9).png",
+    answer_value=""
+)
       
-# # 練題42
-# graphical_question(
-#     page_number=44,
-#     question_image_path="new_folder/高級圖形二(29).png",
-#     option_image_path="new_folder/高級圖形二選項 (29).png",
-#     radio_key="q_graphical_42",
-#     answer_value=""
-# )
+# 練題42
+graphical_question(
+    page_number=44,
+    question_image_path="new_folder/高級圖形二(29).png",
+    option_image_path="new_folder/高級圖形二選項 (29).png",
+    answer_value=""
+)
         
-# # 練題43
-# graphical_question(
-#     page_number=45,
-#     question_image_path="new_folder/高級圖形二 (34).png",
-#     option_image_path="new_folder/高級圖形二選項 (34).png",
-#     radio_key="q_graphical_43",
-#     answer_value=""
-# )
+# 練題43
+graphical_question(
+    page_number=45,
+    question_image_path="new_folder/高級圖形二 (34).png",
+    option_image_path="new_folder/高級圖形二選項 (34).png",
+    answer_value=""
+)
 
 
-# # 練題44
-# graphical_question(
-#     page_number=46,
-#     question_image_path="new_folder/高級圖形二 (17).png",
-#     option_image_path="new_folder/高級圖形二選項 (17).png",
-#     radio_key="q_graphical_44",
-#     answer_value=""
-# )
+# 練題44
+graphical_question(
+    page_number=46,
+    question_image_path="new_folder/高級圖形二 (17).png",
+    option_image_path="new_folder/高級圖形二選項 (17).png",
+    answer_value=""
+)
 
 
-# # 練題45
-# graphical_question1(
-#     page_number=47,
-#     question_image_path="new_folder/區分 (28).png",
-#     option_image_path="new_folder/區分選項 (28).png",
-#     radio_key="q_graphical_45",
-#     answer_value=""
-# )
+# 練題45
+graphical_question(
+    page_number=47,
+    question_image_path="new_folder/區分 (28).png",
+    option_image_path="new_folder/區分選項 (28).png",
+    answer_value=""
+)
 
-# # 練題46
-# graphical_question1(
-#     page_number=48,
-#     question_image_path="new_folder/區分 (1).png",
-#     option_image_path="new_folder/區分選項 (1).png",
-#     radio_key="q_graphical_46",
-#     answer_value=""
-# )
+# 練題46
+graphical_question(
+    page_number=48,
+    question_image_path="new_folder/區分 (1).png",
+    option_image_path="new_folder/區分選項 (1).png",
+    answer_value=""
+)
     
-# # 練題47
-# graphical_question1(
-#     page_number=49,
-#     question_image_path="new_folder/區分 (9).png",
-#     option_image_path="new_folder/區分選項 (9).png",
-#     radio_key="q_graphical_47",
-#     answer_value=""
-# )
+# 練題47
+graphical_question(
+    page_number=49,
+    question_image_path="new_folder/區分 (9).png",
+    option_image_path="new_folder/區分選項 (9).png",
+    answer_value=""
+)
 
-# # 練題48
-# graphical_question2(
-#     page_number=50,
-#     question_image_path="new_folder/推理思考 (16).png",
-#     option_image_path="new_folder/推理思考選項 (16).png",
-#     radio_key="q_graphical_48",
-#     answer_value=""
-# )
+# 練題48
+graphical_question(
+    page_number=50,
+    question_image_path="new_folder/推理思考 (16).png",
+    option_image_path="new_folder/推理思考選項 (16).png",
+    answer_value=""
+)
 
-# # 練題49
-# graphical_question2(
-#     page_number=51,
-#     question_image_path="new_folder/羅桑二氏 (36).png",
-#     option_image_path="new_folder/羅桑二氏選項 (36).png",
-#     radio_key="q_graphical_49",
-#     answer_value=""
-# )
+# 練題49
+graphical_question(
+    page_number=51,
+    question_image_path="new_folder/羅桑二氏 (36).png",
+    option_image_path="new_folder/羅桑二氏選項 (36).png",
+    answer_value=""
+)
 
-# # 練題50
-# graphical_question2(
-#     page_number=52,
-#     question_image_path="new_folder/羅桑二氏 (18).png",
-#     option_image_path="new_folder/羅桑二氏選項 (18).png",
-#     radio_key="q_graphical_50",
-#     answer_value=""
-# )
+# 練題50
+graphical_question(
+    page_number=52,
+    question_image_path="new_folder/羅桑二氏 (18).png",
+    option_image_path="new_folder/羅桑二氏選項 (18).png",
+    answer_value=""
+)
 
-# # 練題51
-# graphical_question(
-#     page_number=53,
-#     question_image_path="new_folder/高級圖形一 (1).png",
-#     option_image_path="new_folder/高級圖形一選項 (1).png",
-#     radio_key="q_graphical_51",
-#     answer_value=""
-# )
+# 練題51
+graphical_question(
+    page_number=53,
+    question_image_path="new_folder/高級圖形一 (1).png",
+    option_image_path="new_folder/高級圖形一選項 (1).png",
+    answer_value=""
+)
       
-# # 練題52
-# graphical_question(
-#     page_number=54,
-#     question_image_path="new_folder/高級圖形二 (8).png",
-#     option_image_path="new_folder/高級圖形二選項 (8).png",
-#     radio_key="q_graphical_52",
-#     answer_value=""
-# )
+# 練題52
+graphical_question(
+    page_number=54,
+    question_image_path="new_folder/高級圖形二 (8).png",
+    option_image_path="new_folder/高級圖形二選項 (8).png",
+    answer_value=""
+)
         
-# # 練題53
-# graphical_question(
-#     page_number=55,
-#     question_image_path="new_folder/高級圖形二 (33).png",
-#     option_image_path="new_folder/高級圖形二選項 (33).png",
-#     radio_key="q_graphical_53",
-#     answer_value=""
-# )
+# 練題53
+graphical_question(
+    page_number=55,
+    question_image_path="new_folder/高級圖形二 (33).png",
+    option_image_path="new_folder/高級圖形二選項 (33).png",
+    answer_value=""
+)
 
 
-# # 練題54
-# graphical_question1(
-#     page_number=56,
-#     question_image_path="new_folder/區分 (3).png",
-#     option_image_path="new_folder/區分選項 (3).png",
-#     radio_key="q_graphical_54",
-#     answer_value=""
-# )
+# 練題54
+graphical_question(
+    page_number=56,
+    question_image_path="new_folder/區分 (3).png",
+    option_image_path="new_folder/區分選項 (3).png",
+    answer_value=""
+)
 
 
-# # 練題55
-# graphical_question1(
-#     page_number=57,
-#     question_image_path="new_folder/區分 (34).png",
-#     option_image_path="new_folder/區分選項 (34).png",
-#     radio_key="q_graphical_55",
-#     answer_value=""
-# )
+# 練題55
+graphical_question(
+    page_number=57,
+    question_image_path="new_folder/區分 (34).png",
+    option_image_path="new_folder/區分選項 (34).png",
+    answer_value=""
+)
 
-# # 練題56
-# graphical_question1(
-#     page_number=58,
-#     question_image_path="new_folder/區分 (22).png",
-#     option_image_path="new_folder/區分選項 (22).png",
-#     radio_key="q_graphical_56",
-#     answer_value=""
-# )
+# 練題56
+graphical_question(
+    page_number=58,
+    question_image_path="new_folder/區分 (22).png",
+    option_image_path="new_folder/區分選項 (22).png",
+    answer_value=""
+)
     
-# # 練題57
-# graphical_question2(
-#     page_number=59,
-#     question_image_path="new_folder/推理思考 (18).png",
-#     option_image_path="new_folder/推理思考選項 (18).png",
-#     radio_key="q_graphical_57",
-#     answer_value=""
-# )
+# 練題57
+graphical_question(
+    page_number=59,
+    question_image_path="new_folder/推理思考 (18).png",
+    option_image_path="new_folder/推理思考選項 (18).png",
+    answer_value=""
+)
 
-# # 練題58
-# graphical_question2(
-#     page_number=60,
-#     question_image_path="new_folder/推理思考 (3).png",
-#     option_image_path="new_folder/推理思考選項 (3).png",
-#     radio_key="q_graphical_58",
-#     answer_value=""
-# )
+# 練題58
+graphical_question(
+    page_number=60,
+    question_image_path="new_folder/推理思考 (3).png",
+    option_image_path="new_folder/推理思考選項 (3).png",
+    answer_value=""
+)
 
-# # 練題59
-# graphical_question2(
-#     page_number=61,
-#     question_image_path="new_folder/羅桑二氏 (19).png",
-#     option_image_path="new_folder/羅桑二氏選項 (19).png",
-#     radio_key="q_graphical_59",
-#     answer_value=""
-# )
+# 練題59
+graphical_question(
+    page_number=61,
+    question_image_path="new_folder/羅桑二氏 (19).png",
+    option_image_path="new_folder/羅桑二氏選項 (19).png",
+    answer_value=""
+)
 
-# # 練題60
-# graphical_question2(
-#     page_number=62,
-#     question_image_path="new_folder/羅桑二氏 (45).png",
-#     option_image_path="new_folder/羅桑二氏選項 (45).png",
-#     radio_key="q_graphical_60",
-#     answer_value=""
-# )
+# 練題60
+graphical_question(
+    page_number=62,
+    question_image_path="new_folder/羅桑二氏 (45).png",
+    option_image_path="new_folder/羅桑二氏選項 (45).png",
+    answer_value=""
+)
 
-# # 練題61
-# graphical_question(
-#     page_number=63,
-#     question_image_path="new_folder/高級圖形一 (12).png",
-#     option_image_path="new_folder/高級圖形一選項 (12).png",
-#     radio_key="q_graphical_61",
-#     answer_value=""
-# )
+# 練題61
+graphical_question(
+    page_number=63,
+    question_image_path="new_folder/高級圖形一 (12).png",
+    option_image_path="new_folder/高級圖形一選項 (12).png",
+    answer_value=""
+)
       
-# # 練題62
-# graphical_question(
-#     page_number=64,
-#     question_image_path="new_folder/高級圖形二 (14).png",
-#     option_image_path="new_folder/高級圖形二選項 (14).png",
-#     radio_key="q_graphical_62",
-#     answer_value=""
-# )
+# 練題62
+graphical_question(
+    page_number=64,
+    question_image_path="new_folder/高級圖形二 (14).png",
+    option_image_path="new_folder/高級圖形二選項 (14).png",
+    answer_value=""
+)
         
-# # 練題63
-# graphical_question(
-#     page_number=65,
-#     question_image_path="new_folder/高級圖形二 (27).png",
-#     option_image_path="new_folder/高級圖形二選項 (27).png",
-#     radio_key="q_graphical_63",
-#     answer_value=""
-# )
+# 練題63
+graphical_question(
+    page_number=65,
+    question_image_path="new_folder/高級圖形二 (27).png",
+    option_image_path="new_folder/高級圖形二選項 (27).png",
+    answer_value=""
+)
 
 
-# # 練題64
-# graphical_question1(
-#     page_number=66,
-#     question_image_path="new_folder/區分 (33).png",
-#     option_image_path="new_folder/區分選項 (33).png",
-#     radio_key="q_graphical_64",
-#     answer_value=""
-# )
+# 練題64
+graphical_question(
+    page_number=66,
+    question_image_path="new_folder/區分 (33).png",
+    option_image_path="new_folder/區分選項 (33).png",
+    answer_value=""
+)
 
 
-# # 練題65
-# graphical_question1(
-#     page_number=67,
-#     question_image_path="new_folder/區分 (2).png",
-#     option_image_path="new_folder/區分選項 (2).png",
-#     radio_key="q_graphical_65",
-#     answer_value=""
-# )
+# 練題65
+graphical_question(
+    page_number=67,
+    question_image_path="new_folder/區分 (2).png",
+    option_image_path="new_folder/區分選項 (2).png",
+    answer_value=""
+)
 
-# # 練題66
-# graphical_question1(
-#     page_number=68,
-#     question_image_path="new_folder/區分 (6).png",
-#     option_image_path="new_folder/區分選項 (6).png",
-#     radio_key="q_graphical_66",
-#     answer_value=""
-# )
+# 練題66
+graphical_question(
+    page_number=68,
+    question_image_path="new_folder/區分 (6).png",
+    option_image_path="new_folder/區分選項 (6).png",
+    answer_value=""
+)
     
-# # 練題67
-# graphical_question2(
-#     page_number=69,
-#     question_image_path="new_folder/推理思考 (19).png",
-#     option_image_path="new_folder/推理思考選項 (19).png",
-#     radio_key="q_graphical_67",
-#     answer_value=""
-# )
+# 練題67
+graphical_question(
+    page_number=69,
+    question_image_path="new_folder/推理思考 (19).png",
+    option_image_path="new_folder/推理思考選項 (19).png",
+    answer_value=""
+)
 
-# # 練題68
-# graphical_question2(
-#     page_number=70,
-#     question_image_path="new_folder/推理思考 (4).png",
-#     option_image_path="new_folder/推理思考選項 (4).png",
-#     radio_key="q_graphical_68",
-#     answer_value=""
-# )
+# 練題68
+graphical_question(
+    page_number=70,
+    question_image_path="new_folder/推理思考 (4).png",
+    option_image_path="new_folder/推理思考選項 (4).png",
+    answer_value=""
+)
 
-# # 練題69
-# graphical_question2(
-#     page_number=71,
-#     question_image_path="new_folder/羅桑二氏 (44).png",
-#     option_image_path="new_folder/羅桑二氏選項 (44).png",
-#     radio_key="q_graphical_69",
-#     answer_value=""
-# )
+# 練題69
+graphical_question(
+    page_number=71,
+    question_image_path="new_folder/羅桑二氏 (44).png",
+    option_image_path="new_folder/羅桑二氏選項 (44).png",
+    answer_value=""
+)
 
-# # 練題70
-# graphical_question2(
-#     page_number=72,
-#     question_image_path="new_folder/羅桑二氏 (8).png",
-#     option_image_path="new_folder/羅桑二氏選項 (8).png",
-#     radio_key="q_graphical_70",
-#     answer_value=""
-# )
+# 練題70
+graphical_question(
+    page_number=72,
+    question_image_path="new_folder/羅桑二氏 (8).png",
+    option_image_path="new_folder/羅桑二氏選項 (8).png",
+    answer_value=""
+)
 
-# # 練題71
-# graphical_question(
-#     page_number=73,
-#     question_image_path="new_folder/高級圖形一 (11).png",
-#     option_image_path="new_folder/高級圖形一選項 (11).png",
-#     radio_key="q_graphical_71",
-#     answer_value=""
-# )
+# 練題71
+graphical_question(
+    page_number=73,
+    question_image_path="new_folder/高級圖形一 (11).png",
+    option_image_path="new_folder/高級圖形一選項 (11).png",
+    answer_value=""
+)
       
-# # 練題72
-# graphical_question(
-#     page_number=74,
-#     question_image_path="new_folder/高級圖形二(16).png",
-#     option_image_path="new_folder/高級圖形二選項 (16).png",
-#     radio_key="q_graphical_72",
-#     answer_value=""
-# )
+# 練題72
+graphical_question(
+    page_number=74,
+    question_image_path="new_folder/高級圖形二(16).png",
+    option_image_path="new_folder/高級圖形二選項 (16).png",
+    answer_value=""
+)
         
-# # 練題73
-# graphical_question(
-#     page_number=75,
-#     question_image_path="new_folder/高級圖形二 (31).png",
-#     option_image_path="new_folder/高級圖形二選項 (31).png",
-#     radio_key="q_graphical_73",
-#     answer_value=""
-# )
+# 練題73
+graphical_question(
+    page_number=75,
+    question_image_path="new_folder/高級圖形二 (31).png",
+    option_image_path="new_folder/高級圖形二選項 (31).png",
+    answer_value=""
+)
 
 
-# # 練題74
-# graphical_question(
-#     page_number=76,
-#     question_image_path="new_folder/高級圖形二 (12).png",
-#     option_image_path="new_folder/高級圖形二選項 (12).png",
-#     radio_key="q_graphical_74",
-#     answer_value=""
-# )
+# 練題74
+graphical_question(
+    page_number=76,
+    question_image_path="new_folder/高級圖形二 (12).png",
+    option_image_path="new_folder/高級圖形二選項 (12).png",
+    answer_value=""
+)
 
 
-# # 練題75
-# graphical_question1(
-#     page_number=77,
-#     question_image_path="new_folder/區分 (39).png",
-#     option_image_path="new_folder/區分選項 (39).png",
-#     radio_key="q_graphical_75",
-#     answer_value=""
-# )
+# 練題75
+graphical_question(
+    page_number=77,
+    question_image_path="new_folder/區分 (39).png",
+    option_image_path="new_folder/區分選項 (39).png",
+    answer_value=""
+)
 
-# # 練題76
-# graphical_question1(
-#     page_number=78,
-#     question_image_path="new_folder/區分 (19).png",
-#     option_image_path="new_folder/區分選項 (19).png",
-#     radio_key="q_graphical_76",
-#     answer_value=""
-# )
+# 練題76
+graphical_question(
+    page_number=78,
+    question_image_path="new_folder/區分 (19).png",
+    option_image_path="new_folder/區分選項 (19).png",
+    answer_value=""
+)
     
-# # 練題77
-# graphical_question1(
-#     page_number=79,
-#     question_image_path="new_folder/區分 (29).png",
-#     option_image_path="new_folder/區分選項 (29).png",
-#     radio_key="q_graphical_77",
-#     answer_value=""
-# )
+# 練題77
+graphical_question(
+    page_number=79,
+    question_image_path="new_folder/區分 (29).png",
+    option_image_path="new_folder/區分選項 (29).png",
+    answer_value=""
+)
 
-# # 練題78
-# graphical_question2(
-#     page_number=80,
-#     question_image_path="new_folder/推理思考 (17).png",
-#     option_image_path="new_folder/推理思考選項 (17).png",
-#     radio_key="q_graphical_78",
-#     answer_value=""
-# )
+# 練題78
+graphical_question(
+    page_number=80,
+    question_image_path="new_folder/推理思考 (17).png",
+    option_image_path="new_folder/推理思考選項 (17).png",
+    answer_value=""
+)
 
-# # 練題79
-# graphical_question2(
-#     page_number=81,
-#     question_image_path="new_folder/羅桑二氏 (7).png",
-#     option_image_path="new_folder/羅桑二氏選項 (7).png",
-#     radio_key="q_graphical_79",
-#     answer_value=""
-# )
+# 練題79
+graphical_question(
+    page_number=81,
+    question_image_path="new_folder/羅桑二氏 (7).png",
+    option_image_path="new_folder/羅桑二氏選項 (7).png",
+    answer_value=""
+)
 
-# # 練題80
-# graphical_question2(
-#     page_number=82,
-#     question_image_path="new_folder/羅桑二氏 (56).png",
-#     option_image_path="new_folder/羅桑二氏選項 (56).png",
-#     radio_key="q_graphical_80",
-#     answer_value=""
-# )
+# 練題80
+graphical_question(
+    page_number=82,
+    question_image_path="new_folder/羅桑二氏 (56).png",
+    option_image_path="new_folder/羅桑二氏選項 (56).png",
+    answer_value=""
+)
 
-# # 練題81
-# graphical_question(
-#     page_number=83,
-#     question_image_path="new_folder/高級圖形一 (7).png",
-#     option_image_path="new_folder/高級圖形一選項 (7).png",
-#     radio_key="q_graphical_81",
-#     answer_value=""
-# )
+# 練題81
+graphical_question(
+    page_number=83,
+    question_image_path="new_folder/高級圖形一 (7).png",
+    option_image_path="new_folder/高級圖形一選項 (7).png",
+    answer_value=""
+)
       
-# # 練題82
-# graphical_question(
-#     page_number=84,
-#     question_image_path="new_folder/高級圖形二(22).png",
-#     option_image_path="new_folder/高級圖形二選項 (22).png",
-#     radio_key="q_graphical_82",
-#     answer_value=""
-# )
+# 練題82
+graphical_question(
+    page_number=84,
+    question_image_path="new_folder/高級圖形二(22).png",
+    option_image_path="new_folder/高級圖形二選項 (22).png",
+    answer_value=""
+)
         
-# # 練題83
-# graphical_question(
-#     page_number=85,
-#     question_image_path="new_folder/高級圖形二 (36).png",
-#     option_image_path="new_folder/高級圖形二選項 (36).png",
-#     radio_key="q_graphical_83",
-#     answer_value=""
-# )
+# 練題83
+graphical_question(
+    page_number=85,
+    question_image_path="new_folder/高級圖形二 (36).png",
+    option_image_path="new_folder/高級圖形二選項 (36).png",
+    answer_value=""
+)
 
 
-# # 練題84
-# graphical_question(
-#     page_number=86,
-#     question_image_path="new_folder/高級圖形二 (24).png",
-#     option_image_path="new_folder/高級圖形二選項 (24).png",
-#     radio_key="q_graphical_84",
-#     answer_value=""
-# )
+# 練題84
+graphical_question(
+    page_number=86,
+    question_image_path="new_folder/高級圖形二 (24).png",
+    option_image_path="new_folder/高級圖形二選項 (24).png",
+    answer_value=""
+)
 
 
-# # 練題85
-# graphical_question1(
-#     page_number=87,
-#     question_image_path="new_folder/區分 (37).png",
-#     option_image_path="new_folder/區分選項 (37).png",
-#     radio_key="q_graphical_85",
-#     answer_value=""
-# )
+# 練題85
+graphical_question(
+    page_number=87,
+    question_image_path="new_folder/區分 (37).png",
+    option_image_path="new_folder/區分選項 (37).png",
+    answer_value=""
+)
 
-# # 練題86
-# graphical_question1(
-#     page_number=88,
-#     question_image_path="new_folder/區分 (21).png",
-#     option_image_path="new_folder/區分選項 (21).png",
-#     radio_key="q_graphical_86",
-#     answer_value=""
-# )
+# 練題86
+graphical_question(
+    page_number=88,
+    question_image_path="new_folder/區分 (21).png",
+    option_image_path="new_folder/區分選項 (21).png",
+    answer_value=""
+)
     
-# # 練題87
-# graphical_question1(
-#     page_number=89,
-#     question_image_path="new_folder/區分 (13).png",
-#     option_image_path="new_folder/區分選項 (13).png",
-#     radio_key="q_graphical_87",
-#     answer_value=""
-# )
+# 練題87
+graphical_question(
+    page_number=89,
+    question_image_path="new_folder/區分 (13).png",
+    option_image_path="new_folder/區分選項 (13).png",
+    answer_value=""
+)
 
-# # 練題88
-# graphical_question2(
-#     page_number=90,
-#     question_image_path="new_folder/推理思考 (1).png",
-#     option_image_path="new_folder/推理思考選項 (1).png",
-#     radio_key="q_graphical_88",
-#     answer_value=""
-# )
+# 練題88
+graphical_question(
+    page_number=90,
+    question_image_path="new_folder/推理思考 (1).png",
+    option_image_path="new_folder/推理思考選項 (1).png",
+    answer_value=""
+)
 
-# # 練題89
-# graphical_question2(
-#     page_number=91,
-#     question_image_path="new_folder/羅桑二氏 (24).png",
-#     option_image_path="new_folder/羅桑二氏選項 (24).png",
-#     radio_key="q_graphical_89",
-#     answer_value=""
-# )
+# 練題89
+graphical_question(
+    page_number=91,
+    question_image_path="new_folder/羅桑二氏 (24).png",
+    option_image_path="new_folder/羅桑二氏選項 (24).png",
+    answer_value=""
+)
 
-# # 練題90
-# graphical_question2(
-#     page_number=92,
-#     question_image_path="new_folder/羅桑二氏 (31).png",
-#     option_image_path="new_folder/羅桑二氏選項 (31).png",
-#     radio_key="q_graphical_90",
-#     answer_value=""
-# )
+# 練題90
+graphical_question(
+    page_number=92,
+    question_image_path="new_folder/羅桑二氏 (31).png",
+    option_image_path="new_folder/羅桑二氏選項 (31).png",
+    answer_value=""
+)
 
-# # 練題91
-# graphical_question(
-#     page_number=93,
-#     question_image_path="new_folder/高級圖形一 (4).png",
-#     option_image_path="new_folder/高級圖形一選項 (4).png",
-#     radio_key="q_graphical_91",
-#     answer_value=""
-# )
+# 練題91
+graphical_question(
+    page_number=93,
+    question_image_path="new_folder/高級圖形一 (4).png",
+    option_image_path="new_folder/高級圖形一選項 (4).png",
+    answer_value=""
+)
       
-# # 練題92
-# graphical_question(
-#     page_number=94,
-#     question_image_path="new_folder/高級圖形二(7).png",
-#     option_image_path="new_folder/高級圖形二選項 (7).png",
-#     radio_key="q_graphical_92",
-#     answer_value=""
-# )
+# 練題92
+graphical_question(
+    page_number=94,
+    question_image_path="new_folder/高級圖形二(7).png",
+    option_image_path="new_folder/高級圖形二選項 (7).png",
+    answer_value=""
+)
         
-# # 練題93
-# graphical_question(
-#     page_number=95,
-#     question_image_path="new_folder/高級圖形二 (3).png",
-#     option_image_path="new_folder/高級圖形二選項 (3).png",
-#     radio_key="q_graphical_93",
-#     answer_value=""
-# )
+# 練題93
+graphical_question(
+    page_number=95,
+    question_image_path="new_folder/高級圖形二 (3).png",
+    option_image_path="new_folder/高級圖形二選項 (3).png",
+    answer_value=""
+)
 
 
-# # 練題94
-# graphical_question(
-#     page_number=96,
-#     question_image_path="new_folder/高級圖形二 (2).png",
-#     option_image_path="new_folder/高級圖形二選項 (2).png",
-#     radio_key="q_graphical_94",
-#     answer_value=""
-# )
+# 練題94
+graphical_question(
+    page_number=96,
+    question_image_path="new_folder/高級圖形二 (2).png",
+    option_image_path="new_folder/高級圖形二選項 (2).png",
+    answer_value=""
+)
 
 
-# # 練題95
-# graphical_question1(
-#     page_number=97,
-#     question_image_path="new_folder/區分 (38).png",
-#     option_image_path="new_folder/區分選項 (38).png",
-#     radio_key="q_graphical_95",
-#     answer_value=""
-# )
+# 練題95
+graphical_question(
+    page_number=97,
+    question_image_path="new_folder/區分 (38).png",
+    option_image_path="new_folder/區分選項 (38).png",
+    answer_value=""
+)
 
-# # 練題96
-# graphical_question1(
-#     page_number=98,
-#     question_image_path="new_folder/區分 (8).png",
-#     option_image_path="new_folder/區分選項 (8).png",
-#     radio_key="q_graphical_96",
-#     answer_value=""
-# )
+# 練題96
+graphical_question(
+    page_number=98,
+    question_image_path="new_folder/區分 (8).png",
+    option_image_path="new_folder/區分選項 (8).png",
+    answer_value=""
+)
     
-# # 練題97
-# graphical_question1(
-#     page_number=99,
-#     question_image_path="new_folder/區分 (7).png",
-#     option_image_path="new_folder/區分選項 (7).png",
-#     radio_key="q_graphical_97",
-#     answer_value=""
-# )
+# 練題97
+graphical_question(
+    page_number=99,
+    question_image_path="new_folder/區分 (7).png",
+    option_image_path="new_folder/區分選項 (7).png",
+    answer_value=""
+)
 
-# # 練題98
-# graphical_question2(
-#     page_number=100,
-#     question_image_path="new_folder/推理思考 (9).png",
-#     option_image_path="new_folder/推理思考選項 (9).png",
-#     radio_key="q_graphical_98",
-#     answer_value=""
-# )
+# 練題98
+graphical_question(
+    page_number=100,
+    question_image_path="new_folder/推理思考 (9).png",
+    option_image_path="new_folder/推理思考選項 (9).png",
+    answer_value=""
+)
 
-# # 練題99
-# graphical_question2(
-#     page_number=101,
-#     question_image_path="new_folder/羅桑二氏 (58).png",
-#     option_image_path="new_folder/羅桑二氏選項 (58).png",
-#     radio_key="q_graphical_99",
-#     answer_value=""
-# )
+# 練題99
+graphical_question(
+    page_number=101,
+    question_image_path="new_folder/羅桑二氏 (58).png",
+    option_image_path="new_folder/羅桑二氏選項 (58).png",
+    answer_value=""
+)
 
-# # 練題100
-# graphical_question2(
-#     page_number=102,
-#     question_image_path="new_folder/羅桑二氏 (34).png",
-#     option_image_path="new_folder/羅桑二氏選項 (34).png",
-#     radio_key="q_graphical_100",
-#     answer_value=""
-# )
+# 練題100
+graphical_question(
+    page_number=102,
+    question_image_path="new_folder/羅桑二氏 (34).png",
+    option_image_path="new_folder/羅桑二氏選項 (34).png",
+    answer_value=""
+)
 
 # 頁面 13：練習結束後，進入過渡動畫（進度條）
 if st.session_state.page == 23:
@@ -1648,6 +1558,7 @@ elif st.session_state.page == 27:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
