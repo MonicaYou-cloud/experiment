@@ -134,7 +134,7 @@ elif st.session_state.page == 1:
     important1 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important1")
     st.write("對您來說，分析思考能力有多重要？")
     important2 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important2")
-    st.write("對您來說，圖形理解能力有多重要？"")
+    st.write("對您來說，圖形理解能力有多重要？")
     important3 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important3")
     
     st.write("2. 您認為自己的分析思考能力如何？")
@@ -1597,6 +1597,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
