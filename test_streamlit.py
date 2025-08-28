@@ -1122,23 +1122,26 @@ if st.session_state.page == 105:
 
     with col1:
         E1 = st.radio(
-            label=("您覺得自己有多認真對待剛才的練習題？"),
-            label=("（1=非常不認真，6=非常認真）"),
+            label="您覺得自己有多認真對待剛才的練習題？",
             options=["1", "2", "3", "4", "5", "6"],
             key="E1", horizontal=True, index=None
         )
+        st.caption("（1=非常不認真，6=非常認真）")
        
         
         E2 = st.radio(
             label="您覺得自己有多投入於練習階段？",
-            options=["非常不投入", "不投入", "有點不投入", "有點投入", "投入", "非常投入"],
+            options=["1", "2", "3", "4", "5", "6"],
             key="E2", horizontal=True, index=None
         )
+        st.caption("（1=非常不投入，6=非常投入）")
+        
         E3 = st.radio(
             label="您覺得自己在做練習題時有多努力？",
-            options=["非常不努力", "不努力", "有點不努力", "有點努力", "努力", "非常努力"],
+            options=["1", "2", "3", "4", "5", "6"],
             key="E3", horizontal=True, index=None
         )
+        st.caption("（1=非常不努力，6=非常努力）")
 
         if st.session_state.get("warning_message"):
             st.warning(st.session_state.warning_message)
@@ -1569,6 +1572,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
