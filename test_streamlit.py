@@ -1107,6 +1107,16 @@ if st.session_state.page == 105:
     st.header("進入正式測驗前")
     st.markdown("---")
     st.write("（此處將放個人知覺努力程度問題說明）")
+
+    st.markdown("""
+        <style>
+        .stRadio > div {
+            flex-direction: row !important;
+            gap: 20px; /* 調整間距 */
+            flex-wrap: nowrap !important; /* 不允許換行 */
+        }
+        </style>
+    """, unsafe_allow_html=True)
     
     col1, col2 = st.columns([3, 1])
 
@@ -1556,6 +1566,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
