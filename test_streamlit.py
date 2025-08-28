@@ -1164,11 +1164,11 @@ if st.session_state.page == 105:
             st.session_state.get("E3") is None:
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
-        else:
-            st.session_state.warning_message = ""
-            st.session_state.just_entered_page_15 = True
-            st.session_state.page += 1
-            st.rerun()
+            else:
+                st.session_state.warning_message = ""
+                st.session_state.just_entered_page_15 = True
+                st.session_state.page += 1
+                st.rerun()
                 
 # 正式測驗說明
 if st.session_state.page == 106:
@@ -1567,6 +1567,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
