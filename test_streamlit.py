@@ -1539,7 +1539,7 @@ if st.session_state.page == 115:
         st.warning(st.session_state.warning_message)
 
     st.markdown("---")
-    spacer1, btn_col, spacer2 = st.columns([1, 2, 1])
+    spacer1, spacer2, btn_col, spacer3 = st.columns([1, 1, 2, 1])
 
     with btn_col:
         if st.button("完成測驗"):
@@ -1573,37 +1573,3 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
