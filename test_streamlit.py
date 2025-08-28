@@ -1159,11 +1159,16 @@ if st.session_state.page == 105:
 
     with btn_col:
         if st.button("下一頁"):
-            if not st.session_state.get("E1") or \
-            not st.session_state.get("E2") or \
-            not st.session_state.get("E3"):
+            if st.session_state.get("E1") is None or \
+            st.session_state.get("E2") is None or \
+            st.session_state.get("E3") is None:
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
+    else:
+        st.session_state.warning_message = ""
+        st.session_state.just_entered_page_15 = True
+        st.session_state.page += 1
+        st.rerun()
             else:
                 # ✅ 填寫完成，清除錯誤訊息，標記頁面已換
                 st.session_state.warning_message = ""
@@ -1570,5 +1575,6 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
