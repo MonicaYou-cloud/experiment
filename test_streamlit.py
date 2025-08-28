@@ -123,13 +123,19 @@ elif st.session_state.page == 1:
     st.write("9. 我對自己抱持正面的態度。")
     self_esteem9 = st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="self_esteem9")
     st.write("10. 整體來說，我對自己感到滿意。")
-    self_esteem10 = st.radio("（１=非常不同意，６=非常同意）", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="self_esteem10")
-    mindset1 = st.radio("人的聰明程度是固定的，無論做什麼都不能改變。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset1")
-    mindset2 = st.radio("人可以學新的東西，但沒有辦法真正改變自己原本的聰明程度。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset2")
-    mindset3 = st.radio("一個人有多聰明是他不太能夠改變的。", ["非常不同意", "不同意", "有點不同意", "有點同意", "同意", "非常同意"], index=None, key="mindset3")
-    important1 = st.radio("對您來說，邏輯推理能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important1")
-    important2 = st.radio("對您來說，分析思考能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important2")
-    important3 = st.radio("對您來說，圖形理解能力是否重要？", ["非常不重要", "不重要", "有點不重要", "有點重要", "重要", "非常重要"], index=None, key="important3")
+    self_esteem10 = st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="self_esteem10")
+    st.write("人的聰明程度是固定的，無論做什麼都不能改變。")
+    mindset1 = st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="mindset1")
+    st.write("人可以學新的東西，但沒有辦法真正改變自己原本的聰明程度。")
+    mindset2 = st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="mindset2")
+    st.write("一個人有多聰明是不能夠改變的。")
+    mindset3 = st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="mindset3")
+    st.write("對您來說，邏輯推理能力有多重要？")
+    important1 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important1")
+    st.write("對您來說，分析思考能力有多重要？")
+    important2 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important2")
+    st.write("對您來說，圖形理解能力有多重要？"")
+    important3 = st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important3")
     
     st.write("2. 您認為自己的分析思考能力如何？")
     E2 = st.radio(
@@ -1591,6 +1597,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
