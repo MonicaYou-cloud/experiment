@@ -1159,9 +1159,6 @@ if st.session_state.page == 105:
             key="E3", horizontal=True, index=None
         )
 
-        if st.session_state.get("warning_message"):
-            st.warning(st.session_state.warning_message)
-
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
 
@@ -1178,21 +1175,7 @@ if st.session_state.page == 105:
                 st.session_state.just_entered_page_15 = True  # 供下一頁使用
                 st.session_state.page += 1
                 st.rerun()
-
-# 正式測驗時間
-if "formal_start_time" not in st.session_state:
-    st.session_state.formal_start_time = None
-
-if "formal_timer_started" not in st.session_state:
-    st.session_state.formal_timer_started = False
-
-# 顯示計時器
-if 106 > st.session_state.page > 112 and st.session_state.formal_timer_started:
-    elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
-    minutes = elapsed_seconds // 60
-    seconds = elapsed_seconds % 60
-    st.markdown(f"⏱️ **正式測驗時間：{minutes:02d} 分 {seconds:02d} 秒**")
-
+                
 # 正式測驗說明
 if st.session_state.page == 106:
     st.header("第二階段：正式測驗")
@@ -1590,20 +1573,3 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
