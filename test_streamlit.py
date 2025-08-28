@@ -1120,6 +1120,18 @@ if st.session_state.page == 105:
     
     col1, col2 = st.columns([3, 1])
 
+    st.markdown(
+    """
+    <style>
+    .tight-caption {
+        margin-top: -10px;  /* 控制 caption 與題目距離 */
+        margin-bottom: -5px; /* 控制 caption 與選項距離 */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+    )
+    
     with col1:
         st.write("您覺得自己有多認真對待剛才的練習題？")
         st.caption("（1=非常不認真，6=非常認真）")
@@ -1572,6 +1584,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
