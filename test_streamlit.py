@@ -1122,7 +1122,7 @@ if st.session_state.page == 105:
 
     with col1:
         st.write("您覺得自己有多認真對待剛才的練習題？")
-         st.caption("（1=非常不認真，6=非常認真）")
+        st.caption("（1=非常不認真，6=非常認真）")
         E1 = st.radio(
             label="",
             options=["1", "2", "3", "4", "5", "6"],
@@ -1572,6 +1572,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
