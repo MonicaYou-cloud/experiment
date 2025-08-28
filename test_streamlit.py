@@ -483,7 +483,7 @@ graphical_question(
     page_number=33,
     question_image_path="new_folder/高級圖形一 (6).png",
     option_image_path="new_folder/高級圖形一選項 (6).png",
-    answer_value=""
+    answer_value="5"
 )
       
 # 練題32
@@ -491,7 +491,7 @@ graphical_question(
     page_number=34,
     question_image_path="new_folder/高級圖形二 (26).png",
     option_image_path="new_folder/高級圖形二選項 (26).png",
-    answer_value=""
+    answer_value="5"
 )
         
 # 練題33
@@ -499,7 +499,7 @@ graphical_question(
     page_number=35,
     question_image_path="new_folder/高級圖形二 (13).png",
     option_image_path="new_folder/高級圖形二選項 (13).png",
-    answer_value=""
+    answer_value="8"
 )
 
 
@@ -508,7 +508,7 @@ graphical_question(
     page_number=36,
     question_image_path="new_folder/高級圖形二 (9).png",
     option_image_path="new_folder/高級圖形二選項 (9).png",
-    answer_value=""
+    answer_value="4"
 )
 
 
@@ -517,7 +517,7 @@ graphical_question(
     page_number=37,
     question_image_path="new_folder/區分 (16).png",
     option_image_path="new_folder/區分選項 (16).png",
-    answer_value=""
+    answer_value="C"
 )
 
 # 練題36
@@ -525,7 +525,7 @@ graphical_question(
     page_number=38,
     question_image_path="new_folder/區分 (31).png",
     option_image_path="new_folder/區分選項 (31).png",
-    answer_value=""
+    answer_value="B"
 )
     
 # 練題37
@@ -533,7 +533,7 @@ graphical_question(
     page_number=39,
     question_image_path="new_folder/區分 (26).png",
     option_image_path="new_folder/區分選項 (26).png",
-    answer_value=""
+    answer_value="E"
 )
 
 # 練題38
@@ -541,7 +541,7 @@ graphical_question(
     page_number=40,
     question_image_path="new_folder/推理思考 (14).png",
     option_image_path="new_folder/推理思考選項 (14).png",
-    answer_value=""
+    answer_value="4"
 )
 
 # 練題39
@@ -549,7 +549,7 @@ graphical_question(
     page_number=41,
     question_image_path="new_folder/羅桑二氏 (59).png",
     option_image_path="new_folder/羅桑二氏選項 (59).png",
-    answer_value=""
+    answer_value="2"
 )
 
 # 練題40
@@ -557,7 +557,7 @@ graphical_question(
     page_number=42,
     question_image_path="new_folder/羅桑二氏 (57).png",
     option_image_path="new_folder/羅桑二氏選項 (57).png",
-    answer_value=""
+    answer_value="4"
 )
 
 # 練題41
@@ -565,7 +565,7 @@ graphical_question(
     page_number=43,
     question_image_path="new_folder/高級圖形一 (9).png",
     option_image_path="new_folder/高級圖形一選項 (9).png",
-    answer_value=""
+    answer_value="7"
 )
       
 # 練題42
@@ -573,7 +573,7 @@ graphical_question(
     page_number=44,
     question_image_path="new_folder/高級圖形二 (29).png",
     option_image_path="new_folder/高級圖形二選項 (29).png",
-    answer_value=""
+    answer_value="2"
 )
         
 # 練題43
@@ -581,7 +581,7 @@ graphical_question(
     page_number=45,
     question_image_path="new_folder/高級圖形二 (34).png",
     option_image_path="new_folder/高級圖形二選項 (34).png",
-    answer_value=""
+    answer_value="3"
 )
 
 
@@ -590,7 +590,7 @@ graphical_question(
     page_number=46,
     question_image_path="new_folder/高級圖形二 (17).png",
     option_image_path="new_folder/高級圖形二選項 (17).png",
-    answer_value=""
+    answer_value="3"
 )
 
 
@@ -599,7 +599,7 @@ graphical_question(
     page_number=47,
     question_image_path="new_folder/區分 (34).png",
     option_image_path="new_folder/區分選項 (34).png",
-    answer_value=""
+    answer_value="E"
 )
 
 # 練題46
@@ -607,7 +607,7 @@ graphical_question(
     page_number=48,
     question_image_path="new_folder/區分 (1).png",
     option_image_path="new_folder/區分選項 (1).png",
-    answer_value=""
+    answer_value="E"
 )
     
 # 練題47
@@ -615,7 +615,7 @@ graphical_question(
     page_number=49,
     question_image_path="new_folder/區分 (9).png",
     option_image_path="new_folder/區分選項 (9).png",
-    answer_value=""
+    answer_value="C"
 )
 
 # 練題48
@@ -623,7 +623,7 @@ graphical_question(
     page_number=50,
     question_image_path="new_folder/推理思考 (16).png",
     option_image_path="new_folder/推理思考選項 (16).png",
-    answer_value=""
+    answer_value="5"
 )
 
 # 練題49
@@ -631,7 +631,7 @@ graphical_question(
     page_number=51,
     question_image_path="new_folder/羅桑二氏 (36).png",
     option_image_path="new_folder/羅桑二氏選項 (36).png",
-    answer_value=""
+    answer_value="3"
 )
 
 # 練題50
@@ -639,7 +639,7 @@ graphical_question(
     page_number=52,
     question_image_path="new_folder/羅桑二氏 (18).png",
     option_image_path="new_folder/羅桑二氏選項 (18).png",
-    answer_value=""
+    answer_value="1"
 )
 
 # 練題51
@@ -647,7 +647,7 @@ graphical_question(
     page_number=53,
     question_image_path="new_folder/高級圖形一 (1).png",
     option_image_path="new_folder/高級圖形一選項 (1).png",
-    answer_value=""
+    answer_value="8"
 )
       
 # 練題52
@@ -655,7 +655,7 @@ graphical_question(
     page_number=54,
     question_image_path="new_folder/高級圖形二 (8).png",
     option_image_path="new_folder/高級圖形二選項 (8).png",
-    answer_value=""
+    answer_value="2"
 )
         
 # 練題53
@@ -663,7 +663,7 @@ graphical_question(
     page_number=55,
     question_image_path="new_folder/高級圖形二 (33).png",
     option_image_path="new_folder/高級圖形二選項 (33).png",
-    answer_value=""
+    answer_value="4"
 )
 
 
@@ -672,7 +672,7 @@ graphical_question(
     page_number=56,
     question_image_path="new_folder/區分 (3).png",
     option_image_path="new_folder/區分選項 (3).png",
-    answer_value=""
+    answer_value="B"
 )
 
 
@@ -681,7 +681,7 @@ graphical_question(
     page_number=57,
     question_image_path="new_folder/區分 (36).png",
     option_image_path="new_folder/區分選項 (36).png",
-    answer_value=""
+    answer_value="D"
 )
 
 # 練題56
@@ -689,7 +689,7 @@ graphical_question(
     page_number=58,
     question_image_path="new_folder/區分 (22).png",
     option_image_path="new_folder/區分選項 (22).png",
-    answer_value=""
+    answer_value="E"
 )
     
 # 練題57
@@ -697,7 +697,7 @@ graphical_question(
     page_number=59,
     question_image_path="new_folder/推理思考 (18).png",
     option_image_path="new_folder/推理思考選項 (18).png",
-    answer_value=""
+    answer_value="5"
 )
 
 # 練題58
@@ -705,7 +705,7 @@ graphical_question(
     page_number=60,
     question_image_path="new_folder/推理思考 (3).png",
     option_image_path="new_folder/推理思考選項 (3).png",
-    answer_value=""
+    answer_value="3"
 )
 
 # 練題59
@@ -713,7 +713,7 @@ graphical_question(
     page_number=61,
     question_image_path="new_folder/羅桑二氏 (19).png",
     option_image_path="new_folder/羅桑二氏選項 (19).png",
-    answer_value=""
+    answer_value="5"
 )
 
 # 練題60
@@ -721,7 +721,7 @@ graphical_question(
     page_number=62,
     question_image_path="new_folder/羅桑二氏 (45).png",
     option_image_path="new_folder/羅桑二氏選項 (45).png",
-    answer_value=""
+    answer_value="3"
 )
 
 # 練題61
@@ -1576,6 +1576,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
