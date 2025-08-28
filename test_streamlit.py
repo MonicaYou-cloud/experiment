@@ -1513,6 +1513,13 @@ if st.session_state.page == 115:
     st.header("結束正式測驗前")
     st.markdown("---")
     st.write("（此處將放依變項問題說明）")
+
+    st.write("１. 您認為自己的邏輯推理能力如何？")
+    E1 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="E1", horizontal=True, index=None
+    )
     
     E1 = st.radio(label="您認為自己的邏輯推理能力如何？",
                   options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
@@ -1571,6 +1578,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
