@@ -1082,8 +1082,8 @@ if st.session_state.page == 103:
 
         progress_bar = st.progress(0)
 
-    for i in range(3):  # 顯示 5 秒（0.5 秒更新一次）
-        time.sleep(0.5)
+    for i in range(7):  # 顯示7秒（1秒更新一次）
+        time.sleep(1)
         progress_bar.progress((i + 1) * 10)
 
     # 處理完後跳轉至第 14 頁（正式測驗前）
@@ -1454,7 +1454,7 @@ if st.session_state.page == 112:
         progress_bar = st.progress(0)
 
     for i in range(10):
-        time.sleep(0.5)
+        time.sleep(1)
         progress_bar.progress((i + 1) * 10)
 
     # 處理完跳轉下一頁
@@ -1590,6 +1590,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
