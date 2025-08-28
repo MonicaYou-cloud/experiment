@@ -1121,21 +1121,21 @@ if st.session_state.page == 105:
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.write("1.您覺得自己有多認真對待剛才的練習題？")
+        st.write("１.您覺得自己有多認真對待剛才的練習題？")
         E1 = st.radio(
             label="（１=非常不認真，６=非常認真）",
             options=["1", "2", "3", "4", "5", "6"],
             key="E1", horizontal=True, index=None
         )
 
-        st.write("2.您覺得自己有多投入於練習階段？")
+        st.write("２.您覺得自己有多投入於練習階段？")
         E2 = st.radio(
             label="（１=非常不投入，６=非常投入）",
             options=["1", "2", "3", "4", "5", "6"],
             key="E2", horizontal=True, index=None
         )
 
-        st.write("3.您覺得自己在做練習題時有多努力？")
+        st.write("３.您覺得自己在做練習題時有多努力？")
         E3 = st.radio(
             label="（１=非常不努力，６=非常努力）",
             options=["1", "2", "3", "4", "5", "6"],
@@ -1571,6 +1571,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
