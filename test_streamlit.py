@@ -1116,11 +1116,6 @@ if st.session_state.page == 105:
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
 
-    # ✅ 強制一進來這頁就清空 warning_message（只清一次）
-    if st.session_state.get("just_entered_page_15", True):
-        st.session_state.warning_message = ""
-        st.session_state.just_entered_page_15 = False  # 清除標記
-
     st.header("進入正式測驗前")
     st.markdown("---")
     st.write("（此處將放個人知覺努力程度問題說明）")
@@ -1575,4 +1570,5 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
