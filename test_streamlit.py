@@ -1521,25 +1521,20 @@ if st.session_state.page == 115:
         key="E1", horizontal=True, index=None
     )
     
-    E1 = st.radio(label="您認為自己的邏輯推理能力如何？",
-                  options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
-                  key="E1",
-                  horizontal=True, 
-                  index=None
-                 )
-    E2 = st.radio(label="您認為自己的分析思考能力如何？",
-                  options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
-                  key="E2",
-                  horizontal=True, 
-                  index=None
-                 )
-    E3 = st.radio(label="您認為自己的圖形理解能力如何？",
-                  options=["非常不好", "不好", "有點不好", "有點好", "好", "非常好"],
-                  key="E3",
-                  horizontal=True, 
-                  index=None
-                 )
-            
+    st.write("2. 您認為自己的分析思考能力如何？")
+    E2 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="E2", horizontal=True, index=None
+    )
+
+    st.write("3. 您認為自己的分析思考能力如何？")
+    E3 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="E3", horizontal=True, index=None
+    )
+    
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
 
@@ -1578,6 +1573,7 @@ elif st.session_state.page == 117:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
