@@ -1688,8 +1688,12 @@ if st.session_state.page == 139:
             st.session_state.scroll_to_top = False
     st.header("請填寫以下問題")
     st.markdown("---")
-    score1 = st.text_input("您的正式測驗分數是幾分？", value="", placeholder="請輸入數字",  key="score1")
-    score2 = st.text_input("同齡人平均測驗分數是幾分？", value="", placeholder="請輸入數字", key="score2")
+    if "score1" not in st.session_state:
+    st.session_state["score1"] = ""
+    if "score2" not in st.session_state:
+    st.session_state["score2"] = ""
+    score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
+    score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
     comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
   
     st.markdown("---")
@@ -1776,5 +1780,6 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
