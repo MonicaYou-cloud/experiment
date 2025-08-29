@@ -1409,205 +1409,205 @@ question1(
 
 # 6
 question1(
-    page_number=111,
+    page_number=112,
     question_image_path="區分 (30).png",
     option_image_path="區分選項 (30).png",
-    radio_key="q_5",
+    radio_key="q_6",
 )
 
 # 7
 question2(
-    page_number=111,
+    page_number=113,
     question_image_path="推理思考 (5).png",
     option_image_path="推理思考選項 (5).png",
-    radio_key="q_5",
+    radio_key="q_7",
 )
 
 # 8
 question2(
-    page_number=111,
+    page_number=114,
     question_image_path="羅桑二氏 (50).png",
     option_image_path="羅桑二氏選項 (50).png",
-    radio_key="q_5",
+    radio_key="q_8",
 )
 
 # 9
 question2(
-    page_number=111,
+    page_number=115,
     question_image_path="羅桑二氏 (30).png",
     option_image_path="羅桑二氏選項 (30).png",
-    radio_key="q_5",
+    radio_key="q_9",
 )
 
 # 10
 question2(
-    page_number=111,
+    page_number=116,
     question_image_path="羅桑二氏 (55).png",
     option_image_path="羅桑二氏選項 (55).png",
-    radio_key="q_5",
+    radio_key="q_10",
 )
 
 # 11
 question(
-    page_number=108,
+    page_number=117,
     question_image_path="高級圖形二 (20).png",
     option_image_path="高級圖形二選項 (20).png",
-    radio_key="q_2"
+    radio_key="q_11"
 )
 
 # 12
 question(
-    page_number=109,
+    page_number=118,
     question_image_path="高級圖形二 (5).png",
     option_image_path="高級圖形二選項 (5).png",
-    radio_key="q_3",
+    radio_key="q_12",
 )
 
 # 13
 question1(
-    page_number=110,
+    page_number=119,
     question_image_path="區分 (25).png",
     option_image_path="區分選項 (25).png",
-    radio_key="q_4"
+    radio_key="q_13"
 )
 
 # 14
 question1(
-    page_number=111,
+    page_number=120,
     question_image_path="區分 (40).png",
     option_image_path="區分選項 (40).png",
-    radio_key="q_5",
+    radio_key="q_14",
 )
 
 # 15
 question1(
-    page_number=111,
+    page_number=121,
     question_image_path="區分 (35).png",
     option_image_path="區分選項 (35).png",
-    radio_key="q_5",
+    radio_key="q_15",
 )
 
 # 16
 question2(
-    page_number=111,
+    page_number=122,
     question_image_path="推理思考 (7).png",
     option_image_path="推理思考選項 (7).png",
-    radio_key="q_5",
+    radio_key="q_16",
 )
 
 # 17
 question2(
-    page_number=111,
+    page_number=123,
     question_image_path="推理思考 (20).png",
     option_image_path="推理思考選項 (20).png",
-    radio_key="q_5",
+    radio_key="q_17",
 )
 
 # 18
 question2(
-    page_number=111,
+    page_number=124,
     question_image_path="羅桑二氏 (25).png",
     option_image_path="羅桑二氏選項 (25).png",
-    radio_key="q_5",
+    radio_key="q_18",
 )
 
 # 19
 question2(
-    page_number=111,
+    page_number=125,
     question_image_path="羅桑二氏 (45).png",
     option_image_path="羅桑二氏選項 (45).png",
-    radio_key="q_5",
+    radio_key="q_19",
 )
 
 # 20
 question2(
-    page_number=111,
+    page_number=126,
     question_image_path="羅桑二氏 (10).png",
     option_image_path="羅桑二氏選項 (10).png",
-    radio_key="q_5",
+    radio_key="q_20",
 )
 
 # 21
 question(
-    page_number=108,
+    page_number=127,
     question_image_path="高級圖形二 (30).png",
     option_image_path="高級圖形二選項 (30).png",
-    radio_key="q_2"
+    radio_key="q_21"
 )
 
 # 22
 question(
-    page_number=109,
+    page_number=128,
     question_image_path="高級圖形二 (25).png",
     option_image_path="高級圖形二選項 (25).png",
-    radio_key="q_3",
+    radio_key="q_22",
 )
 
 # 23
 question1(
-    page_number=110,
+    page_number=129,
     question_image_path="區分 (15).png",
     option_image_path="區分選項 (15).png",
-    radio_key="q_4"
+    radio_key="q_23"
 )
 
 # 24
 question1(
-    page_number=111,
+    page_number=130,
     question_image_path="區分 (10).png",
     option_image_path="區分選項 (10).png",
-    radio_key="q_5",
+    radio_key="q_24",
 )
 
 # 25
 question1(
-    page_number=111,
+    page_number=131,
     question_image_path="區分 (27).png",
     option_image_path="區分選項 (27).png",
-    radio_key="q_5",
+    radio_key="q_25",
 )
 
 # 26
 question2(
-    page_number=111,
+    page_number=132,
     question_image_path="推理思考 (15).png",
     option_image_path="推理思考選項 (15).png",
-    radio_key="q_5",
+    radio_key="q_26",
 )
 
 # 27
 question2(
-    page_number=111,
+    page_number=133,
     question_image_path="推理思考 (10).png",
     option_image_path="推理思考選項 (10).png",
-    radio_key="q_5",
+    radio_key="q_27",
 )
 
 # 28
 question2(
-    page_number=111,
+    page_number=134,
     question_image_path="羅桑二氏 (40).png",
     option_image_path="羅桑二氏選項 (40).png",
-    radio_key="q_5",
+    radio_key="q_28",
 )
 
 # 29
 question2(
-    page_number=111,
+    page_number=135,
     question_image_path="羅桑二氏 (5).png",
     option_image_path="羅桑二氏選項 (5).png",
-    radio_key="q_5",
+    radio_key="q_29",
 )
 
 # 30
 question2(
-    page_number=111,
+    page_number=136,
     question_image_path="羅桑二氏 (60).png",
     option_image_path="羅桑二氏選項 (60).png",
-    radio_key="q_5",
+    radio_key="q_30",
 )
 
-if st.session_state.page == 112:
+if st.session_state.page == 137:
     placeholder = st.empty()
     with placeholder.container():
         st.markdown("""
@@ -1648,7 +1648,7 @@ if st.session_state.page == 112:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 113:
+if st.session_state.page == 138:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1682,7 +1682,7 @@ if st.session_state.page == 113:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 114:
+if st.session_state.page == 139:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1709,7 +1709,7 @@ if st.session_state.page == 114:
                 st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 115:
+if st.session_state.page == 140:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1757,7 +1757,7 @@ if st.session_state.page == 115:
                 st.rerun()
 
 # debrief
-if st.session_state.page == 116:
+if st.session_state.page == 141:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1772,8 +1772,9 @@ if st.session_state.page == 116:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 117:
+elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
