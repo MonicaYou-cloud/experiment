@@ -531,8 +531,8 @@ graphical_question(
 # 練題37
 graphical_question(
     page_number=39,
-    question_image_path="new_folder/區分 (26).png",
-    option_image_path="new_folder/區分選項 (26).png",
+    question_image_path="new_folder/區分 (27).png",
+    option_image_path="new_folder/區分選項 (27).png",
     answer_value="E"
 )
 
@@ -793,8 +793,8 @@ graphical_question(
 # 練題69
 graphical_question(
     page_number=71,
-    question_image_path="new_folder/羅桑二氏 (44).png",
-    option_image_path="new_folder/羅桑二氏選項 (44).png",
+    question_image_path="new_folder/羅桑二氏 (25).png",
+    option_image_path="new_folder/羅桑二氏選項 (25).png",
     answer_value="3"
 )
 
@@ -1410,8 +1410,8 @@ question1(
 # 6
 question1(
     page_number=112,
-    question_image_path="new_folder/區分 (30).png",
-    option_image_path="new_folder/區分選項 (30).png",
+    question_image_path="new_folder/區分 (40).png",
+    option_image_path="new_folder/區分選項 (40).png",
     radio_key="q_6",
 )
 
@@ -1474,8 +1474,8 @@ question1(
 # 14
 question1(
     page_number=120,
-    question_image_path="new_folder/區分 (40).png",
-    option_image_path="new_folder/區分選項 (40).png",
+    question_image_path="new_folder/區分 (30).png",
+    option_image_path="new_folder/區分選項 (30).png",
     radio_key="q_14",
 )
 
@@ -1506,8 +1506,8 @@ question2(
 # 18
 question2(
     page_number=124,
-    question_image_path="new_folder/羅桑二氏 (25).png",
-    option_image_path="new_folder/羅桑二氏選項 (25).png",
+    question_image_path="new_folder/羅桑二氏 (44).png",
+    option_image_path="new_folder/羅桑二氏選項 (44).png",
     radio_key="q_18",
 )
 
@@ -1562,8 +1562,8 @@ question1(
 # 25
 question1(
     page_number=131,
-    question_image_path="new_folder/區分 (27).png",
-    option_image_path="new_folder/區分選項 (27).png",
+    question_image_path="new_folder/區分 (26).png",
+    option_image_path="new_folder/區分選項 (26).png",
     radio_key="q_25",
 )
 
@@ -1776,3 +1776,4 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
