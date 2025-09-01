@@ -1758,7 +1758,7 @@ if st.session_state.page == 140:
             else:
                 next_page() 
                 st.rerun()
-    if warning_needed: st.warning("⚠️ 請先作答才能繼續。")
+    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
 if st.session_state.page == 141:
@@ -1780,16 +1780,3 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
