@@ -1749,16 +1749,16 @@ if st.session_state.page == 140:
     spacer1, spacer2, btn_col, spacer3 = st.columns([1, 1, 2, 1])
 
     with btn_col:
+        warning_needed = False
         if st.button("完成測驗"):
             if st.session_state.get("E1") is None or \
                st.session_state.get("E2") is None or \
                st.session_state.get("E3") is None:
-                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
-                st.rerun()
+                   warning_needed = True
             else:
-                st.session_state.warning_message = ""
-                st.session_state.page += 1
+                next_page() 
                 st.rerun()
+    if warning_needed: st.warning("⚠️ 請先作答才能繼續。")
 
 # debrief
 if st.session_state.page == 141:
@@ -1780,6 +1780,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
