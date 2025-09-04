@@ -1113,10 +1113,6 @@ if st.session_state.page == 104:
 
 # 練習後問卷
 if st.session_state.page == 105:
-    if st.session_state.get("just_entered_page_15", True):
-        st.session_state.warning_message = ""
-        st.session_state.just_entered_page_15 = False
-
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1158,6 +1154,9 @@ if st.session_state.page == 105:
             options=["1", "2", "3", "4", "5", "6"],
             key="E3", horizontal=True, index=None
         )
+    
+    if 'warning_message' in st.session_state and st.session_state.warning_message:
+        st.warning(st.session_state.warning_message)
 
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
@@ -1780,3 +1779,4 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
