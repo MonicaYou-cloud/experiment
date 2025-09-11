@@ -2,6 +2,10 @@ import streamlit as st
 import pandas as pd
 import time
 from PIL import Image
+from streamlit_gsheets import GSheetsConnection
+
+###### 建立 Google Sheets 連線（連線名稱要跟 secrets 一致）
+conn = st.connection("gsheets", type=GSheetsConnection, credentials=st.secrets["gcp_service_account"])
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -1759,6 +1763,15 @@ if st.session_state.page == 140:
                 st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
+# #####if st.button("完成測驗"):
+#     new_data = pd.DataFrame([{"姓名": name, "顏色": color, "動物": animal}])
+#     conn.update(worksheet="工作表1", data=new_data, append=True)
+#     st.success("✅ 回答已送出！")
+
+# # 顯示目前所有作答
+# df = conn.read(worksheet="工作表1")
+# st.dataframe(df)
+
 # debrief
 if st.session_state.page == 141:
     if st.session_state.get("scroll_to_top", False):
@@ -1779,4 +1792,5 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
