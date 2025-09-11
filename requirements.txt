@@ -1,4 +1,8 @@
 streamlit
 streamlit-javascript
 pandas
+
 Pillow
+
+gspread
+streamlit_gsheets
