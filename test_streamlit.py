@@ -183,11 +183,11 @@ elif st.session_state.page == 1:
                                if st.session_state.get(key) is None:
                                         warning_needed = True
                                         break  # 一旦有缺失就停止檢查
-                                        if warning_needed:
-                                                 st.warning("⚠️請先作答才能繼續。")
-                                        else:
-                                                 next_page()   # 全部都填了才跳頁
-                                                 st.rerun()
+                      if warning_needed:
+                               st.warning("⚠️請先作答才能繼續。")
+                      else:
+                               next_page()   # 全部填完才跳頁
+                               st.rerun()
                                                  
 # 練習說明
 elif st.session_state.page == 2:
@@ -1831,6 +1831,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
