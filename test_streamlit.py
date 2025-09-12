@@ -4,8 +4,9 @@ import time
 from PIL import Image
 from streamlit_gsheets import GSheetsConnection
 
-###### 建立 Google Sheets 連線（連線名稱要跟 secrets 一致）
+# 建立 Google Sheets 連線
 conn = st.connection("gsheets", type=GSheetsConnection, credentials=st.secrets["gcp_service_account"])
+
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -1763,14 +1764,35 @@ if st.session_state.page == 140:
                 st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
-# #####if st.button("完成測驗"):
-#     new_data = pd.DataFrame([{"姓名": name, "顏色": color, "動物": animal}])
-#     conn.update(worksheet="工作表1", data=new_data, append=True)
-#     st.success("✅ 回答已送出！")
+if st.button("完成測驗"):
+    new_data = pd.DataFrame([{
+        "性別": gender,
+        "年齡": age,
+        "Q1": self_esteem1,
+        "Q2": self_esteem2,
+        "Q3": self_esteem3,
+        "Q4": self_esteem4,
+        "Q5": self_esteem5,
+        "Q6": self_esteem6,
+        "Q7": self_esteem7,
+        "Q8": self_esteem8,
+        "Q9": self_esteem9,
+        "Q10": self_esteem10,
+        "心智1": mindset1,
+        "心智2": mindset2,
+        "心智3": mindset3,
+        "重要1": important1,
+        "重要2": important2,
+        "重要3": important3
+    }])
 
-# # 顯示目前所有作答
-# df = conn.read(worksheet="工作表1")
-# st.dataframe(df)
+    # 寫入 Google Sheet
+    conn.update(worksheet="工作表1", data=new_data, append=True)
+    st.success("✅ 作答已送出！")
+
+    # 顯示目前所有資料（測試用，可以刪掉）
+    df = conn.read(worksheet="工作表1")
+    st.dataframe(df)
 
 # debrief
 if st.session_state.page == 141:
@@ -1792,5 +1814,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
+
 
 
