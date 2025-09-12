@@ -168,18 +168,26 @@ elif st.session_state.page == 1:
         if 'warning_message' in st.session_state and st.session_state.warning_message:
             st.warning(st.session_state.warning_message)
 
+required_keys = [
+    "ID", "age", "gender",
+    *[f"self_esteem{i}" for i in range(1, 10)],
+    *[f"mindset{i}" for i in range(1, 3)],
+    *[f"important{i}" for i in range(1, 3)],
+]
+
     with col4:
              warning_needed = False
              if st.button("下一頁"):
                       for key in required_keys:
                                if st.session_state.get(key) is None:
                                         warning_needed = True
-                               else:
-                                        next_page() 
-                                        st.rerun()
-    if warning_needed:
-        st.warning("⚠️請先作答才能繼續。")
-
+                                        break  # 一旦有缺失就停止檢查
+                                        if warning_needed:
+                                                 st.warning("⚠️請先作答才能繼續。")
+                                        else:
+                                                 next_page()   # 全部都填了才跳頁
+                                                 st.rerun()
+                                                 
 # 練習說明
 elif st.session_state.page == 2:
     st.header("第一階段：練習測驗")
@@ -1822,6 +1830,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
