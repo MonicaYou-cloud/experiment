@@ -1777,33 +1777,17 @@ if st.session_state.page == 140:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 if st.button("完成測驗"):
-    new_data = pd.DataFrame([{
-        "性別": gender,
-        "年齡": age,
-        "Q1": self_esteem1,
-        "Q2": self_esteem2,
-        "Q3": self_esteem3,
-        "Q4": self_esteem4,
-        "Q5": self_esteem5,
-        "Q6": self_esteem6,
-        "Q7": self_esteem7,
-        "Q8": self_esteem8,
-        "Q9": self_esteem9,
-        "Q10": self_esteem10,
-        "心智1": mindset1,
-        "心智2": mindset2,
-        "心智3": mindset3,
-        "重要1": important1,
-        "重要2": important2,
-        "重要3": important3
-    }])
-
-    # 寫入 Google Sheet
-    conn.update(worksheet="工作表1", data=new_data, append=True)
+    sheet.append_row([
+        gender, age,
+        self_esteem1, self_esteem2, self_esteem3,
+        self_esteem4, self_esteem5, self_esteem6,
+        self_esteem7, self_esteem8, self_esteem9, self_esteem10,
+        mindset1, mindset2, mindset3,
+        important1, important2, important3
+    ])
     st.success("✅ 作答已送出！")
 
-    # 顯示目前所有資料（測試用，可以刪掉）
-    df = conn.read(worksheet="工作表1")
+    df = pd.DataFrame(sheet.get_all_records())
     st.dataframe(df)
 
 # debrief
@@ -1826,6 +1810,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
