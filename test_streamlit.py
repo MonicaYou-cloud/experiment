@@ -1195,10 +1195,10 @@ if st.session_state.page == 105:
         warning_needed = False
         if st.button("下一頁"):
             # 檢查是否有漏填
-            if st.session_state.get("E1") is None or \
-            st.session_state.get("E2") is None or \
-            st.session_state.get("E3") is None:
-                warning_needed = True
+            if (st.session_state.get("E1") is None or 
+                st.session_state.get("E2") is None or 
+                st.session_state.get("E3") is None):
+                         warning_needed = True
             else:
                 next_page() 
                 st.rerun()
@@ -1713,9 +1713,9 @@ if st.session_state.page == 139:
             st.session_state.scroll_to_top = False
     st.header("請填寫以下問題")
     st.markdown("---")
-    st.session_state.score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
-    st.session_state.score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
-    st.session_state.comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
+    score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
+    score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
+    comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
     # 加上 JS/HTML 把 autocomplete 關掉
     st.markdown("""
     <style>
@@ -1733,7 +1733,7 @@ if st.session_state.page == 139:
 
     with col4:
         if st.button("下一頁"):
-            if st.session_state.score1 is None or st.session_state.score2 is None or st.session_state.comparison is None:
+            if score1 is None or score2 is None or comparison is None:
                 st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                 st.rerun()
             else:
@@ -1751,21 +1751,21 @@ if st.session_state.page == 140:
     st.write("（此處將放依變項問題說明）")
 
     st.write("１. 您認為自己的邏輯推理能力如何？")
-    st.session_state.SE1 = st.radio(
+    SE1 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE1", horizontal=True, index=None
     )
     
     st.write("2. 您認為自己的分析思考能力如何？")
-    st.session_state.SE2 = st.radio(
+    SE2 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE2", horizontal=True, index=None
     )
 
     st.write("3. 您認為自己的分析思考能力如何？")
-    st.session_state.SE3 = st.radio(
+    SE3 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE3", horizontal=True, index=None
@@ -1780,9 +1780,9 @@ if st.session_state.page == 140:
     with btn_col:
         warning_needed = False
         if st.button("完成測驗"):
-            if st.session_state.get("st.session_state.SE1") is None or \
-               st.session_state.get("st.session_state.SE2") is None or \
-               st.session_state.get("st.session_state.SE3") is None:
+            if st.session_state.get("SE1") is None or \
+               st.session_state.get("SE2") is None or \
+               st.session_state.get("SE3") is None:
                    warning_needed = True
             else:
                      next_page() 
@@ -1829,6 +1829,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
