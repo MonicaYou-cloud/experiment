@@ -128,7 +128,7 @@ elif st.session_state.page == 1:
     st.markdown("---")
     st.text_input("請輸入受試者編號", placeholder="",  key="ID")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
-    st.selectbox("請選擇您的年齡區間", ["18歲以下", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇")
+    st.selectbox("請選擇您的年齡區間", ["18歲以下", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
     st.write("1. 我一無是處。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="self_esteem1")
     st.write("2. 我有許多優點。")
@@ -172,7 +172,14 @@ elif st.session_state.page == 1:
 
     with col4:
              if st.button("下一頁"):
-                      if st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None or st.session_state.get("self_esteem3") is None or st.session_state.get("self_esteem4") is None or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None or st.session_state.get("self_esteem7") is None or st.session_state.get("self_esteem8") is None or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None:
+                      if (st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None 
+                          or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None 
+                          or st.session_state.get("self_esteem3") is None or st.session_state.get("self_esteem4") is None 
+                          or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None 
+                          or st.session_state.get("self_esteem7") is None or st.session_state.get("self_esteem8") is None 
+                          or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None 
+                          or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None 
+                          or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None):
                                    st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                                    st.rerun()
                       else:
@@ -1822,6 +1829,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
