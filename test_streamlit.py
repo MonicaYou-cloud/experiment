@@ -119,6 +119,7 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("請填寫以下問卷，完成後按下一頁")
     st.markdown("---")
+    ID = st.text_input("請輸入受試者編號", placeholder="",  key="ID")
     gender = st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
     age = st.selectbox("請選擇您的年齡區間", ["18歲以下", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇")
     st.write("1. 我一無是處。")
@@ -1809,6 +1810,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
