@@ -162,12 +162,6 @@ elif st.session_state.page == 1:
     st.write("16. 對您來說，圖形理解能力有多重要？")
     st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important3")
 
-    required_keys = [
-             "ID", "age", "gender",
-             *[f"self_esteem{i}" for i in range(1, 11)],
-             *[f"mindset{i}" for i in range(1, 4)],
-             *[f"important{i}" for i in range(1, 4)],
-    ]
     st.markdown("---")
 
 
@@ -179,14 +173,15 @@ elif st.session_state.page == 1:
     with col4:
              warning_needed = False
              if st.button("下一頁"):
-                      for key in required_keys:
-                               if st.session_state.get(key) is None:
-                                        warning_needed = True
-                               else:
-                                        next_page()   # 全部填完才跳頁
-                                        st.rerun()
-     if warning_needed:
-              st.warning("⚠️請先作答才能繼續。")
+                      if (age is None or gender is None or self_esteem1 is None or self_esteem2 is None or self_esteem3 is None 
+                          or self_esteem4 is None or self_esteem5 is None or self_esteem6 is None or self_esteem7 is None 
+                          or self_esteem8 is None or self_esteem9 is None or self_esteem10 is None or mindset1 is None 
+                          or mindset2 is None or mindset3 is None or important1 is None or important2 is None or important3 is None):
+                                   warning_needed = True
+                      else:
+                               next_page() 
+                               st.rerun()
+    if warning_needed: st.warning("⚠️ 請先作答才能繼續。")
                                                  
 # 練習說明
 elif st.session_state.page == 2:
@@ -1830,6 +1825,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
