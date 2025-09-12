@@ -163,12 +163,7 @@ elif st.session_state.page == 1:
     st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important3")
     
     st.markdown("---")
-required_keys = [
-         "ID", "age", "gender",
-         *[f"self_esteem{i}" for i in range(1, 10)],
-         *[f"mindset{i}" for i in range(1, 3)],
-         *[f"important{i}" for i in range(1, 3)],
-]
+
 
     col1, col2, col3, col4 = st.columns([1, 3, 1, 1])
     with col2:
@@ -1830,6 +1825,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
