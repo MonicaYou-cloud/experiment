@@ -2,10 +2,22 @@ import streamlit as st
 import pandas as pd
 import time
 from PIL import Image
-from streamlit_gsheets import GSheetsConnection
+import gspread
+from google.oauth2.service_account import Credentials
 
-# 建立 Google Sheets 連線
-conn = st.connection("gsheets", type=GSheetsConnection, credentials=st.secrets["gcp_service_account"])
+scope = ["https://spreadsheets.google.com/feeds",
+         "https://www.googleapis.com/auth/drive"]
+
+creds = Credentials.from_service_account_info(
+    st.secrets["gcp_service_account"],  # 讀取 secrets.toml
+    scopes=scope
+)
+
+client = gspread.authorize(creds)
+
+# 開啟 Google Sheet（名稱要跟你的試算表一致）
+sheet = client.open("experiment_data").工作表1
+
 
 
 # 初始化分頁
@@ -1814,6 +1826,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
