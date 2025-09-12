@@ -172,14 +172,7 @@ elif st.session_state.page == 1:
 
     with col4:
              if st.button("下一頁"):
-                      if (st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None 
-                          or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None 
-                          or st.session_state.get("self_esteem3") is None or st.session_state.get("self_esteem4") is None 
-                          or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None 
-                          or st.session_state.get("self_esteem7") is None or st.session_state.get("self_esteem8") is None 
-                          or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None 
-                          or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None 
-                          or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None):
+                      if st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None or st.session_state.get("self_esteem3") is None or st.session_state.get("self_esteem4") is None or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None or st.session_state.get("self_esteem7") is None or st.session_state.get("self_esteem8") is None or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None:
                                    st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
                                    st.rerun()
                       else:
@@ -1829,6 +1822,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
