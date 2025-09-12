@@ -4,5 +4,4 @@ pandas
 
 Pillow
 
-gspread
-streamlit_gsheets
+streamlit-gsheets
