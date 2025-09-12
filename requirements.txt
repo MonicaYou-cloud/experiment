@@ -4,4 +4,6 @@ pandas
 
 Pillow
 
-streamlit-gsheets
+google-auth-oauthlib
+gspread
+google-auth
