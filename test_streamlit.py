@@ -16,7 +16,7 @@ creds = Credentials.from_service_account_info(
 client = gspread.authorize(creds)
 
 # 開啟 Google Sheet（名稱要跟你的試算表一致）
-sheet = client.open("experiment_data").工作表1
+sheet = client.open("experiment_data").worksheet("工作表1")
 
 
 
@@ -1826,6 +1826,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
