@@ -164,9 +164,9 @@ elif st.session_state.page == 1:
 
 required_keys = [
          "ID", "age", "gender",
-         *[f"self_esteem{i}" for i in range(1, 10)],
-         *[f"mindset{i}" for i in range(1, 3)],
-         *[f"important{i}" for i in range(1, 3)],
+         *[f"self_esteem{i}" for i in range(1, 11)],
+         *[f"mindset{i}" for i in range(1, 4)],
+         *[f"important{i}" for i in range(1, 4)],
 ]
 
     st.markdown("---")
@@ -1832,6 +1832,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
