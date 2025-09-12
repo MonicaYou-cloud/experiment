@@ -169,14 +169,14 @@ elif st.session_state.page == 1:
             st.warning(st.session_state.warning_message)
 
     with col4:
-        warning_needed = False
-        if st.button("下一頁"):
-                 for key in required_keys:
-                          if st.session_state.get(key) is None:
-                                   warning_needed = True
-                          else:
-                                   next_page() 
-                                   st.rerun()
+             warning_needed = False
+             if st.button("下一頁"):
+                      for key in required_keys:
+                               if st.session_state.get(key) is None:
+                                        warning_needed = True
+                               else:
+                                        next_page() 
+                                        st.rerun()
     if warning_needed:
         st.warning("⚠️請先作答才能繼續。")
 
@@ -1822,6 +1822,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
