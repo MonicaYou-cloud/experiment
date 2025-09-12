@@ -1783,7 +1783,7 @@ if st.button("完成測驗"):
         self_esteem4, self_esteem5, self_esteem6,
         self_esteem7, self_esteem8, self_esteem9, self_esteem10,
         mindset1, mindset2, mindset3,
-        important1, important2, important3, E1, E2, E3, SE1, SE2, SE3
+        important1, important2, important3
     ])
     st.success("✅ 作答已送出！")
 
@@ -1810,6 +1810,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
