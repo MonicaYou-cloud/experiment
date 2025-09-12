@@ -171,7 +171,6 @@ elif st.session_state.page == 1:
             st.warning(st.session_state.warning_message)
 
     with col4:
-             warning_needed = False
              if st.button("下一頁"):
                       if (st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None 
                           or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None 
@@ -181,13 +180,12 @@ elif st.session_state.page == 1:
                           or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None 
                           or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None 
                           or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None):
-                                   warning_needed = True
+                                   st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                                   st.rerun()
                       else:
-                               warning_needed = False
-                               next_page()
+                               st.session_state.warning_message = "" 
+                               st.session_state.page += 1
                                st.rerun()
-    if warning_needed:
-             st.warning("⚠️ 請先作答才能繼續。")
                                                  
 # 練習說明
 elif st.session_state.page == 2:
@@ -1831,6 +1829,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
