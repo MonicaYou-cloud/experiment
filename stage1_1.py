@@ -1365,8 +1365,6 @@ def question(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                         row_data = [st.session_state.get(radio_key)]
-                         sheet.append_row(row_data)
                          next_page()
                          st.rerun()
         
@@ -1424,8 +1422,6 @@ def question1(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                         row_data = [st.session_state.get(radio_key)]
-                         sheet.append_row(row_data)
                          next_page()
                          st.rerun()
         
@@ -1484,8 +1480,6 @@ def question2(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                         row_data = [st.session_state.get(radio_key)]
-                         sheet.append_row(row_data)
                          next_page()
                          st.rerun()
         
@@ -1973,4 +1967,5 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
