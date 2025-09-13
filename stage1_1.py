@@ -1186,9 +1186,7 @@ if st.session_state.page == 105:
     
     st.header("進入正式測驗前")
     st.markdown("---")
-    st.write("""以下問題是想了解您在練習階段的狀況。""")
-    st.write("""填寫完畢後請按【下一頁】進入正式測驗""")
-    
+    st.write("""以下問題是想了解您的練習狀況。填寫完畢後請按【下一頁】進入正式測驗。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1922,6 +1920,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
