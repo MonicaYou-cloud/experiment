@@ -167,13 +167,10 @@ if st.session_state.page == 0:
                                if start <= now <= end:
                                         st.session_state["participant_id"] = user_id
                                         st.session_state["start_time"] = now
-                                        st.success(f"✅ 登入成功！編號：{user_id}")
-                                        st.write(f"👉 測驗允許時間：{start} ~ {end}")
-                                        st.write(f"🕒 登入時間：{now}")
                                         next_page()
                                         st.rerun()
                                else:
-                                        st.error(f"⛔ {user_id} 不在允許填答時間！允許時間：{start} ~ {end}")
+                                        st.error(f"⛔ {user_id} 不在允許填答時間！")
 
 
 # 基本資料頁
@@ -1966,6 +1963,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
