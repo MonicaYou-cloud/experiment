@@ -1214,6 +1214,7 @@ if st.session_state.page == 105:
                 
 # 正式測驗說明
 if st.session_state.page == 106:
+    st.write(st.session_state)
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("此處將放上正式測驗說明")
@@ -1716,6 +1717,7 @@ if st.session_state.page == 138:
 
 # 操弄檢核
 if st.session_state.page == 139:
+    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1751,6 +1753,7 @@ if st.session_state.page == 139:
 
 # 測驗後問卷
 if st.session_state.page == 140:
+    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1852,6 +1855,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
