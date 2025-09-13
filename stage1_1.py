@@ -1816,9 +1816,9 @@ if st.session_state.page == 140:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
-    st.header("結束正式測驗前")
+    st.header("結束本測驗前")
     st.markdown("---")
-    st.write("（此處將放依變項問題說明）")
+    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按【下一頁】進入研究解釋與說明。""")
 
     st.write("１. 您認為自己的邏輯推理能力如何？")
     SE1 = st.radio(
@@ -1827,28 +1827,28 @@ if st.session_state.page == 140:
         key="SE1", horizontal=True, index=None
     )
     
-    st.write("2. 您認為自己的分析思考能力如何？")
+    st.write("２. 您認為自己的分析思考能力如何？")
     SE2 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE2", horizontal=True, index=None
     )
 
-    st.write("3. 您認為自己的分析思考能力如何？")
+    st.write("３. 您認為自己的分析思考能力如何？")
     SE3 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE3", horizontal=True, index=None
     )
     
-    st.write("4. 您認為自己的正式測驗表現如何？")
+    st.write("４. 您認為自己的正式測驗表現如何？")
     SE2 = st.radio(
         label="（１=非常不滿意，６=非常滿意）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE4", horizontal=True, index=None
     )
 
-    st.write("5. 您對自己的正式測驗表現有多滿意？")
+    st.write("５. 您對自己的正式測驗表現有多滿意？")
     SE3 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
@@ -1925,33 +1925,3 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
