@@ -1185,8 +1185,10 @@ if st.session_state.page == 105:
         st.session_state.scroll_to_top = False
     
     st.header("進入正式測驗前")
+    st.write("""以下問題是想了解您在練習階段的狀況。""")
+    st.write("""填寫完畢後，請按【下一頁】進入正式測驗""")
     st.markdown("---")
-    st.write("（此處將放個人知覺努力程度問題說明）")
+    
 
     st.markdown("""
         <style>
@@ -1921,6 +1923,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
