@@ -130,7 +130,7 @@ if st.session_state.page == 0:
     碩士學生 游主雲
     指導老師 孫蒨如 教授
     敬上
-")
+    ")
     st.markdown("---")
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
@@ -1913,6 +1913,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
