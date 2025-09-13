@@ -128,7 +128,7 @@ if st.session_state.page == 0:
     st.write("""本研究不會對您造成任何風險，您所填寫的資料將完全保密。資料收回後將由研究人員電子歸檔與保存並進行統計數據分析，預計保留5年後全數刪除，請您放心。""")
     st.write("""當您按下開始測驗表示您同意上述內容。""")
     st.write("""最後，如果您有任何疑問，可以直接聯繫研究人員（112752003@g.nccu.edu.tw）""")
-    col1, col2, col3 = st.columns([1, 1, 2])
+    col1, col2, col3 = st.columns([1, 2, 2])
     with col3:
              st.write("""國立政治大學 心理學研究所""")
              st.write("""碩士生 游主雲""")
@@ -1916,6 +1916,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
