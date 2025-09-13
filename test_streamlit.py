@@ -33,6 +33,27 @@ for key in ["ID", "gender", "age",
     if key not in st.session_state:
         st.session_state[key] = None
 
+def submit_data():
+    try:
+        data_to_save = [
+                 st.session_state.get("ID", ""), st.session_state.get("gender", ""), st.session_state.get("age", ""),
+                 st.session_state.get("self_esteem1", ""), st.session_state.get("self_esteem2", ""),
+                 st.session_state.get("self_esteem3", ""), st.session_state.get("self_esteem4", ""),
+                 st.session_state.get("self_esteem5", ""), st.session_state.get("self_esteem6", ""),
+                 st.session_state.get("self_esteem7", ""), st.session_state.get("self_esteem8", ""),
+                 st.session_state.get("self_esteem9", ""), st.session_state.get("self_esteem10", ""),
+                 st.session_state.get("mindset1", ""), st.session_state.get("mindset2", ""), st.session_state.get("mindset3", ""),
+                 st.session_state.get("important1", ""), st.session_state.get("important2", ""), st.session_state.get("important3", ""),
+                 st.session_state.get("E1", ""), st.session_state.get("E2", ""), st.session_state.get("E3", ""),
+                 st.session_state.get("score1", ""), st.session_state.get("score2", ""), st.session_state.get("comparison", ""),
+                 st.session_state.get("SE1", ""), st.session_state.get("SE2", ""), st.session_state.get("SE3", ""),
+                 st.session_state.get("elapsed_time", "")
+        ]
+             sheet.append_row(data_to_save)
+             st.success("資料已成功提交！")
+    except Exception as e:
+             st.error(f"❌ 資料提交失敗！請聯繫研究者。錯誤訊息：{e}")
+
 # 初始化分頁
 if "page" not in st.session_state:
     st.session_state.page = 0
@@ -1813,22 +1834,18 @@ if st.session_state.page == 140:
                      st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
-if st.button("完成測驗"):
-         row_data = [
-                  st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                  st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                  st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                  st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                  st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                  st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                  st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                  st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                  st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
-                  st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
-                  st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
-         ]
-         sheet.append_row(row_data)
-         st.success("✅ 作答已送出！")
+
+# --- 在你的程式碼中加入這個區塊 ---
+# 假設這是最後一頁
+if st.session_state.page == 200:
+    st.header("問卷結束")
+    st.write("感謝您完成本次測驗。")
+    st.write("請點擊下方按鈕提交您的資料。")
+    
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("提交資料", type="primary", on_click=submit_data):
+            st.rerun() # 點擊後重新執行頁面，以顯示 success/error 訊息
 
     # df = pd.DataFrame(sheet.get_all_records())
     # st.dataframe(df)
@@ -1854,6 +1871,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
