@@ -5,6 +5,8 @@ from PIL import Image
 import gspread
 from google.oauth2.service_account import Credentials
 from datetime import datetime
+from datetime import datetime, timedelta, timezone
+tz = timezone(timedelta(hours=8))
 
 # 建立連線 (只做一次)
 scope = ["https://spreadsheets.google.com/feeds",
@@ -155,7 +157,7 @@ if st.session_state.page == 0:
     with col3:
              warning_needed = False
              if st.button("開始測驗"):
-                      now = datetime.now()
+                      now = datetime.now(tz)
                       user_id = st.session_state["ID"]
                       if user_id in participants:
                                start, end = participants[user_id]
@@ -1962,6 +1964,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
