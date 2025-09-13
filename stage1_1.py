@@ -145,7 +145,7 @@ elif st.session_state.page == 1:
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("基本資料")
-    st.write("以下問題是想了解您的基本資訊，以及關於您的價值觀與想法，填寫完畢後將進入練習階段")
+    st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀與看法，填寫完畢後請按下一頁進入練習階段")
     st.markdown("---")
     st.text_input("請輸入受試者編號", placeholder="",  key="ID")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
@@ -1916,6 +1916,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
