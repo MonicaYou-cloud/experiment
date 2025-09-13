@@ -1260,7 +1260,11 @@ if st.session_state.page == 105:
 if st.session_state.page == 106:
     st.header("第二階段：正式測驗")
     st.markdown("---")
-    st.write("此處將放上正式測驗說明")
+    st.write("""歡迎您來到正式測驗階段！本階段設有30道智力測驗題目。""")
+    st.write("""當您作答完畢後，系統將會計算您的測驗分數（滿分為100）""")
+    st.write("""正式測驗無法跳回上一頁，請您確定填答後再按【下一頁】""")
+    st.write("""了解以上敘述後，請按【開始測驗】進入正式測驗""")
+    st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
@@ -1920,6 +1924,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
