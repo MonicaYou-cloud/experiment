@@ -168,8 +168,8 @@ if st.session_state.page == 0:
                                    st.rerun()
                           else:
                                    st.error(f"⛔ {user_id} 不在允許填答時間！允許時間：{start} ~ {end}")
-                  else:
-                           st.error("⚠️ 無效的受試者編號！請確認後再試。")
+                 else:
+                          st.error("⚠️ 無效的受試者編號！請確認後再試。")
 
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -1961,6 +1961,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
