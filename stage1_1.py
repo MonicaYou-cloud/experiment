@@ -167,6 +167,10 @@ if st.session_state.page == 0:
                       if start <= now <= end:
                                st.session_state["participant_id"] = user_id
                                st.session_state["start_time"] = now
+                               row_data = [
+                                        st.session_state["ID"]
+                               ]
+                               sheet.append_row(row_data)
                                next_page()
                                st.rerun()
                       else:
@@ -1965,6 +1969,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
