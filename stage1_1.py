@@ -4,6 +4,7 @@ import time
 from PIL import Image
 import gspread
 from google.oauth2.service_account import Credentials
+from datetime import datetime
 
 # 建立連線 (只做一次)
 scope = ["https://spreadsheets.google.com/feeds",
@@ -32,6 +33,20 @@ for key in ["ID", "gender", "age",
            , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5"]:
     if key not in st.session_state:
         st.session_state[key] = None
+
+# 預先設定：受試者編號 -> [允許開始時間, 允許結束時間]
+participants = {
+    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0), datetime(2025, 9, 13, 21, 30, 0)],
+    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
+    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
+    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0), datetime(2025, 9, 15, 15, 0, 0)],
+    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
+    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
+    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0), datetime(2025, 9, 15, 15, 0, 0)],
+    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
+    "snTq11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
+    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
+}
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -140,15 +155,22 @@ if st.session_state.page == 0:
     with col3:
         warning_needed = False
         if st.button("開始測驗"):
-                 if (st.session_state.get("ID") is None):
-                          warning_needed = True
-                 else:
-                          row_data = [st.session_state["ID"]]
-                          sheet.append_row(row_data)
-                          next_page() 
-                          st.rerun()
-    if warning_needed: st.warning("⚠️ 請填寫受試者編號才能繼續。")             
-            
+                 now = datetime.now()
+                 if user_id in participants:
+                          start, end = participants[user_id]
+                          if start <= now <= end:
+                                   st.session_state["participant_id"] = user_id
+                                   st.session_state["start_time"] = now
+                                   st.success(f"✅ 登入成功！編號：{user_id}")
+                                   st.write(f"👉 測驗允許時間：{start} ~ {end}")
+                                   st.write(f"🕒 登入時間：{now}")
+                                   next_page()
+                                   st.rerun()
+                          else:
+                                   st.error(f"⛔ {user_id} 不在允許填答時間！允許時間：{start} ~ {end}")
+                          else:
+                                   st.error("⚠️ 無效的受試者編號！請確認後再試。")
+
 # 基本資料頁
 elif st.session_state.page == 1:
     if st.session_state.get("scroll_to_top", False):
@@ -1939,6 +1961,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
