@@ -25,13 +25,13 @@ sheet = get_sheet()
 
 
 #初始化資料庫
-# for key in ["ID", "gender", "age",
-#             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
-#            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
-#            , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
-#            , "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3"]:
-#     if key not in st.session_state:
-#         st.session_state[key] = None
+for key in ["ID", "gender", "age",
+            "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
+           , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
+           , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
+           , "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3"]:
+    if key not in st.session_state:
+        st.session_state[key] = None
 
 # 初始化分頁
 if "page" not in st.session_state:
@@ -1854,6 +1854,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
