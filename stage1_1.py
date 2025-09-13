@@ -223,7 +223,9 @@ elif st.session_state.page == 1:
 elif st.session_state.page == 2:
     st.header("第一階段：練習測驗")
     st.markdown("---")
-    st.write("此處將放上練習測驗說明")
+    st.write("""歡迎您來到練習階段！本階段設有多道智力測驗練習題，每道練習題都可以觀看解答。""")
+    st.write("""【請您至少練習5題】，之後您可自行決定是否要繼續練習或直接進入正式測驗""")
+    st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
@@ -234,12 +236,12 @@ elif st.session_state.page == 2:
             st.session_state.scroll_to_top = True
             st.rerun()
     
-    with col4:
-        if st.button("直接進入正式測驗"):
-            st.session_state.start_time = None
-            st.session_state.page = 104
-            st.session_state.scroll_to_top = True
-            st.rerun()
+    # with col4:
+    #     if st.button("直接進入正式測驗"):
+    #         st.session_state.start_time = None
+    #         st.session_state.page = 104
+    #         st.session_state.scroll_to_top = True
+    #         st.rerun()
     
 # 練習測驗函式
 def graphical_question(
@@ -1916,6 +1918,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
