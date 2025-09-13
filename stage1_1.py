@@ -1912,7 +1912,12 @@ if st.session_state.page == 141:
         st.session_state.scroll_to_top = False
     st.header("實驗目的澄清")
     st.markdown("---")
-    st.write("（此處將放debrief文字）")
+    st.write("""再次感謝您完成了本測驗！""")
+    st.write("""我們真實的研究目的是想要了解受試者練習時的努力狀況以及與他人的分數差異，會如何影響受試者對自己能力與表現的看法。""")
+    st.write("""因此【正式測驗分數並不是真的】，請您別將分數作為判斷自己智力的依據！""")
+    st.write("""最後，也請您勿將本研究與測驗內容告知任何人""")
+    st.write("""如果您有任何疑問，可以直接聯繫研究人員（112752003@g.nccu.edu.tw）""")
+　　st.write("""祝您能在本研究的抽獎活動中獎！也敬祝平安健康順心！""")
     st.markdown("---")
     
     col1, col2, col3, col4 = st.columns([1, 1, 2, 1])
@@ -1925,5 +1930,6 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
