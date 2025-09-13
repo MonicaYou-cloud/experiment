@@ -5,18 +5,24 @@ from PIL import Image
 import gspread
 from google.oauth2.service_account import Credentials
 
+# 建立連線 (只做一次)
 scope = ["https://spreadsheets.google.com/feeds",
          "https://www.googleapis.com/auth/drive"]
 
 creds = Credentials.from_service_account_info(
-    st.secrets["gcp_service_account"],  # 讀取 secrets.toml
+    st.secrets["gcp_service_account"],
     scopes=scope
 )
 
 client = gspread.authorize(creds)
 
-# 開啟 Google Sheet（名稱要跟你的試算表一致）
-sheet = client.open("experiment_data").worksheet("工作表1")
+# 📌 這裡只 open 一次
+@st.cache_resource
+def get_sheet():
+    return client.open("experiment_data").worksheet("工作表1")
+
+sheet = get_sheet()
+
 
 #初始化資料庫
 for key in ["ID", "gender", "age",
@@ -1827,3 +1833,4 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
