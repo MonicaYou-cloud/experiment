@@ -229,16 +229,21 @@ elif st.session_state.page == 2:
     st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
     st.write("""例題：""")
     col1, col2 = st.columns(2)
-         with col1:
-                  try:
-                           Image.open(new_folder/高級圖形一 (3).png)
-                  except FileNotFoundError:
-                           st.warning("⚠️ 圖片載入失敗")
-         with col2:
-                  try:
-                           image2 = Image.open(new_folder/高級圖形一選項 (3).png)
-                  except FileNotFoundError:
-                           st.warning("⚠️ 圖片載入失敗")
+
+    with col1:
+        try:
+            image1 = Image.open("new_folder/高級圖形一 (3).png")
+            st.image(image1, caption="例題題目")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片載入失敗")
+
+    with col2:
+        try:
+            image2 = Image.open("new_folder/高級圖形一選項 (3).png")
+            st.image(image2, caption="例題選項")
+        except FileNotFoundError:
+            st.warning("⚠️ 圖片載入失敗")
+                 
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -1942,4 +1947,5 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
