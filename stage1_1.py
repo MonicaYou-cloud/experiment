@@ -153,23 +153,22 @@ if st.session_state.page == 0:
 
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
-        warning_needed = False
-        if st.button("開始測驗"):
-                 now = datetime.now()
-                 if user_id in participants:
-                          start, end = participants[user_id]
-                          if start <= now <= end:
-                                   st.session_state["participant_id"] = user_id
-                                   st.session_state["start_time"] = now
-                                   st.success(f"✅ 登入成功！編號：{user_id}")
-                                   st.write(f"👉 測驗允許時間：{start} ~ {end}")
-                                   st.write(f"🕒 登入時間：{now}")
-                                   next_page()
-                                   st.rerun()
-                          else:
-                                   st.error(f"⛔ {user_id} 不在允許填答時間！允許時間：{start} ~ {end}")
-                 else:
-                          st.error("⚠️ 無效的受試者編號！請確認後再試。")
+             if st.button("開始測驗"):
+                      now = datetime.now()
+                      if user_id in participants:
+                               start, end = participants[user_id]
+                               if start <= now <= end:
+                                        st.session_state["participant_id"] = user_id
+                                        st.session_state["start_time"] = now
+                                        st.success(f"✅ 登入成功！編號：{user_id}")
+                                        st.write(f"👉 測驗允許時間：{start} ~ {end}")
+                                        st.write(f"🕒 登入時間：{now}")
+                                        next_page()
+                                        st.rerun()
+                               else:
+                                        st.error(f"⛔ {user_id} 不在允許填答時間！允許時間：{start} ~ {end}")
+             else:
+                      st.error("⚠️ 無效的受試者編號！請確認後再試。")
 
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -1961,6 +1960,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
