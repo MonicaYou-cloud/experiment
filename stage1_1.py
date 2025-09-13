@@ -170,6 +170,7 @@ if st.session_state.page == 0:
                                st.session_state["participant_id"] = user_id
                                st.session_state["start_time"] = now
                                row_data = [
+                                        st.session_state.get("start_time").strftime("%Y-%m-%d %H:%M:%S"),
                                         st.session_state["ID"]
                                ]
                                sheet.append_row(row_data)
@@ -1914,6 +1915,7 @@ if st.session_state.page == 140:
                st.session_state.get("SE5") is None:
                    warning_needed = True
             else:
+                     st.session_state["end_time"] = datetime.now(tz)
                      row_data = [
                               st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                               st.session_state["self_esteem1"], st.session_state["self_esteem2"],
@@ -1926,6 +1928,7 @@ if st.session_state.page == 140:
                               st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], st.session_state["SE5"],
+                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S"),
                      ]
                      sheet.append_row(row_data)
                      next_page()  # 跳到下一頁
@@ -1973,6 +1976,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
