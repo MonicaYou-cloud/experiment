@@ -1928,8 +1928,6 @@ if st.session_state.page == 140:
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], st.session_state["SE5"],
                      ]
                      sheet.append_row(row_data)
-                     question_answers = [st.session_state.get(f"q_{i}") for i in range(1, 31)]
-                     sheet.append_row(question_answers)
                      next_page()  # 跳到下一頁
                      st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
@@ -1975,3 +1973,4 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
