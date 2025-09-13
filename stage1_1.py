@@ -153,6 +153,7 @@ if st.session_state.page == 0:
     st.markdown("---")
     st.text_input("請輸入您的受試者編號", placeholder="",  key="ID")
 
+    user_id = str(st.session_state.get("ID", "")).strip()
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
              clicked = st.button("開始測驗")  # 只把按鈕放在 col3
@@ -1962,6 +1963,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
