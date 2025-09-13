@@ -1916,7 +1916,6 @@ if st.session_state.page == 140:
                               st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state.get(f"q_{i}") for i in range(1, 31)
                      ]
         
                      sheet.append_row(row_data)
@@ -1965,6 +1964,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
