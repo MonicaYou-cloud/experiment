@@ -262,8 +262,8 @@ elif st.session_state.page == 2:
     st.markdown("---")
     st.write("""歡迎您來到練習階段！""")
     st.write("""本階段設有多道智力測驗練習題，每道練習題都可以觀看解答。""")
-    st.write("""【請您至少練習5題】之後您可自行決定是否要繼續練習或直接進入正式測驗""")
-    st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")              
+    st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
+    st.write("""【請您至少練習5題】之後您可自行決定是否要繼續練習或直接進入正式測驗。""")              
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -1771,21 +1771,19 @@ if st.session_state.page == 138:
     st.header("測驗結果")
     st.markdown("---")
 
-    if st.session_state.get("formal_start_time"):
-        elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
-        minutes = elapsed_seconds // 60
-        seconds = elapsed_seconds % 60
-        time_str = f"{minutes} 分 {seconds} 秒"
-    else:
-        time_str = "無法取得"
+    # if st.session_state.get("formal_start_time"):
+    #     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
+    #     minutes = elapsed_seconds // 60
+    #     seconds = elapsed_seconds % 60
+    #     time_str = f"{minutes} 分 {seconds} 秒"
+    # else:
+    #     time_str = "無法取得"
 
     personal_score = 65
     average_score = 80
 
     col1, col2, col3 = st.columns([2, 1, 2])
     with col1:
-        st.metric(label="您在測驗所花費的時間", value=time_str) 
-    with col2:
         st.metric(label="您的智力測驗分數", value=f"{personal_score}")
     with col3:
         st.metric(label="與您同齡的人的平均分數", value=f"{average_score}")
@@ -1969,6 +1967,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
