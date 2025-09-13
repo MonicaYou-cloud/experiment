@@ -38,16 +38,16 @@ for key in ["ID", "gender", "age",
 
 # 預先設定：受試者編號 -> [允許開始時間, 允許結束時間]
 participants = {
-    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0), datetime(2025, 9, 13, 21, 30, 0)],
-    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
-    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
-    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0), datetime(2025, 9, 15, 15, 0, 0)],
-    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
-    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
-    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0), datetime(2025, 9, 15, 15, 0, 0)],
-    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0), datetime(2025, 9, 16, 11, 0, 0)],
-    "snTq11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
-    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0), datetime(2025, 9, 16, 14, 30, 0)],
+    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2025, 9, 13, 21, 30, 0, tzinfo=tz)],
+    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2025, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2025, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "snTq11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
 }
 
 # 初始化分頁
@@ -1966,6 +1966,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
