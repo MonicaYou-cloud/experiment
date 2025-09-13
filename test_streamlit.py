@@ -33,27 +33,6 @@ for key in ["ID", "gender", "age",
     if key not in st.session_state:
         st.session_state[key] = None
 
-def submit_data():
-    try:
-             data_to_save = [
-                      st.session_state.get("ID", ""), st.session_state.get("gender", ""), st.session_state.get("age", ""),
-                      st.session_state.get("self_esteem1", ""), st.session_state.get("self_esteem2", ""),
-                      st.session_state.get("self_esteem3", ""), st.session_state.get("self_esteem4", ""),
-                      st.session_state.get("self_esteem5", ""), st.session_state.get("self_esteem6", ""),
-                      st.session_state.get("self_esteem7", ""), st.session_state.get("self_esteem8", ""),
-                      st.session_state.get("self_esteem9", ""), st.session_state.get("self_esteem10", ""),
-                      st.session_state.get("mindset1", ""), st.session_state.get("mindset2", ""), st.session_state.get("mindset3", ""),
-                      st.session_state.get("important1", ""), st.session_state.get("important2", ""), st.session_state.get("important3", ""),
-                      st.session_state.get("E1", ""), st.session_state.get("E2", ""), st.session_state.get("E3", ""),
-                      st.session_state.get("score1", ""), st.session_state.get("score2", ""), st.session_state.get("comparison", ""),
-                      st.session_state.get("SE1", ""), st.session_state.get("SE2", ""), st.session_state.get("SE3", ""),
-                      st.session_state.get("elapsed_time", "")
-             ]
-             sheet.append_row(data_to_save)
-             st.success("資料已成功提交！")
-    except Exception as e:
-             st.error(f"❌ 資料提交失敗！請聯繫研究者。錯誤訊息：{e}")
-
 # 初始化分頁
 if "page" not in st.session_state:
     st.session_state.page = 0
@@ -210,6 +189,18 @@ elif st.session_state.page == 1:
                           or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None):
                                    warning_needed = True
                       else:
+                               row_data = [
+                                        st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                                        st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                                        st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                                        st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                                        st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                                        st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                                        st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                                        st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                               ]
+                               sheet.append_row(row_data)
+                               st.success("✅ 作答已送出！")
                                next_page() 
                                st.rerun()
     if warning_needed: st.warning("⚠️ 請先作答才能繼續。")
@@ -1864,6 +1855,31 @@ elif st.session_state.page == 142:
 
 
 
+
+ if st.button("完成測驗"):
+            if st.session_state.get("SE1") is None or \
+               st.session_state.get("SE2") is None or \
+               st.session_state.get("SE3") is None:
+                   warning_needed = True
+            else:
+                     row_data = [
+                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
+                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
+                     ]
+                     sheet.append_row(row_data)
+                     st.success("✅ 作答已送出！")
+                     next_page() 
+                     st.rerun()
+    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 
 
