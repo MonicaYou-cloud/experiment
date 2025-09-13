@@ -32,7 +32,9 @@ for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
            , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
-           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5"]:
+           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5"
+           , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
+           , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
     if key not in st.session_state:
         st.session_state[key] = None
 
@@ -1363,8 +1365,10 @@ def question(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                    next_page()
-                    st.rerun()
+                         row_data = [st.session_state.get(radio_key)]
+                         sheet.append_row(row_data)
+                         next_page()
+                         st.rerun()
         
         if warning_needed:
             st.warning("⚠️ 請先作答才能繼續。")
@@ -1420,8 +1424,10 @@ def question1(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                    next_page()
-                    st.rerun()
+                         row_data = [st.session_state.get(radio_key)]
+                         sheet.append_row(row_data)
+                         next_page()
+                         st.rerun()
         
         if warning_needed:
             st.warning("⚠️ 請先作答才能繼續。")
@@ -1478,8 +1484,10 @@ def question2(
                 if st.session_state.get(radio_key) is None:
                     warning_needed = True  # 觸發提示
                 else:
-                    next_page()
-                    st.rerun()
+                         row_data = [st.session_state.get(radio_key)]
+                         sheet.append_row(row_data)
+                         next_page()
+                         st.rerun()
         
         if warning_needed:
             st.warning("⚠️ 請先作答才能繼續。")
@@ -1967,29 +1975,3 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
