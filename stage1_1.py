@@ -145,7 +145,7 @@ elif st.session_state.page == 1:
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("基本資料")
-    st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀與看法，填寫完畢後請按【下一頁】進入練習階段。")
+    st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀，填寫完畢後請按【下一頁】進入練習階段。")
     st.markdown("---")
     st.text_input("請輸入受試者編號", placeholder="",  key="ID")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
@@ -227,6 +227,18 @@ elif st.session_state.page == 2:
     st.write("""本階段設有多道智力測驗練習題，每道練習題都可以觀看解答。""")
     st.write("""【請您至少練習5題】之後您可自行決定是否要繼續練習或直接進入正式測驗""")
     st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
+    st.write("""例題：""")
+    col1, col2 = st.columns(2)
+         with col1:
+                  try:
+                           Image.open(new_folder/高級圖形一 (3).png)
+                  except FileNotFoundError:
+                           st.warning("⚠️ 圖片載入失敗")
+         with col2:
+                  try:
+                           image2 = Image.open(new_folder/高級圖形一選項 (3).png)
+                  except FileNotFoundError:
+                           st.warning("⚠️ 圖片載入失敗")
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -1930,3 +1942,4 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
