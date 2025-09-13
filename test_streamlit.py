@@ -1825,8 +1825,8 @@ if st.button("完成測驗"):
 
     st.success("✅ 作答已送出！")
 
-    df = pd.DataFrame(sheet.get_all_records())
-    st.dataframe(df)
+    # df = pd.DataFrame(sheet.get_all_records())
+    # st.dataframe(df)
 
 # debrief
 if st.session_state.page == 141:
@@ -1848,6 +1848,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
