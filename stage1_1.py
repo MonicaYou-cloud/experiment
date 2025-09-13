@@ -134,10 +134,20 @@ if st.session_state.page == 0:
              st.write("""碩士生 游主雲""")
              st.write("""指導老師 孫蒨如 教授""")                 
     st.markdown("---")
+    st.text_input("請輸入您的受試者編號", placeholder="",  key="ID")
 
     col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
     with col3:
-        st.button("開始測驗", on_click=next_page)
+        warning_needed = False
+        if st.button("開始測驗"):
+                 if (st.session_state.get("ID") is None):
+                          warning_needed = True
+                 else:
+                          row_data = [st.session_state["ID"]]
+                          sheet.append_row(row_data)
+                          next_page() 
+                          st.rerun()
+    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")             
             
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -147,7 +157,6 @@ elif st.session_state.page == 1:
     st.header("基本資料")
     st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀，填寫完畢後請按【下一頁】進入練習階段。")
     st.markdown("---")
-    st.text_input("請輸入受試者編號", placeholder="",  key="ID")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
     st.selectbox("請選擇您的年齡區間", ["18歲以下", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
     st.write("1. 我一無是處。")
@@ -194,7 +203,7 @@ elif st.session_state.page == 1:
     with col4:
              warning_needed = False
              if st.button("下一頁"):
-                      if (st.session_state.get("ID") is None or st.session_state.get("gender") is None or st.session_state.get("age") is None 
+                      if (st.session_state.get("gender") is None or st.session_state.get("age") is None 
                           or st.session_state.get("self_esteem1") is None or st.session_state.get("self_esteem2") is None 
                           or st.session_state.get("self_esteem3") is None or st.session_state.get("self_esteem4") is None 
                           or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None 
@@ -1930,6 +1939,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
