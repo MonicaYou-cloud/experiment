@@ -1818,7 +1818,7 @@ if st.session_state.page == 140:
         st.session_state.scroll_to_top = False
     st.header("結束本測驗前")
     st.markdown("---")
-    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按【完成測驗】進入研究解釋。""")
+    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按【完成測驗】。""")
 
     st.write("１. 您認為自己的邏輯推理能力如何？")
     SE1 = st.radio(
@@ -1925,4 +1925,5 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
