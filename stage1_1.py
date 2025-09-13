@@ -1183,7 +1183,7 @@ if st.session_state.page == 105:
     
     with col1:
         st.text_input("請問您總共練習了多少題？", placeholder="請輸入數字",  key="Num")
-        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Min")
+        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
         st.write("１. 您覺得自己有多認真對待剛才的練習題？")
         st.radio(
                  label="（１=非常不認真，６=非常認真）",
@@ -1908,6 +1908,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
