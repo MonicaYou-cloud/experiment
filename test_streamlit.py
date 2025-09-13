@@ -1131,6 +1131,7 @@ if st.session_state.page == 103:
     
 # 顯示練習花費時間
 if st.session_state.page == 104:
+    st.write(st.session_state)
 
     # 顯示練習階段所花時間
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -1851,6 +1852,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
