@@ -200,7 +200,6 @@ elif st.session_state.page == 1:
                                         st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                                ]
                                sheet.append_row(row_data)
-                               st.success("✅ 作答已送出！")
                                next_page() 
                                st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
@@ -1234,14 +1233,12 @@ if st.session_state.page == 105:
                               st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                      ]
                      sheet.append_row(row_data)
-                     st.success("✅ 作答已送出！")
                      next_page() 
                      st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
                 
 # 正式測驗說明
 if st.session_state.page == 106:
-    st.write(st.session_state)
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("此處將放上正式測驗說明")
@@ -1744,7 +1741,6 @@ if st.session_state.page == 138:
 
 # 操弄檢核
 if st.session_state.page == 139:
-    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1787,14 +1783,12 @@ if st.session_state.page == 139:
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                      ]
                      sheet.append_row(row_data)
-                     st.success("✅ 作答已送出！")
                      st.session_state.warning_message = "" 
                      st.session_state.page += 1
                      st.rerun()
 
 # 測驗後問卷
 if st.session_state.page == 140:
-    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1889,7 +1883,6 @@ if st.session_state.page == 200:
 
 # debrief
 if st.session_state.page == 141:
-    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1908,6 +1901,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
