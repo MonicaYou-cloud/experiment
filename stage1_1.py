@@ -126,7 +126,7 @@ if st.session_state.page == 0:
     st.write(""" 若您是需要換取課堂學分則需要參與現場實驗，且無法參加抽獎活動，謝謝！""")
     st.write("""您有完全自主性，可以自由決定是否參與以及繼續本測驗，若您感到不適，可以隨時中止測驗。""")
     st.write("""本研究不會對您造成任何風險，您所填寫的資料將完全保密。資料收回後將由研究人員電子歸檔與保存並進行統計數據分析，預計保留5年後全數刪除，請您放心。""")
-    st.write("""當您按下開始測驗表示您同意上述內容。""")
+    st.write("""當您按下【開始測驗】表示您同意上述內容。""")
     st.write("""最後，如果您有任何疑問，可以直接聯繫研究人員（112752003@g.nccu.edu.tw）""")
     col1, col2, col3 = st.columns([1, 2, 2])
     with col3:
@@ -147,7 +147,7 @@ if st.session_state.page == 0:
                           sheet.append_row(row_data)
                           next_page() 
                           st.rerun()
-    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")             
+    if warning_needed: st.warning("⚠️ 請填寫受試者編號才能繼續。")             
             
 # 基本資料頁
 elif st.session_state.page == 1:
@@ -1939,6 +1939,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
