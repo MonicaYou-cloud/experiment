@@ -226,24 +226,7 @@ elif st.session_state.page == 2:
     st.write("""歡迎您來到練習階段！""")
     st.write("""本階段設有多道智力測驗練習題，每道練習題都可以觀看解答。""")
     st.write("""【請您至少練習5題】之後您可自行決定是否要繼續練習或直接進入正式測驗""")
-    st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
-    st.write("""例題：""")
-    col1, col2 = st.columns(2)
-
-    with col1:
-        try:
-            image1 = Image.open("new_folder/高級圖形一 (3).png")
-            st.image(image1, caption="例題題目")
-        except FileNotFoundError:
-            st.warning("⚠️ 圖片載入失敗")
-
-    with col2:
-        try:
-            image2 = Image.open("new_folder/高級圖形一選項 (3).png")
-            st.image(image2, caption="例題選項")
-        except FileNotFoundError:
-            st.warning("⚠️ 圖片載入失敗")
-                 
+    st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")              
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -289,7 +272,7 @@ def graphical_question(
         with col2:
             try:
                 image2 = Image.open(option_image_path)
-                st.image(image2, caption="請選擇您認為的正確圖形")
+                st.image(image2, caption="請選擇符合題目規律的圖形")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
@@ -1315,7 +1298,7 @@ def question(
         with col2:
             try:
                 image2 = Image.open(option_image_path)
-                st.image(image2, caption="請選擇您認為的正確圖形")
+                st.image(image2, caption="請選擇符合題目規律的圖形")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
@@ -1372,7 +1355,7 @@ def question1(
         with col2:
             try:
                 image2 = Image.open(option_image_path)
-                st.image(image2, caption="請選擇您認為的正確圖形")
+                st.image(image2, caption="請選擇符合題目規律的圖形")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
@@ -1430,7 +1413,7 @@ def question2(
         with col2:
             try:
                 image2 = Image.open(option_image_path)
-                st.image(image2, caption="請選擇您認為的正確圖形")
+                st.image(image2, caption="請選擇符合題目規律的圖形")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
@@ -1947,5 +1930,6 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
