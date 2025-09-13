@@ -1836,8 +1836,20 @@ if st.session_state.page == 140:
                st.session_state.get("SE3") is None:
                    warning_needed = True
             else:
-                     submit_data()
-                     st.success("✅ 作答已送出！")
+                     row_data = [
+                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
+                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
+                     ]
+                     sheet.append_row(row_data)
                      next_page()  # 跳到下一頁
                      st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
@@ -1879,5 +1891,6 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
