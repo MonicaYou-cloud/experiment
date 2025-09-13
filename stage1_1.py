@@ -157,7 +157,7 @@ if st.session_state.page == 0:
     with col3:
              if st.button("開始測驗"):
                       now = datetime.now(tz)  # 加上時區
-                      user_id = st.session_state.get("ID", "").strip()  # 安全取值並去掉空白
+                      user_id = str(st.session_state.get("ID", "")).strip()
                       if not user_id:
                                st.warning("⚠️ 請先輸入受試者編號！")  # 沒輸入就警告
                       elif user_id not in participants:
@@ -1966,6 +1966,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
