@@ -1837,6 +1837,7 @@ if st.button("完成測驗"):
 
 # debrief
 if st.session_state.page == 141:
+    st.write(st.session_state)
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1855,6 +1856,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
