@@ -228,6 +228,7 @@ elif st.session_state.page == 2:
     st.write("""【請您至少練習5題】之後您可自行決定是否要繼續練習或直接進入正式測驗""")
     st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
+    st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
     with col3:
@@ -1920,6 +1921,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
