@@ -19,7 +19,7 @@ client = gspread.authorize(creds)
 # 📌 這裡只 open 一次
 @st.cache_resource
 def get_sheet():
-    return client.open("experiment_data").worksheet("工作表1")
+    return client.open("experiment_data").worksheet("stage1-1")
 
 sheet = get_sheet()
 
@@ -1767,7 +1767,7 @@ if st.session_state.page == 139:
     with col4:
         if st.button("下一頁"):
             if score1 is None or score2 is None or comparison is None:
-                st.session_state.warning_message = "⚠請填寫所有問題才能繼續。"
+                st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
             else:
                      row_data = [
@@ -1901,6 +1901,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
