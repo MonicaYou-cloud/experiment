@@ -195,6 +195,7 @@ elif st.session_state.page == 1:
 
 # 練習說明
 elif st.session_state.page == 2:
+    st.write(st.session_state)
     st.header("第一階段：練習測驗")
     st.markdown("---")
     st.write("此處將放上練習測驗說明")
@@ -1850,6 +1851,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
