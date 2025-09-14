@@ -1211,9 +1211,10 @@ if st.session_state.page == 104:
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
-            
-            avg_minutes = round(elapsed_seconds / 3, 2)
-            avg_seconds = 30
+
+            average_seconds = round(elapsed_seconds / 3)
+            avg_minutes = average_seconds // 60
+            avg_seconds = average_seconds % 60
             average_time_str = f"{avg_minutes} 分 {avg_seconds} 秒"
     col1, col2, col3 = st.columns([2, 1, 2])
     with col1:
