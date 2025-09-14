@@ -1251,7 +1251,7 @@ if st.session_state.page == 105:
     with col1:
         st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time1")
         st.text_input("請問同齡人平均練習了幾分鐘？", placeholder="請輸入數字",  key="Time2")
-        comparison1 = st.radio("您比同齡人練習的時間更多還是更少？", ["更多", "更少", "不知道"], index=None, key="comparison1")
+        comparison1 = st.radio("您比同齡人練習的時間更多還是更少？", ["更多", "更少", "差不多"], index=None, key="comparison1")
     
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
