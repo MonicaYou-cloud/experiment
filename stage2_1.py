@@ -1250,28 +1250,9 @@ if st.session_state.page == 105:
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Num")
-        st.text_input("請問同齡人平均練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
-        st.write("１. 您有多認真做剛才的練習題？")
-        st.radio(
-                 label="（１=非常不認真，６=非常認真）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E1", horizontal=True, index=None
-        )
-
-        st.write("２. 您有多投入於練習階段？")
-        st.radio(
-                 label="（１=非常不投入，６=非常投入）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E2", horizontal=True, index=None
-        )
-
-        st.write("３. 您在做練習題時有多努力？")
-        st.radio(
-                 label="（１=非常不努力，６=非常努力）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E3", horizontal=True, index=None
-        )
+        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time1")
+        st.text_input("請問同齡人平均練習了幾分鐘？", placeholder="請輸入數字",  key="Time2")
+        comparison1 = st.radio("您比同齡人練習的時間更多還是更少？", ["更多", "更少", "不知道"], index=None, key="comparison1")
     
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
@@ -1283,11 +1264,9 @@ if st.session_state.page == 105:
         warning_needed = False
         if st.button("下一頁"):
             # 檢查是否有漏填
-            if (st.session_state.get("Num") is None or 
-                st.session_state.get("Time") is None or 
-                st.session_state.get("E1") is None or 
-                st.session_state.get("E2") is None or 
-                st.session_state.get("E3") is None):
+            if (st.session_state.get("Time1") is None or 
+                st.session_state.get("Time2") is None or 
+                st.session_state.get("comparison1") is None):
                          warning_needed = True
             else:
                      row_data = [
