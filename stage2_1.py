@@ -1805,7 +1805,7 @@ if st.session_state.page == 139:
     st.write("""以下問題是想了解您的正式測驗狀況。填寫完畢後請按【下一頁】。""")
     score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
-    comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison2")
+    comparison2 = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison2")
     # 加上 JS/HTML 把 autocomplete 關掉
     st.markdown("""
     <style>
