@@ -1211,6 +1211,8 @@ if st.session_state.page == 104:
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
+         else:
+            st.warning("您未進行任何練習\n請按下一頁")
     
     
     average_time = time_str * 6 / 3
@@ -1220,8 +1222,7 @@ if st.session_state.page == 104:
     with col3:
       st.metric(label="與您同齡的人的平均練習時間", value=f"{average_time}")
             
-        else:
-            st.warning("您未進行任何練習\n請按下一頁")
+        
             
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
     with col6:
