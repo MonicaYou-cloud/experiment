@@ -1249,8 +1249,8 @@ if st.session_state.page == 105:
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.text_input("請問您總共練習了多少題？", placeholder="請輸入數字",  key="Num")
-        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
+        st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Num")
+        st.text_input("請問同齡人平均練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
         st.write("１. 您有多認真做剛才的練習題？")
         st.radio(
                  label="（１=非常不認真，６=非常認真）",
