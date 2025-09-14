@@ -1211,14 +1211,16 @@ if st.session_state.page == 104:
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
-    
-    
-    average_time = time_str * 6 / 3
+            
+            average_seconds = elapsed_seconds * 6 / 3
+            avg_minutes = int(average_seconds) // 60
+            avg_seconds = int(average_seconds) % 60
+            average_time_str = f"{avg_minutes} 分 {avg_seconds} 秒"
     col1, col2, col3 = st.columns([2, 1, 2])
     with col1:
       st.metric(label="您在練習所花費的時間", value=time_str)
     with col3:
-      st.metric(label="與您同齡的人的平均練習時間", value=f"{average_time}")
+      st.metric(label="與您同齡的人的平均練習時間", value=average_time_str)
             
         
             
