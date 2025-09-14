@@ -246,7 +246,7 @@ elif st.session_state.page == 1:
                           or st.session_state.get("important1") is None or st.session_state.get("important2") is None or st.session_state.get("important3") is None):
                                    warning_needed = True
                       else:
-                               row_data = [
+                               row_data = [st.session_state["ID"],
                                         st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                                         st.session_state["self_esteem1"], st.session_state["self_esteem2"],
                                         st.session_state["self_esteem3"], st.session_state["self_esteem4"],
@@ -1282,7 +1282,7 @@ if st.session_state.page == 105:
                 st.session_state.get("E3") is None):
                          warning_needed = True
             else:
-                     row_data = [
+                     row_data = [st.session_state["ID"],
                               st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                               st.session_state["self_esteem1"], st.session_state["self_esteem2"],
                               st.session_state["self_esteem3"], st.session_state["self_esteem4"],
@@ -1840,7 +1840,7 @@ if st.session_state.page == 139:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
             else:
-                     row_data = [
+                     row_data = [st.session_state["ID"],
                               st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                               st.session_state["self_esteem1"], st.session_state["self_esteem2"],
                               st.session_state["self_esteem3"], st.session_state["self_esteem4"],
@@ -1918,7 +1918,7 @@ if st.session_state.page == 140:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
-                     row_data = [
+                     row_data = [st.session_state["ID"],
                               st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                               st.session_state["self_esteem1"], st.session_state["self_esteem2"],
                               st.session_state["self_esteem3"], st.session_state["self_esteem4"],
