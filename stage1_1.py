@@ -1826,9 +1826,9 @@ if st.session_state.page == 138:
                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                              st.session_state.get("formal_start_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
-                     sheet.append_row(row_data)
-                     next_page() 
-                     st.rerun()
+                  sheet.append_row(row_data)
+                  next_page() 
+                  st.rerun()
             # st.session_state.page += 1
             # st.session_state.scroll_to_top = True
             # st.rerun()
@@ -2003,6 +2003,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
