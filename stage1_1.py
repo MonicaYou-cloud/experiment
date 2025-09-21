@@ -1226,8 +1226,7 @@ if st.session_state.page == 104:
             sheet.append_row(row_data)
         else:
             st.warning("您未進行任何練習\n請按下一頁")
-time_str1=time_str1
-
+                 
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
     with col6:
         st.button("下一頁", on_click=next_page)
@@ -1256,7 +1255,6 @@ if st.session_state.page == 105:
     with col1:
         st.text_input("請問您總共練習了多少題？", placeholder="請輸入數字",  key="Num")
         st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
-        Num=st.session_state["Num"]
         st.write("１. 您有多認真做剛才的練習題？")
         st.radio(
                  label="（１=非常不認真，６=非常認真）",
@@ -1821,10 +1819,10 @@ if st.session_state.page == 138:
 
     col1, col2, col3 = st.columns([2, 1, 2]) 
     with col1: 
-        st.metric(label="您在練習所花費的時間", value=time_str1)  
+        st.metric(label="您在練習所花費的時間", value=sheet.acell("U4").value)  
          
     with col3: 
-        st.metric(label="您在練習所做的題數", value=Num) 
+        st.metric(label="您在練習所做的題數", value=sheet.acell("V4").value) 
     
     col1, col2, col3 = st.columns([2, 1, 2]) 
     with col1: 
@@ -2039,6 +2037,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
