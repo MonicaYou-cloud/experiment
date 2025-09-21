@@ -1210,8 +1210,22 @@ if st.session_state.page == 104:
             elapsed_seconds = int(time.time() - st.session_state.start_time)
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
-            time_str = f"{minutes} 分 {seconds} 秒"
-            st.metric(label="您在練習所花費的時間", value=time_str)
+            time_str1 = f"{minutes} 分 {seconds} 秒"
+            st.metric(label="您在練習所花費的時間", value=time_str1)
+            row_data = [st.session_state["ID"],                                        
+                        st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                        
+                        st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                        
+                        st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
+                        st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                        
+                        st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
+                        st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                    
+                        st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                                        
+                        st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                        time_str1
+                       ]
+                               sheet.append_row(row_data)
+                               next_page() 
+                               st.rerun()
         else:
             st.warning("您未進行任何練習\n請按下一頁")
             
@@ -2000,6 +2014,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
