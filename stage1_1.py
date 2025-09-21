@@ -1224,8 +1224,6 @@ if st.session_state.page == 104:
                         time_str1
                        ]
             sheet.append_row(row_data)
-            next_page() 
-            st.rerun()
         else:
             st.warning("您未進行任何練習\n請按下一頁")
             
@@ -2014,6 +2012,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
