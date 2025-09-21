@@ -1255,6 +1255,7 @@ if st.session_state.page == 105:
     with col1:
         st.text_input("請問您總共練習了多少題？", placeholder="請輸入數字",  key="Num")
         st.text_input("請問您總共練習了幾分鐘？", placeholder="請輸入數字",  key="Time")
+        Num=st.session_state["Num"]
         st.write("１. 您有多認真做剛才的練習題？")
         st.radio(
                  label="（１=非常不認真，６=非常認真）",
@@ -1797,7 +1798,7 @@ if st.session_state.page == 138:
         elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
         minutes = elapsed_seconds // 60
         seconds = elapsed_seconds % 60
-        time_str = f"{minutes} 分 {seconds} 秒"
+        time_str2 = f"{minutes} 分 {seconds} 秒"
         row_data = [st.session_state["ID"],
                     st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
                     st.session_state["self_esteem1"], st.session_state["self_esteem2"],
@@ -1808,18 +1809,25 @@ if st.session_state.page == 138:
                     st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                     st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                     st.session_state["Num"], st.session_state["Time"],                              
-                    st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str
+                    st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str2
                    ]
         sheet.append_row(row_data)
     else:
-        time_str = "無法取得"
+        time_str2 = "無法取得"
 
     personal_score = 65
     average_score = 80
+
+    col1, col2, col3 = st.columns([2, 1, 2]) 
+    with col1: 
+        st.metric(label="您在練習所花費的時間", value=time_str1)  
+         
+    with col3: 
+        st.metric(label="您在練習所做的題數", value=Num) 
     
     col1, col2, col3 = st.columns([2, 1, 2]) 
     with col1: 
-        st.metric(label="您在測驗所花費的時間", value=time_str)  
+        st.metric(label="您在測驗所花費的時間", value=time_str2)  
 
     with col2: 
         st.metric(label="您的分數", value=f"{personal_score}") 
@@ -2030,6 +2038,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
