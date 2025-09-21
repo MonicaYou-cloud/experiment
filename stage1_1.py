@@ -1786,6 +1786,19 @@ if st.session_state.page == 138:
         minutes = elapsed_seconds // 60
         seconds = elapsed_seconds % 60
         time_str = f"{minutes} 分 {seconds} 秒"
+        row_data = [st.session_state["ID"],
+                    st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                    st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                    st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                    st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                    st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                    st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                    st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                    st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                    st.session_state["Num"], st.session_state["Time"],                              
+                    st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str
+                   ]
+        sheet.append_row(row_data)
     else:
         time_str = "無法取得"
 
@@ -1813,24 +1826,9 @@ if st.session_state.page == 138:
     col1, col2 = st.columns([5, 2])
     with col2:
         if st.button("下一頁"):
-                 row_data = [st.session_state["ID"],
-                             st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                             st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                             st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                             st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                             st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                             st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                             st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                             st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                             st.session_state["Num"], st.session_state["Time"], 
-                             st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str
-                     ]
-                 sheet.append_row(row_data)
-                 next_page() 
-                 st.rerun()
-            # st.session_state.page += 1
-            # st.session_state.scroll_to_top = True
-            # st.rerun()
+            st.session_state.page += 1
+            st.session_state.scroll_to_top = True
+            st.rerun()
 
 # 操弄檢核
 if st.session_state.page == 139:
@@ -2002,6 +2000,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
