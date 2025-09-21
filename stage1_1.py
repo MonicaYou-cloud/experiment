@@ -1935,6 +1935,21 @@ if st.session_state.page == 140:
         key="SE5", horizontal=True, index=None
     )
     
+    st.write("６. 您是否同意本測驗能正確測量到您的能力？")
+    SE3 = st.radio(
+        label="（１=非常不同意，６=非常同意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE6", horizontal=True, index=None
+    )
+    
+    st.write("７. 您是否同意本測驗的內容是有效的？")
+    SE3 = st.radio(
+        label="（１=非常不同意，６=非常同意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE7", horizontal=True, index=None
+    )
+
+    
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
 
@@ -1948,7 +1963,9 @@ if st.session_state.page == 140:
                st.session_state.get("SE2") is None or \
                st.session_state.get("SE3") is None or \
                st.session_state.get("SE4") is None or \
-               st.session_state.get("SE5") is None:
+               st.session_state.get("SE5") is None or \
+               st.session_state.get("SE6") is None or \
+               st.session_state.get("SE7") is None:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
@@ -1963,7 +1980,8 @@ if st.session_state.page == 140:
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                               st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
-                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], st.session_state["SE5"],
+                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], 
+                              st.session_state["SE5"], st.session_state["SE6"], st.session_state["SE7"],
                               st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S"),
                      ]
                      sheet.append_row(row_data)
@@ -2012,6 +2030,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
