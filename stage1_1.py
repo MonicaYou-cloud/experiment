@@ -26,13 +26,12 @@ def get_sheet():
 
 sheet = get_sheet()
 
-
 #初始化資料庫
 for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
            , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
-           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5"
+           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
     if key not in st.session_state:
@@ -1985,11 +1984,12 @@ if st.session_state.page == 140:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              time_str1, st.session_state["Num"], st.session_state["Time"], 
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str2,
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], 
                               st.session_state["SE5"], st.session_state["SE6"], st.session_state["SE7"],
-                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S"),
+                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
                      next_page()  # 跳到下一頁
@@ -2037,23 +2037,3 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
