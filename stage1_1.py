@@ -1824,7 +1824,7 @@ if st.session_state.page == 138:
         st.metric(label="您在練習所做的題數", value=sheet.acell("V4").value) 
 
     Img = Image.open("new_folder/圖片1.png")
-    col1, col2, col3 = st.columns([2, 1, 1]) 
+    col1, col2, col3 = st.columns([2, 1, 2]) 
     with col1:
              st.image(Img)
     with col2:
@@ -2043,6 +2043,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
