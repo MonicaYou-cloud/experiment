@@ -1816,25 +1816,24 @@ if st.session_state.page == 138:
 
     personal_score = 65
     average_score = 80
-
+    Img = Image.open("new_folder/圖片1.png")
     col1, col2, col3 = st.columns([1, 1, 2]) 
     with col1: 
         st.metric(label="您先前練習的時間", value=sheet.acell("U4").value)  
          
     with col2: 
         st.metric(label="您先前練習的題數", value=sheet.acell("V4").value) 
-
-    Img = Image.open("new_folder/圖片1.png")
+    
+    with col3:
+             st.image(Img)
+    
     col1, col2, col3 = st.columns([1, 1, 2]) 
     with col1:
              st.metric(label="您的分數", value=f"{personal_score}") 
              
     with col2:
              st.metric(label="同齡人平均分數", value=f"{average_score}") 
-    with col3:
-             st.image(Img)
              
-         
     # col1, col2, col3 = st.columns([2, 1, 2]) 
     # with col1: 
     #     st.metric(label="您在測驗所花費的時間", value=time_str2)  
@@ -2046,6 +2045,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
