@@ -26,13 +26,12 @@ def get_sheet():
 
 sheet = get_sheet()
 
-
 #初始化資料庫
 for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
            , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
-           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5"
+           , "Num", "Time", "E1", "E2", "E3", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
     if key not in st.session_state:
@@ -267,7 +266,7 @@ elif st.session_state.page == 2:
     st.write("""歡迎您來到練習階段！""")
     st.write("""本階段設有100道智力測驗練習題，每道練習題都可以觀看解答。""")
     st.write("""練習階段將會計時，也請您記住自己最後共練習了幾題。""")
-    st.write("""【請您至少練習60題】之後您可自行決定是否要繼續練習或直接進入正式測驗。""")              
+    st.write("""【請您至少練習50題】之後您可自行決定是否要繼續練習或直接進入正式測驗。""")              
     st.write("""了解以上敘述後，請按【開始練習】進入練習測驗""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -1210,11 +1209,23 @@ if st.session_state.page == 104:
             elapsed_seconds = int(time.time() - st.session_state.start_time)
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
-            time_str = f"{minutes} 分 {seconds} 秒"
-            st.metric(label="您在練習所花費的時間", value=time_str)
+            time_str1 = f"{minutes} 分 {seconds} 秒"
+            st.metric(label="您在練習所花費的時間", value=time_str1)
+            row_data = [st.session_state["ID"],                                        
+                        st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                        
+                        st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                        
+                        st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
+                        st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                        
+                        st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
+                        st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                    
+                        st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                                        
+                        st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                        time_str1
+                       ]
+            sheet.append_row(row_data)
         else:
             st.warning("您未進行任何練習\n請按下一頁")
-            
+                 
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
     with col6:
         st.button("下一頁", on_click=next_page)
@@ -1290,7 +1301,8 @@ if st.session_state.page == 105:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["important3"], st.session_state["Num"], st.session_state["Time"], 
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                      ]
                      sheet.append_row(row_data)
                      next_page() 
@@ -1781,23 +1793,58 @@ if st.session_state.page == 138:
     st.header("測驗結果")
     st.markdown("---")
 
-    # if st.session_state.get("formal_start_time"):
-    #     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
-    #     minutes = elapsed_seconds // 60
-    #     seconds = elapsed_seconds % 60
-    #     time_str = f"{minutes} 分 {seconds} 秒"
-    # else:
-    #     time_str = "無法取得"
+    if st.session_state.get("formal_start_time"):
+        elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
+        minutes = elapsed_seconds // 60
+        seconds = elapsed_seconds % 60
+        time_str2 = f"{minutes} 分 {seconds} 秒"
+        row_data = [st.session_state["ID"],
+                    st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                    st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                    st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                    st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                    st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                    st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                    st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                    st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
+                    st.session_state["important3"], st.session_state["Num"], st.session_state["Time"],                              
+                    st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], time_str2
+                   ]
+        sheet.append_row(row_data)
+    else:
+        time_str2 = "無法取得"
 
     personal_score = 65
     average_score = 50
-
-    col1, col2, col3 = st.columns([2, 1, 2])
+    Img = Image.open("new_folder/圖片2.png")
+    col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
-        st.metric(label="您的智力測驗分數", value=f"{personal_score}")
+             st.metric(label="您先前練習的題數", value=f"{sheet.acell('V4').value} 題")  
+    with col2:
+             st.metric(label="您先前的練習時長", value=sheet.acell("U4").value)  
+    
+    col1, col2, col3 = st.columns([1, 1, 2]) 
+    with col1:
+             st.metric(label="您的分數", value=f"{personal_score} 分") 
+             
+    with col2:
+             st.metric(label="同齡人平均分數", value=f"{average_score} 分") 
+     
     with col3:
-        st.metric(label="與您同齡的人的平均分數", value=f"{average_score}")
+             st.image(Img)
+             
+    # col1, col2, col3 = st.columns([2, 1, 2]) 
+    # with col1: 
+    #     st.metric(label="您在測驗所花費的時間", value=time_str2)  
 
+    
+         
+    # col1, col2, col3 = st.columns([2, 1, 2])
+    # with col1:
+    #     st.metric(label="您的智力測驗分數", value=f"{personal_score}")
+    # with col3:
+    #     st.metric(label="與您同齡的人的平均分數", value=f"{average_score}")
+        
     st.markdown("---")
     # 下一頁按鈕
     col1, col2 = st.columns([5, 2])
@@ -1848,7 +1895,8 @@ if st.session_state.page == 139:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["important3"], st.session_state["Num"], st.session_state["Time"], 
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                      ]
                      sheet.append_row(row_data)
@@ -1900,6 +1948,21 @@ if st.session_state.page == 140:
         key="SE5", horizontal=True, index=None
     )
     
+    st.write("６. 您是否同意本測驗能正確測量到您的能力？")
+    SE3 = st.radio(
+        label="（１=非常不同意，６=非常同意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE6", horizontal=True, index=None
+    )
+    
+    st.write("７. 您是否同意本測驗的內容是有效的？")
+    SE3 = st.radio(
+        label="（１=非常不同意，６=非常同意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE7", horizontal=True, index=None
+    )
+
+    
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
 
@@ -1913,7 +1976,9 @@ if st.session_state.page == 140:
                st.session_state.get("SE2") is None or \
                st.session_state.get("SE3") is None or \
                st.session_state.get("SE4") is None or \
-               st.session_state.get("SE5") is None:
+               st.session_state.get("SE5") is None or \
+               st.session_state.get("SE6") is None or \
+               st.session_state.get("SE7") is None:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
@@ -1926,10 +1991,12 @@ if st.session_state.page == 140:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["Num"], st.session_state["Time"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["important3"], st.session_state["Num"], st.session_state["Time"], 
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
-                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S"),
+                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"], st.session_state["SE4"], 
+                              st.session_state["SE5"], st.session_state["SE6"], st.session_state["SE7"],
+                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
                      next_page()  # 跳到下一頁
