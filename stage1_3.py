@@ -1927,7 +1927,7 @@ if st.session_state.page == 140:
         key="SE2", horizontal=True, index=None
     )
 
-    st.write("３. 您認為自己的分析思考能力如何？")
+    st.write("３. 您認為自己的圖形理解能力如何？")
     SE3 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
