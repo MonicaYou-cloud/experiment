@@ -1927,7 +1927,7 @@ if st.session_state.page == 140:
         key="SE2", horizontal=True, index=None
     )
 
-    st.write("３. 您認為自己的分析思考能力如何？")
+    st.write("３. 您認為自己的圖形理解能力如何？")
     SE3 = st.radio(
         label="（１=非常不好，６=非常好）",
         options=["1", "2", "3", "4", "5", "6"],
@@ -2044,5 +2044,6 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
