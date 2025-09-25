@@ -131,7 +131,7 @@ if 2 < st.session_state.page < 103 and st.session_state.start_time:
     elapsed_seconds = int(time.time() - st.session_state.start_time)
     minutes = elapsed_seconds // 60
     seconds = elapsed_seconds % 60
-    st.markdown(f"⏱️ **練習時間：{minutes:02d} 分 {seconds:02d} 秒**")
+    # st.markdown(f"⏱️ **練習時間：{minutes:02d} 分 {seconds:02d} 秒**")
 
 # 歡迎頁
 if st.session_state.page == 0:
@@ -2044,6 +2044,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
