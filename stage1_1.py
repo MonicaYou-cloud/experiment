@@ -1181,42 +1181,35 @@ if st.session_state.page == 103:
                              ]
                   sheet.append_row(row_data)
                   
-    placeholder = st.empty()
-    with placeholder.container():
-        st.markdown("""
-            <style>
-                /* 強制整頁白底，清除殘影 */
-                body, .main, .block-container {
-                    background-color: white !important;
-                }
-
-                .top-container {
-                    padding-top: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                .stProgress {
-                    width: 60%;
-                    margin: 0 auto;
-                }
-            </style>
-            <div class="top-container">
-                <h4> 正在整理資料，請稍候…</h4>
-            </div>
-        """, unsafe_allow_html=True)
-
-        progress_bar = st.progress(0)
-
-    for i in range(5):  # 顯示7秒（1秒更新一次）
-        time.sleep(1)
-        progress_bar.progress((i + 1) * 10)
-
-    # 處理完後跳轉至第 14 頁（正式測驗前）
-    st.session_state.page += 1
-    st.session_state.scroll_to_top = True
-    st.rerun()
+         placeholder = st.empty()
+         with placeholder.container():
+                  st.markdown("""
+                  <style>
+                  body, .main, .block-container {
+                  background-color: white !important;
+                  }
+                  .top-container {
+                  padding-top: 30px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  }
+                  .stProgress {
+                  width: 60%;
+                  margin: 0 auto;
+                  }
+                  </style>
+                  <div class="top-container">
+                  <h4> 正在整理資料，請稍候…</h4>
+                  </div>
+                  """, unsafe_allow_html=True)
+                  progress_bar = st.progress(0)
+                  for i in range(5):  # 顯示7秒（1秒更新一次）
+                           time.sleep(1)
+                           progress_bar.progress((i + 1) * 10)
+                           st.session_state.page += 1
+                           st.session_state.scroll_to_top = True
+                           st.rerun()
     
 # 顯示練習花費時間
 # if st.session_state.page == 104:
@@ -2063,6 +2056,7 @@ elif st.session_state.page == 142:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
