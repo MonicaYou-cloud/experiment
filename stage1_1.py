@@ -1766,7 +1766,7 @@ if st.session_state.page == 135:
     
     st.header("成績計算中")
     st.markdown("---")
-    st.write("""想先透過以下問題了解您在練習階段以及正式測驗的狀況。填寫完畢後請按【下一頁】觀看您的測驗結果。""")
+    st.write("""以下問題想了解您在練習階段以及正式測驗的狀況。填寫完畢後請按【下一頁】觀看您的測驗結果。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1803,7 +1803,7 @@ if st.session_state.page == 135:
                  key="E3", horizontal=True, index=None
         )
          
-        st.markdown("---")
+    st.markdown("---")
              
     st.write("【您在正式測驗階段的狀況】")
          
@@ -1868,42 +1868,28 @@ if st.session_state.page == 135:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
          
 if st.session_state.page == 136:
-    placeholder = st.empty()
-    with placeholder.container():
-        st.markdown("""
-            <style>
-                /* 強制整頁白底，清除殘影 */
-                body, .main, .block-container {
-                    background-color: white !important;
-                }
+    st.markdown("### ⏳ 分數計算中，請稍候…")
 
-                /* 置頂區塊容器 */
-                .top-container {
-                    padding-top: 30px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                }
-
-                /* 將進度條的外框撐寬（選擇性） */
-                .stProgress {
-                    width: 60%;
-                    margin: 0 auto;
-                }
-            </style>
-            <div class="top-container">
-                <h4>⏳ 正式測驗分數計算中，請稍候…</h4>
-            </div>
-        """, unsafe_allow_html=True)
-
-        # 放置進度條（放在 Markdown 之後，就會靠近頂部）
+    # 在頁面最後放一個 container
+    bottom_placeholder = st.container()
+    with bottom_placeholder:
         progress_bar = st.progress(0)
 
     for i in range(10):
-        time.sleep(1)
+        time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
 
-    # 處理完跳轉下一頁
+    st.markdown("### ⏳ 圖片生成中，請稍候…")
+
+    # 在頁面最後放一個 container
+    bottom_placeholder = st.container()
+    with bottom_placeholder:
+        progress_bar = st.progress(0)
+
+    for i in range(10):
+        time.sleep(0.5)
+        progress_bar.progress((i + 1) * 10)
+
     st.session_state.page += 1
     st.session_state.scroll_to_top = True
     st.rerun()
@@ -2152,5 +2138,6 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
