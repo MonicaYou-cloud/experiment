@@ -1763,7 +1763,7 @@ if st.session_state.page == 135:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # 顯示練習花費時間
-if st.session_state.page == 104:
+if st.session_state.page == 136:
 
     # 顯示練習階段所花時間
     col1, col2, col3 = st.columns([1, 1, 1])
@@ -1783,22 +1783,37 @@ if st.session_state.page == 104:
       st.metric(label="您在練習所花費的時間", value=time_str)
     with col3:
       st.metric(label="與您同齡的人的平均練習時間", value=average_time_str)
-            
-        
-            
+                
     col1, col2, col3, col4, col5, col6 = st.columns([1, 1, 1, 1, 1, 1])
     with col6:
-        st.button("下一頁", on_click=next_page)
-
+        if st.button("下一頁"):
+                 row_data = [st.session_state["ID"],                             
+                             st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                           
+                             st.session_state["self_esteem1"], st.session_state["self_esteem2"],                           
+                             st.session_state["self_esteem3"], st.session_state["self_esteem4"],                             
+                             st.session_state["self_esteem5"], st.session_state["self_esteem6"],                             
+                             st.session_state["self_esteem7"], st.session_state["self_esteem8"],                             
+                             st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
+                             st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
+                             st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
+                             st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                             st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
+                             st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
+                             time_str, average_time_str
+                     ]
+                 sheet.append_row(row_data)
+                 next_page() 
+                 st.rerun()
+                 
 # 練習後問卷
 if st.session_state.page == 137:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
     
-    st.header("進入正式測驗前")
+    st.header("成績計算中")
     st.markdown("---")
-    st.write("""以下問題是想了解您的練習狀況。填寫完畢後請按【下一頁】進入正式測驗。""")
+    st.write("""以下問題是想了解您的練習時間狀況。填寫完畢後請按【下一頁】進入正式測驗。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1831,23 +1846,27 @@ if st.session_state.page == 137:
                 st.session_state.get("comparison1") is None):
                          warning_needed = True
             else:
-                     row_data = [st.session_state["ID"],
-                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["Time1"], st.session_state["Time2"], st.session_state["comparison1"]
+                     row_data = [st.session_state["ID"],                                                          
+                                 st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                        
+                                 st.session_state["self_esteem1"], st.session_state["self_esteem2"],                             
+                                 st.session_state["self_esteem3"], st.session_state["self_esteem4"],                             
+                                 st.session_state["self_esteem5"], st.session_state["self_esteem6"],                               
+                                 st.session_state["self_esteem7"], st.session_state["self_esteem8"],                              
+                                 st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
+                                 st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
+                                 st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
+                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
+                                 st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
+                                 st.session_state["E6"], st.session_state["E6"], 
+                                 st.session_state["Time1"], st.session_state["Time2"], st.session_state["comparison1"], 
                                 ]
                      sheet.append_row(row_data)
                      next_page() 
                      st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
-if st.session_state.page == 137:
+if st.session_state.page == 138:
     st.markdown("### ⏳ 分數計算中，請稍候…")
 
     # 頁面頂部顯示文字
@@ -1903,7 +1922,7 @@ if st.session_state.page == 137:
 #     st.session_state.scroll_to_top = True
 #     st.rerun()
     
-if st.session_state.page == 138:
+if st.session_state.page == 139:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1937,7 +1956,7 @@ if st.session_state.page == 138:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 138:
+if st.session_state.page == 140:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1968,19 +1987,21 @@ if st.session_state.page == 138:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
             else:
-                     row_data = [st.session_state["ID"],
-                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],
-                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], 
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],  
-                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
+                     row_data = [st.session_state["ID"],                                                          
+                                 st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                        
+                                 st.session_state["self_esteem1"], st.session_state["self_esteem2"],                             
+                                 st.session_state["self_esteem3"], st.session_state["self_esteem4"],                             
+                                 st.session_state["self_esteem5"], st.session_state["self_esteem6"],                               
+                                 st.session_state["self_esteem7"], st.session_state["self_esteem8"],                              
+                                 st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
+                                 st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
+                                 st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
+                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
+                                 st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
+                                 st.session_state["E6"], st.session_state["E6"], 
+                                 st.session_state["Time1"], st.session_state["Time2"], st.session_state["comparison1"], 
+                                 st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"], 
                      ]
                      sheet.append_row(row_data)
                      st.session_state.warning_message = "" 
@@ -1988,7 +2009,7 @@ if st.session_state.page == 138:
                      st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 139:
+if st.session_state.page == 141:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -2049,22 +2070,24 @@ if st.session_state.page == 139:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
-                     row_data = [st.session_state["ID"],
-                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],
-                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
-                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
-                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
-                              st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
+                     row_data = [st.session_state["ID"],                                                          
+                                 st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                        
+                                 st.session_state["self_esteem1"], st.session_state["self_esteem2"],                             
+                                 st.session_state["self_esteem3"], st.session_state["self_esteem4"],                             
+                                 st.session_state["self_esteem5"], st.session_state["self_esteem6"],                               
+                                 st.session_state["self_esteem7"], st.session_state["self_esteem8"],                              
+                                 st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
+                                 st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
+                                 st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
+                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
+                                 st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
+                                 st.session_state["E6"], st.session_state["E6"], 
+                                 st.session_state["Time1"], st.session_state["Time2"], st.session_state["comparison1"], 
+                                 st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],  
+                                 st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],                              
+                                 st.session_state["SE4"], st.session_state["SE5"],                              
+                                 st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
                      next_page()  # 跳到下一頁
@@ -2072,7 +2095,7 @@ if st.session_state.page == 139:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 140:
+if st.session_state.page == 142:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -2092,7 +2115,7 @@ if st.session_state.page == 140:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 141:
+elif st.session_state.page == 143:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
