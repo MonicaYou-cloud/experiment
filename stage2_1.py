@@ -30,7 +30,7 @@ sheet = get_sheet()
 for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
-           , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3"
+           , "mindset1", "mindset2", "mindset3", "important1", "important2", "important3", "Time1", "Time2", "comparison1"
            , "Num", "E1", "E2", "E3", "E4", "E5", "E6", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
