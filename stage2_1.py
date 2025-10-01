@@ -1166,7 +1166,8 @@ if st.session_state.page == 103:
                   elapsed_seconds = int(time.time() - st.session_state.start_time)
                   minutes = elapsed_seconds // 60
                   seconds = elapsed_seconds % 60
-                  time_str1 = f"{minutes} 分 {seconds} 秒"
+                  time_str1 = elapsed_seconds
+                  # f"{minutes} 分 {seconds} 秒"
                   # st.metric(label="您在練習所花費的時間", value=time_str1)
                   row_data = [st.session_state["ID"],                                        
                               st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                                
@@ -1769,7 +1770,7 @@ if st.session_state.page == 136:
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
         if st.session_state.get("start_time"):
-            elapsed_seconds = int(time.time() - st.session_state.start_time)
+            elapsed_seconds = f"{sheet.acell('U4').value}
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
