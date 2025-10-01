@@ -1770,7 +1770,7 @@ if st.session_state.page == 136:
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
         if st.session_state.get("start_time"):
-            elapsed_seconds = f"{sheet.acell('U4').value}"
+            elapsed_seconds = sheet.acell('U4').value
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
