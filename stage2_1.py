@@ -1933,9 +1933,9 @@ if st.session_state.page == 139:
     personal_score = 65
     average_score = 80
     Img = Image.open("new_folder/圖片1.png")
-    col1, col2, col3 = st.columns([2, 2, 1]) 
+    col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
-             st.metric(label="您練習的時長", value=f"{sheet.acell('AD35').value} 題")  
+             st.metric(label="您練習的時長", value=f"{sheet.acell('AD35').value} ")  
     with col2:
              st.metric(label="同齡人練習的時長", value=sheet.acell("AE35").value)  
     
