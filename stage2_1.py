@@ -1946,6 +1946,7 @@ if st.session_state.page == 139:
     with col2:
              st.metric(label="同齡人平均分數", value=f"{average_score} 分") 
      
+    col1, col2, col3 = st.columns([1, 1, 1])  
     with col3:
              st.image(Img)
         
