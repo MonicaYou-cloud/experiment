@@ -1215,7 +1215,7 @@ if st.session_state.page == 103:
 if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
-    st.write("""接下來將進入正式測驗，請完整閱讀以下說明：""")
+    st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
     st.write("""本階段共有30道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
     st.write("""測驗結束後將由系統計算並顯示您的測驗分數，請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
@@ -2012,6 +2012,7 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
