@@ -1766,9 +1766,6 @@ if st.session_state.page == 135:
 if st.session_state.page == 136:
     st.markdown("### ⏳ 分數計算中，請稍候…")
 
-    # 頁面頂部顯示文字
-    st.write("正在處理，請稍候...")
-
     # 預留一個空容器在頁尾
     bottom_placeholder = st.empty()
 
@@ -1791,6 +1788,9 @@ if st.session_state.page == 136:
         time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
 
+    st.session_state.page += 1
+    st.session_state.scroll_to_top = True
+    st.rerun()
 
 # if st.session_state.page == 136:
 #     st.markdown("### ⏳ 分數計算中，請稍候…")
@@ -2012,6 +2012,7 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
