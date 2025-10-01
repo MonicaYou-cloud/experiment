@@ -1977,7 +1977,7 @@ if st.session_state.page == 139:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
-                              st.session_state["important3"], st.session_state["Num"], st.session_state["Num"] 
+                              st.session_state["important3"], st.session_state["Num"], st.session_state["Num"],
                               st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
@@ -2015,3 +2015,4 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
