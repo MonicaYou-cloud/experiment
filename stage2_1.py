@@ -1895,6 +1895,10 @@ if st.session_state.page == 138:
     for i in range(10):
         time.sleep(0.5)
         progress_bar.progress((i + 1) * 10)
+ 
+    st.session_state.page += 1
+    st.session_state.scroll_to_top = True
+    st.rerun()
 
 
 # if st.session_state.page == 136:
