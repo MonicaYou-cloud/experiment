@@ -1770,7 +1770,7 @@ if st.session_state.page == 136:
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
         if st.session_state.get("start_time"):
-            elapsed_seconds = f"{sheet.acell('U4').value}
+            elapsed_seconds = f"{sheet.acell('U4').value}"
             minutes = elapsed_seconds // 60
             seconds = elapsed_seconds % 60
             time_str = f"{minutes} 分 {seconds} 秒"
@@ -1797,7 +1797,7 @@ if st.session_state.page == 136:
                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
                              st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
-                             st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                             st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],                             
                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                              time_str, average_time_str
@@ -1814,7 +1814,7 @@ if st.session_state.page == 137:
     
     st.header("成績計算中")
     st.markdown("---")
-    st.write("""以下問題是想了解您的練習時間狀況。填寫完畢後請按【下一頁】進入正式測驗。""")
+    st.write("""以下問題是想了解您的練習時間狀況。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1856,7 +1856,7 @@ if st.session_state.page == 137:
                                  st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
                                  st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
                                  st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
-                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],                             
                                  st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
                                  st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                                  st.session_state["E6"], st.session_state["E6"], 
@@ -1997,7 +1997,7 @@ if st.session_state.page == 140:
                                  st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
                                  st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
                                  st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
-                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],                             
                                  st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
                                  st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                                  st.session_state["E6"], st.session_state["E6"], 
@@ -2080,7 +2080,7 @@ if st.session_state.page == 141:
                                  st.session_state["self_esteem9"], st.session_state["self_esteem10"],                             
                                  st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                             
                                  st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],                             
-                                 st.session_state["important3"], time_str2, st.session_state["Num"],                             
+                                 st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],                             
                                  st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],                            
                                  st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                                  st.session_state["E6"], st.session_state["E6"], 
