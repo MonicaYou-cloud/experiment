@@ -1948,7 +1948,7 @@ if st.session_state.page == 139:
                st.session_state.get("SE4") is None or \
                st.session_state.get("SE5") is None or \
                st.session_state.get("E4") is None or \
-               st.session_state.get("E5") is None or \  
+               st.session_state.get("E5") is None or \
                st.session_state.get("E6") is None:
                    warning_needed = True
             else:
@@ -2000,5 +2000,6 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
