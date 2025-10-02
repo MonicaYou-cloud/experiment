@@ -1764,7 +1764,8 @@ if st.session_state.page == 135:
 
 # 顯示練習花費時間
 if st.session_state.page == 136:
-
+    st.write("""經過計算，您比同齡人平均練習的題目更少。""")
+    st.write("""以下是您的練習時間與平均練習時間：""")
     # 顯示練習階段所花時間
     col1, col2, col3 = st.columns([1, 1, 1])
     with col2:
