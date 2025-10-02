@@ -1655,7 +1655,7 @@ if st.session_state.page == 135:
     
     st.header("成績計算中")
     st.markdown("---")
-    st.write("""以下問題想了解您在練習階段以及正式測驗的狀況。填寫完畢後請按【下一頁】觀看您的測驗結果。""")
+    st.write("""以下問題想了解您在練習階段的狀況。填寫完畢後請按【下一頁】觀看您的測驗結果。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1666,7 +1666,7 @@ if st.session_state.page == 135:
         </style>
     """, unsafe_allow_html=True)
 
-    st.write("【您在練習階段的狀況】")
+    # st.write("【您在練習階段的狀況】")
     col1, col2 = st.columns([3, 1])
     
     with col1:
@@ -1691,37 +1691,7 @@ if st.session_state.page == 135:
                  options=["1", "2", "3", "4", "5", "6"],
                  key="E3", horizontal=True, index=None
         )
-         
-    st.markdown("---")
-             
-    st.write("【您在正式測驗階段的狀況】")
-         
-    col1, col2 = st.columns([3, 1])
-    with col1:
-        st.write("１. 您有多認真做剛才的正式題？")
-        st.radio(
-                 label="（１=非常不認真，６=非常認真）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E4", horizontal=True, index=None
-        )
-
-        st.write("２. 您有多投入於正式測驗階段？")
-        st.radio(
-                 label="（１=非常不投入，６=非常投入）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E5", horizontal=True, index=None
-        )
-
-        st.write("３. 您在做正式測驗題時有多努力？")
-        st.radio(
-                 label="（１=非常不努力，６=非常努力）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E6", horizontal=True, index=None
-        )
-    
-    if 'warning_message' in st.session_state and st.session_state.warning_message:
-        st.warning(st.session_state.warning_message)
-
+          
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
 
@@ -1738,10 +1708,7 @@ if st.session_state.page == 135:
             if (st.session_state.get("Num") is None or 
                 st.session_state.get("E1") is None or 
                 st.session_state.get("E2") is None or
-                st.session_state.get("E3") is None or 
-                st.session_state.get("E4") is None or 
-                st.session_state.get("E5") is None or 
-                st.session_state.get("E6") is None):
+                st.session_state.get("E3") is None):
                          warning_needed = True
             else:
                      row_data = [st.session_state["ID"],
@@ -1754,8 +1721,7 @@ if st.session_state.page == 135:
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                               st.session_state["important3"], time_str2, st.session_state["Num"],
-                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"]
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
                      ]
                      sheet.append_row(row_data)
                      next_page() 
@@ -1895,7 +1861,6 @@ if st.session_state.page == 138:
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                               st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],
                               st.session_state["E1"], st.session_state["E2"], st.session_state["E3"], 
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],  
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                      ]
                      sheet.append_row(row_data)
@@ -1933,9 +1898,9 @@ if st.session_state.page == 139:
         key="SE3", horizontal=True, index=None
     )
     
-    st.write("４. 您是否同意本測驗能正確測量到您的能力？")
+    st.write("４. 您認為本測驗能正確測量到您內隱學習能力的程度？")
     SE3 = st.radio(
-        label="（１=非常不同意，６=非常同意）",
+        label="（１=非常不正確，６=非常正確）",
         options=["1", "2", "3", "4", "5", "6"],
         key="SE4", horizontal=True, index=None
     )
@@ -1946,7 +1911,27 @@ if st.session_state.page == 139:
         options=["1", "2", "3", "4", "5", "6"],
         key="SE5", horizontal=True, index=None
     )
+         
+    st.write("１. 您有多認真做剛才的正式題？")
+    st.radio(
+             label="（１=非常不認真，６=非常認真）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="E4", horizontal=True, index=None
+    )
+    
+    st.write("２. 您有多投入於正式測驗階段？")
+    st.radio(
+             label="（１=非常不投入，６=非常投入）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="E5", horizontal=True, index=None
+    )
 
+    st.write("３. 您在做正式測驗題時有多努力？")
+    st.radio(
+             label="（１=非常不努力，６=非常努力）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="E6", horizontal=True, index=None
+    )
     
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
@@ -1961,7 +1946,10 @@ if st.session_state.page == 139:
                st.session_state.get("SE2") is None or \
                st.session_state.get("SE3") is None or \
                st.session_state.get("SE4") is None or \
-               st.session_state.get("SE5") is None:
+               st.session_state.get("SE5") is None or \ 
+               st.session_state.get("E4") is None or \ 
+               st.session_state.get("E5") is None or \  
+               st.session_state.get("E6") is None:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
@@ -1976,10 +1964,10 @@ if st.session_state.page == 139:
                               st.session_state["important1"], st.session_state["important2"], st.session_state["important3"],
                               st.session_state["important3"], st.session_state["important3"], st.session_state["Num"],
                               st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"], 
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
                               st.session_state["SE4"], st.session_state["SE5"],
+                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],
                               st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
@@ -2012,11 +2000,3 @@ elif st.session_state.page == 141:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
-
-
-
-
-
