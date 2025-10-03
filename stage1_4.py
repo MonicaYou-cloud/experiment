@@ -22,7 +22,7 @@ client = gspread.authorize(creds)
 # 📌 這裡只 open 一次
 @st.cache_resource
 def get_sheet():
-    return client.open("experiment_data").worksheet("stage1-4")
+    return client.open("experiment_data").worksheet("stage1-5")
 
 sheet = get_sheet()
 
