@@ -1976,7 +1976,7 @@ if st.session_state.page == 135:
     st.markdown("---")
     st.write("""再次感謝您完成了本測驗！""")
     st.write("""我們的真實研究目的是想要了解受試者在練習時的努力狀況以及與他人的分數差異，會如何影響受試者對自己能力與表現的看法。""")
-    st.write("""因此【正式測驗分數並不是真的】，請您別將分數作為判斷自己智力的依據！""")
+    st.write("""因此【正式測驗分數並不是真的】，請您別將分數作為判斷自己能力的依據！""")
     st.write("""最後，也請您勿將本研究與測驗內容告知任何人""")
     st.write("""如果您有任何疑問，請直接詢問研究人員。""")
     st.write("""敬祝平安健康順心！""")
@@ -1992,3 +1992,4 @@ elif st.session_state.page == 136:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
