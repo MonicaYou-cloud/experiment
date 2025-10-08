@@ -1907,7 +1907,7 @@ if st.session_state.page == 134:
         key="SE5", horizontal=True, index=None
     )
          
-    st.write("１. 您認為自己在正式測驗有多努力？")
+    st.write("６. 您認為自己在正式測驗有多努力？")
     st.radio(
              label="（１=非常不努力，６=非常努力）",
              options=["1", "2", "3", "4", "5", "6"],
@@ -1992,6 +1992,3 @@ elif st.session_state.page == 136:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
-
-
-
