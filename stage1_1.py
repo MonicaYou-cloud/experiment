@@ -31,7 +31,7 @@ for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
            , "mindset1", "mindset2", "mindset3"
-           , "Num", "E1", "E4", "E5", "E6", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
+           , "Num", "E1", "E4", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
     if key not in st.session_state:
@@ -265,7 +265,7 @@ elif st.session_state.page == 2:
     st.write("""歡迎您來到練習階段！""")
     st.write("""為了幫助您了解正式測驗的題型，本階段設有多道練習題。""")
     st.write("""過去很多研究發現在本階段練習越多的受試者，在正式測驗的表現結果越好。""")
-    st.write("""請您練習【1~5題】後，點選【直接進入正式測驗】。""")
+    st.write("""請您練習【1~3題】後，點選【直接進入正式測驗】。""")
     st.write("""這個範圍僅是過去研究發現多數人都有辦法完成的最低練習門檻，而本研究不強制規定您的練習題數，您仍可以自由選擇。""")              
     st.write("""了解以上說明後，請您按下【開始測驗】進入練習階段。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
@@ -1215,7 +1215,7 @@ if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
-    st.write("""本階段共有30道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
+    st.write("""本階段共有25道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
     st.write("""測驗結束後將由系統計算並顯示您的測驗分數，請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
     st.write("""最後，系統也會在測驗過程中計時，以讓研究者了解您的答題時間狀況。""")
@@ -1907,26 +1907,26 @@ if st.session_state.page == 134:
         key="SE5", horizontal=True, index=None
     )
          
-    st.write("１. 您有多認真做剛才的正式題？")
+    st.write("１. 您認為自己在正式測驗有多努力？")
     st.radio(
-             label="（１=非常不認真，６=非常認真）",
+             label="（１=非常不努力，６=非常努力）",
              options=["1", "2", "3", "4", "5", "6"],
              key="E4", horizontal=True, index=None
     )
     
-    st.write("２. 您有多投入於正式測驗階段？")
-    st.radio(
-             label="（１=非常不投入，６=非常投入）",
-             options=["1", "2", "3", "4", "5", "6"],
-             key="E5", horizontal=True, index=None
-    )
+    # st.write("２. 您有多投入於正式測驗階段？")
+    # st.radio(
+    #          label="（１=非常不投入，６=非常投入）",
+    #          options=["1", "2", "3", "4", "5", "6"],
+    #          key="E5", horizontal=True, index=None
+    # )
 
-    st.write("３. 您在做正式測驗題時有多努力？")
-    st.radio(
-             label="（１=非常不努力，６=非常努力）",
-             options=["1", "2", "3", "4", "5", "6"],
-             key="E6", horizontal=True, index=None
-    )
+    # st.write("３. 您在做正式測驗題時有多努力？")
+    # st.radio(
+    #          label="（１=非常不努力，６=非常努力）",
+    #          options=["1", "2", "3", "4", "5", "6"],
+    #          key="E6", horizontal=True, index=None
+    # )
     
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
@@ -1942,9 +1942,7 @@ if st.session_state.page == 134:
                st.session_state.get("SE3") is None or \
                st.session_state.get("SE4") is None or \
                st.session_state.get("SE5") is None or \
-               st.session_state.get("E4") is None or \
-               st.session_state.get("E5") is None or \
-               st.session_state.get("E6") is None:
+               st.session_state.get("E4") is None:
                    warning_needed = True
             else:
                      st.session_state["end_time"] = datetime.now(tz)
@@ -1961,7 +1959,7 @@ if st.session_state.page == 134:
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
                               st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],
+                              st.session_state["E4"],
                               st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
@@ -1994,4 +1992,5 @@ elif st.session_state.page == 136:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
