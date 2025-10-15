@@ -1672,7 +1672,7 @@ if st.session_state.page == 128:
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.write("１. 您認為自己練習時間的長度如何？")
+        st.write("１. 您認為自己練習的時間長度如何？")
         st.radio(
                  label="（１=非常短，６=非常長）",
                  options=["1", "2", "3", "4", "5", "6"],
@@ -1680,7 +1680,7 @@ if st.session_state.page == 128:
         )
              
         st.text_input("請問您在練習階段總共練習了多少題？", placeholder="請輸入數字",  key="Num")
-        st.write("２. 您認為自己練習題數的數量如何？")
+        st.write("２. 您認為自己練習的題數如何？")
         st.radio(
                  label="（１=非常少，６=非常多）",
                  options=["1", "2", "3", "4", "5", "6"],
@@ -1998,6 +1998,7 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
