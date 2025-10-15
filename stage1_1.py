@@ -1650,7 +1650,7 @@ question1(
 #     radio_key="q_30",
 # )
 
-if st.session_state.page == 130:
+if st.session_state.page == 128:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1760,7 +1760,7 @@ if st.session_state.page == 130:
 # st.session_state.scroll_to_top = True
 # st.rerun()
 
-if st.session_state.page == 131:
+if st.session_state.page == 129:
     st.markdown("### ⏳ 分數計算中，請稍候…")
          
     # 在頁面最後放一個 container
@@ -1787,7 +1787,7 @@ if st.session_state.page == 131:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 132:
+if st.session_state.page == 130:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1821,7 +1821,7 @@ if st.session_state.page == 132:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 133:
+if st.session_state.page == 131:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1870,7 +1870,7 @@ if st.session_state.page == 133:
                      st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 134:
+if st.session_state.page == 132:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1974,7 +1974,7 @@ if st.session_state.page == 134:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 135:
+if st.session_state.page == 133:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1994,9 +1994,10 @@ if st.session_state.page == 135:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 136:
+elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
