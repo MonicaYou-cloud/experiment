@@ -1668,7 +1668,7 @@ if st.session_state.page == 128:
         </style>
     """, unsafe_allow_html=True)
 
-    st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('R4').value}】")
+    st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('S4').value}】")
     col1, col2 = st.columns([3, 1])
     
     with col1:
@@ -1797,9 +1797,9 @@ if st.session_state.page == 130:
     Img = Image.open("new_folder/圖片1.png")
     col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
-             st.metric(label="您先前練習的題數", value=f"{sheet.acell('T29').value} 題")  
+             st.metric(label="您先前練習的題數", value=f"{sheet.acell('T27').value} 題")  
     with col2:
-             st.metric(label="您先前的練習時間", value=sheet.acell("R4").value)  
+             st.metric(label="您先前的練習時間", value=sheet.acell("S4").value)  
     
     col1, col2, col3 = st.columns([1, 1, 2]) 
     with col1:
@@ -1998,6 +1998,7 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
