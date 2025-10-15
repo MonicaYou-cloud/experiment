@@ -30,7 +30,7 @@ sheet = get_sheet()
 for key in ["ID", "gender", "age",
             "self_esteem1", "self_esteem2", "self_esteem3", "self_esteem4", "self_esteem5"
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
-           , "mindset1", "mindset2", "mindset3"
+           , "mindset1", "mindset2", "mindset3", "important"
            , "Num", "E1", "E4", "score1", "score2", "comparison", "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
@@ -40,16 +40,16 @@ for key in ["ID", "gender", "age",
 # 預先設定：受試者編號 -> [允許開始時間, 允許結束時間]
 participants = {
     "test00": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2026, 9, 15, 21, 30, 0, tzinfo=tz)],
-    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2025, 9, 15, 21, 30, 0, tzinfo=tz)],
-    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2025, 9, 15, 15, 0, 0, tzinfo=tz)],
-    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2025, 9, 15, 15, 0, 0, tzinfo=tz)],
-    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2025, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "snTq11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2025, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2026, 9, 15, 21, 30, 0, tzinfo=tz)],
+    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "snTq11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
 }
 
 # 初始化分頁
@@ -217,8 +217,8 @@ elif st.session_state.page == 1:
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="mindset2")
     st.write("13. 一個人有多聰明是不能夠改變的。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="mindset3")
-    # st.write("14. 對您來說，邏輯推理能力有多重要？")
-    # st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important1")
+    st.write("14. 內隱學習能力是重要的。")
+    st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important")
     # st.write("15. 對您來說，分析思考能力有多重要？")
     # st.radio("（１=非常不重要，６=非常重要）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="important2")
     # st.write("16. 對您來說，圖形理解能力有多重要？")
@@ -241,7 +241,8 @@ elif st.session_state.page == 1:
                           or st.session_state.get("self_esteem5") is None or st.session_state.get("self_esteem6") is None 
                           or st.session_state.get("self_esteem7") is None or st.session_state.get("self_esteem8") is None 
                           or st.session_state.get("self_esteem9") is None or st.session_state.get("self_esteem10") is None 
-                          or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None or st.session_state.get("mindset3") is None):
+                          or st.session_state.get("mindset1") is None or st.session_state.get("mindset2") is None 
+                          or st.session_state.get("mindset3") is None or st.session_state.get("important") is None):
                                    warning_needed = True
                       else:
                                row_data = [st.session_state["ID"],
@@ -252,6 +253,7 @@ elif st.session_state.page == 1:
                                         st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                                         st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                                         st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                                        st.session_state["important"]  
                                ]
                                sheet.append_row(row_data)
                                next_page() 
@@ -264,7 +266,8 @@ elif st.session_state.page == 2:
     st.markdown("---")
     st.write("""歡迎您來到練習階段！""")
     st.write("""為了幫助您了解正式測驗的題型，本階段設有多道練習題。""")
-    st.write("""過去很多研究發現在本階段練習越多的受試者，在正式測驗的表現結果越好。""")
+    st.write("""過去很多研究發現在本階段越努力的受試者，在正式測驗的表現結果越好。""")
+    st.write("""在本階段的努力程度指的是練習時間長度與練習題數。""")
     st.write("""請您練習【1~3題】後，點選【直接進入正式測驗】。""")
     st.write("""這個範圍僅是過去研究發現多數人都有辦法完成的最低練習門檻，而本研究不強制規定您的練習題數，您仍可以自由選擇。""")              
     st.write("""了解以上說明後，請您按下【開始測驗】進入練習階段。""")
@@ -1175,8 +1178,8 @@ if st.session_state.page == 103:
                               st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                                                
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                            
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],                                           
-                              time_str1 
+                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                              st.session_state["important"], time_str1 
                              ]
                   sheet.append_row(row_data)
                   
@@ -1215,10 +1218,10 @@ if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
-    st.write("""本階段共有25道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
-    st.write("""測驗結束後將由系統計算並顯示您的測驗分數，請您務必認真作答，確保分數的有效性。""")
+    st.write("""本階段共有23道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
+    st.write("""測驗結束後將由系統透過您的答題時間與正確率計算您的測驗分數。""")
+    st.write("""請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
-    st.write("""最後，系統也會在測驗過程中計時，以讓研究者了解您的答題時間狀況。""")
     st.write("""了解以上說明後，請您按下【開始測驗】進入正式測驗。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -1591,21 +1594,21 @@ question1(
     radio_key="q_23"
 )
 
-# 24
-question1(
-    page_number=128,
-    question_image_path="new_folder/區分 (10).png",
-    option_image_path="new_folder/區分選項 (10).png",
-    radio_key="q_24",
-)
+# # 24
+# question1(
+#     page_number=128,
+#     question_image_path="new_folder/區分 (10).png",
+#     option_image_path="new_folder/區分選項 (10).png",
+#     radio_key="q_24",
+# )
 
-# 25
-question1(
-    page_number=129,
-    question_image_path="new_folder/區分 (26).png",
-    option_image_path="new_folder/區分選項 (26).png",
-    radio_key="q_25",
-)
+# # 25
+# question1(
+#     page_number=129,
+#     question_image_path="new_folder/區分 (26).png",
+#     option_image_path="new_folder/區分選項 (26).png",
+#     radio_key="q_25",
+# )
 
 # # 26
 # question2(
@@ -1665,31 +1668,31 @@ if st.session_state.page == 130:
         </style>
     """, unsafe_allow_html=True)
 
-    # st.write("【您在練習階段的狀況】")
+    st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('R4').value}】")
     col1, col2 = st.columns([3, 1])
     
     with col1:
-        st.text_input("請問您在練習階段總共練習了多少題？", placeholder="請輸入數字",  key="Num")
-        st.write("１. 您認為自己在練習階段有多努力？")
+        st.write("１. 您認為自己練習時間的長度如何？")
         st.radio(
-                 label="（１=非常不努力，６=非常努力）",
+                 label="（１=非常短，６=非常長）",
                  options=["1", "2", "3", "4", "5", "6"],
                  key="E1", horizontal=True, index=None
         )
+             
+        st.text_input("請問您在練習階段總共練習了多少題？", placeholder="請輸入數字",  key="Num")
+        st.write("２. 您認為自己練習題數的數量如何？")
+        st.radio(
+                 label="（１=非常少，６=非常多）",
+                 options=["1", "2", "3", "4", "5", "6"],
+                 key="E2", horizontal=True, index=None
+        )
 
-        # st.write("２. 您有多投入於練習階段？")
-        # st.radio(
-        #          label="（１=非常不投入，６=非常投入）",
-        #          options=["1", "2", "3", "4", "5", "6"],
-        #          key="E2", horizontal=True, index=None
-        # )
-
-        # st.write("３. 您在做練習題時有多努力？")
-        # st.radio(
-        #          label="（１=非常不努力，６=非常努力）",
-        #          options=["1", "2", "3", "4", "5", "6"],
-        #          key="E3", horizontal=True, index=None
-        # )
+        st.write("３. 您認為自己在練習階段有多努力？")
+        st.radio(
+                 label="（１=非常不努力，６=非常努力）",
+                 options=["1", "2", "3", "4", "5", "6"],
+                 key="E3", horizontal=True, index=None
+        )
           
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
@@ -1705,7 +1708,9 @@ if st.session_state.page == 130:
              
             # 檢查是否有漏填
             if (st.session_state.get("Num") is None or 
-                st.session_state.get("E1") is None):
+                st.session_state.get("E1") is None or 
+                st.session_state.get("E2") is None or 
+                st.session_state.get("E3") is None):
                          warning_needed = True
             else:
                      row_data = [st.session_state["ID"],
@@ -1716,8 +1721,9 @@ if st.session_state.page == 130:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["mindset3"], time_str2, st.session_state["Num"],
-                              st.session_state["E1"]
+                              st.session_state["important"],st.session_state["important"],
+                              time_str2, 
+                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"]
                      ]
                      sheet.append_row(row_data)
                      next_page() 
@@ -1793,7 +1799,7 @@ if st.session_state.page == 132:
     with col1:
              st.metric(label="您先前練習的題數", value=f"{sheet.acell('T29').value} 題")  
     with col2:
-             st.metric(label="您先前的練習時長", value=sheet.acell("R4").value)  
+             st.metric(label="您先前的練習時間", value=sheet.acell("R4").value)  
     
     col1, col2, col3 = st.columns([1, 1, 2]) 
     with col1:
@@ -1854,8 +1860,8 @@ if st.session_state.page == 133:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["mindset3"], st.session_state["mindset3"], st.session_state["Num"],
-                              st.session_state["E1"],
+                              st.session_state["important"], st.session_state["important"], st.session_state["important"], 
+                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                      ]
                      sheet.append_row(row_data)
@@ -1907,26 +1913,26 @@ if st.session_state.page == 134:
         key="SE5", horizontal=True, index=None
     )
          
-    st.write("６. 您認為自己在正式測驗有多努力？")
+    st.write("６. 您認為自己在正式測驗有多認真？")
     st.radio(
-             label="（１=非常不努力，６=非常努力）",
+             label="（１=非常不認真，６=非常認真）",
              options=["1", "2", "3", "4", "5", "6"],
              key="E4", horizontal=True, index=None
     )
     
-    # st.write("２. 您有多投入於正式測驗階段？")
-    # st.radio(
-    #          label="（１=非常不投入，６=非常投入）",
-    #          options=["1", "2", "3", "4", "5", "6"],
-    #          key="E5", horizontal=True, index=None
-    # )
+    st.write("７. 您有多投入於正式測驗？")
+    st.radio(
+             label="（１=非常不投入，６=非常投入）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="E5", horizontal=True, index=None
+    )
 
-    # st.write("３. 您在做正式測驗題時有多努力？")
-    # st.radio(
-    #          label="（１=非常不努力，６=非常努力）",
-    #          options=["1", "2", "3", "4", "5", "6"],
-    #          key="E6", horizontal=True, index=None
-    # )
+    st.write("８. 您認為自己在正式測驗有多努力？")
+    st.radio(
+             label="（１=非常不努力，６=非常努力）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="E6", horizontal=True, index=None
+    )
     
     if 'warning_message' in st.session_state and st.session_state.warning_message:
         st.warning(st.session_state.warning_message)
@@ -1954,12 +1960,12 @@ if st.session_state.page == 134:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["mindset3"], st.session_state["mindset3"], st.session_state["Num"],
-                              st.session_state["E1"],
+                               st.session_state["important"], st.session_state["important"], st.session_state["important"], 
+                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
                               st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state["E4"],
+                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],
                               st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
                      ]
                      sheet.append_row(row_data)
@@ -1992,4 +1998,5 @@ elif st.session_state.page == 136:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
