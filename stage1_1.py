@@ -1736,34 +1736,44 @@ if st.session_state.page == 128:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 
-# if st.session_state.page == 136:
-#     st.markdown("### ⏳ 分數計算中，請稍候…")
+if st.session_state.page == 129:
+    
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
 
-#     # 預留一個空容器在頁尾
-#     bottom_placeholder = st.empty()
+    # 預留一個空容器在頁尾
+    bottom_placeholder = st.empty()
 
-#     # 在頁尾放進度條
-#     with bottom_placeholder:
-#         progress_bar = st.progress(0)
+    # 在頁尾放進度條
+    with bottom_placeholder:
+        progress_bar = st.progress(0)
 
-#     for i in range(10):
-#         time.sleep(0.5)
-#         progress_bar.progress((i + 1) * 10)
+    for i in range(10):
+        time.sleep(0.5)
+        progress_bar.progress((i + 1) * 10)
 
-#     st.markdown("### ⏳ 圖片生成中，請稍候…")
+    st.markdown("### ⏳ 圖片生成中，請稍候…")
 
-#     # 再建一個新容器（還是在頁尾）
-#     bottom_placeholder = st.empty()
-#     with bottom_placeholder:
-#         progress_bar = st.progress(0)
+    # 再建一個新容器（還是在頁尾）
+    bottom_placeholder = st.empty()
+    with bottom_placeholder:
+        progress_bar = st.progress(0)
 
-#     for i in range(10):
-#         time.sleep(0.5)
-#         progress_bar.progress((i + 1) * 10)
+    for i in range(10):
+        time.sleep(0.5)
+        progress_bar.progress((i + 1) * 10)
 
-# st.session_state.page += 1
-# st.session_state.scroll_to_top = True
-# st.rerun()
+st.session_state.page += 1
+st.session_state.scroll_to_top = True
+st.rerun()
 
 # if st.session_state.page == 129:
 #     st.markdown("### ⏳ 分數計算中，請稍候…")
@@ -1792,64 +1802,64 @@ if st.session_state.page == 128:
 #     st.session_state.scroll_to_top = True
 #     st.rerun()
 
-if st.session_state.page == 129:
-    st.markdown("### ⏳ 分數計算中，請稍候…")
+# if st.session_state.page == 129:
+#     st.markdown("### ⏳ 分數計算中，請稍候…")
 
-    progress_placeholder = st.empty()
+#     progress_placeholder = st.empty()
 
-    for i in range(11):
-        pct = i * 10
-        # 每次都重繪 HTML
-        progress_html = f"""
-        <div style="
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            background-color: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 20px;">
-            <div style="
-                height: 100%;
-                width: {pct}%;
-                background-color: #4CAF50;
-                transition: width 0.3s;">
-            </div>
-        </div>
-        """
-        progress_placeholder.markdown(progress_html, unsafe_allow_html=True)
-        time.sleep(0.5)
+#     for i in range(11):
+#         pct = i * 10
+#         # 每次都重繪 HTML
+#         progress_html = f"""
+#         <div style="
+#             position: fixed;
+#             bottom: 10px;
+#             left: 50%;
+#             transform: translateX(-50%);
+#             width: 80%;
+#             background-color: #eee;
+#             border-radius: 10px;
+#             overflow: hidden;
+#             height: 20px;">
+#             <div style="
+#                 height: 100%;
+#                 width: {pct}%;
+#                 background-color: #4CAF50;
+#                 transition: width 0.3s;">
+#             </div>
+#         </div>
+#         """
+#         progress_placeholder.markdown(progress_html, unsafe_allow_html=True)
+#         time.sleep(0.5)
 
-    st.markdown("### ⏳ 圖片生成中，請稍候…")
+#     st.markdown("### ⏳ 圖片生成中，請稍候…")
 
-    for i in range(11):
-        pct = i * 10
-        progress_html = f"""
-        <div style="
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            background-color: #eee;
-            border-radius: 10px;
-            overflow: hidden;
-            height: 20px;">
-            <div style="
-                height: 100%;
-                width: {pct}%;
-                background-color: #2196F3;
-                transition: width 0.3s;">
-            </div>
-        </div>
-        """
-        progress_placeholder.markdown(progress_html, unsafe_allow_html=True)
-        time.sleep(0.5)
+#     for i in range(11):
+#         pct = i * 10
+#         progress_html = f"""
+#         <div style="
+#             position: fixed;
+#             bottom: 10px;
+#             left: 50%;
+#             transform: translateX(-50%);
+#             width: 80%;
+#             background-color: #eee;
+#             border-radius: 10px;
+#             overflow: hidden;
+#             height: 20px;">
+#             <div style="
+#                 height: 100%;
+#                 width: {pct}%;
+#                 background-color: #2196F3;
+#                 transition: width 0.3s;">
+#             </div>
+#         </div>
+#         """
+#         progress_placeholder.markdown(progress_html, unsafe_allow_html=True)
+#         time.sleep(0.5)
 
-    st.session_state.page += 1
-    st.rerun()
+#     st.session_state.page += 1
+#     st.rerun()
 
     
 if st.session_state.page == 130:
@@ -2063,6 +2073,7 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
