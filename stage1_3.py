@@ -147,7 +147,7 @@ if st.session_state.page == 0:
     # st.write(""" 若您是需要換取課堂學分則無法參加抽獎活動，謝謝！""")
     st.write("""在測驗開始後，您有完全自主性，可以自由決定是否參與以及繼續本測驗，若您感到不適，可以隨時中止測驗。""")
     st.write("""本研究不會對您造成任何風險，您所填寫的資料將完全保密。資料收回後將由研究人員電子歸檔與保存並進行統計數據分析，預計保留5年後全數刪除，請您放心。""")
-    st.write("""當您按下【開始測驗】表示您同意上述內容。""")
+    st.write("""當您按下〔開始測驗〕表示您同意上述內容。""")
     st.write("""最後，如果您有任何疑問，可以直接聯繫研究人員（112752003@g.nccu.edu.tw）""")
     col1, col2, col3 = st.columns([1, 2, 2])
     with col3:
@@ -188,10 +188,10 @@ elif st.session_state.page == 1:
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("基本資料")
-    st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀，填寫完畢後請按【下一頁】進入練習階段。")
+    st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀，填寫完畢後請按〔下一頁〕進入練習階段。")
     st.markdown("---")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
-    st.selectbox("請選擇您的年齡區間", ["18歲以下", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
+    st.selectbox("請選擇您的年齡區間", ["18-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
     st.write("1. 我一無是處。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="self_esteem1")
     st.write("2. 我有許多優點。")
@@ -269,9 +269,10 @@ elif st.session_state.page == 2:
     st.write("""為了幫助您了解正式測驗的題型，本階段設有多道練習題。""")
     st.write("""過去很多研究發現在本階段越努力的受試者，在正式測驗的表現結果越好。""")
     st.write("""在本階段的努力程度指的是練習時間長度與練習題數。""")
-    st.write("""請您練習【21~25題】後，點選【直接進入正式測驗】。""")
-    st.write("""這個範圍僅是過去研究發現極少數人才有辦法完成的高度練習門檻，而本研究不強制規定您的練習題數，您仍可以自由選擇。""")              
-    st.write("""了解以上說明後，請您按下【開始測驗】進入練習階段。""")
+    st.write("""請您練習【21~25題】後，點選〔直接進入正式測驗〕。""")
+    st.write("""這個範圍僅是過去研究發現約5%的受試者才有辦法完成的高度練習門檻。""") 
+    st.write("""而本研究不強制規定您的練習題數，您仍可以自由選擇。""")  
+    st.write("""了解以上說明後，請您按下〔開始測驗〕進入練習階段。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
@@ -1220,10 +1221,10 @@ if st.session_state.page == 104:
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
     st.write("""本階段共有23道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
-    st.write("""測驗結束後將由系統透過您的答題時間與正確率計算您的測驗分數。""")
+    st.write("""測驗結束後將由系統透過您的【答題時間與正確率】計算您的測驗分數。""")
     st.write("""請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
-    st.write("""了解以上說明後，請您按下【開始測驗】進入正式測驗。""")
+    st.write("""了解以上說明後，請您按下〔開始測驗〕進入正式測驗。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
@@ -1658,7 +1659,7 @@ if st.session_state.page == 128:
     
     st.header("成績計算中")
     st.markdown("---")
-    st.write("""以下問題想了解您在練習階段的狀況。填寫完畢後請按【下一頁】觀看您的測驗結果。""")
+    st.write("""以下問題想了解您在練習階段的狀況，包含您對自己練習題數、練習時間長度的感覺，而【練習題數與練習時間長度都是努力的一部份！】填寫完後請按〔下一頁〕觀看您的測驗結果。""")
     st.markdown("""
         <style>
         .stRadio > div {
@@ -1669,24 +1670,27 @@ if st.session_state.page == 128:
         </style>
     """, unsafe_allow_html=True)
 
-    st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('S4').value}】")
-    col1, col2 = st.columns([3, 1])
     
+    col1, col2 = st.columns([3, 1])
+
+         
     with col1:
-        st.write("１. 您認為自己練習的時間長度如何？")
-        st.radio(
-                 label="（１=非常短，６=非常長）",
-                 options=["1", "2", "3", "4", "5", "6"],
-                 key="E1", horizontal=True, index=None
-        )
-             
         st.text_input("請問您在練習階段總共練習了多少題？", placeholder="請輸入數字",  key="Num")
-        st.write("２. 您認為自己練習的題數如何？")
+        st.write("１. 您認為自己練習的題數如何？")
         st.radio(
                  label="（１=非常少，６=非常多）",
                  options=["1", "2", "3", "4", "5", "6"],
+                 key="E1", horizontal=True, index=None
+        )
+
+        st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('S4').value}】")
+        st.write("２. 您認為自己練習的時間長度如何？")
+        st.radio(
+                 label="（１=非常短，６=非常長）",
+                 options=["1", "2", "3", "4", "5", "6"],
                  key="E2", horizontal=True, index=None
         )
+             
 
         st.write("３. 您認為自己在練習階段有多努力？")
         st.radio(
@@ -1694,7 +1698,7 @@ if st.session_state.page == 128:
                  options=["1", "2", "3", "4", "5", "6"],
                  key="E3", horizontal=True, index=None
         )
-          
+             
     st.markdown("---")
     spacer1, btn_col = st.columns([5, 1])
 
@@ -1828,7 +1832,7 @@ if st.session_state.page == 131:
             st.session_state.scroll_to_top = False
     st.header("正式測驗結束前")
     st.markdown("---")
-    st.write("""以下問題是想了解您的測驗結果。填寫完畢後請按【下一頁】。""")
+    st.write("""以下問題是想了解您的測驗結果。填寫完畢後請按〔下一頁〕。""")
     score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
     comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
@@ -1877,7 +1881,7 @@ if st.session_state.page == 132:
         st.session_state.scroll_to_top = False
     st.header("結束本測驗前")
     st.markdown("---")
-    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按【完成測驗】。""")
+    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
 
     st.write("１. 您認為自己的內隱學習能力如何？")
     SE1 = st.radio(
