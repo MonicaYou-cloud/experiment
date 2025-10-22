@@ -1736,36 +1736,17 @@ if st.session_state.page == 128:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 
-# if st.session_state.page == 136:
-#     st.markdown("### ⏳ 分數計算中，請稍候…")
-
-#     # 預留一個空容器在頁尾
-#     bottom_placeholder = st.empty()
-
-#     # 在頁尾放進度條
-#     with bottom_placeholder:
-#         progress_bar = st.progress(0)
-
-#     for i in range(10):
-#         time.sleep(0.5)
-#         progress_bar.progress((i + 1) * 10)
-
-#     st.markdown("### ⏳ 圖片生成中，請稍候…")
-
-#     # 再建一個新容器（還是在頁尾）
-#     bottom_placeholder = st.empty()
-#     with bottom_placeholder:
-#         progress_bar = st.progress(0)
-
-#     for i in range(10):
-#         time.sleep(0.5)
-#         progress_bar.progress((i + 1) * 10)
-
-# st.session_state.page += 1
-# st.session_state.scroll_to_top = True
-# st.rerun()
-
 if st.session_state.page == 129:
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
+    st.markdown("")
     st.markdown("### ⏳ 分數計算中，請稍候…")
          
     # 在頁面最後放一個 container
