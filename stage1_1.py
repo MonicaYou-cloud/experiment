@@ -191,7 +191,7 @@ elif st.session_state.page == 1:
     st.write("以下問題是想了解您的基本資訊，以及您的一些價值觀，填寫完畢後請按〔下一頁〕進入練習階段。")
     st.markdown("---")
     st.radio("請選擇您的生理性別", ["男", "女", "其他"], horizontal=True, index=None, key="gender")
-    st.selectbox("請選擇您的年齡區間", ["18歲", "19-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
+    st.selectbox("請選擇您的年齡區間", ["18-25歲", "26-35歲", "36-45歲", "46-55歲", "56-65歲", "65歲以上"], index=None, placeholder="請選擇", key="age")
     st.write("1. 我一無是處。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="self_esteem1")
     st.write("2. 我有許多優點。")
@@ -2003,3 +2003,4 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
