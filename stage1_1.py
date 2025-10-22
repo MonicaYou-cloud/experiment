@@ -1765,28 +1765,76 @@ if st.session_state.page == 128:
 # st.session_state.scroll_to_top = True
 # st.rerun()
 
+# if st.session_state.page == 129:
+#     st.markdown("### ⏳ 分數計算中，請稍候…")
+         
+#     # 在頁面最後放一個 container
+#     bottom_placeholder = st.container()
+#     with bottom_placeholder:
+#         progress_bar = st.progress(0)
+
+#     for i in range(10):
+#         time.sleep(0.5)
+#         progress_bar.progress((i + 1) * 10)
+
+#     st.markdown("### ⏳ 圖片生成中，請稍候…")
+
+#     # 在頁面最後放一個 container
+#     bottom_placeholder = st.container()
+#     with bottom_placeholder:
+#         progress_bar = st.progress(0)
+
+#     for i in range(10):
+#         time.sleep(0.5)
+#         progress_bar.progress((i + 1) * 10)
+
+#     st.session_state.page += 1
+#     st.session_state.scroll_to_top = True
+#     st.rerun()
+
 if st.session_state.page == 129:
     st.markdown("### ⏳ 分數計算中，請稍候…")
-         
-    # 在頁面最後放一個 container
-    bottom_placeholder = st.container()
-    with bottom_placeholder:
-        progress_bar = st.progress(0)
+
+    progress_placeholder = st.empty()
+
+    # ✅ 用 HTML 將進度條固定在底部
+    progress_html = """
+    <div id="progress-container" style="
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        background-color: #eee;
+        border-radius: 10px;
+        overflow: hidden;
+        height: 20px;">
+        <div id="progress-bar" style="
+            height: 100%;
+            width: 0%;
+            background-color: #4CAF50;
+            transition: width 0.5s;">
+        </div>
+    </div>
+    <script>
+    function updateProgress(pct){
+        document.getElementById("progress-bar").style.width = pct + "%";
+    }
+    </script>
+    """
+    st.markdown(progress_html, unsafe_allow_html=True)
 
     for i in range(10):
         time.sleep(0.5)
-        progress_bar.progress((i + 1) * 10)
+        pct = (i + 1) * 10
+        st.markdown(f"<script>updateProgress({pct})</script>", unsafe_allow_html=True)
 
     st.markdown("### ⏳ 圖片生成中，請稍候…")
 
-    # 在頁面最後放一個 container
-    bottom_placeholder = st.container()
-    with bottom_placeholder:
-        progress_bar = st.progress(0)
-
     for i in range(10):
         time.sleep(0.5)
-        progress_bar.progress((i + 1) * 10)
+        pct = (i + 1) * 10
+        st.markdown(f"<script>updateProgress({pct})</script>", unsafe_allow_html=True)
 
     st.session_state.page += 1
     st.session_state.scroll_to_top = True
@@ -2003,5 +2051,6 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
