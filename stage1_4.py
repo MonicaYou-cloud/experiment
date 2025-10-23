@@ -1728,7 +1728,7 @@ if st.session_state.page == 128:
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important"],st.session_state["important"],
                               time_str2, 
-                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"]
+                              st.session_state["Num"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
                      ]
                      sheet.append_row(row_data)
                      next_page() 
@@ -1844,7 +1844,7 @@ if st.session_state.page == 130:
     Img = Image.open("new_folder/圖片2.png")
     col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
-             st.metric(label="您先前練習的題數", value=f"{sheet.acell('V27').value} 題")  
+             st.metric(label="您先前練習的題數", value=f"{sheet.acell('U27').value} 題")  
     with col2:
              st.metric(label="您先前的練習時間", value=sheet.acell("S4").value)  
     
