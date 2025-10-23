@@ -1728,7 +1728,7 @@ if st.session_state.page == 128:
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important"],st.session_state["important"],
                               time_str2, 
-                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"]
+                              st.session_state["Num"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
                      ]
                      sheet.append_row(row_data)
                      next_page() 
