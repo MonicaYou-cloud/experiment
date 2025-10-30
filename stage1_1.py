@@ -140,6 +140,7 @@ if st.session_state.page == 0:
     st.markdown("---")
     st.write("""您好！首先非常感謝您願意參與本測驗，本測驗為政治大學心理學研究所進行的碩士學位研究。""")
     st.write("""研究目的是想要了解目前台灣學生的內隱學習能力狀況。""")
+    st.write("""內隱學習能力是在近十年左右被國外研究所發現，是人內在具有的學習能力。""")
     st.write("""這個能力已被國內外研究證實，會正向影響學業及工作表現。""")
     st.write("""本測驗採用已接受過嚴格檢測的內隱學習能力測驗，共分為兩階段：練習階段與正式測驗。""")
     st.write(""" 當您開始進行本測驗，將會透過受試者編號與測驗系統連線，並在測驗完畢後顯示結果。""")
@@ -2045,6 +2046,7 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
