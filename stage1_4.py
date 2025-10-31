@@ -267,7 +267,7 @@ elif st.session_state.page == 2:
     st.header("第一階段：練習測驗")
     st.markdown("---")
     st.write("""歡迎您來到練習階段！""")
-    st.write("""為了幫助您了解正式測驗的題型，本階段設有多道練習題。""")
+    st.write("""為了幫助您了解正式測驗的題型，本階段設有100道練習題。""")
     st.write("""過去很多研究發現在本階段越努力的受試者，在正式測驗的表現結果越好。""")
     st.write("""在本階段的努力程度指的是練習時間長度與練習題數。""")
     st.write("""請您練習【6~10題】後，點選〔直接進入正式測驗〕。""")
@@ -1676,7 +1676,7 @@ if st.session_state.page == 128:
 
          
     with col1:
-        st.text_input("請問您在練習階段總共練習了多少題？", placeholder="請輸入數字",  key="Num")
+        st.text_input("請問您在練習階段總共練習了多少題（共100題）？", placeholder="請輸入數字",  key="Num")
         st.write("１. 您認為自己練習的題數如何？")
         st.radio(
                  label="（１=非常少，６=非常多）",
