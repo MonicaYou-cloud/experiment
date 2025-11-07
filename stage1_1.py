@@ -273,7 +273,7 @@ elif st.session_state.page == 2:
     st.write("""請您練習【6~10題】後，點選〔直接進入正式測驗〕。""")
     st.write("""這個範圍僅是過去研究發現約95%的大多數受試者都有辦法完成的【最低練習門檻】。""")
     st.write("""而本研究不強制規定您的練習題數，您仍可以自由選擇。""")  
-    st.write("""了解以上說明後，請您按下〔開始測驗〕進入練習階段。""")
+    st.write("""了解以上說明後，請您按下〔開始練習〕進入練習階段。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
     col1, col2, col3, col4 = st.columns([1, 1, 2, 2])
@@ -2046,6 +2046,7 @@ elif st.session_state.page == 134:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
+
 
 
 
