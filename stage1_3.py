@@ -492,7 +492,7 @@ graphical_question(
     page_number=20,
     question_image_path="new_folder/推理思考 (11).png",
     option_image_path="new_folder/推理思考選項 (11).png",
-    answer_value="1"
+    answer_value="4"
 )
 
 # 練題19
