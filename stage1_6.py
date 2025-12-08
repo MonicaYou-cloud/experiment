@@ -1781,8 +1781,8 @@ if st.session_state.page == 130:
     st.markdown("---")
 
     personal_score = 65
-    average_score = 80
-    Img = Image.open("new_folder/圖片1.png")
+    average_score = 50
+    Img = Image.open("new_folder/圖片2.png")
     col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
              st.metric(label="您先前練習的題數", value=f"{sheet.acell('U27').value} 題")  
