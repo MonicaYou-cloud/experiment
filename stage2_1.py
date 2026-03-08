@@ -1719,7 +1719,6 @@ if st.session_state.page == 125:
     st.header("結束本測驗前")
     st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
     st.markdown("---")
-    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
 
     st.write("１. 您認為自己的內隱學習能力如何？")
     SE1 = st.radio(
