@@ -1608,14 +1608,16 @@ if st.session_state.page == 123:
              st.metric(label="同齡人們的平均練習時間", value=avg_time)  
 
     st.write("""【以下是您與同齡人們在正式測驗所得到的分數】""")     
-    col1, col2, col3 = st.columns([1, 1, 1]) 
+    col1, col2 = st.columns([1, 1]) 
     with col1:
              st.metric(label="您的分數", value=f"{personal_score} 分") 
              
     with col2:
              st.metric(label="同齡人平均分數", value=f"{average_score} 分")
-    
-    with col3:
+  
+    col1, col2, col3 = st.columns([1, 1, 1]) 
+             
+    with col2:
              st.image(Img)
         
     st.markdown("---")
