@@ -1689,6 +1689,11 @@ if st.session_state.page == 124:
 
     with col4:
         if st.button("下一頁"):
+                 if st.session_state.get("formal_start_time"):
+                     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
+                     minutes = elapsed_seconds // 60
+                     seconds = elapsed_seconds % 60
+                     time2 = f"{minutes} 分 {seconds} 秒"
             if prac1 is None or prac2 is None or score1 is None or score2 is None or comparison is None or ME1 is None or ME2 is None or ME3 is None:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
@@ -1701,7 +1706,7 @@ if st.session_state.page == 124:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important"], st.session_state["important"], st.session_state["important"], 
+                              st.session_state["important"], st.session_state["important"], time2, 
                               st.session_state["prac1"], st.session_state["prac2"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
