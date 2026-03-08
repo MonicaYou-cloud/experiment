@@ -1634,7 +1634,7 @@ if st.session_state.page == 124:
     st.header("測驗結束前")
     st.markdown("---")
     st.write("""以下問題是想了解您的練習狀況與測驗結果。填寫完畢後請按〔下一頁〕。""")
-　　
+    
     st.write("１. 您比同齡人練習的時間更多還是更少？")
     prac1 = st.radio(
              label="",
