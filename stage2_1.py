@@ -1158,25 +1158,58 @@ graphical_question(
     answer_value="4"
 )
 
-start_time = st.session_state.get("start_time")
-if st.session_state.get("start_time"):
-    elapsed_seconds = int(time.time() - st.session_state.start_time)
-    minutes = elapsed_seconds // 60
-    seconds = elapsed_seconds % 60
-    time1 = f"{minutes} 分 {seconds} 秒"
-    row_data = [st.session_state["ID"],                                        
-                st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                                
-                st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                          
-                st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
-                st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                                                
-                st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
-                st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                            
-                st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                st.session_state["important"], time1]
-    sheet.append_row(row_data)
+# 練習結束後，進入過渡動畫（進度條）
+if st.session_state.page == 103:
+         if st.session_state.get("start_time"):
+                  elapsed_seconds = int(time.time() - st.session_state.start_time)
+                  minutes = elapsed_seconds // 60
+                  seconds = elapsed_seconds % 60
+                  time_str1 = f"{minutes} 分 {seconds} 秒"
+                  # st.metric(label="您在練習所花費的時間", value=time_str1)
+                  row_data = [st.session_state["ID"],                                        
+                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                                
+                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                          
+                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
+                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                                                
+                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
+                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                            
+                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                              st.session_state["important"], time_str1 
+                             ]
+                  sheet.append_row(row_data)
+                  
+         placeholder = st.empty()
+         with placeholder.container():
+                  st.markdown("""
+                  <style>
+                  body, .main, .block-container {
+                  background-color: white !important;
+                  }
+                  .top-container {
+                  padding-top: 30px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  }
+                  .stProgress {
+                  width: 60%;
+                  margin: 0 auto;
+                  }
+                  </style>
+                  <div class="top-container">
+                  <h4> 正在整理資料，請稍候…</h4>
+                  </div>
+                  """, unsafe_allow_html=True)
+                  progress_bar = st.progress(0)
+         for i in range(5):  # 顯示7秒（1秒更新一次）
+                  time.sleep(1)
+                  progress_bar.progress((i + 1) * 10)
+         st.session_state.page += 1
+         st.session_state.scroll_to_top = True
+         st.rerun()
                 
 # 正式測驗說明
-if st.session_state.page == 103:
+if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
@@ -1212,7 +1245,7 @@ def question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-103}")
+                st.image(image1, caption=f"正式題 {page_number-104}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1271,7 +1304,7 @@ def question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-103}")
+                st.image(image1, caption=f"正式題 {page_number-104}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1331,7 +1364,7 @@ def question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-103}")
+                st.image(image1, caption=f"正式題 {page_number-104}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1374,7 +1407,7 @@ def question2(
 
 # 1
 question(
-    page_number=104,
+    page_number=105,
     question_image_path="new_folder/高級圖形一 (5).png",
     option_image_path="new_folder/高級圖形一選項 (5).png",
     radio_key="q_1"
@@ -1382,7 +1415,7 @@ question(
         
 # 2
 question(
-    page_number=105,
+    page_number=106,
     question_image_path="new_folder/高級圖形二 (11).png",
     option_image_path="new_folder/高級圖形二選項 (11).png",
     radio_key="q_2"
@@ -1390,7 +1423,7 @@ question(
 
 # 3
 question(
-    page_number=106,
+    page_number=107,
     question_image_path="new_folder/高級圖形二 (15).png",
     option_image_path="new_folder/高級圖形二選項 (15).png",
     radio_key="q_3",
@@ -1398,7 +1431,7 @@ question(
 
 # 4
 question1(
-    page_number=107,
+    page_number=108,
     question_image_path="new_folder/區分 (20).png",
     option_image_path="new_folder/區分選項 (20).png",
     radio_key="q_4"
@@ -1406,7 +1439,7 @@ question1(
 
 # 5
 question1(
-    page_number=108,
+    page_number=109,
     question_image_path="new_folder/區分 (5).png",
     option_image_path="new_folder/區分選項 (5).png",
     radio_key="q_5",
@@ -1414,7 +1447,7 @@ question1(
 
 # 6
 question1(
-    page_number=109,
+    page_number=110,
     question_image_path="new_folder/區分 (40).png",
     option_image_path="new_folder/區分選項 (40).png",
     radio_key="q_6",
@@ -1422,7 +1455,7 @@ question1(
 
 # 7
 question2(
-    page_number=110,
+    page_number=111,
     question_image_path="new_folder/推理思考 (5).png",
     option_image_path="new_folder/推理思考選項 (5).png",
     radio_key="q_7",
@@ -1430,7 +1463,7 @@ question2(
 
 # 8
 question2(
-    page_number=111,
+    page_number=112,
     question_image_path="new_folder/羅桑二氏 (50).png",
     option_image_path="new_folder/羅桑二氏選項 (50).png",
     radio_key="q_8",
@@ -1438,7 +1471,7 @@ question2(
 
 # 9
 question2(
-    page_number=112,
+    page_number=113,
     question_image_path="new_folder/羅桑二氏 (30).png",
     option_image_path="new_folder/羅桑二氏選項 (30).png",
     radio_key="q_9",
@@ -1446,7 +1479,7 @@ question2(
 
 # 10
 question2(
-    page_number=113,
+    page_number=114,
     question_image_path="new_folder/羅桑二氏 (55).png",
     option_image_path="new_folder/羅桑二氏選項 (55).png",
     radio_key="q_10",
@@ -1454,7 +1487,7 @@ question2(
 
 # 11
 question(
-    page_number=114,
+    page_number=115,
     question_image_path="new_folder/高級圖形二 (20).png",
     option_image_path="new_folder/高級圖形二選項 (20).png",
     radio_key="q_11"
@@ -1462,7 +1495,7 @@ question(
 
 # 12
 question(
-    page_number=115,
+    page_number=116,
     question_image_path="new_folder/高級圖形二 (5).png",
     option_image_path="new_folder/高級圖形二選項 (5).png",
     radio_key="q_12",
@@ -1470,7 +1503,7 @@ question(
 
 # 13
 question1(
-    page_number=116,
+    page_number=117,
     question_image_path="new_folder/區分 (25).png",
     option_image_path="new_folder/區分選項 (25).png",
     radio_key="q_13"
@@ -1478,7 +1511,7 @@ question1(
 
 # 14
 question1(
-    page_number=117,
+    page_number=118,
     question_image_path="new_folder/區分 (30).png",
     option_image_path="new_folder/區分選項 (30).png",
     radio_key="q_14",
@@ -1486,7 +1519,7 @@ question1(
 
 # 15
 question1(
-    page_number=118,
+    page_number=119,
     question_image_path="new_folder/區分 (35).png",
     option_image_path="new_folder/區分選項 (35).png",
     radio_key="q_15",
@@ -1494,7 +1527,7 @@ question1(
 
 # 16
 question2(
-    page_number=119,
+    page_number=120,
     question_image_path="new_folder/推理思考 (7).png",
     option_image_path="new_folder/推理思考選項 (7).png",
     radio_key="q_16",
@@ -1502,13 +1535,13 @@ question2(
 
 # 17
 question2(
-    page_number=120,
+    page_number=121,
     question_image_path="new_folder/高級圖形二 (25).png",
     option_image_path="new_folder/高級圖形二選項 (25).png",
     radio_key="q_17",
 )
 
-if st.session_state.page == 121:
+if st.session_state.page == 122:
     st.markdown("")
     st.markdown("")
     st.markdown("")
@@ -1545,7 +1578,7 @@ if st.session_state.page == 121:
     st.session_state.scroll_to_top = True
     st.rerun()
     
-if st.session_state.page == 122:
+if st.session_state.page == 123:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1594,7 +1627,7 @@ if st.session_state.page == 122:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 123:
+if st.session_state.page == 124:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1664,7 +1697,7 @@ if st.session_state.page == 123:
                      st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 124:
+if st.session_state.page == 125:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1777,7 +1810,7 @@ if st.session_state.page == 124:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 125:
+if st.session_state.page == 126:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1797,7 +1830,7 @@ if st.session_state.page == 125:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 126:
+elif st.session_state.page == 127:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
