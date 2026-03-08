@@ -1689,11 +1689,12 @@ if st.session_state.page == 124:
 
     with col4:
         if st.button("下一頁"):
-                 if st.session_state.get("formal_start_time"):
+            if st.session_state.get("formal_start_time"):
                      elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
                      minutes = elapsed_seconds // 60
                      seconds = elapsed_seconds % 60
                      time2 = f"{minutes} 分 {seconds} 秒"
+                     
             if prac1 is None or prac2 is None or score1 is None or score2 is None or comparison is None or ME1 is None or ME2 is None or ME3 is None:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
