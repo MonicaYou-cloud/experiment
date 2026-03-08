@@ -1589,7 +1589,7 @@ if st.session_state.page == 123:
 
     import re
     p_time = sheet.acell("S4").value 
-    match = re.match(r"(\d+)分(\d+)秒", p_time)
+    match = re.match(r"(\d+)\s*分\s*(\d+)\s*秒", p_time)
     minutes = int(match.group(1))
     seconds = int(match.group(2))
     total_seconds = minutes * 60 + seconds
