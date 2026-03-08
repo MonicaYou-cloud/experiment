@@ -3,7 +3,9 @@ streamlit-javascript
 pandas
 
 Pillow
+matplotlib
 
 google-auth-oauthlib
 gspread
 google-auth
+
