@@ -1585,7 +1585,9 @@ if st.session_state.page == 123:
 
     personal_score = 65
     average_score = 80
-    Img = Image.open("new_folder/圖片1.png")
+    n_people = 291
+         
+    # Img = Image.open("new_folder/圖片1.png")
 
     import re
     p_time = sheet.acell("S4").value 
@@ -1598,6 +1600,30 @@ if st.session_state.page == 123:
     new_min = new_seconds // 60
     new_sec = new_seconds % 60
     avg_time = f"{new_min} 分 {new_sec} 秒"
+    import streamlit as st
+    import matplotlib.pyplot as plt
+
+
+
+
+    labels = ["個人分數", "平均分數"]
+    values = [personal_score, average_score]
+    fig, ax = plt.subplots()
+    bars = ax.bar(labels, values)
+    for bar in bars:
+             height = bar.get_height()
+             ax.text(
+                      bar.get_x() + bar.get_width()/2,
+                      height + 1,
+                      f"{height}",
+                      ha="center",
+                      va="bottom",
+                      fontsize=12)
+             ax.set_ylim(0, 100)
+             ax.set_ylabel("分數")
+             ax.set_title("測驗結果圖")
+             fig.text(0.5, 0.01, f"目前測試人數：{n_people}", ha="center", fontsize=11)
+             # st.pyplot(fig)
 
     st.write("""【以下是您與同齡人們在練習階段所花費的練習時間】""")     
     col1, col2 = st.columns([1, 1]) 
@@ -1607,15 +1633,18 @@ if st.session_state.page == 123:
              st.metric(label="同齡人們的平均練習時間", value=avg_time)  
 
     st.write("""【以下是您與同齡人們在正式測驗所得到的分數】""")     
-    col1, col2 = st.columns([1, 1]) 
+    col1, col2, col3 = st.columns([1, 1, 1]) 
     with col1:
              st.metric(label="您的分數", value=f"{personal_score} 分") 
              
     with col2:
-             st.metric(label="同齡人平均分數", value=f"{average_score} 分") 
+             st.metric(label="同齡人平均分數", value=f"{average_score} 分")
+              
+    with col3:
+             st.pyplot(fig)
      
  
-    st.image(Img)
+    # st.image(Img)
         
     st.markdown("---")
     # 下一頁按鈕
