@@ -1158,22 +1158,21 @@ graphical_question(
     answer_value="4"
 )
 
- if st.session_state.get("start_time"):
-                  elapsed_seconds = int(time.time() - st.session_state.start_time)
-                  minutes = elapsed_seconds // 60
-                  seconds = elapsed_seconds % 60
-                  time1 = f"{minutes} 分 {seconds} 秒"
-                  row_data = [st.session_state["ID"],                                        
-                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                                
-                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                          
-                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
-                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                                                
-                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
-                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                            
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important"], time1 
-                             ]
-                  sheet.append_row(row_data)
+if st.session_state.get("start_time"):
+         elapsed_seconds = int(time.time() - st.session_state.start_time)
+         minutes = elapsed_seconds // 60
+         seconds = elapsed_seconds % 60
+         time1 = f"{minutes} 分 {seconds} 秒"
+         row_data = [st.session_state["ID"],                                        
+                     st.session_state["ID"], st.session_state["gender"], st.session_state["age"],                                                                
+                     st.session_state["self_esteem1"], st.session_state["self_esteem2"],                                          
+                     st.session_state["self_esteem3"], st.session_state["self_esteem4"],                                        
+                     st.session_state["self_esteem5"], st.session_state["self_esteem6"],                                                                
+                     st.session_state["self_esteem7"], st.session_state["self_esteem8"],                                    
+                     st.session_state["self_esteem9"], st.session_state["self_esteem10"],                                            
+                     st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                     st.session_state["important"], time1]
+         sheet.append_row(row_data)
                 
 # 正式測驗說明
 if st.session_state.page == 103:
@@ -1212,7 +1211,7 @@ def question(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-104}")
+                st.image(image1, caption=f"正式題 {page_number-103}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1271,7 +1270,7 @@ def question1(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-104}")
+                st.image(image1, caption=f"正式題 {page_number-103}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
@@ -1331,7 +1330,7 @@ def question2(
         with col1:
             try:
                 image1 = Image.open(question_image_path)
-                st.image(image1, caption=f"正式題 {page_number-104}")
+                st.image(image1, caption=f"正式題 {page_number-103}")
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
         
