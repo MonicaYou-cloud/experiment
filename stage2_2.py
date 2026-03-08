@@ -1594,8 +1594,8 @@ if st.session_state.page == 123:
     minutes = int(match.group(1))
     seconds = int(match.group(2))
     total_seconds = minutes * 60 + seconds
-    new_seconds = total_seconds - 7
-    new_seconds = int(new_seconds)
+    new_seconds = int(total_seconds - 7)
+    new_seconds = max(0, new_seconds)
     new_min = new_seconds // 60
     new_sec = new_seconds % 60
     avg_time = f"{new_min} 分 {new_sec} 秒"
