@@ -1637,26 +1637,35 @@ if st.session_state.page == 124:
     
     st.write("１. 您比同齡人練習的時間更多還是更少？")
     prac1 = st.radio(
-             options=["更多", "更少", "差不多一樣多"],
+             label="（１=更多，２=差不多一樣多，３=更少）",
+             options=["1", "2", "3"],
              key="prac1", horizontal=True, index=None)
-   
-    # prac1 = st.radio("１. 您比同齡人練習的時間更多還是更少？", ["更多", "更少", "差不多一樣多"], index=None, key="prac1")
-    prac2 = st.radio("２. 您認為誰在練習階段更努力？", ["自己", "同齡人們", "差不多一樣努力"], index=None, key="prac2")
+
+    st.write("２. 您認為誰在練習階段更努力？")
+    prac2 = st.radio(
+             label="（１=自己，２=差不多一樣努力，３=同齡人們）",
+             options=["1", "2", "3"],
+             key="prac2", horizontal=True, index=None)
     score1 = st.text_input("３. 您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("４. 同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
-    comparison = st.radio("５. 您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
+
+    st.write("５. 您的正式測驗分數比同齡人平均測驗分數更高還是更低？")
+    comparison = st.radio(
+             label="（１=更高，２=更低，３=不知道）",
+             options=["1", "2", "3"],
+             key="comparison", horizontal=True, index=None)
     
-    st.write("１. 您認為自己是否有可能（有機會）得到和同齡人們一樣的分數？")
+    st.write("６. 您認為自己是否有可能（有機會）得到和同齡人們一樣的分數？")
     ME1 = st.radio(
         label="（１=非常不可能，６=非常可能）",
         options=["1", "2", "3", "4", "5", "6"],
         key="ME1", horizontal=True, index=None)
-    st.write("２. 您是否有信心得到和同齡人們一樣的分數？")
+    st.write("７. 您是否有信心得到和同齡人們一樣的分數？")
     ME2 = st.radio(
         label="（１=非常沒信心，６=非常有信心）",
         options=["1", "2", "3", "4", "5", "6"],
         key="ME2", horizontal=True, index=None)
-    st.write("３. 要得到和同齡人們一樣的分數，對您來說是否困難？")
+    st.write("８. 要得到和同齡人們一樣的分數，對您來說是否困難？")
     ME3 = st.radio(
         label="（１=非常不困難，６=非常困難）",
         options=["1", "2", "3", "4", "5", "6"],
