@@ -1599,23 +1599,23 @@ if st.session_state.page == 123:
     new_sec = new_seconds % 60
     avg_time = f"{new_min} 分 {new_sec} 秒"
 
-    st.write("""以下是您與同齡人們在練習階段所花費的練習時間。""")     
+    st.write("""【以下是您與同齡人們在練習階段所花費的練習時間】""")     
     col1, col2 = st.columns([1, 1]) 
     with col1:
-             st.metric(label="您先前的練習時間", value=sheet.acell("S4").value)  
+             st.metric(label="您的練習時間", value=sheet.acell("S4").value)  
     with col2:
              st.metric(label="同齡人們的平均練習時間", value=avg_time)  
 
-    st.write("""以下是您與同齡人們在正式測驗所得到的分數。""")     
-    col1, col2, col3 = st.columns([1, 1, 2]) 
+    st.write("""【以下是您與同齡人們在正式測驗所得到的分數】""")     
+    col1, col2 = st.columns([1, 1]) 
     with col1:
              st.metric(label="您的分數", value=f"{personal_score} 分") 
              
     with col2:
              st.metric(label="同齡人平均分數", value=f"{average_score} 分") 
      
-    with col3:
-             st.image(Img)
+ 
+    st.image(Img)
         
     st.markdown("---")
     # 下一頁按鈕
