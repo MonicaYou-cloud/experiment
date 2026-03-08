@@ -1552,7 +1552,7 @@ if st.session_state.page == 122:
     st.write("""以下是您與同齡人們在練習階段所花費的練習時間。""")     
     col1, col2 = st.columns([1, 1]) 
     with col1:
-             st.metric(label="您先前的練習時間", value=sheet.acell("S4").value")  
+             st.metric(label="您先前的練習時間", value=sheet.acell("S4").value)  
     with col2:
              st.metric(label="同齡人們的平均練習時間", value=avg_time)  
 
