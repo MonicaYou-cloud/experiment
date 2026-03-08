@@ -1632,9 +1632,9 @@ if st.session_state.page == 124:
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
     st.header("測驗結束前")
-    st.markdown("---")
     st.write("""以下問題是想了解您的練習狀況與測驗結果。填寫完畢後請按〔下一頁〕。""")
-    
+    st.markdown("---")
+     
     st.write("１. 您比同齡人練習的時間更多還是更少？")
     prac1 = st.radio(
              label="（１=更多，２=差不多一樣多，３=更少）",
@@ -1717,6 +1717,7 @@ if st.session_state.page == 125:
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
     st.header("結束本測驗前")
+    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
     st.markdown("---")
     st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
 
