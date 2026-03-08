@@ -1597,7 +1597,7 @@ if st.session_state.page == 123:
     new_seconds = int(new_seconds)
     new_min = new_seconds // 60
     new_sec = new_seconds % 60
-    avg_time = f"{new_min}\s分\s{new_sec}\s秒"
+    avg_time = f"{new_min} 分 {new_sec} 秒"
 
     st.write("""以下是您與同齡人們在練習階段所花費的練習時間。""")     
     col1, col2 = st.columns([1, 1]) 
