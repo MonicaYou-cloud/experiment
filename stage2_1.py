@@ -1158,6 +1158,7 @@ graphical_question(
     answer_value="4"
 )
 
+start_time = st.session_state.get("start_time")
 if st.session_state.get("start_time"):
     elapsed_seconds = int(time.time() - st.session_state.start_time)
     minutes = elapsed_seconds // 60
