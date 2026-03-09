@@ -1584,7 +1584,7 @@ if st.session_state.page == 123:
     st.markdown("---")
 
     personal_score = 70
-    average_score = 85
+    average_score = 55
          
     Img = Image.open("new_folder/圖片2.png")
 
