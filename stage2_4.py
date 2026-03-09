@@ -1534,7 +1534,7 @@ question2(
 )
 
 # 17
-question2(
+question(
     page_number=121,
     question_image_path="new_folder/高級圖形二 (25).png",
     option_image_path="new_folder/高級圖形二選項 (25).png",
