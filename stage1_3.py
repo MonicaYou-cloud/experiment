@@ -410,7 +410,7 @@ graphical_question(
     page_number=10,
     question_image_path="new_folder/推理思考 (8).png",
     option_image_path="new_folder/推理思考選項 (8).png",
-    answer_value="2"
+    answer_value="3"
 )
 
 # 練題9
