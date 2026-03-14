@@ -1638,16 +1638,16 @@ if st.session_state.page == 124:
     st.write("""以下問題是想了解您的練習狀況與測驗結果。填寫完畢後請按〔下一頁〕。""")
     st.markdown("---")
      
-    st.write("１. 您比同齡人練習的時間更多還是更少？")
+    st.write("１. 與同齡人平均的練習時間相比，您的練習時間更多還是更少？")
     prac1 = st.radio(
-             label="（１=更多，２=差不多一樣多，３=更少）",
-             options=["1", "2", "3"],
+             label="（１=明顯更多，２=稍微更多，３=差不多一樣，４=稍微更少，５=明顯更少）",
+             options=["1", "2", "3", "4", "5"],
              key="prac1", horizontal=True, index=None)
 
-    st.write("２. 您認為誰在練習階段更努力？")
+    st.write("２. 與同齡人相比，您在練習階段付出的努力更多還是更少？")
     prac2 = st.radio(
-             label="（１=自己，２=差不多一樣努力，３=同齡人們）",
-             options=["1", "2", "3"],
+             label="（１=更多，６=更少）",
+             options=["1", "2", "3", "4", "5", "6"],
              key="prac2", horizontal=True, index=None)
     score1 = st.text_input("３. 您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("４. 同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
