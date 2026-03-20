@@ -1646,8 +1646,8 @@ if st.session_state.page == 124:
 
     st.write("２. 與同齡人相比，您在練習階段付出的努力更多還是更少？")
     prac2 = st.radio(
-             label="（１=更多，６=更少）",
-             options=["1", "2", "3", "4", "5", "6"],
+             label="（１=明顯更多，２=稍微更多，３=差不多一樣，４=稍微更少，５=明顯更少）",
+             options=["1", "2", "3", "4", "5"],
              key="prac2", horizontal=True, index=None)
     score1 = st.text_input("３. 您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("４. 同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
