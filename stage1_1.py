@@ -41,18 +41,17 @@ for key in ["ID", "gender", "age",
 # 預先設定：受試者編號 -> [允許開始時間, 允許結束時間]
 participants = {
     "test00": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2026, 9, 15, 21, 30, 0, tzinfo=tz)],
-    "GsvY11": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2026, 9, 15, 21, 30, 0, tzinfo=tz)],
-    "CQNp11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "EqLD11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "NcXB11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
-    "UwgD11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "aUKf11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "bmHW11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
-    "nxZS11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
-    "snTq11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
-    "vGTh11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "EYGT11": [datetime(2025, 9, 13, 20, 30, 0, tzinfo=tz), datetime(2026, 9, 15, 21, 30, 0, tzinfo=tz)],
+    "JurM11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "OetM11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "RaYx11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "ZYrQ11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "dFsQ11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "gdFs11": [datetime(2025, 9, 15, 14, 0, 0, tzinfo=tz), datetime(2026, 9, 15, 15, 0, 0, tzinfo=tz)],
+    "pXby11": [datetime(2025, 9, 16, 10, 0, 0, tzinfo=tz), datetime(2026, 9, 16, 11, 0, 0, tzinfo=tz)],
+    "qfVw11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
+    "wqyA11": [datetime(2025, 9, 16, 13, 30, 0, tzinfo=tz), datetime(2026, 9, 16, 14, 30, 0, tzinfo=tz)],
 }
-
 # 初始化分頁
 if "page" not in st.session_state:
     st.session_state.page = 0
