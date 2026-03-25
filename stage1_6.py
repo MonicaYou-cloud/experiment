@@ -1769,7 +1769,7 @@ if st.session_state.page == 125:
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
                               st.session_state["important"], st.session_state["important"], st.session_state["important"],
-                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
                               st.session_state["Num"], 
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
