@@ -1712,21 +1712,21 @@ if st.session_state.page == 125:
     st.header("正式測驗結束前")
     st.markdown("---")
     st.write("""以下問題是想了解您的測驗結果。填寫完畢後請按〔下一頁〕。""")
-    score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
-    score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
-    comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
+    score1 = st.text_input("１. 您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
+    score2 = st.text_input("２. 同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
+    comparison = st.radio("３. 您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
     
-    st.write("６. 您認為自己是否有可能（有機會）得到和同齡人們一樣的分數？")
+    st.write("４. 您認為自己是否有可能（有機會）得到和同齡人們一樣的分數？")
     ME1 = st.radio(
         label="（１=非常不可能，６=非常可能）",
         options=["1", "2", "3", "4", "5", "6"],
         key="ME1", horizontal=True, index=None)
-    st.write("７. 您是否有信心得到和同齡人們一樣的分數？")
+    st.write("５. 您是否有信心得到和同齡人們一樣的分數？")
     ME2 = st.radio(
         label="（１=非常沒信心，６=非常有信心）",
         options=["1", "2", "3", "4", "5", "6"],
         key="ME2", horizontal=True, index=None)
-    st.write("８. 要得到和同齡人們一樣的分數，對您來說是否困難？")
+    st.write("６. 要得到和同齡人們一樣的分數，對您來說是否困難？")
     ME3 = st.radio(
         label="（１=非常不困難，６=非常困難）",
         options=["1", "2", "3", "4", "5", "6"],
@@ -1768,9 +1768,10 @@ if st.session_state.page == 125:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important"],st.session_state["important"],
-                              time_str2, 
-                              st.session_state["Num"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
+                              st.session_state["important"], st.session_state["important"], st.session_state["important"],
+                              st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
+                              st.session_state["Num"], 
+                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
                               st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
                      ]
                      sheet.append_row(row_data)
@@ -1778,6 +1779,118 @@ if st.session_state.page == 125:
                      st.session_state.page += 1
                      st.rerun()
 
+    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
+
+# 測驗後問卷
+if st.session_state.page == 126:
+    if st.session_state.get("scroll_to_top", False):
+        st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
+        st.session_state.scroll_to_top = False
+    st.header("結束本測驗前")
+    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
+    st.markdown("---")
+
+    st.write("１. 您認為自己的內隱學習能力如何？")
+    SE1 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE1", horizontal=True, index=None)
+
+    st.write("２. 您對自己的內隱學習能力有多少信心？")
+    SE2 = st.radio(
+        label="（１=非常沒信心，６=非常有信心）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE2", horizontal=True, index=None)
+
+    st.write("３. 您認為自己在正式測驗的表現如何？")
+    SE3 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE3", horizontal=True, index=None)
+    
+    st.write("４. 若再進行一次測驗，您認為自己的表現會如何？")
+    SE4 = st.radio(
+        label="（１=非常不好，６=非常好）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE4", horizontal=True, index=None)
+
+    st.write("５. 您對自己的正式測驗表現結果有多滿意？")
+    SE5 = st.radio(
+        label="（１=非常不滿意，６=非常滿意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE5", horizontal=True, index=None)
+
+    st.write("６. 您看到正式測驗的分數後有多愉快？")
+    SE6 = st.radio(
+        label="（１=非常不愉快，６=非常愉快）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE6", horizontal=True, index=None)
+         
+    st.write("７. 您認為本測驗能正確測量到您內隱學習能力的程度？")
+    SE7 = st.radio(
+        label="（１=非常不正確，６=非常正確）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE7", horizontal=True, index=None)
+    
+    st.write("８. 您是否同意本測驗的內容是有效的？")
+    SE8 = st.radio(
+        label="（１=非常不同意，６=非常同意）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="SE8", horizontal=True, index=None)
+         
+    st.write("９. 您認為自己在正式測驗有多認真？")
+    SE9 = st.radio(
+             label="（１=非常不認真，６=非常認真）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="SE9", horizontal=True, index=None)
+    
+    st.write("１０. 您有多投入於正式測驗？")
+    SE10 = st.radio(
+             label="（１=非常不投入，６=非常投入）",
+             options=["1", "2", "3", "4", "5", "6"],
+             key="SE10", horizontal=True, index=None)
+    
+    if 'warning_message' in st.session_state and st.session_state.warning_message:
+        st.warning(st.session_state.warning_message)
+
+    st.markdown("---")
+    spacer1, spacer2, btn_col, spacer3 = st.columns([1, 1, 2, 1])
+
+    with btn_col:
+        warning_needed = False
+        if st.button("完成測驗"):
+            if st.session_state.get("SE1") is None or \
+               st.session_state.get("SE2") is None or \
+               st.session_state.get("SE3") is None or \
+               st.session_state.get("SE4") is None or \
+               st.session_state.get("SE5") is None or \
+               st.session_state.get("SE6") is None or \
+               st.session_state.get("SE7") is None or \
+               st.session_state.get("SE8") is None or \
+               st.session_state.get("SE9") is None or \
+               st.session_state.get("SE10") is None:
+                   warning_needed = True
+            else:
+                     st.session_state["end_time"] = datetime.now(tz)
+                     row_data = [st.session_state["ID"],
+                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
+                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
+                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
+                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
+                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
+                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
+                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
+                              st.session_state["important"], st.session_state["important"], st.session_state["important"],
+                              st.session_state["Num"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
+                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
+                              st.session_state["SE4"], st.session_state["SE5"], st.session_state["SE6"], 
+                              st.session_state["SE7"], st.session_state["SE8"], st.session_state["SE9"], st.session_state["SE10"],
+                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
+                     ]
+                     sheet.append_row(row_data)
+                     next_page()  # 跳到下一頁
+                     st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
