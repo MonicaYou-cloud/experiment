@@ -1756,7 +1756,7 @@ if st.session_state.page == 125:
                      seconds = elapsed_seconds % 60
                      time2 = f"{minutes} 分 {seconds} 秒"
                      
-            if prac1 is None or prac2 is None or score1 is None or score2 is None or comparison is None or ME1 is None or ME2 is None or ME3 is None:
+            if score1 is None or score2 is None or comparison is None or ME1 is None or ME2 is None or ME3 is None:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
             else:
