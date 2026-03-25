@@ -1412,7 +1412,6 @@ def question2(
         if warning_needed:
             st.warning("⚠️ 請先作答才能繼續。")
 
-
 # 1
 question(
     page_number=105,
@@ -1542,118 +1541,14 @@ question2(
 )
 
 # 17
-question2(
+question(
     page_number=121,
-    question_image_path="new_folder/推理思考 (20).png",
-    option_image_path="new_folder/推理思考選項 (20).png",
+    question_image_path="new_folder/高級圖形二 (25).png",
+    option_image_path="new_folder/高級圖形二選項 (25).png",
     radio_key="q_17",
 )
 
-# 18
-question2(
-    page_number=122,
-    question_image_path="new_folder/羅桑二氏 (44).png",
-    option_image_path="new_folder/羅桑二氏選項 (44).png",
-    radio_key="q_18",
-)
-
-# 19
-question2(
-    page_number=123,
-    question_image_path="new_folder/羅桑二氏 (45).png",
-    option_image_path="new_folder/羅桑二氏選項 (45).png",
-    radio_key="q_19",
-)
-
-# 20
-question2(
-    page_number=124,
-    question_image_path="new_folder/羅桑二氏 (10).png",
-    option_image_path="new_folder/羅桑二氏選項 (10).png",
-    radio_key="q_20",
-)
-
-# 21
-question(
-    page_number=125,
-    question_image_path="new_folder/高級圖形二 (30).png",
-    option_image_path="new_folder/高級圖形二選項 (30).png",
-    radio_key="q_21"
-)
-
-# 22
-question(
-    page_number=126,
-    question_image_path="new_folder/高級圖形二 (25).png",
-    option_image_path="new_folder/高級圖形二選項 (25).png",
-    radio_key="q_22",
-)
-
-# 23
-question1(
-    page_number=127,
-    question_image_path="new_folder/區分 (15).png",
-    option_image_path="new_folder/區分選項 (15).png",
-    radio_key="q_23"
-)
-
-# # 24
-# question1(
-#     page_number=128,
-#     question_image_path="new_folder/區分 (10).png",
-#     option_image_path="new_folder/區分選項 (10).png",
-#     radio_key="q_24",
-# )
-
-# # 25
-# question1(
-#     page_number=129,
-#     question_image_path="new_folder/區分 (26).png",
-#     option_image_path="new_folder/區分選項 (26).png",
-#     radio_key="q_25",
-# )
-
-# # 26
-# question2(
-#     page_number=130,
-#     question_image_path="new_folder/推理思考 (15).png",
-#     option_image_path="new_folder/推理思考選項 (15).png",
-#     radio_key="q_26",
-# )
-
-# # 27
-# question2(
-#     page_number=131,
-#     question_image_path="new_folder/推理思考 (10).png",
-#     option_image_path="new_folder/推理思考選項 (10).png",
-#     radio_key="q_27",
-# )
-
-# # 28
-# question2(
-#     page_number=132,
-#     question_image_path="new_folder/羅桑二氏 (40).png",
-#     option_image_path="new_folder/羅桑二氏選項 (40).png",
-#     radio_key="q_28",
-# )
-
-# # 29
-# question2(
-#     page_number=133,
-#     question_image_path="new_folder/羅桑二氏 (5).png",
-#     option_image_path="new_folder/羅桑二氏選項 (5).png",
-#     radio_key="q_29",
-# )
-
-# # 30
-# question2(
-#     page_number=134,
-#     question_image_path="new_folder/羅桑二氏 (60).png",
-#     option_image_path="new_folder/羅桑二氏選項 (60).png",
-#     radio_key="q_30",
-# )
-
-if st.session_state.page == 128:
+if st.session_state.page == 122:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1738,7 +1633,7 @@ if st.session_state.page == 128:
 
 
 
-if st.session_state.page == 129:
+if st.session_state.page == 123:
     st.markdown("")
     st.markdown("")
     st.markdown("")
@@ -1835,7 +1730,7 @@ if st.session_state.page == 129:
 #     st.rerun()
 
     
-if st.session_state.page == 130:
+if st.session_state.page == 124:
     st.success("測驗結果分析完成！")
     st.header("測驗結果")
     st.markdown("---")
@@ -1869,7 +1764,7 @@ if st.session_state.page == 130:
             st.rerun()
 
 # 操弄檢核
-if st.session_state.page == 131:
+if st.session_state.page == 125:
     if st.session_state.get("scroll_to_top", False):
             st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
             st.session_state.scroll_to_top = False
@@ -1918,7 +1813,7 @@ if st.session_state.page == 131:
                      st.rerun()
 
 # 測驗後問卷
-if st.session_state.page == 132:
+if st.session_state.page == 126:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -2022,7 +1917,7 @@ if st.session_state.page == 132:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 133:
+if st.session_state.page == 127:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -2042,7 +1937,7 @@ if st.session_state.page == 133:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 134:
+elif st.session_state.page == 128:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
