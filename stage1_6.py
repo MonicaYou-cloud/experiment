@@ -32,7 +32,8 @@ for key in ["ID", "gender", "age",
            , "self_esteem6", "self_esteem7", "self_esteem8", "self_esteem9", "self_esteem10"
            , "mindset1", "mindset2", "mindset3", "important"
            , "Num", "E1", "E2", "E3", "E4", "E5", "score1", "score2", "comparison"
-           , "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
+           , "ME1", "ME2", "ME3"
+           , "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7", "SE9", "SE9", "SE10" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
            , "q_16", "q_17"]:
     if key not in st.session_state:
