@@ -34,7 +34,7 @@ for key in ["ID", "gender", "age",
            , "Num", "E1", "E2", "E3", "E4", "E5", "score1", "score2", "comparison"
            , "SE1", "SE2", "SE3", "SE4", "SE5", "SE6", "SE7" 
            , "q_1", "q_2", "q_3", "q_4", "q_5", "q_6", "q_7", "q_8", "q_9", "q_10", "q_11", "q_12", "q_13", "q_14", "q_15"
-           , "q_16", "q_17", "q_18", "q_19", "q_20", "q_21", "q_22", "q_23", "q_24", "q_25", "q_26", "q_27", "q_28", "q_29", "q_30"]:
+           , "q_16", "q_17"]:
     if key not in st.session_state:
         st.session_state[key] = None
 
@@ -1768,9 +1768,9 @@ if st.session_state.page == 125:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important"], st.session_state["important"], time2, 
-                              st.session_state["prac1"], st.session_state["prac2"],
-                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
+                              st.session_state["important"],st.session_state["important"],
+                              time_str2, 
+                              st.session_state["Num"], st.session_state["E1"], st.session_state["E2"], st.session_state["E3"]
                               st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
                      ]
                      sheet.append_row(row_data)
@@ -1781,7 +1781,7 @@ if st.session_state.page == 125:
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 126:
+if st.session_state.page == 127:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1801,7 +1801,7 @@ if st.session_state.page == 126:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 127:
+elif st.session_state.page == 128:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
