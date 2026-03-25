@@ -1779,7 +1779,7 @@ if st.session_state.page == 125:
                      st.session_state.page += 1
                      st.rerun()
 
-    if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
+    # if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # 測驗後問卷
 if st.session_state.page == 126:
