@@ -1676,8 +1676,8 @@ if st.session_state.page == 124:
     st.header("測驗結果")
     st.markdown("---")
 
-    personal_score = 65
-    average_score = 50
+    personal_score = 70
+    average_score = 55
     Img = Image.open("new_folder/圖片2.png")
     col1, col2, col3 = st.columns([1, 2, 1]) 
     with col1:
