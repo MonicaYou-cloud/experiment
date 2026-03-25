@@ -1222,7 +1222,7 @@ if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
-    st.write("""本階段共有23道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
+    st.write("""本階段共有17道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
     st.write("""測驗結束後將由系統透過您的【答題時間與正確率】計算您的測驗分數。""")
     st.write("""請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
@@ -1715,6 +1715,24 @@ if st.session_state.page == 125:
     score1 = st.text_input("您的正式測驗分數是幾分？", placeholder="請輸入數字",  key="score1")
     score2 = st.text_input("同齡人平均測驗分數是幾分？", placeholder="請輸入數字", key="score2")
     comparison = st.radio("您的正式測驗分數比同齡人平均測驗分數高還是低？", ["高", "低", "不知道"], index=None, key="comparison")
+    
+    st.write("６. 您認為自己是否有可能（有機會）得到和同齡人們一樣的分數？")
+    ME1 = st.radio(
+        label="（１=非常不可能，６=非常可能）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="ME1", horizontal=True, index=None)
+    st.write("７. 您是否有信心得到和同齡人們一樣的分數？")
+    ME2 = st.radio(
+        label="（１=非常沒信心，６=非常有信心）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="ME2", horizontal=True, index=None)
+    st.write("８. 要得到和同齡人們一樣的分數，對您來說是否困難？")
+    ME3 = st.radio(
+        label="（１=非常不困難，６=非常困難）",
+        options=["1", "2", "3", "4", "5", "6"],
+        key="ME3", horizontal=True, index=None)
+         
+         
     # 加上 JS/HTML 把 autocomplete 關掉
     st.markdown("""
     <style>
@@ -1732,7 +1750,13 @@ if st.session_state.page == 125:
 
     with col4:
         if st.button("下一頁"):
-            if score1 is None or score2 is None or comparison is None:
+            if st.session_state.get("formal_start_time"):
+                     elapsed_seconds = int(time.time() - st.session_state.formal_start_time)
+                     minutes = elapsed_seconds // 60
+                     seconds = elapsed_seconds % 60
+                     time2 = f"{minutes} 分 {seconds} 秒"
+                     
+            if prac1 is None or prac2 is None or score1 is None or score2 is None or comparison is None or ME1 is None or ME2 is None or ME3 is None:
                 st.session_state.warning_message = "⚠️ 請填寫所有問題才能繼續。"
                 st.rerun()
             else:
@@ -1744,121 +1768,20 @@ if st.session_state.page == 125:
                               st.session_state["self_esteem7"], st.session_state["self_esteem8"],
                               st.session_state["self_esteem9"], st.session_state["self_esteem10"],
                               st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                              st.session_state["important"], st.session_state["important"], st.session_state["important"], 
-                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"],
+                              st.session_state["important"], st.session_state["important"], time2, 
+                              st.session_state["prac1"], st.session_state["prac2"],
                               st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
+                              st.session_state["ME1"], st.session_state["ME2"], st.session_state["ME3"],
                      ]
                      sheet.append_row(row_data)
                      st.session_state.warning_message = "" 
                      st.session_state.page += 1
                      st.rerun()
 
-# 測驗後問卷
-if st.session_state.page == 126:
-    if st.session_state.get("scroll_to_top", False):
-        st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
-        st.session_state.scroll_to_top = False
-    st.header("結束本測驗前")
-    st.markdown("---")
-    st.write("""以下問題是想了解您的一些想法。填寫完畢後請按〔完成測驗〕。""")
-
-    st.write("１. 您認為自己的內隱學習能力如何？")
-    SE1 = st.radio(
-        label="（１=非常不好，６=非常好）",
-        options=["1", "2", "3", "4", "5", "6"],
-        key="SE1", horizontal=True, index=None
-    )
-    
-    st.write("２. 您認為自己的正式測驗表現如何？")
-    SE2 = st.radio(
-        label="（１=非常不滿意，６=非常滿意）",
-        options=["1", "2", "3", "4", "5", "6"],
-        key="SE2", horizontal=True, index=None
-    )
-
-    st.write("３. 您對自己的正式測驗表現有多滿意？")
-    SE3 = st.radio(
-        label="（１=非常不好，６=非常好）",
-        options=["1", "2", "3", "4", "5", "6"],
-        key="SE3", horizontal=True, index=None
-    )
-    
-    st.write("４. 您認為本測驗能正確測量到您內隱學習能力的程度？")
-    SE3 = st.radio(
-        label="（１=非常不正確，６=非常正確）",
-        options=["1", "2", "3", "4", "5", "6"],
-        key="SE4", horizontal=True, index=None
-    )
-    
-    st.write("５. 您是否同意本測驗的內容是有效的？")
-    SE3 = st.radio(
-        label="（１=非常不同意，６=非常同意）",
-        options=["1", "2", "3", "4", "5", "6"],
-        key="SE5", horizontal=True, index=None
-    )
-         
-    st.write("６. 您認為自己在正式測驗有多認真？")
-    st.radio(
-             label="（１=非常不認真，６=非常認真）",
-             options=["1", "2", "3", "4", "5", "6"],
-             key="E4", horizontal=True, index=None
-    )
-    
-    st.write("７. 您有多投入於正式測驗？")
-    st.radio(
-             label="（１=非常不投入，６=非常投入）",
-             options=["1", "2", "3", "4", "5", "6"],
-             key="E5", horizontal=True, index=None
-    )
-
-    st.write("８. 您認為自己在正式測驗有多努力？")
-    st.radio(
-             label="（１=非常不努力，６=非常努力）",
-             options=["1", "2", "3", "4", "5", "6"],
-             key="E6", horizontal=True, index=None
-    )
-    
-    if 'warning_message' in st.session_state and st.session_state.warning_message:
-        st.warning(st.session_state.warning_message)
-
-    st.markdown("---")
-    spacer1, spacer2, btn_col, spacer3 = st.columns([1, 1, 2, 1])
-
-    with btn_col:
-        warning_needed = False
-        if st.button("完成測驗"):
-            if st.session_state.get("SE1") is None or \
-               st.session_state.get("SE2") is None or \
-               st.session_state.get("SE3") is None or \
-               st.session_state.get("SE4") is None or \
-               st.session_state.get("SE5") is None or \
-               st.session_state.get("E4") is None:
-                   warning_needed = True
-            else:
-                     st.session_state["end_time"] = datetime.now(tz)
-                     row_data = [st.session_state["ID"],
-                              st.session_state["ID"], st.session_state["gender"], st.session_state["age"],
-                              st.session_state["self_esteem1"], st.session_state["self_esteem2"],
-                              st.session_state["self_esteem3"], st.session_state["self_esteem4"],
-                              st.session_state["self_esteem5"], st.session_state["self_esteem6"],
-                              st.session_state["self_esteem7"], st.session_state["self_esteem8"],
-                              st.session_state["self_esteem9"], st.session_state["self_esteem10"],
-                              st.session_state["mindset1"], st.session_state["mindset2"], st.session_state["mindset3"],
-                               st.session_state["important"], st.session_state["important"], st.session_state["important"], 
-                              st.session_state["E1"], st.session_state["Num"], st.session_state["E2"], st.session_state["E3"],
-                              st.session_state["score1"], st.session_state["score2"], st.session_state["comparison"],
-                              st.session_state["SE1"], st.session_state["SE2"], st.session_state["SE3"],
-                              st.session_state["SE4"], st.session_state["SE5"],
-                              st.session_state["E4"], st.session_state["E5"], st.session_state["E6"],
-                              st.session_state.get("end_time").strftime("%Y-%m-%d %H:%M:%S")
-                     ]
-                     sheet.append_row(row_data)
-                     next_page()  # 跳到下一頁
-                     st.rerun()
     if warning_needed: st.warning("⚠️ 請填寫所有問題才能繼續。")
 
 # debrief
-if st.session_state.page == 127:
+if st.session_state.page == 126:
     if st.session_state.get("scroll_to_top", False):
         st.markdown("<script>window.scrollTo(0,0);</script>", unsafe_allow_html=True)
         st.session_state.scroll_to_top = False
@@ -1878,7 +1801,7 @@ if st.session_state.page == 127:
         st.button("結束實驗", on_click=next_page)
 
 #完成頁面
-elif st.session_state.page == 128:
+elif st.session_state.page == 127:
     st.markdown("""<script>window.scrollTo(0, 0);</script>""", unsafe_allow_html=True)
     st.success("實驗已完成！非常感謝您的參與。")
     st.balloons()
