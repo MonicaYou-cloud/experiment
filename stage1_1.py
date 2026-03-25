@@ -392,7 +392,7 @@ graphical_question(
     page_number=8,
     question_image_path="new_folder/區分 (4).png",
     option_image_path="new_folder/區分選項 (4).png",
-    # answer_value="B"
+    # answer_value="C"
 )
     
 # 練題7
