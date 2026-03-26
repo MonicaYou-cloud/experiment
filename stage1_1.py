@@ -324,9 +324,9 @@ def graphical_question(
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
-        # 顯示答案
-        if st.session_state[f'show_answer_{page_number}']:
-            st.markdown(f"""正確答案是 **{answer_value}**""")
+        # # 顯示答案
+        # if st.session_state[f'show_answer_{page_number}']:
+        #     st.markdown(f"""正確答案是 **{answer_value}**""")
 
         # 三個按鈕
         col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
@@ -334,8 +334,8 @@ def graphical_question(
         with col1:
             st.button("上一頁", on_click=prev_page)
 
-        with col3:
-            st.button("看答案", on_click=show_answer, args=(page_number,))
+        # with col3:
+        #     st.button("看答案", on_click=show_answer, args=(page_number,))
 
         with col5:
             st.button("下一頁", on_click=next_page)
