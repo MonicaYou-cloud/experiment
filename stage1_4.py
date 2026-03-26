@@ -273,8 +273,7 @@ elif st.session_state.page == 2:
     st.write("""在本階段的努力程度指的是練習時間長度與練習題數。""")
     st.write("""建議您在練習【6~10題】後，點選〔直接進入正式測驗〕。""")
     st.write("""這個範圍僅是過去研究發現約95%的大多數受試者都有辦法完成的【最低練習門檻】。""") 
-    st.write("""但本研究不強制規定您的練習題數，您仍可以自由選擇。""") 
-    st.write("""＊每一題都請認真思考後再看答案。""")      
+    st.write("""但本研究不強制規定您的練習題數，您仍可以自由選擇。""")      
     st.write("""了解以上說明後，請您按下〔開始練習〕進入練習階段。""")
     st.write("""（提醒：畫面閃爍實屬正常，請別擔心！）""")
     st.markdown("---")
@@ -324,9 +323,9 @@ def graphical_question(
             except FileNotFoundError:
                 st.warning("⚠️ 圖片載入失敗")
 
-        # 顯示答案
-        if st.session_state[f'show_answer_{page_number}']:
-            st.markdown(f"""正確答案是 **{answer_value}**""")
+        # # 顯示答案
+        # if st.session_state[f'show_answer_{page_number}']:
+        #     st.markdown(f"""正確答案是 **{answer_value}**""")
 
         # 三個按鈕
         col1, col2, col3, col4, col5 = st.columns([1, 1, 1, 1, 1])
@@ -334,8 +333,8 @@ def graphical_question(
         with col1:
             st.button("上一頁", on_click=prev_page)
 
-        with col3:
-            st.button("看答案", on_click=show_answer, args=(page_number,))
+        # with col3:
+        #     st.button("看答案", on_click=show_answer, args=(page_number,))
 
         with col5:
             st.button("下一頁", on_click=next_page)
@@ -1223,7 +1222,7 @@ if st.session_state.page == 104:
     st.header("第二階段：正式測驗")
     st.markdown("---")
     st.write("""歡迎您來到正式測驗！請完整閱讀以下說明：""")
-    st.write("""本階段共有17道正式測驗題，測驗期間不得使用任何方式查詢答案。""")
+    st.write("""本階段共有17道正式測驗題。""")
     st.write("""測驗結束後將由系統透過您的【答題時間與正確率】計算您的測驗分數。""")
     st.write("""請您務必認真作答，確保分數的有效性。""")
     st.write("""提醒您，每題僅能作答一次，無法更改答案或回到上一頁，因此請您確認答案後再到下一題。""")
