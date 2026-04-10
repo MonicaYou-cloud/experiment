@@ -1589,7 +1589,7 @@ if st.session_state.page == 122:
                  key="E1", horizontal=True, index=None
         )
 
-        st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('S4').value}】")
+        st.write(f"【系統計算：您在練習階段所花費的時間為 {sheet.acell('W4').value}】")
         st.write("２. 您認為自己練習的時間長度如何？")
         st.radio(
                  label="（１=非常短，６=非常長）",
