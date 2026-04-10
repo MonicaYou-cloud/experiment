@@ -224,7 +224,7 @@ elif st.session_state.page == 1:
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="EU1")
     st.write("15. 即使下定決心努力打拼，有些人還是會因為能力不夠而無法克服學業困難。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="EU2")
-    st.write("16. 在學業方面，我相信一個人只要肯為自己的理想不斷奮鬥，沒有達不到的目標。")
+    st.write("16. 在學業方面，一個人只要肯為自己的理想不斷奮鬥，沒有達不到的目標。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="EU3")
     st.write("17. 每個人都應該再接再勵，但有些人的學業成就是有極限的。")
     st.radio("（１=非常不同意，６=非常同意）", ["1", "2", "3", "4", "5", "6"], horizontal=True, index=None, key="EU4")
