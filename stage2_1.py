@@ -1597,7 +1597,7 @@ if st.session_state.page == 123:
     Img = Image.open("new_folder/圖片1.png")
 
     import re
-    p_time = sheet.acell("S4").value 
+    p_time = sheet.acell("W4").value 
     match = re.match(r"(\d+)\s*分\s*(\d+)\s*秒", p_time)
     minutes = int(match.group(1))
     seconds = int(match.group(2))
@@ -1611,7 +1611,7 @@ if st.session_state.page == 123:
     st.write("""【以下是您與同齡人們在練習階段所花費的練習時間】""")     
     col1, col2 = st.columns([1, 1]) 
     with col1:
-             st.metric(label="您的練習時間", value=sheet.acell("S4").value)  
+             st.metric(label="您的練習時間", value=sheet.acell("W4").value)  
     with col2:
              st.metric(label="同齡人們的平均練習時間", value=avg_time)  
 
